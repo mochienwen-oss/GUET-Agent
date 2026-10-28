@@ -6,7 +6,7 @@ from pathlib import Path
 from threading import Lock
 
 from core.config import settings
-from core.paths import PROJECT_ROOT
+from core.paths import PLAN_DB_PATH, PROJECT_ROOT
 from agent.core.scope import document_scope
 
 _LOCK = Lock()
@@ -15,8 +15,7 @@ _LOCK = Lock()
 def _verified_plan_identity(title, content):
     """Only the current source-bound undergraduate dataset may supply its scope."""
     from agent.core.citations import short_title
-    from agent.tools.query_course.scripts.repository import DB_PATH
-    plans = json.loads(Path(DB_PATH).read_text(encoding="utf-8"))
+    plans = json.loads(PLAN_DB_PATH.read_text(encoding="utf-8"))
     if plans.get("meta", {}).get("source_dir") != "final-md/培养方案":
         return None
     matches = [row for row in plans["majors"]

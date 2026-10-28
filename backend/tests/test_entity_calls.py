@@ -572,8 +572,7 @@ def test_mapping_covers_every_registered_tool():
          "runtime_tool_names.json").read_text(encoding="utf-8"))
 
 
-def test_seven_tool_schemas_are_untouched_by_this_task():
-    """本 Task **未改**任何工具 schema：名字、顺序、参数块都取自 Registry 自身。"""
+def test_active_tool_schemas_match_the_registry():
     import agent.runtime.registry as registry
 
     schemas = registry.schemas()
@@ -581,5 +580,4 @@ def test_seven_tool_schemas_are_untouched_by_this_task():
     for schema in schemas:
         assert schema["type"] == "function"
         assert "properties" in schema["function"]["parameters"]
-    assert [s["function"]["name"] for s in registry.training_schemas()] == \
-        list(registry.TRAINING_TOOL_NAMES)
+    assert [s["function"]["name"] for s in schemas] == ["search_regulations"]

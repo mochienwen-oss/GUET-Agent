@@ -155,7 +155,7 @@ def _regulation_facts(corpus_root) -> list[dict]:
 
 def _audit_metrics(courses: list[dict], corpus_root) -> dict:
     """名称计数口径 —— 逐字精确去重为准；`join_key` **只作碰撞审计**。"""
-    from agent.tools.query_course.scripts.normalize import join_key
+    from documents.plan_data.normalize import join_key
 
     names = [c["canonical_name"] for c in courses]
     groups: dict[str, list[str]] = {}
@@ -570,7 +570,7 @@ def _check_manifest(manifest: dict) -> None:
 
 def _check_sidecar(sidecar, catalog: dict, metrics: dict) -> None:
     """碰撞审计 sidecar —— 形状固定 + join_key 语义必须**复用正式 join_key**。"""
-    from agent.tools.query_course.scripts.normalize import join_key
+    from documents.plan_data.normalize import join_key
 
     sidecar = _check_object(sidecar, "collisions sidecar")
     _check_exact_fields(sidecar, SIDECAR_FIELDS, "collisions sidecar")

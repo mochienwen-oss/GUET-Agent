@@ -3,9 +3,9 @@
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from agent.tools.query_course.scripts import plan_source as ps  # noqa: E402
+from documents.plan_data import plan_source as ps  # noqa: E402
 
 
 def test_row_hash_is_stable_for_the_same_line():

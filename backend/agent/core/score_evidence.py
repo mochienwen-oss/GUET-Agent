@@ -1,34 +1,9 @@
-"""Evidence-bound linear score conversion; no eval or model arithmetic."""
+"""Source-row recognition and explicit score inputs for retrieval; no calculation tool."""
 import re
 import hashlib
 import json
-from decimal import Decimal, ROUND_HALF_UP
+from decimal import Decimal
 from html import unescape
-
-
-def validate_recorded_text(text, refs, units, calculations, identity=""):
-    """Shared mechanical calculation binding for every composition protocol."""
-    if not isinstance(refs, list) or any(not isinstance(ref, str) or ref not in calculations for ref in refs):
-        raise ValueError("claim引用了不存在的计算记录：%s" % identity)
-    for ref in refs:
-        record = calculations[ref]
-        if not set(record["source_refs"]) <= {unit["evidence_id"] for unit in units}:
-            raise ValueError("计算记录与claim引用来源不一致：%s" % identity)
-        if not re.search(r"(?<![\d.])" + re.escape(record["final_result"]) + r"(?:\.0+)?\s*分", text):
-            raise ValueError("计算结果未正确交付：%s" % identity)
-        declared = re.findall(
-            r"(?:你(?:的)?(?:四级|六级|CET\s*[-－]?\s*[46])?(?:考试)?(?:成绩|分数)?|"
-            r"本次输入(?:成绩)?|输入成绩|实际成绩)(?:是|为|考了|考到)?\s*(\d{3}(?:\.\d+)?)\s*分", text, re.I)
-        if any(Decimal(value) != Decimal(record["inputs"]["score"]) for value in declared):
-            raise ValueError("正文输入成绩与计算记录不一致：%s" % identity)
-        source = "\n".join(unit["text"] for unit in units)
-        allowed = set(re.findall(r"(?<![A-Za-z0-9_.])\d+(?:\.\d+)?", source))
-        allowed.update([record["inputs"]["score"], record["raw_result"], record["final_result"]])
-        values = {Decimal(value) for value in allowed}
-        if any(Decimal(value) not in values for value in re.findall(r"(?<![A-Za-z0-9_.])\d+(?:\.\d+)?", text)):
-            raise ValueError("计算正文含未授权数值：%s" % identity)
-    if not refs and re.search(r"\d+(?:\.\d+)?\s*[×÷*/]\s*\d+(?:\.\d+)?\s*=", text):
-        raise ValueError("实际运算缺少计算记录：%s" % identity)
 
 
 def conversion_rules(evidence: dict, revision=None) -> list[dict]:
@@ -63,18 +38,6 @@ def conversion_rules(evidence: dict, revision=None) -> list[dict]:
                           "source_refs": [eid], "source_revision": revision,
                           "rounding": "ROUND_HALF_UP", "unit": "分"})
     return rules
-
-
-def _evaluate(rule: dict, value: Decimal):
-    case = rule["case"]
-    low, high = Decimal(case["low"]), Decimal(case["high"])
-    if not (value >= low if case["low_inclusive"] else value > low):
-        return None
-    if not (value <= high if case["high_inclusive"] else value < high):
-        return None
-    if "constant" in case:
-        return Decimal(case["constant"]), None
-    return value * Decimal(case["multiplier"]), "%s×%s" % (value, case["multiplier"])
 
 
 def user_score(question: str, history: list, exam: str) -> tuple[Decimal, str]:
@@ -210,103 +173,3 @@ def conversion_inputs(question, *, history=(), pending=None, turn_index=None):
         else:
             values["score"] = (str(score), turn_index, origin)
     return values, gaps, continuing
-
-
-def calculation_task(packet: dict) -> dict:
-    """One shared obligation for routing and every final-answer exit.
-
-    Only select an applicable source-bound rule here. Arithmetic stays in the
-    actual calculate tool, whose execution is logged by the normal graph path.
-    """
-    question = packet.get("question") or ""
-    brief = packet.get("question_brief") or {}
-    parameters = {item["name"]: item["value"] for item in brief.get("parameters") or []}
-    committed = "operation" in brief
-    # Positive, narrow fast path: unrecognized wording keeps Agent planning.
-    # Do not infer a single goal merely from the absence of conjunctions.
-    can_skip_planning = brief["operation"] == "score_conversion" if committed else is_single_conversion(question)
-    result_question = bool(re.search(r"多少|几分|认定成|认定为|换成", question))
-    operation = bool(re.search(r"换算|折算|认定|大学英语", question))
-    followup_score = bool(re.match(r"^那.*\d{3}(?:\.\d+)?\s*分.*呢", question))
-    policy_query = bool(re.search(r"规则|政策|办法|标准|条件", question))
-    if committed:
-        if any(gap["field"] in {"exam", "score"} for gap in brief.get("input_gaps") or []):
-            return {"status": "unresolved", "reason": "input_not_confirmed"}
-        if not {"exam", "score"} <= set(parameters):
-            return {"status": "unresolved", "reason": "input_not_confirmed"} if can_skip_planning else {"status": "not_required"}
-    elif not ((operation and (result_question or not policy_query)) or followup_score):
-        return {"status": "not_required"}
-    history = [{"role": "user", "content": text} for text in packet.get("user_history") or []]
-    exams = re.findall(r"CET\s*[-－]?\s*([46])|([四六])级", question, re.I)
-    kinds = {parameters["exam"]} if committed else {"CET" + (a or {"四": "4", "六": "6"}[b]) for a, b in exams}
-    if not kinds:
-        kinds = {r["exam"] for r in packet.get("calculation_rules") or []}
-    candidates = []
-    for exam in kinds:
-        try:
-            value = Decimal(parameters["score"]) if committed else user_score(question, history, exam)[0]
-        except ValueError:
-            continue
-        for rule in packet.get("calculation_rules") or []:
-            if rule["exam"] != exam:
-                continue
-            case = rule["case"]
-            lower, upper = Decimal(case["low"]), Decimal(case["high"])
-            if ((value >= lower if case["low_inclusive"] else value > lower)
-                    and (value <= upper if case["high_inclusive"] else value < upper)):
-                candidates.append((rule, str(value)))
-    if not candidates:
-        return {"status": "unresolved", "reason": "input_or_rule_not_confirmed"}
-    signatures = {(r["exam"], score, json.dumps(r["case"], sort_keys=True)) for r, score in candidates}
-    if len(signatures) != 1:
-        return {"status": "unresolved", "reason": "conflicting_rules"}
-    rule, score = candidates[0]
-    for record in packet.get("calculations") or []:
-        if (record.get("rule_id") == rule["rule_id"] and record.get("exam") == rule["exam"]
-                and record.get("inputs") == {"score": score}
-                and record.get("source_revision") == rule["source_revision"]
-                and record.get("source_refs") == rule["source_refs"]):
-            return {"status": "complete", "calculation_id": record["calculation_id"],
-                    "can_skip_planning": can_skip_planning}
-    return {"status": "pending", "call": {"name": "calculate", "arguments": {
-        "rule_id": rule["rule_id"], "inputs": {"score": score}}},
-        "can_skip_planning": can_skip_planning}
-
-
-def calculate(rule_id: str, inputs: dict, *, rules: list[dict], question: str,
-              history: list, task=None) -> dict:
-    rule = next((r for r in rules if r["rule_id"] == rule_id), None)
-    if rule is None:
-        raise ValueError("规则不属于本轮可用证据")
-    if set(inputs) != {"score"} or not isinstance(inputs["score"], str) or not re.fullmatch(r"\d{3}(?:\.\d+)?", inputs["score"]):
-        raise ValueError("inputs只接受明确的score字符串")
-    if task is not None:
-        if task.parameter("exam") != rule["exam"] or any(g.field in {"exam", "score"} for g in task.unresolved):
-            raise ValueError("计算规则与本轮已确认输入不一致")
-        score_parameter = next((p for p in task.parameters if p.name == "score"), None)
-        if score_parameter is None or not score_parameter.origin:
-            raise ValueError("缺少本轮可信成绩")
-        value, origin = Decimal(score_parameter.value), score_parameter.origin
-    else:
-        value, origin = user_score(question, history, rule["exam"])
-    if not 0 <= value <= 710:
-        raise ValueError("成绩超出CET有效范围")
-    if Decimal(inputs["score"]) != value:
-        raise ValueError("计算输入与用户明确成绩不一致")
-    evaluated = _evaluate(rule, value)
-    if evaluated is None:
-        raise ValueError("成绩不在所选规则区间")
-    other = [_evaluate(r, value) for r in rules if r["exam"] == rule["exam"]]
-    if len({x[0] for x in other if x is not None}) != 1:
-        raise ValueError("本轮存在冲突计算规则，不能选择其中一个")
-    raw, expression = evaluated
-    final = str(raw.quantize(Decimal("1"), rounding=ROUND_HALF_UP))
-    cid = "k" + hashlib.sha256((rule_id + str(value)).encode()).hexdigest()[:12]
-    return {"calculation_id": cid, "rule_id": rule_id, "exam": rule["exam"],
-            "inputs": {"score": str(value)}, "input_origin": origin,
-            "matched_case": rule["case"], "expression": expression,
-            "raw_result": str(raw), "final_result": final, "unit": rule["unit"],
-            "rounding": rule["rounding"], "source_refs": rule["source_refs"],
-            "source_row": rule["source_row"],
-            "source_revision": rule["source_revision"]}
-

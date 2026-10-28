@@ -9,7 +9,6 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from agent.core.calculations import calculate
 from agent.core.task import interpret_task
 from agent.core import Source, EvidenceLedger
 from agent.runtime import composition as C, graph, grounded_answer as G, answer_service as A
@@ -111,18 +110,6 @@ def test_body_has_its_own_renderer_and_binds_real_units(monkeypatch):
         C.render_body(bad, packet)
 
 
-def test_body_reuses_actual_linear_calculation_and_rejects_fake_input():
-    evidence = ledger(row()["text"], TITLE)
-    packet = G.evidence_packet({"question": QUERY, "evidence": evidence})
-    rules = packet["calculation_rules"]
-    record = calculate(rules[0]["rule_id"], {"score": "450"}, rules=rules, question=QUERY, history=[])
-    packet["calculations"] = [record]
-    draft = {"paragraphs": [{"text": "你的成绩为450分，可认定79分。", "unit_ids": [unit["unit_id"] for unit in packet["evidence_units"]],
-                             "calculation_ids": [record["calculation_id"]]}]}
-    assert C.render_body(draft, packet)[0] == draft["paragraphs"][0]["text"]
-    draft["paragraphs"][0]["text"] = "你的成绩为425分，可认定79分。"
-    with pytest.raises(ValueError, match="输入成绩"):
-        C.render_body(draft, packet)
 
 
 def test_graph_uses_explicit_body_candidate_and_application_answer(monkeypatch):
@@ -188,27 +175,6 @@ def test_fixed_lookup_does_not_bypass_skill_whitelist(monkeypatch):
     assert "Skill" in done["answer"]["text"]
 
 
-def test_real_source_chunk_projection_reaches_actual_linear_calculator():
-    from documents.document_chunks import build_chunks
-    root = Path(__file__).resolve().parents[3]
-    source = next(path for path in (root / "final-md").rglob("*.md")
-                  if "大学英语" in path.name and "成绩认定" in path.name)
-    units = [dict(unit, document_id=2, source=TITLE) for unit in build_chunks(source.read_text(encoding="utf-8"))]
-    anchor = next(unit for unit in units if unit.get("block_type") == "table" and "CET6" in unit["text"])
-    def table(seed):
-        return [unit for unit in units if unit.get("parent_id") == seed["parent_id"]]
-    def related(seed, selector):
-        return [unit for unit in table(seed) if all(unit.get(key) == value for key, value in selector.items())]
-    rows, audit = select_target_record(QUERY, [anchor], [anchor], top_k=5, max_chars=6000,
-                                       fetch_table=table, fetch_related=related)
-    assert audit["status"] == "obtained" and audit["recovery_used"]
-    book = EvidenceLedger()
-    item = book.add("search_regulations", {"query": QUERY}, Source(title=TITLE, text=rows[0]["text"]))
-    packet = G.evidence_packet({"question": QUERY, "evidence": {item.evidence_id: item}})
-    rules = packet["calculation_rules"]
-    assert len(rules) == 1 and rules[0]["exam"] == "CET4"
-    result = calculate(rules[0]["rule_id"], {"score": "450"}, rules=rules, question=QUERY, history=[])
-    assert result["raw_result"] == "79.3800" and result["final_result"] == "79"
 
 
 @pytest.mark.parametrize("repair_mode", [None, "structure", "content", "regenerate"])

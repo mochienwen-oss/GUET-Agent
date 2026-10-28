@@ -67,13 +67,3 @@ def call(name, args=None):
     if spec is None:
         return {"status": "error", "error": {"code": "unknown_tool", "detail": "未开放此工具"}}
     return execute(spec, args or {})
-
-
-def training_schemas():
-    """Historical data exports remain separate from the active tool set."""
-    import json
-    from core.paths import BACKEND_ROOT
-    frozen = json.loads((BACKEND_ROOT / 'tests/agent_platform/golden_tool_schemas.json').read_text(encoding='utf-8'))
-    names = ('search_regulations', 'query_course', 'compare_course', 'query_empty_classroom')
-    by_name = {item['function']['name']: item for item in frozen}
-    return [by_name[name] for name in names]

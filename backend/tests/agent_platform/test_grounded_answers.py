@@ -8,7 +8,6 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from agent.core import Source, EvidenceLedger, ToolResult
-from agent.core.calculations import conversion_rules, calculate
 from agent.core.scope import RequestScope, request_scope, scope_conflict, tool_scope_conflict
 from agent.core import citations
 from agent.runtime import grounded_answer as G, graph
@@ -376,25 +375,8 @@ def test_owner_148_ruling_is_document_specific():
     assert "human_ruling" not in other["evidence"][0]
 
 
-@pytest.mark.parametrize("score,expected", [("425", "75"), ("450", "79"), ("566", "100"), ("567", "100")])
-def test_decimal_conversion_interval_boundaries(score, expected):
-    evidence = ledger("类别：CET4\n成绩A：425 ≤ A < 567\n大学英语成绩：A × 0.1764\n四舍五入取整")
-    evidence.update(ledger("类别：CET4\n成绩A：A ≥ 567\n大学英语成绩：100\n四舍五入取整"))
-    rules = conversion_rules(evidence, "initial")
-    rule = rules[0 if int(score) < 567 else 1]
-    record = calculate(rule["rule_id"], {"score": score}, rules=rules,
-                       question=f"CET4考了{score}分，换算多少？", history=[])
-    assert record["final_result"] == expected
-    if score == "450":
-        assert record["raw_result"] == "79.3800"
 
 
-def test_unverified_formula_and_ambiguous_score_do_not_calculate():
-    assert conversion_rules(ledger("CET4|425≤A<567|A×0.1764")) == []
-    rules = conversion_rules(ledger("四舍五入取整\nCET4|425≤A<567|A×0.1764"), "initial")
-    with pytest.raises(ValueError, match="不唯一"):
-        calculate(rules[0]["rule_id"], {"score": "450"}, rules=rules,
-                  question="CET4 450或500分", history=[])
 
 
 def test_first_round_hallucination_is_not_emitted(monkeypatch):
@@ -458,14 +440,6 @@ def test_meta_identity_question_is_explicit_non_fact():
         assert G.safe_non_fact(question) == expected
 
 
-def test_ai_practice_list_no_longer_contains_prose():
-    from agent.tools.query_major_requirements.scripts.query import query_major_requirements
-    result = query_major_requirements("人工智能")
-    assert result["total_credits"] == 148
-    assert result["study_duration"] == "3~6年" and result["duration"] == "4年"
-    assert "毕业设计(论文)" in result["practice_courses"]
-    assert not any("Cloudera" in x or "本专业" in x or "URP" in x for x in result["practice_courses"])
-    assert "人工智能基础" in result["core_courses"]
 
 
 def test_college_and_staff_conflicts_are_explicit_not_inferred():
@@ -509,37 +483,3 @@ def test_heading_only_block_is_left_alone_rather_than_emptied():
     text, _ = G.render_draft(draft_for(
         packet, "### 第七条", [item.evidence_id]), packet)
     assert text.strip()
-
-
-def test_constant_threshold_conversion_renders_a_verdict_not_an_identity():
-    """CET6 500 属常量档（A>=500 -> 100），不是一个可乘的公式。
-
-    旧渲染产出「100=100」这种无信息恒等式；恒等式不是计算过程，
-    而且会让读者以为模型自己算了一遍。
-    """
-    evidence = ledger("类别：CET6\n成绩A：A ≥ 500\n大学英语成绩：100\n四舍五入取整")
-    rules = conversion_rules(evidence, "initial")
-    calc = calculate(rules[0]["rule_id"], {"score": "500"}, rules=rules,
-                     question="CET6考了500分，换算多少？", history=[])
-    assert calc["expression"] is None and calc["final_result"] == "100"
-    packet = G.evidence_packet({"question": "CET6考了500分，换算多少？",
-                                "evidence": evidence, "calculations": [calc]})
-    eid = packet["evidence"][0]["evidence_id"]
-    d = draft_for(packet, "六级500分换算为100分。", [eid])
-    d["claims"][0]["calculation_ids"] = [calc["calculation_id"]]
-    text, _ = G.render_draft(d, packet)
-    assert "100" in text and "100=100" not in text
-
-
-def test_interval_conversion_keeps_model_explanation_and_exact_result():
-    evidence = ledger("类别：CET4\n成绩A：425 ≤ A < 567\n大学英语成绩：A × 0.1764\n四舍五入取整")
-    rules = conversion_rules(evidence, "initial")
-    calc = calculate(rules[0]["rule_id"], {"score": "450"}, rules=rules,
-                     question="CET4考了450分，换算多少？", history=[])
-    assert calc["expression"] == "450×0.1764"
-    packet = G.evidence_packet({"question": "CET4考了450分，换算多少？",
-                                "evidence": evidence, "calculations": [calc]})
-    eid = packet["evidence"][0]["evidence_id"]
-    d = draft_for(packet, "按规则计算后为79.3800，四舍五入认定为79分。", [eid])
-    d["claims"][0]["calculation_ids"] = [calc["calculation_id"]]
-    assert G.render_draft(d, packet)[0] == d["claims"][0]["text"]

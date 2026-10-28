@@ -138,33 +138,6 @@ def test_structure_repair_cannot_change_body_or_publish_second_failure(monkeypat
     assert result["answer"]["contexts"] == []
 
 
-@pytest.mark.parametrize("failure", ["wrong_input", "missing_calculation_binding"])
-def test_content_repair_can_fix_calculation_without_freezing_wrong_text(monkeypatch, failure):
-    from agent.core.calculations import calculate
-    from test_evidence_centered_paths import row, QUERY, TITLE
-    evidence = ledger(row()["text"], TITLE)
-    packet = G.evidence_packet({"question": QUERY, "evidence": evidence})
-    record = calculate(packet["calculation_rules"][0]["rule_id"], {"score": "450"},
-                       rules=packet["calculation_rules"], question=QUERY, history=[])
-    calls = []
-    async def compose(messages, packet, **kwargs):
-        calls.append(kwargs)
-        draft = {"paragraphs": [{"text": "你的成绩为450分，可认定79分。",
-            "unit_ids": [unit["unit_id"] for unit in packet["evidence_units"]],
-            "calculation_ids": [record["calculation_id"]]}]}
-        if len(calls) == 1:
-            if failure == "wrong_input":
-                draft["paragraphs"][0]["text"] = "你的成绩为425分，可认定79分。"
-            else:
-                draft["paragraphs"][0]["calculation_ids"] = []
-        else:
-            assert kwargs["repair_mode"] == "content"
-        return draft
-    monkeypatch.setattr(graph.model, "compose", compose)
-    result = asyncio.run(graph._grounded_final({"question": QUERY, "evidence": evidence,
-        "calculations": [record], "answer_protocol": C.PROTOCOL}, [], 0, None))
-    assert len(calls) == 2 and result["answer"]["status"] == "answer"
-    assert "450分" in result["answer"]["text"] and "79分" in result["answer"]["text"]
 
 
 def test_tool_partial_evidence_alone_does_not_declare_partial_answer(monkeypatch):

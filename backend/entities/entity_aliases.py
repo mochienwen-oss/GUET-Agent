@@ -91,10 +91,9 @@ def _sha256_text(text: str) -> str:
 def _join_key(text: str) -> str:
     """**复用当前正式归一函数** —— 不另写第二份名称归一规则。
 
-    `repository.find_major` / `match_course` 用的就是它，所以正式名冲突判据
-    与运行时匹配判据**同源**。
+    正式名冲突判据、资料解析与实体识别共用同一份归一化。
     """
-    from agent.tools.query_course.scripts.normalize import join_key
+    from documents.plan_data.normalize import join_key
 
     return join_key(text)
 

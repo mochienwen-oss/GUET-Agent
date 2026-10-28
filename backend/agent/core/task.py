@@ -3,7 +3,7 @@ from dataclasses import dataclass, replace
 import re
 
 from .scope import RequestScope, request_scope, REFERENCE_DESCRIPTION
-from .calculations import conversion_inputs, conversion_request
+from .score_evidence import conversion_inputs, conversion_request
 
 
 @dataclass(frozen=True)

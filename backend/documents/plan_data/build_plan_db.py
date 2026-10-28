@@ -23,19 +23,19 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-ROOT = str(Path(__file__).resolve().parents[5])
+ROOT = str(Path(__file__).resolve().parents[3])
 SRC_DIR = os.path.join(ROOT, "final-md", "培养方案")
 OUT_DIR = os.path.join(ROOT, "backend", "data")
 WORK_DIR = os.path.join(ROOT, "_work", "plan_db")
 DEFAULT_OUTPUT_PATH = os.path.join(WORK_DIR, "plan_db.candidate.json")
 
-# 归一化是**单一来源**，放在本工具的 `scripts/normalize.py`，抽取与运行时共用一份。
+# 归一化与资料解析共用本包的 normalize.py。
 # 各写一份必然漂移，而那种漂移**不报错、只让匹配率悄悄掉下来**。
 sys.path.insert(0, os.path.join(ROOT, "backend"))
-from agent.tools.query_course.scripts.normalize import (  # noqa: E402
+from documents.plan_data.normalize import (  # noqa: E402
     CJK, cell_num, join_key, norm_cjk, to_float,
 )
-from agent.tools.query_course.scripts import plan_source as ps  # noqa: E402
+from documents.plan_data import plan_source as ps  # noqa: E402
 
 #: 抽取器版本。**任何解析规则变更必须 bump**，并在 `_work/plan_db/extractor_changelog.md` 留一行。
 EXTRACTOR_VERSION = "build_plan_db/2.2.2"
@@ -820,7 +820,7 @@ def main(argv=None):
     args = parser.parse_args(argv)
     if not os.path.isdir(SRC_DIR):
         sys.exit("❌ 找不到语料目录 %s" % SRC_DIR)
-    from agent.tools.query_course.scripts.final_md_plan import build
+    from documents.plan_data.final_md_plan import build
     active = json.loads(Path(ROOT, "backend/data/documents.active.json").read_text("utf-8"))
     result = build(SRC_DIR, active)
     unknown = sum(course["credits"] is None for major in result["majors"] for course in major["courses"])

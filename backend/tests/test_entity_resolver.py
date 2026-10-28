@@ -693,7 +693,7 @@ def _imported_modules():
 def test_resolver_imports_only_pure_modules():
     allowed = {"__future__", "hashlib", "json", "re", "dataclasses", "pathlib",
                "entities.entity_catalog", "entities.entity_aliases",
-               "agent.tools.query_course.scripts.normalize"}
+               "documents.plan_data.normalize"}
     assert _imported_modules() <= allowed, _imported_modules() - allowed
 
 

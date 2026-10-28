@@ -196,8 +196,5 @@ def test_phase2_public_imports_resolve():
     from agent.runtime import registry
 
     assert Path(agent.__file__).name == "__init__.py"
-    assert {row['function']['name'] for row in registry.schemas()} == {
-        'search_regulations', 'query_course', 'compare_course', 'query_empty_classroom',
-        'create_ppt', 'query_major_requirements', 'list_courses', 'calculate'}
-    assert len(registry.training_schemas()) == 4
+    assert {row['function']['name'] for row in registry.schemas()} == {'search_regulations'}
     assert sys.modules["agent"].__name__ == "agent"

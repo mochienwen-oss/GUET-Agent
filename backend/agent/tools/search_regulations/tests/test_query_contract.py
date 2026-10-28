@@ -30,11 +30,8 @@ def test_invalid_keywords_are_rejected(keywords):
         SearchRegulationsArgs.model_validate({"query": "补考有什么规定", "keywords": keywords})
 
 
-def test_runtime_schema_adds_keywords_but_v7_training_schema_stays_frozen():
+def test_runtime_schema_uses_the_execution_input_model():
     runtime_search = registry.schemas()[0]["function"]["parameters"]
-    frozen_search = registry.training_schemas()[0]["function"]["parameters"]
-
+    assert runtime_search == SearchRegulationsArgs.model_json_schema()
     assert "keywords" in runtime_search["properties"]
     assert runtime_search["required"] == ["query"]
-    assert list(frozen_search["properties"]) == ["query"]
-    assert frozen_search["required"] == ["query"]

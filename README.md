@@ -13,6 +13,8 @@
 - PPT 公开资料搜索：接入火山引擎独立搜索 API；密钥由后端环境变量提供。
 - 用户登录、会话保存和知识库管理。
 
+当前工具目录仅保留 `search_regulations`、`workspace` 和 `create_ppt`：普通问答只开放知识库检索；文件操作、受限执行、公开搜索及制作任务操作由 PPT 宿主提供。旧课程查询、课程列表、跨专业对比、毕业要求查询、空教室查询和独立计算工具已移除。
+
 ## 目录
 
 | 路径 | 内容 |
@@ -61,6 +63,8 @@
 仓库不附带 `.env` 密钥、MySQL 账号与聊天会话数据、Qdrant 数据目录、检索模型权重、用户 PPT 任务、安装依赖或构建产物。克隆代码后，需要另行配置或恢复运行数据，无法仅凭本仓库还原本机的数据库状态。
 
 知识库初始化入口为 `scripts/seed_knowledge.py`；导入前确认目标 MySQL/Qdrant 与检索模型配置，并将 `MD_DIR` 指向所需资料目录，例如 `final-md/`。文档的展示元数据可通过 `scripts/backfill_source_metadata.py` 在本地补提取，无需为此重建向量或 BM25。
+
+培养方案解析和名称归一化保留于 `backend/documents/plan_data/`，用于资料维护及实体识别，不作为模型可调用的业务工具。
 
 旧资料解析脚本 `scripts/prepare_knowledge.py` 的可选 MinerU 凭据使用 `MINERU_API_TOKEN`，从环境变量或本地 `backend/.env` 读取。
 

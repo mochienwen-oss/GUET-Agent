@@ -6,7 +6,7 @@ import sys
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from agent.tools.query_course.scripts import final_md_plan as P
+from documents.plan_data import final_md_plan as P
 
 
 def rows():

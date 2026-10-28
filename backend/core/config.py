@@ -153,20 +153,6 @@ class Settings(BaseSettings):
     volc_search_free_budget: int = Field(default=0, ge=0)
     volc_search_usage_path: str = os.path.join(os.path.dirname(_HERE), 'run', 'volc_search_usage.json')
 
-    # ==== 空教室查询：学校统一身份认证凭据（**留空即关闭该工具**）====
-    # ★ 留空时 `agent.tools.query_empty_classroom.scripts.pointer` 显式返回「未配置」卡片，
-    #   而不是静默给空 ——
-    #   配置缺失要**显式**，不让服务挂掉、也不让用户看到空的。
-    # ⚠️ 这是**真实学生账号**，查询以该身份向教务系统发起。凭据只存服务器
-    #   `backend/.env`（不入版本控制），仓库里这两项**必须是空串**。
-    # ⚠️ 该校 CAS 登录**强制验证码**（实测 checkNeedCaptcha 恒 true），
-    #   所以需要 `ddddocr`；它在 requirements.txt 里。
-    jw_student_id: str = ""
-    jw_password: str = ""
-    # 验证码出错就换一张重试。实测 ddddocr 认这套 4 字符图**大小写不稳**
-    # （W/w、J/j、P/p、S/s 分不清），所以单次命中率不到 100%，必须重试。
-    jw_captcha_retries: int = 4
-
     # Qdrant 向量库
     qdrant_url: str = "http://localhost:6333"
     # 本地验证可直接打开向量存储；留空时继续连接 HTTP 服务。

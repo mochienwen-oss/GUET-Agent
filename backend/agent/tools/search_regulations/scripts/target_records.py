@@ -2,7 +2,7 @@
 from decimal import Decimal
 from types import SimpleNamespace
 
-from agent.core.calculations import conversion_rules
+from agent.core.score_evidence import conversion_rules
 from agent.core.task import interpret_task
 from .linked_context import restore_headers
 

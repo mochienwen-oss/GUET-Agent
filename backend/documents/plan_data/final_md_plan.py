@@ -16,7 +16,7 @@ from . import plan_source
 from .build_plan_db import parse_core, parse_module_credits, split_sections
 
 VERSION = "final-md-plan/2"
-FIELD_RULINGS = Path(__file__).resolve().parents[4] / "data/plan_field_rulings.json"
+FIELD_RULINGS = Path(__file__).resolve().parents[2] / "data/plan_field_rulings.json"
 FIELDS = ("课程代码", "课程名称", "课程类别", "课程性质", "学分", "总学时",
           "理论学时", "实验学时", "实践学时", "开课学期", "是否必修", "开课部门")
 CODE = re.compile(r"(?:\d{6}|\d{7}X\d)\Z")

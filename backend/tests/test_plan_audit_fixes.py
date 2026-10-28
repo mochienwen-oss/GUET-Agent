@@ -10,11 +10,11 @@ from pathlib import Path
 
 import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from agent.tools.query_course.scripts import build_plan_db as B  # noqa: E402
+from documents.plan_data import build_plan_db as B  # noqa: E402
 
-ROOT = Path(__file__).resolve().parents[5]
+ROOT = Path(__file__).resolve().parents[2]
 SRC = ROOT / "_md" / "培养方案"
 
 

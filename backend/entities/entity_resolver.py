@@ -98,7 +98,7 @@ def _join_key(text: str) -> str:
     """**复用当前正式归一函数** —— 不另写第二份名称归一规则（只加载一次）。"""
     global _JOIN_KEY
     if _JOIN_KEY is None:
-        from agent.tools.query_course.scripts.normalize import join_key
+        from documents.plan_data.normalize import join_key
 
         _JOIN_KEY = join_key
     return _JOIN_KEY(text)
