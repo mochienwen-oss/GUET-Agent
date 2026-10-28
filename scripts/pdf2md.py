@@ -15,7 +15,7 @@
 #
 # 判断标准：
 #   ✅ 正文字数 ≥ 200   → 转换成功，可以入库
-#   ⚠️ 正文字数 < 200   → 多半是扫描件（无文字层），需要 OCR / MinerU，pypdf 救不了
+#   ⚠️ 正文字数 < 200   → 多半是扫描件（无文字层），需要本地 OCR，pypdf 救不了
 
 import argparse
 import os
@@ -154,7 +154,6 @@ def main():
         print("    走 scripts/ocr2md.py（本地 CPU，无需外网）：")
         print("      PYTHONIOENCODING=utf-8 python scripts/ocr2md.py --check <文件>   # 先逐页体检")
         print("      PYTHONIOENCODING=utf-8 python scripts/ocr2md.py --dir guet数据文件 _md")
-        print("    ※ 不要用 scripts/prepare_knowledge.py（遗留 MinerU 路线，含硬编码 token，已停用）")
 
 
 if __name__ == "__main__":

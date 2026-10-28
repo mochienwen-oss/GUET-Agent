@@ -951,17 +951,9 @@ def retrieve(query: str, top_k: int | None = None, *,
         return result
 
     ensure_collection()
-    # ★★ 阶段 2d 多轮检索接续（**反问链路的命门**）：第 2 轮常是「我大二，自动化专业，
-    #   成绩中等」这类**补充句** —— 里面**没有「转专业」三个字**，单用它检索必跑偏
-    #   （与上一轮命中的文档毫无词面交集 → dense/sparse 两路都召不到它）。
-    #
-    #   做法是方案说的「**先试最便宜的拼接**」：把上一轮问句前置拼进本轮，**零额外 LLM
-    #   调用**。向量侧 bge-m3 与 sparse 侧 BM25 都按整串算，上一轮的主题词因此仍在。
-    #   截到 120 字：上一轮问句通常很短，截断只为防御（有人把整段粘进对话框）。
-    #
-    #   ⚠️ 拼接**会稀释**当轮自足的问句（「那奖学金怎么评?」会带上上一轮的「转专业」）——
-    #      这是本项要在 `multi_turn` 组上 A/B 的头号问题（「不接续 / 拼接 / 改写」三者对比），
-    #      不是拍板能定的。开关 `MULTITURN_CARRY=0` 立刻回到「只用当轮原句」的旧行为。
+    # 可选底层兼容：只有调用方显式传入 prev_query 才拼接。
+    # 当前 API 聊天由模型结合最近消息组织 query，不传 prev_query。
+    # build_query_plan 最多前置 120 字；BM25 优先使用显式 keywords。
     carry = prev_query if settings.multiturn_carry else None
     plan = build_query_plan(query, keywords, carry)
     query = plan.semantic_query
@@ -1201,8 +1193,8 @@ def retrieve_frozen(query: str, prev_query: str | None = None,
                     recovery_round: int = 0, request_task=None) -> dict:
     """生产检索入口：参数**冻结**为标定常量（后台不再可调）。
 
-    `prev_query`（阶段 2d）：上一轮的**用户问句**，用于多轮检索接续（拼接，零 LLM 调用）。
-    由 `routers/chat.py` 从 history 里取最后一条 user 消息传进来。
+    `prev_query` 是可选的上一轮用户问句；仅显式传入且开关启用时做字符串拼接。
+    当前 routers/chat.py 将历史交给 API 模型，不向检索入口传此参数。
     `extra_query` 只用于一次已授权的确定性纠错召回；原问句保持不变。
     """
     task_args = {"request_task": request_task} if request_task is not None else {}

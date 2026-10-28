@@ -210,7 +210,7 @@ def record_turn(db, conversation_id, *, validations, calls, correction=None,
 
 
 def recent_history(db, conversation_id, *, max_messages: int = 6):
-    """临时窗口：固定条数。Task 4 将由 token 预算窗口替换。"""
+    """当前聊天按时间顺序读取最近 max_messages 条消息，默认 6 条。"""
     rows = (db.query(Message)
             .filter(Message.conversation_id == conversation_id)
             .order_by(Message.id.desc())

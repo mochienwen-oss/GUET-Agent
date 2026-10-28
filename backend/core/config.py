@@ -45,8 +45,8 @@ class Settings(BaseSettings):
     #    `backend/data/ref_allowlist.json`，不跑正则（正则只是生成器）。
     #    ⚠️ 白名单是**新文件，部署要一起拷**；拷不到自动关闭（失败开放）。
     ref_follow: bool = True
-    # 2d 多轮检索接续：把上一轮问句拼进本轮检索（零额外 LLM 调用）。
-    #    关掉即回到「只用当轮原句检索」的旧行为。
+    # 底层兼容：显式提供 prev_query 才拼接；当前聊天依赖模型历史，不传该参数。
+    #    关闭时忽略显式传入的 prev_query，不影响聊天历史窗口。
     multiturn_carry: bool = True
 
     # ==== 方案 1：sparse 质量门（默认**关**，失败开放）====

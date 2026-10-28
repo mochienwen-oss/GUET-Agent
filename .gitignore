@@ -13,6 +13,7 @@
 /.workbuddy/
 /_work/
 /run/
+/docs/
 
 # Installed dependencies and generated builds.
 __pycache__/
@@ -30,6 +31,7 @@ node_modules/
 /model/*
 !/model/bm25_vocab.json
 !/model/bm25_vocab_phase5.json
+!/model/README.md
 /backend/data/ppt_tasks/
 /backend/data/documents.active.availability.json
 /backend/data/*.lock
