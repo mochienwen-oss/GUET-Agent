@@ -35,8 +35,8 @@
 ### 1. 获取代码并创建 Python 环境
 
 ```powershell
-git clone https://github.com/mochienwen-oss/guet-agent.git
-cd guet-agent
+git clone https://github.com/mochienwen-oss/GUET-Agent.git
+cd GUET-Agent
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install --upgrade pip
 .\.venv\Scripts\python.exe -m pip install -r backend/requirements.txt
