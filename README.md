@@ -1,4 +1,4 @@
-# guet-agent
+# GUET-Agent
 
 面向桂林电子科技大学学生的校园问答与聊天式 PPT 制作工作区。
 
