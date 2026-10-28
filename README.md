@@ -26,16 +26,11 @@
 | `backend/data/` | 文档清单、课程与专业结构化资料、引用关联等必要数据 |
 | `model/` | 模型下载说明及 BM25 词表；权重需自行下载，见 [model/README.md](model/README.md) |
 | `deploy/` | API 模型配置、环境变量示例和部署文件 |
-| `scripts/runtime/` | 本地启动与已有服务器环境的服务管理 |
-| `scripts/knowledge/` | 知识库导入、元数据补提取和检索路由资料维护 |
-| `scripts/documents/` | 文档转换、OCR、清理、去重和表格修复 |
-| `scripts/diagnostics/` | 语料、索引、解析和分块检查 |
-| `scripts/evaluation/` | 检索评测与阈值标定 |
-| `scripts/models/` | 本地检索模型下载 |
+| `scripts/` | 按启动、知识库、文档处理、检查、评测和模型下载分类的脚本 |
 
 ## 本地运行（Windows PowerShell）
 
-当前本地已使用的环境为 Windows、Python 3.13.5、Node.js 24.14.1。以下以 Windows 为主，所有命令均在仓库根目录执行；涉及实际安装、模型下载和知识库导入的命令由操作者按需执行。
+环境：Windows、Python 3.13、Node.js 24、本地 MySQL。PPT 页面预览还需要桌面版 Microsoft PowerPoint。
 
 如果这台电脑已经有完整环境和 `.env`，直接看“日常再次启动”，不要覆盖现有密钥配置、重新下载已有模型或重复导入知识库。
 
@@ -50,11 +45,7 @@ python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r backend/agent/skills/ppt_master/requirements.txt
 ```
 
-私有仓库需要先登录有访问权限的 GitHub 账号。这里直接调用虚拟环境中的 Python，无需修改 PowerShell 的脚本执行策略。
-
-示例只下载当前版本，避免拉取历史提交中已移出仓库的资料；需要完整 Git 历史时去掉 `--depth 1`。
-
-Windows 的 PPT 页面预览需要已安装并可正常使用的桌面版 Microsoft PowerPoint；`pywin32` 由后端依赖安装。仅安装 Python 和 `python-pptx` 不能代替 PowerPoint 预览引擎。
+以下命令在仓库根目录执行；私有仓库需要有访问权限的 GitHub 账号。
 
 ### 2. 下载 embedding 和 reranker 模型
 
@@ -71,21 +62,26 @@ Windows 的 PPT 页面预览需要已安装并可正常使用的桌面版 Micros
 .\.venv\Scripts\python.exe -c "from huggingface_hub import snapshot_download; snapshot_download(repo_id='BAAI/bge-reranker-v2-m3', local_dir='model/rerank_m3', ignore_patterns=['assets/*'])"
 ```
 
-下载细节、设备配置和模型目录说明见 [model/README.md](model/README.md)。仓库中的 BM25 词表不能代替 embedding 权重；使用 API 生成回答也不意味着知识库检索不需要本地模型。已有完整模型目录时直接复用。
+已有完整模型目录时直接复用。CPU/GPU 配置见 [model/README.md](model/README.md)。
 
-### 3. 准备 MySQL
+### 3. 启动本地 MySQL
 
-已有 MySQL 时，确认 `guet_chat` 数据库存在，并在下一步填写真实连接地址、端口和密码。
-
-全新环境若使用 Docker Desktop，可用以下示例创建独立 MySQL。先将示例密码 `change-this-password` 替换成自己的密码；下一步的数据库连接必须使用同一个密码。已有数据库或 33306 端口已被使用时跳过此命令，沿用现有数据库。
+安装 MySQL 并注册为 Windows 服务。以管理员身份打开 PowerShell，查看并启动服务：
 
 ```powershell
-docker run -d --name guet-agent-mysql -e MYSQL_ROOT_PASSWORD=change-this-password -e MYSQL_DATABASE=guet_chat -p 127.0.0.1:33306:3306 -v guet-agent-mysql-data:/var/lib/mysql mysql:8.4
+Get-Service *mysql*
+Start-Service MySQL84
 ```
 
-示例使用本机 33306 端口映射容器 3306 端口。这里仅用 Docker 运行 MySQL；后端、前端构建和模型仍在本机运行。
+`MySQL84` 替换为本机实际服务名，也可以在 Windows“服务”中启动。服务已运行时跳过启动。
 
-首次创建容器后，等待 MySQL 初始化完成再继续；可通过 `docker logs guet-agent-mysql` 查看是否已出现 `ready for connections`。
+使用 MySQL 命令行创建数据库，输入安装时设置的密码：
+
+```powershell
+mysql -h 127.0.0.1 -P 33306 -u root -p -e "CREATE DATABASE IF NOT EXISTS guet_chat DEFAULT CHARACTER SET utf8mb4;"
+```
+
+示例端口为 `33306`；若本机使用 `3306` 或其他端口，修改命令中的端口，并在下一步填写相同的连接地址。若终端找不到 `mysql`，将 MySQL 安装目录下的 `bin` 加入 PATH。
 
 ### 4. 配置后端环境变量和 API
 
@@ -102,41 +98,24 @@ MYSQL_URL=mysql+pymysql://root:change-this-password@127.0.0.1:33306/guet_chat?ch
 ADMIN_USERNAME=admin
 ADMIN_PASSWORD=请设置自己的管理员密码
 DASHSCOPE_API_KEY=填写自己的API密钥
-
-QDRANT_PATH=qdrant_local
-QDRANT_COLLECTION=structure_docs_20261019
-ACTIVE_DOCUMENTS_PATH=run/documents.local.json
-BM25_VOCAB_PATH=model/bm25_vocab.json
-
-EMBED_MODEL=model/embedding_m3
-EMBED_DEVICE=cpu
-RERANK_MODEL=model/rerank_m3
-RERANK_DEVICE=cpu
-RERANK_FP16=0
 ```
 
 - `deploy/llm-api.json` 决定生成模型、平台和参数。当前 `active_profile=aliyun`，读取 `DASHSCOPE_API_KEY`；选择其他 profile 时填写对应 `api_key_env` 指定的变量。
-- `QDRANT_PATH` 非空时使用本地嵌入式 Qdrant，不需要另外启动 Qdrant 容器；如果改用 HTTP Qdrant 服务，应把 `QDRANT_PATH` 留空并正确设置 `QDRANT_URL`。
-- CPU 配置便于先启动；使用 GPU 时先准备支持本机 CUDA 的 PyTorch，再按 [模型说明](model/README.md) 调整设备参数。
-- 相对路径以仓库根目录为工作目录。恢复已有知识库时，MySQL、向量库、文档清单及 BM25 词表必须配套，`ACTIVE_DOCUMENTS_PATH` 应改为该数据集实际使用的清单。
-- 仅启用 PPT 公开搜索时填写 `VOLC_SEARCH_API_KEY`；其余现有搜索配置见 `deploy/volc-search.env.example`，按需合并到 `.env`。未配置或不满足现有启用条件时，搜索会如实显示不可用。
+- 示例已配置本地模型路径和嵌入式 Qdrant，无需另外启动 Qdrant 服务。恢复已有知识库时，修改为与数据配套的存储、文档清单及 BM25 词表路径。
+- PPT 公开搜索配置见 `deploy/volc-search.env.example`，按需将密钥和启用配置填入 `.env`。
 
 生成模型和公开搜索的实际调用可能产生平台费用。密钥只放在本地 `.env`，不要填写到 README 或示例文件。
 
 ### 5. 全新空库首次初始化（已有配套数据时跳过）
 
-本仓库没有上传本机 MySQL 和 Qdrant 数据。第一次克隆到新机器，只有代码与资料原文，不能跳过知识库初始化就声称已经具备检索能力。
-
-以下步骤仅用于全新空库：先完成模型下载、数据库与 `.env` 配置，确保 MySQL 可连接，后端服务尚未启动。嵌入式 Qdrant 不能被导入进程和服务进程同时占用。
-
-先创建数据库表和管理员，再为本机新建空文档清单。清单使用独占创建，已有同名文件时会报错，不覆盖已有记录：
+仅用于全新空库。完成模型下载和 `.env` 配置，确认 MySQL 正在运行，后端尚未启动，再创建表、管理员和空文档清单：
 
 ```powershell
 .\.venv\Scripts\python.exe -c "import sys; sys.path.insert(0, 'backend'); from database.db import init_db, seed_admin; init_db(); seed_admin()"
 .\.venv\Scripts\python.exe -c "from pathlib import Path; import json; p=Path('run/documents.local.json'); p.parent.mkdir(exist_ok=True); p.open('x', encoding='utf-8').write(json.dumps({'version':'active-documents/1','collection':'structure_docs_20261019','points':0,'documents':[]}))"
 ```
 
-然后导入原文。此过程在本机生成向量与 BM25 数据，会占用 CPU 或 GPU，首次耗时取决于设备：
+导入原文，生成本机向量及 BM25 数据：
 
 ```powershell
 $env:MD_DIR = (Resolve-Path final-md).Path
@@ -144,9 +123,7 @@ $env:MD_DIR = (Resolve-Path final-md).Path
 Remove-Item Env:MD_DIR
 ```
 
-确认导入日志中的失败和拒绝条目已处理，再继续启动。目录中的同名文件会按导入器的同标题更新方式处理，实际文档数和块数以导入日志及本机清单为准。
-
-若是恢复原有数据库，应恢复与其匹配的向量存储、活动文档清单和 BM25 词表，跳过空库创建及批量导入。仓库中的 `backend/data/documents.active.json` 是已有数据集的记录，不能当作新建空库的导入结果。
+确认导入成功后再启动服务。恢复已有知识库时，使用配套的 MySQL、向量库、活动文档清单和 BM25 词表，跳过本节；不要用已有清单作为新空库的导入结果。
 
 ### 6. 构建前端
 
@@ -159,7 +136,7 @@ npm.cmd run build
 cd ..
 ```
 
-构建输出为 `frontend/dist/`，由后端同一端口托管。正常使用已构建页面时，不必另外启动 Vite 开发服务。
+前端构建完成后由后端统一托管。
 
 ### 7. 启动和访问
 
@@ -167,42 +144,15 @@ cd ..
 .\.venv\Scripts\python.exe scripts/runtime/local_api.py --host 127.0.0.1 --port 8080
 ```
 
-看到 `Application startup complete` 后访问 <http://127.0.0.1:8080/>，使用 `.env` 中配置的管理员账号登录。健康接口为 <http://127.0.0.1:8080/api/health>；健康接口正常说明服务已启动，知识库是否可检索还取决于前面的模型与数据初始化。
-
-在运行终端按 `Ctrl+C` 停止服务。
+看到 `Application startup complete` 后访问 <http://127.0.0.1:8080/>，使用 `.env` 中配置的管理员账号登录。按 `Ctrl+C` 停止服务。
 
 ### 日常再次启动
 
-数据库和知识库已经配置好后，只需要确认 MySQL 正在运行，再在仓库根目录执行：
-
-```powershell
-.\.venv\Scripts\python.exe scripts/runtime/local_api.py --host 127.0.0.1 --port 8080
-```
-
-若 MySQL 使用上面的 Docker 容器且已停止，可先运行 `docker start guet-agent-mysql`。Python 依赖、模型和知识库不需要每次重装或重建；前端源码变化后才需要重新构建。
-
-## 当前多轮对话流程
-
-1. 同一会话的消息保存到 MySQL。模型每轮读取最近 6 条聊天消息，约为最近 3 轮完整问答；当前新问题随后单独加入。
-2. API 模型结合系统说明、这些历史消息和当前问题，决定直接回答，或调用 `search_regulations(query, keywords)`。跨轮的省略、指代及是否换话题由模型结合上下文判断。
-3. 需要检索时，模型可以把追问组织成语义完整的 `query`，例如结合上轮“本科生转专业”，把“那研究生呢”组织为“研究生转专业的申请条件”。程序没有保证每次都自动补全正确。
-4. 工具结果回到本轮模型循环，模型据此回答；无依据、不相关或查询失败的终止状态由后端按既定规则直接回复。最终回答入库，供后续对话读取。
-
-`MULTITURN_CARRY` 是底层检索的兼容选项：只有调用方显式传入 `prev_query` 时，才会将上一轮问句的前 120 个字符拼到当前语义检索串前面。有 `keywords` 时 BM25 使用关键词，否则使用该检索串。当前普通聊天的模型工具不传 `prev_query`，所以这个开关不控制聊天记忆；设为 0 也不会停止模型读取历史。
-
-配置注释中的“零额外 LLM 调用”只描述字符串拼接本身。正常对话仍调用 API，历史消息也会计入本轮输入。当前聊天窗口不是无限历史或永久记忆，上轮工具返回的完整资料不会自动作为下一轮工具结果重放。
+确认本地 MySQL 服务正在运行，执行上面的后端启动命令即可。无需重复安装依赖、下载模型或导入知识库；前端代码变动后才需重新构建。
 
 ## 数据与本地配置
 
-仓库不附带 `.env` 密钥、MySQL 账号与聊天会话数据、Qdrant 数据目录、检索模型权重、用户 PPT 任务、安装依赖或构建产物。克隆代码后，需要另行配置或恢复运行数据，无法仅凭本仓库还原本机的数据库状态。
-
-`docs/` 中的本地交接、审计和实施记录保留在本机，不再纳入当前仓库。运行必需的资料仍在 `backend/data/` 和 Skill 自身资源目录中；历史提交不因本次清理而改写。
-
-`final-md/assets/` 原文配图和脚本临时图片不纳入仓库，本机文件保留。部分 Markdown 引用了这些配图；新环境若需要完整显示原文附件和图表，需要另行恢复对应的 `assets/` 目录。PPT Master 原版脚本所依赖的资源不受此规则影响。
-
-旧模型下载、LoRA 合并及历史训练数据脚本仅在本地 `scripts/training/` 归档，不作为当前 API 项目的安装或运行入口，也不上传。当前会实际使用的检索评测脚本保留于 `scripts/evaluation/`，不会在启动服务时自动执行。
-
-已有本地数据库若缺少引用展示元数据，可单独执行 `scripts/knowledge/backfill_source_metadata.py` 补提取，无需为此重建向量或 BM25。培养方案解析和名称归一化保留于 `backend/documents/plan_data/`，用于资料维护及实体识别，不作为模型可调用的业务工具。
+仓库不包含私有 `.env`、MySQL 数据、Qdrant 存储、模型权重和用户 PPT 任务，新环境需自行初始化或恢复配套数据。原文配图 `final-md/assets/` 也需另行恢复。
 
 ## 第三方组件
 
