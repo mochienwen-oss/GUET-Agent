@@ -1,0 +1,1275 @@
+{
+  "version": "active-documents/1",
+  "collection": "structure_docs_20261019",
+  "points": 19200,
+  "documents": [
+    {
+      "document_id": 1,
+      "title": "2025级交通工程专业培养方案(主修)",
+      "source_sha256": "fdb6c27a5851a45efc0a760b1f09e632d4527b62196edc8373f8bf49598c6994",
+      "indexed_source_sha256": "2238c108960a4fa04c0c2a13fe184e4fe5f93e58a87cc3161fccc3123fcf7caf",
+      "category": "培养方案",
+      "chunks": 257,
+      "scope": {
+        "cohort": "2025",
+        "major": "交通工程",
+        "college": "建筑与交通工程学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级交通工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 2,
+      "title": "2025级产品设计专业培养方案(主修)",
+      "source_sha256": "5aaa37cd4696b6652b9bc89524ae150f7c03b65f110682c5f8d5ec9ea14d68d6",
+      "indexed_source_sha256": "82986988db3351cc677dba0c8af77005c042a70ab34713ceeec75f319b3dc63c",
+      "category": "培养方案",
+      "chunks": 258,
+      "scope": {
+        "cohort": "2025",
+        "major": "产品设计",
+        "college": "艺术与设计学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级产品设计专业培养方案(主修).md"
+    },
+    {
+      "document_id": 3,
+      "title": "2025级人力资源管理专业培养方案(主修)",
+      "source_sha256": "a1a298652299b75ce3f0a4b8e547e3b107714327a866ed3ba190aff6ecbf4d28",
+      "indexed_source_sha256": "2ff334dff0d333adb1685d590b76893853e6f88531bf988ea46060b06a207969",
+      "category": "培养方案",
+      "chunks": 250,
+      "scope": {
+        "cohort": "2025",
+        "major": "人力资源管理",
+        "college": "商学院(数字经济学院)",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级人力资源管理专业培养方案(主修).md"
+    },
+    {
+      "document_id": 4,
+      "title": "2025级人工智能专业培养方案(主修)",
+      "source_sha256": "75c410072ac5cf0fd14f63f24c1fce257aa715520115d7d85d8f1f2685b4c3a8",
+      "indexed_source_sha256": "f692075634054407f180524a9988dff8818a41366797c11816bbfa22bfb5b9e4",
+      "category": "培养方案",
+      "chunks": 237,
+      "scope": {
+        "cohort": "2025",
+        "major": "人工智能",
+        "level": "undergraduate",
+        "subject": "student"
+      },
+      "source_path": "final-md/培养方案/2025级人工智能专业培养方案(主修).md"
+    },
+    {
+      "document_id": 5,
+      "title": "2025级会计学专业培养方案(主修)",
+      "source_sha256": "fd56303d56945155d05054fee38e51e3fb91f784bdd1fc507ffb5ee59e2cbd7f",
+      "indexed_source_sha256": "24a9713940a40662263472a52025a56f25d67df9bb0495374a01f8c923a5ff7a",
+      "category": "培养方案",
+      "chunks": 251,
+      "scope": {
+        "cohort": "2025",
+        "major": "会计学",
+        "college": "商学院(数字经济学院)",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级会计学专业培养方案(主修).md"
+    },
+    {
+      "document_id": 6,
+      "title": "2025级信息与计算科学专业培养方案(主修)",
+      "source_sha256": "24b30298bb0e59b3226d91c859bbaeb259c4fb117c5b9016f77f48f7fd538cfe",
+      "indexed_source_sha256": "0c15547afd4ff567f80d92534d06bd659ba388a558dad4c341dcf652a34afeab",
+      "category": "培养方案",
+      "chunks": 246,
+      "scope": {
+        "cohort": "2025",
+        "major": "信息与计算科学",
+        "college": "数学与计算科学学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级信息与计算科学专业培养方案(主修).md"
+    },
+    {
+      "document_id": 7,
+      "title": "2025级信息安全专业培养方案(主修)",
+      "source_sha256": "3a035b51fd287c826f3931fa34c883a9b99db50f72f20c33c5fc9fdb9a0f6789",
+      "indexed_source_sha256": "6d239aea0b002ddecf145077c552197a1148e733d15210242df7642169418476",
+      "category": "培养方案",
+      "chunks": 249,
+      "scope": {
+        "cohort": "2025",
+        "major": "信息安全",
+        "college": "计算机与信息安全学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级信息安全专业培养方案(主修).md"
+    },
+    {
+      "document_id": 8,
+      "title": "2025级信息管理与信息系统专业培养方案(主修)",
+      "source_sha256": "dc49fc52191859938751b1a18e7321337a0185f3858aa615ec22676ef23390c9",
+      "indexed_source_sha256": "b5b5a32db1e1a8d069b454b71ca4bb161dbc1ddc70a80eef31b809decb0c2093",
+      "category": "培养方案",
+      "chunks": 262,
+      "scope": {
+        "cohort": "2025",
+        "major": "信息管理与信息系统",
+        "college": "商学院(数字经济学院)",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级信息管理与信息系统专业培养方案(主修).md"
+    },
+    {
+      "document_id": 9,
+      "title": "2025级光电信息材料与器件专业培养方案(主修)",
+      "source_sha256": "888a4f2df77db887a139835a73e317a7860d3282d256af4eaeae52b500befd93",
+      "indexed_source_sha256": "46d2d09f04fad362bb7c681b90659063b9e3d491e2c107ecbd4ce8493e64a42a",
+      "category": "培养方案",
+      "chunks": 249,
+      "scope": {
+        "cohort": "2025",
+        "major": "光电信息材料与器件",
+        "college": "材料科学与工程学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级光电信息材料与器件专业培养方案(主修).md"
+    },
+    {
+      "document_id": 10,
+      "title": "2025级光电信息科学与工程专业培养方案(主修)",
+      "source_sha256": "ee0f23596db4419d425bf89439a40ca7cf9eb793393f81b3fccc8de6c3e9b30b",
+      "indexed_source_sha256": "0b5d2b76e4f53639f1da75a998125a4569c8227585abdd744e44f6a75af6906a",
+      "category": "培养方案",
+      "chunks": 259,
+      "scope": {
+        "cohort": "2025",
+        "major": "光电信息科学与工程",
+        "college": "光电工程学院"
+      },
+      "source_path": "final-md/培养方案/2025级光电信息科学与工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 11,
+      "title": "2025级动画专业培养方案(主修)",
+      "source_sha256": "c9af5ba304b7a6423fd5b6701a6e50e7eb7a26c1843c0521a302519dbbdb60ee",
+      "indexed_source_sha256": "6d730e22f3fead8223ea25345c63a8e0b94665f5490ff857d64bf0c4a2824963",
+      "category": "培养方案",
+      "chunks": 261,
+      "scope": {
+        "cohort": "2025",
+        "major": "动画",
+        "college": "艺术与设计学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级动画专业培养方案(主修).md"
+    },
+    {
+      "document_id": 12,
+      "title": "2025级国际经贸规则专业培养方案(主修)",
+      "source_sha256": "3f3799e624c76548880b06a56db9c2e7c322dac28f2f00eb4609d87a716f2b2a",
+      "indexed_source_sha256": "05ab182320004578dcc11fc8f1e96534181e6d0aaf02d8ab95e475f2a51c85a2",
+      "category": "培养方案",
+      "chunks": 230,
+      "scope": {
+        "cohort": "2025",
+        "major": "国际经贸规则",
+        "college": "法学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级国际经贸规则专业培养方案(主修).md"
+    },
+    {
+      "document_id": 13,
+      "title": "2025级土木工程专业培养方案(主修)",
+      "source_sha256": "e3f55471459158a2365bff675b3d437f98cc4d0e4ee814013a7ec153b027c50c",
+      "indexed_source_sha256": "6da7726f40790e391345d08b6111c45d9eb37745359459bee14cab5e1c39e354",
+      "category": "培养方案",
+      "chunks": 261,
+      "scope": {
+        "cohort": "2025",
+        "major": "土木工程",
+        "college": "建筑与交通工程学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级土木工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 14,
+      "title": "2025级密码科学与技术专业培养方案(主修)",
+      "source_sha256": "8142d1d653bca6f06aac4e4c641ae5f9cf97d2bf9c94d41cdfb23cb4dc89bfd9",
+      "indexed_source_sha256": "1a52dc9e7b35b565dbb7e9794ad8dee7b18d57a6d9c296be925c6b91de67a3bf",
+      "category": "培养方案",
+      "chunks": 246,
+      "scope": {
+        "cohort": "2025",
+        "major": "密码科学与技术",
+        "college": "计算机与信息安全学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级密码科学与技术专业培养方案(主修).md"
+    },
+    {
+      "document_id": 15,
+      "title": "2025级导航工程专业培养方案(主修)",
+      "source_sha256": "412d27cc62fd50bb549eecec22a237e12028801f444176034b0466371b9fd52c",
+      "indexed_source_sha256": "379484957e06677a72c4a39a532b628dc93cad37ab1cd37d1e0b66d4a889c2ce",
+      "category": "培养方案",
+      "chunks": 280,
+      "scope": {
+        "cohort": "2025",
+        "major": "导航工程",
+        "college": "信息与通信学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级导航工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 16,
+      "title": "2025级工业工程专业培养方案(主修)",
+      "source_sha256": "9517688342765475a1e745e72ec5e7ca0e4cfcfea38736a467c4829f51304c2d",
+      "indexed_source_sha256": "f1c451984d0a6588f756392e83a68c6dbe1a6352964bf109d7d4f42b4ab59389",
+      "category": "培养方案",
+      "chunks": 262,
+      "scope": {
+        "cohort": "2025",
+        "major": "工业工程",
+        "college": "商学院(数字经济学院)",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级工业工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 17,
+      "title": "2025级市场营销专业培养方案(主修)",
+      "source_sha256": "f32b02b76c580ff46a2ceb7c5c5d5d993856e2e308d3d0840b9f670559b01eef",
+      "indexed_source_sha256": "9b235b4e2d3f05e19e728458fb0176ee80d70b1e8ff7201ab3c2cda8671c425f",
+      "category": "培养方案",
+      "chunks": 246,
+      "scope": {
+        "cohort": "2025",
+        "major": "市场营销",
+        "college": "商学院(数字经济学院)",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级市场营销专业培养方案(主修).md"
+    },
+    {
+      "document_id": 18,
+      "title": "2025级应用统计学专业培养方案(主修)",
+      "source_sha256": "53ebcb0aa9f8d3dbb9cd1261346a3409b26d065e97459052c5d68f8e8967c600",
+      "indexed_source_sha256": "451d6a7c17cb9f6462e44fee889502b6ff5304958e3aa996168667aa9079c885",
+      "category": "培养方案",
+      "chunks": 255,
+      "scope": {
+        "cohort": "2025",
+        "major": "应用统计学",
+        "college": "数学与计算科学学院"
+      },
+      "source_path": "final-md/培养方案/2025级应用统计学专业培养方案(主修).md"
+    },
+    {
+      "document_id": 19,
+      "title": "2025级建筑环境与能源应用工程专业培养方案(主修)",
+      "source_sha256": "b4a5cc75b70731906e17c82d9a85f0edbf38b77968500fd44a0bf55d2b8aa274",
+      "indexed_source_sha256": "df688b6201ead4e2ec8222f6dcfbe3cf5d39b64a5a309efcd4e00999a85a6383",
+      "category": "培养方案",
+      "chunks": 255,
+      "scope": {
+        "cohort": "2025",
+        "major": "建筑环境与能源应用工程",
+        "college": "建筑与交通工程学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级建筑环境与能源应用工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 20,
+      "title": "2025级微电子科学与工程专业培养方案(主修)",
+      "source_sha256": "b762ceab4e3e57082f63b814944d56635882ac6ede7d202d31d38ff64d427377",
+      "indexed_source_sha256": "71bba76396fb2e6b30541be075a2be50fd4c663a873cc9320a32e4f2d1b2d5d8",
+      "category": "培养方案",
+      "chunks": 286,
+      "scope": {
+        "cohort": "2025",
+        "major": "微电子科学与工程",
+        "college": "信息与通信学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级微电子科学与工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 21,
+      "title": "2025级数字媒体技术(中外合作办学)培养方案",
+      "source_sha256": "cecbb73c5047142da84f9841b3db2c9bd2276b7404855b515709a6ae6b9f70b9",
+      "indexed_source_sha256": "0f987fc01810611c50b88c891f2f28cb36d287187801d78ce4cfa62191d86ff6",
+      "category": "培养方案",
+      "chunks": 213,
+      "scope": {
+        "college": "艺术与设计学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级数字媒体技术(中外合作办学)培养方案.md"
+    },
+    {
+      "document_id": 22,
+      "title": "2025级数字经济专业培养方案(主修)",
+      "source_sha256": "5abeb0484dcb63516ce708368866d58191aa39947e317da6cc780809c8fba6fa",
+      "indexed_source_sha256": "105b6a0670b9ff28e48c8cd5b7adbfd96aabb1f843d006cbd31d26b15ab66583",
+      "category": "培养方案",
+      "chunks": 242,
+      "scope": {
+        "cohort": "2025",
+        "major": "数字经济",
+        "college": "商学院(数字经济学院)",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级数字经济专业培养方案(主修).md"
+    },
+    {
+      "document_id": 23,
+      "title": "2025级数学与应用数学专业培养方案(主修)",
+      "source_sha256": "57d332655b1250ba21e22ef455a0b013b965cf2846627b4ef2950230f771edd7",
+      "indexed_source_sha256": "849a18bbf82469699ddb86558f06e46ed320d336e65d99b023270614b121d7f1",
+      "category": "培养方案",
+      "chunks": 247,
+      "scope": {
+        "cohort": "2025",
+        "major": "数学与应用数学",
+        "college": "数学与计算科学学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级数学与应用数学专业培养方案(主修).md"
+    },
+    {
+      "document_id": 24,
+      "title": "2025级数据科学与大数据技术专业培养方案(主修)",
+      "source_sha256": "6221f8bc05bd39453bc070eb5812af70d8097d7f0dda7666e2643e841ef54616",
+      "indexed_source_sha256": "94ac4b54a98f4248629143c5c53f84f74f06fde2e313fd060fad2b64df51674f",
+      "category": "培养方案",
+      "chunks": 233,
+      "scope": {
+        "cohort": "2025",
+        "major": "数据科学与大数据技术",
+        "college": "人工智能学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级数据科学与大数据技术专业培养方案(主修).md"
+    },
+    {
+      "document_id": 25,
+      "title": "2025级新能源材料与器件专业培养方案(主修)",
+      "source_sha256": "1c02ea5250de020e64c0926d55927486cc3e20a5b6fef62ccc64b54f692e9734",
+      "indexed_source_sha256": "aae7cbe89b82329d0e8af79f65f9f3bac8c4dc0016b9523b839289967b179c92",
+      "category": "培养方案",
+      "chunks": 247,
+      "scope": {
+        "cohort": "2025",
+        "major": "新能源材料与器件",
+        "college": "材料科学与工程学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级新能源材料与器件专业培养方案(主修).md"
+    },
+    {
+      "document_id": 26,
+      "title": "2025级日语专业培养方案(主修)",
+      "source_sha256": "646c05275eb7ff7283f48ab253c35001f9e5c3ec71f05a0b1b9e5b116f00e95c",
+      "indexed_source_sha256": "897d108110032eadd97bbe895ad652645a995ead17efd8ba2736e8139c6ff963",
+      "category": "培养方案",
+      "chunks": 219,
+      "scope": {
+        "cohort": "2025",
+        "major": "日语",
+        "college": "外国语学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级日语专业培养方案(主修).md"
+    },
+    {
+      "document_id": 27,
+      "title": "2025级智慧交通专业培养方案(主修)",
+      "source_sha256": "abab60ea035c7c8f30a7f58e6471359eefde81b8b0b0ae4cd539d504e216f414",
+      "indexed_source_sha256": "2534f9a99178dd13805224c6d9bc1f880fbc525237f6c4f5e9fb84991d4ff875",
+      "category": "培养方案",
+      "chunks": 233,
+      "scope": {
+        "cohort": "2025",
+        "major": "智慧交通",
+        "college": "建筑与交通工程学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级智慧交通专业培养方案(主修).md"
+    },
+    {
+      "document_id": 28,
+      "title": "2025级智能制造工程专业培养方案(主修)",
+      "source_sha256": "bd23353224023d49454678b8ec53c64d931b31083dc7aa14e0945f3bed53be47",
+      "indexed_source_sha256": "e45d72b540b219b5f59a913705f517c847a571fad055babd12c0a373276afb2b",
+      "category": "培养方案",
+      "chunks": 264,
+      "scope": {
+        "cohort": "2025",
+        "major": "智能制造工程",
+        "college": "机电工程学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级智能制造工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 29,
+      "title": "2025级智能感知工程专业培养方案(主修)",
+      "source_sha256": "c0a62442a56b7c8bcc18dd9eb3e93884affd442dbd972b5fc23b4ced78e35abf",
+      "indexed_source_sha256": "92a1e573c3ecc2776075e8c87ef818767139c93a87664404c1aa5b58ce0ce8a9",
+      "category": "培养方案",
+      "chunks": 259,
+      "scope": {
+        "cohort": "2025",
+        "major": "智能感知工程",
+        "college": "电子工程与自动化学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级智能感知工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 30,
+      "title": "2025级智能科学与技术专业培养方案(主修)",
+      "source_sha256": "b0751b618244b5fd28eab26a6c1d8940900c5264bdc19549d6104a8fffcf0af6",
+      "indexed_source_sha256": "22f4ccb3dd10e3a0516ff61403ed12722d5756f9ce23a90c6f232722a95abe61",
+      "category": "培养方案",
+      "chunks": 245,
+      "scope": {
+        "cohort": "2025",
+        "major": "智能科学与技术",
+        "college": "计算机与信息安全学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级智能科学与技术专业培养方案(主修).md"
+    },
+    {
+      "document_id": 31,
+      "title": "2025级智能装备与系统专业培养方案(主修)",
+      "source_sha256": "5d1a96488b37fd238cab5e2bb93491464d7b24037cc564d13ff8fd1439529a9a",
+      "indexed_source_sha256": "35c1ab81c712ac4473cd733bb8c6daa94f108dec8b88b1f5aec8776158decdb6",
+      "category": "培养方案",
+      "chunks": 251,
+      "scope": {
+        "cohort": "2025",
+        "major": "智能装备与系统",
+        "college": "电子工程与自动化学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级智能装备与系统专业培养方案(主修).md"
+    },
+    {
+      "document_id": 32,
+      "title": "2025级智能视觉工程专业培养方案(主修)",
+      "source_sha256": "cdd6b31a4eb5c1f3fa9de8f09d573599514654dddca2861c9cc6321907bab30c",
+      "indexed_source_sha256": "4cac06f8f9b89fb2feded60f5eb462a17618ec5ac6bf4973be275349fbf72cc4",
+      "category": "培养方案",
+      "chunks": 238,
+      "scope": {
+        "cohort": "2025",
+        "major": "智能视觉工程",
+        "college": "光电工程学院"
+      },
+      "source_path": "final-md/培养方案/2025级智能视觉工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 33,
+      "title": "2025级服装与服饰设计专业培养方案(主修)",
+      "source_sha256": "0c4b7e5442c9ef9108b9281a54fc8185964a905bc93498b3837baf6d3e9e47a7",
+      "indexed_source_sha256": "037383e97582508b816db5b9cca3575cef64a351b086072eda86a6d25a5d6a72",
+      "category": "培养方案",
+      "chunks": 268,
+      "scope": {
+        "cohort": "2025",
+        "major": "服装与服饰设计",
+        "college": "艺术与设计学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级服装与服饰设计专业培养方案(主修).md"
+    },
+    {
+      "document_id": 34,
+      "title": "2025级机器人工程专业培养方案(主修)",
+      "source_sha256": "8ca39037be7d94661a144ec9dbc43eb99ad3bb01870d34570a5d8bab286e01a8",
+      "indexed_source_sha256": "d0fbc66415b5b300644a55a85cacf0ab6bd77ba784497a904028aae5bbb75d90",
+      "category": "培养方案",
+      "chunks": 232,
+      "scope": {
+        "cohort": "2025",
+        "major": "机器人工程",
+        "college": "人工智能学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级机器人工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 35,
+      "title": "2025级机械电子工程专业培养方案(主修)",
+      "source_sha256": "38a3dc585ea2496c8a87cc51374c87219eaec2034b1f21d515bfe7961612f348",
+      "indexed_source_sha256": "f8597f3ff660ff844ef9c4b217c8c4c9438350093798f9e30652137adf656371",
+      "category": "培养方案",
+      "chunks": 246,
+      "scope": {
+        "cohort": "2025",
+        "major": "机械电子工程",
+        "college": "机电工程学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级机械电子工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 36,
+      "title": "2025级机械设计制造及其自动化专业培养方案(主修)",
+      "source_sha256": "2ba5de54ce7c093b582ba66c12bc2c6b8c2de9eac959278702961c77acb8d544",
+      "indexed_source_sha256": "e25847f9f05b516e7534275e1875466ed8094d8f7a3957c02e0eab168deb0f72",
+      "category": "培养方案",
+      "chunks": 260,
+      "scope": {
+        "cohort": "2025",
+        "major": "机械设计制造及其自动化",
+        "college": "机电工程学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级机械设计制造及其自动化专业培养方案(主修).md"
+    },
+    {
+      "document_id": 37,
+      "title": "2025级材料成型及控制工程专业培养方案(主修)",
+      "source_sha256": "bb8530ff9ae76e7cfbd871dc7bc3fcbd306e3d205638ae9b7afc28e6aeee56b4",
+      "indexed_source_sha256": "49536b24fbc6e3ba1ce2b1b4ece93e0df68c612b5c6b2d0f44298b53c8fd3752",
+      "category": "培养方案",
+      "chunks": 256,
+      "scope": {
+        "cohort": "2025",
+        "major": "材料成型及控制工程",
+        "college": "材料科学与工程学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级材料成型及控制工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 38,
+      "title": "2025级材料科学与工程专业培养方案(主修)",
+      "source_sha256": "8e92272f42f7871771a13e16a032ecb6aff5d907f2424b5dca12754f48d1d364",
+      "indexed_source_sha256": "40d7df37e660ef489f6d3771c07a4e4974952b4fcb5d129c4b872206372ed981",
+      "category": "培养方案",
+      "chunks": 276,
+      "scope": {
+        "cohort": "2025",
+        "major": "材料科学与工程",
+        "college": "材料科学与工程学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级材料科学与工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 39,
+      "title": "2025级汉语国际教育专业培养方案(主修)",
+      "source_sha256": "c0fa9f23de3aba590d32e94e06f7c36045ae21147b94b58f8e8a2103c1d626e6",
+      "indexed_source_sha256": "2c1d2d765b890e7d3e279a8691a3d8cb8d8dd7724c1ffb71f073178e9ecb3354",
+      "category": "培养方案",
+      "chunks": 240,
+      "scope": {
+        "cohort": "2025",
+        "major": "汉语国际教育",
+        "college": "外国语学院"
+      },
+      "source_path": "final-md/培养方案/2025级汉语国际教育专业培养方案(主修).md"
+    },
+    {
+      "document_id": 40,
+      "title": "2025级法学专业培养方案(主修)",
+      "source_sha256": "0292dee7563c4388316b2bae9defe6821b163daa1db8451047e84891b7e50e4e",
+      "indexed_source_sha256": "277423ff3f2a9cc5a8ca1e8765ecd1a9dd9b954d1db75423cdadbcd1f508f39b",
+      "category": "培养方案",
+      "chunks": 252,
+      "scope": {
+        "cohort": "2025",
+        "major": "法学",
+        "college": "法学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级法学专业培养方案(主修).md"
+    },
+    {
+      "document_id": 41,
+      "title": "2025级测控技术与仪器专业培养方案(主修)",
+      "source_sha256": "381e7a2c22a2a778e9cd8c3e2c307bd737a6de95dc13cd17aea4f604b6f6b444",
+      "indexed_source_sha256": "cc7274234515afb4642c48588eaff622734274f76ed3e767b8fbf18516a02ac0",
+      "category": "培养方案",
+      "chunks": 1299,
+      "scope": {
+        "cohort": "2025",
+        "major": "测控技术与仪器",
+        "college": "电子工程与自动化学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级测控技术与仪器专业培养方案(主修).md"
+    },
+    {
+      "document_id": 42,
+      "title": "2025级物联网工程专业培养方案(主修)",
+      "source_sha256": "85d36f75eec08317f28a029d3f1167e5d047dd07bd17ef8a9157438763f2d3db",
+      "indexed_source_sha256": "ca33dbd8cb835aca0742e5b28044ea87997e9f9ca85bd634e922b6c0acb2a170",
+      "category": "培养方案",
+      "chunks": 252,
+      "scope": {
+        "cohort": "2025",
+        "major": "物联网工程",
+        "college": "计算机与信息安全学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级物联网工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 43,
+      "title": "2025级环境工程专业培养方案(主修)",
+      "source_sha256": "8b911c1a0458124f6e6582928a0806b6e8aac3477f9fe02971762b4df5e49a2a",
+      "indexed_source_sha256": "fc5f0e1e54ed19ca2c67139bd91635cd20eeb41b5ff0bef99208132f7d3c8b30",
+      "category": "培养方案",
+      "chunks": 262,
+      "scope": {
+        "cohort": "2025",
+        "major": "环境工程",
+        "college": "生命与环境科学学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级环境工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 44,
+      "title": "2025级环境设计专业培养方案(主修)",
+      "source_sha256": "fad3321d70f13af1fd5f2140c1bb9a08dd4ed2d400a1e9acca229d46f54ca415",
+      "indexed_source_sha256": "711cac6e503d8275af2b2bd47cc18df1f0cc58f2cee3f49ede1c8a3c37cd01b4",
+      "category": "培养方案",
+      "chunks": 257,
+      "scope": {
+        "cohort": "2025",
+        "major": "环境设计",
+        "college": "艺术与设计学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级环境设计专业培养方案(主修).md"
+    },
+    {
+      "document_id": 45,
+      "title": "2025级生物医学工程专业培养方案(主修)",
+      "source_sha256": "facb2f5da79443af38a472a3c4e6ab5de3073285f4f775bc19db5b5dc96328eb",
+      "indexed_source_sha256": "7c38d3ad03788d4b7917841bb2152b8a57f92f77e540eb0fd476adce26177837",
+      "category": "培养方案",
+      "chunks": 273,
+      "scope": {
+        "cohort": "2025",
+        "major": "生物医学工程",
+        "college": "生命与环境科学学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级生物医学工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 46,
+      "title": "2025级电子信息工程专业培养方案(主修)",
+      "source_sha256": "d8c4f9096fbe944570876dc15ebe55927695e5966c16094f668bf9d40dcd68e6",
+      "indexed_source_sha256": "f4228f79d4d4c0172a7c66fb9d271edd3ca54ff6c28ed68639610764561b7abe",
+      "category": "培养方案",
+      "chunks": 285,
+      "scope": {
+        "cohort": "2025",
+        "major": "电子信息工程",
+        "college": "信息与通信学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级电子信息工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 47,
+      "title": "2025级电子商务专业培养方案(主修)",
+      "source_sha256": "3e1723598f86d1dfd9995cda7bfad91f2bab442993ea14b4f94bc736c46cc8e6",
+      "indexed_source_sha256": "ca2922dc14b7c201724363e5ad3f297d6f2c967d6a10417e3e62c830181cb04a",
+      "category": "培养方案",
+      "chunks": 247,
+      "scope": {
+        "cohort": "2025",
+        "major": "电子商务",
+        "college": "商学院(数字经济学院)",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级电子商务专业培养方案(主修).md"
+    },
+    {
+      "document_id": 48,
+      "title": "2025级电子封装技术专业培养方案(主修)",
+      "source_sha256": "38bd3c6ddfa99a9f9106a3b00990a61431bb803388230d305861a2dae9ae6608",
+      "indexed_source_sha256": "c7df9dd2a81c9b71c0b0696036fd80acdfb973b008696bcfc82c29406b68b6c7",
+      "category": "培养方案",
+      "chunks": 253,
+      "scope": {
+        "cohort": "2025",
+        "major": "电子封装技术",
+        "college": "机电工程学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级电子封装技术专业培养方案(主修).md"
+    },
+    {
+      "document_id": 49,
+      "title": "2025级电子科学与技术专业培养方案(主修)",
+      "source_sha256": "39452b84c6f05b616f9158ebb77ffdead92bfb5f88b4d3311801ee9d0e7e5a1f",
+      "indexed_source_sha256": "38686ee408e5fb50626423e198e11db5ac1c8063852f2a260d8236c79ff71930",
+      "category": "培养方案",
+      "chunks": 288,
+      "scope": {
+        "cohort": "2025",
+        "major": "电子科学与技术",
+        "college": "信息与通信学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级电子科学与技术专业培养方案(主修).md"
+    },
+    {
+      "document_id": 50,
+      "title": "2025级电气工程及其自动化专业培养方案(主修)",
+      "source_sha256": "0e8615e65af4bb1eb0c1822cefdbef03d8b4b0f9611fea65ae05cb20558aedf6",
+      "indexed_source_sha256": "203a3ba92a8337bed0cdeea3b27ff22264fe0b3194c7b02731d70dd8ed115e8f",
+      "category": "培养方案",
+      "chunks": 260,
+      "scope": {
+        "cohort": "2025",
+        "major": "电气工程及其自动化",
+        "college": "机电工程学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级电气工程及其自动化专业培养方案(主修).md"
+    },
+    {
+      "document_id": 51,
+      "title": "2025级知识产权专业培养方案(主修)",
+      "source_sha256": "fc16c03fee6db18fba585562343b16e991fd9977519e83b9e198632695ad3bd5",
+      "indexed_source_sha256": "0b9cce93ac5bc72bf34f8dd30202707067dda608cea8b75359280addae630e77",
+      "category": "培养方案",
+      "chunks": 235,
+      "scope": {
+        "cohort": "2025",
+        "major": "知识产权",
+        "college": "法学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级知识产权专业培养方案(主修).md"
+    },
+    {
+      "document_id": 52,
+      "title": "2025级网络空间安全专业培养方案(主修)",
+      "source_sha256": "ad3097a619a43c5d1609a8a93e2e00f08e217c3c1e5dabd4b6218bac03e2ca4b",
+      "indexed_source_sha256": "e3deab9048bee47d2694205e0d603e5ef15eda041563ee7bb3100a1de9d01bd3",
+      "category": "培养方案",
+      "chunks": 251,
+      "scope": {
+        "cohort": "2025",
+        "major": "网络空间安全",
+        "college": "计算机与信息安全学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级网络空间安全专业培养方案(主修).md"
+    },
+    {
+      "document_id": 53,
+      "title": "2025级自动化专业培养方案(主修)",
+      "source_sha256": "44657746e7257b500695f837d55d56a73d0d408e59bfb841ff179a829dd5c8a9",
+      "indexed_source_sha256": "7e0a4f5c492b423381ad7b0e0ec69ca464e9c49d62d708676175a2b5d35ec1cd",
+      "category": "培养方案",
+      "chunks": 1313,
+      "scope": {
+        "cohort": "2025",
+        "major": "自动化",
+        "college": "电子工程与自动化学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级自动化专业培养方案(主修) .md"
+    },
+    {
+      "document_id": 54,
+      "title": "2025级英语专业培养方案(主修)",
+      "source_sha256": "3cec75d20f580de6d29033c4958248e719b5b0a74cd8ec8e11ec1f7b1d994aef",
+      "indexed_source_sha256": "7470732001fa96beae8a3015a1eb0b93df6be34ac72c246b62b349bd55a59b72",
+      "category": "培养方案",
+      "chunks": 235,
+      "scope": {
+        "cohort": "2025",
+        "major": "英语",
+        "college": "外国语学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级英语专业培养方案(主修).md"
+    },
+    {
+      "document_id": 55,
+      "title": "2025级表演专业培养方案(主修)",
+      "source_sha256": "07e0588f904c0efaa3c9df39cff430afd172e37e0937137c3ba6c6f30bc79814",
+      "indexed_source_sha256": "2b458f3aa8527ee22bcd9bfc9a11e784e84be0c743534a7f9bfb5adb617bd59a",
+      "category": "培养方案",
+      "chunks": 260,
+      "scope": {
+        "cohort": "2025",
+        "major": "表演",
+        "college": "艺术与设计学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级表演专业培养方案(主修).md"
+    },
+    {
+      "document_id": 56,
+      "title": "2025级视觉传达设计专业培养方案(主修)",
+      "source_sha256": "6d78706318d7a5aadd18c745e0a8ec78c64a4f05a3d092d79ba665353eca4697",
+      "indexed_source_sha256": "e65b2c1bcb8a80295d8f3ce0a5f7578c2807f599aa25e044792842fe0967c98c",
+      "category": "培养方案",
+      "chunks": 249,
+      "scope": {
+        "cohort": "2025",
+        "major": "视觉传达设计",
+        "college": "艺术与设计学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级视觉传达设计专业培养方案(主修).md"
+    },
+    {
+      "document_id": 57,
+      "title": "2025级计算机科学与技术专业培养方案(主修)",
+      "source_sha256": "aed1ae0507cb6ac36e466cf9afb7d5e302c2335a60e8bbf0188e140125136fc3",
+      "indexed_source_sha256": "d771f862d9fab5284a778dbcab03a22f64385f916a44794909fe00d6cbb527c5",
+      "category": "培养方案",
+      "chunks": 259,
+      "scope": {
+        "cohort": "2025",
+        "major": "计算机科学与技术",
+        "college": "计算机与信息安全学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级计算机科学与技术专业培养方案(主修).md"
+    },
+    {
+      "document_id": 58,
+      "title": "2025级财务管理专业培养方案(主修)",
+      "source_sha256": "0a8a16b501711aba6a5f5b053f63d926f8c25b6ee30f257aa675e609a00526ad",
+      "indexed_source_sha256": "061be9a7c2f0032f5de0e3705570b23fad84346b06e1d5cfca5e52762cf6a3ef",
+      "category": "培养方案",
+      "chunks": 254,
+      "scope": {
+        "cohort": "2025",
+        "major": "财务管理",
+        "college": "商学院(数字经济学院)",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级财务管理专业培养方案(主修).md"
+    },
+    {
+      "document_id": 59,
+      "title": "2025级车辆工程专业培养方案(主修)",
+      "source_sha256": "281e3ae4316755b5a15f547e097efd44c834bf855ba362058788646929dc5be3",
+      "indexed_source_sha256": "ab2b0d2c9e6a2a3d351b388129b3bc60730fc67a7aa51340fea4d5716492e170",
+      "category": "培养方案",
+      "chunks": 258,
+      "scope": {
+        "cohort": "2025",
+        "major": "车辆工程",
+        "college": "机电工程学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级车辆工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 60,
+      "title": "2025级软件工程专业培养方案(主修)",
+      "source_sha256": "a194dca76900266a7bcc63a8504a18621e5d4471215803135a5e5be5d222bfeb",
+      "indexed_source_sha256": "740e15a3cb0e28ac755ad6ee73b66d69975cfdd871ba2ae6164a482fd21a24cc",
+      "category": "培养方案",
+      "chunks": 264,
+      "scope": {
+        "cohort": "2025",
+        "major": "软件工程",
+        "college": "计算机与信息安全学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级软件工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 61,
+      "title": "2025级通信工程专业培养方案(主修)",
+      "source_sha256": "16bc9227fae1a4f7d7482db2391a2cc9a167c1abdec2cdee2fcaf25e26b95552",
+      "indexed_source_sha256": "ee93ae6d7299231fb95c4043a3573020a7d7dbd1e522c4159b8ecb3a297a3bb1",
+      "category": "培养方案",
+      "chunks": 284,
+      "scope": {
+        "cohort": "2025",
+        "major": "通信工程",
+        "college": "信息与通信学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级通信工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 62,
+      "title": "2025级金融工程专业培养方案(主修)",
+      "source_sha256": "777d9a482a025f833d6855dfed32ba5032d08542f0b16bbe9f2af7f5884c5b6b",
+      "indexed_source_sha256": "f22782767babf6915205cbfdac59c5bce7194cc2d706a2e2c58cc85522d85111",
+      "category": "培养方案",
+      "chunks": 250,
+      "scope": {
+        "cohort": "2025",
+        "major": "金融工程",
+        "college": "商学院(数字经济学院)",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级金融工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 63,
+      "title": "2025级高分子材料与工程专业培养方案(主修)",
+      "source_sha256": "73ce82b92537cacbeab7fe488a25af487dd03bbcd73e5dc4626bd370264e8b71",
+      "indexed_source_sha256": "f1e19b3c2c258808601ba7f1228a4ccb45c3ca60034d4c0a9965dca0c4f50539",
+      "category": "培养方案",
+      "chunks": 274,
+      "scope": {
+        "cohort": "2025",
+        "major": "高分子材料与工程",
+        "college": "材料科学与工程学院",
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/培养方案/2025级高分子材料与工程专业培养方案(主修).md"
+    },
+    {
+      "document_id": 64,
+      "title": "人工智能学院本科生综合素质测评实施办法",
+      "source_sha256": "b5d66f1351f524acfcb1f4bee75860b305b0539088c14b3793bd7b39fc635e9d",
+      "indexed_source_sha256": "c653ce6e1782a9f8c4715e518ae677cfd878ad1de30061f83deb68fce9310e6f",
+      "category": "规章制度",
+      "chunks": 152,
+      "scope": {
+        "level": "undergraduate",
+        "college": "人工智能学院",
+        "subject": "student"
+      },
+      "source_path": "final-md/智能〔2026〕14号--关于印发《人工智能学院本科生综合素质测评实施办法》的通知.md"
+    },
+    {
+      "document_id": 65,
+      "title": "桂林电子科技大学创新创业拓展课程学分认定管理办法",
+      "source_sha256": "b81ced8345e96410708e13cf5a066658d30a40eb9748ed3286ab60747a43dfd8",
+      "indexed_source_sha256": "5039e1718f55a801276933ca5f8304b5dd031e0da5fad9f11829e89d9942133b",
+      "category": "规章制度",
+      "chunks": 105,
+      "scope": {},
+      "source_path": "final-md/桂电教〔2026〕13号--关于印发《桂林电子科技大学创新创业拓展课程学分认定管理办法》的通知.md"
+    },
+    {
+      "document_id": 66,
+      "title": "桂林电子科技大学博士后管理工作实施办法",
+      "source_sha256": "75f65d6f610516a63511e7e3a9d1aca7cfaff081156a4dc5ae5be85ee6470c14",
+      "indexed_source_sha256": "0da7464ebb150ac111bdb3110e119fd6028a7f1c68979b9e72321e6c55431889",
+      "category": "规章制度",
+      "chunks": 38,
+      "scope": {
+        "level": "graduate"
+      },
+      "source_path": "final-md/规章制度/人事制度/关于印发《桂林电子科技大学博士后管理工作实施办法》的通知（桂电人〔2022〕2号）.md"
+    },
+    {
+      "document_id": 67,
+      "title": "桂林电子科技大学教职工进修管理办法",
+      "source_sha256": "d88ebd1bf42528471ee96daa912395397ace39d24b6d8eb37fabd0202dcad61d",
+      "indexed_source_sha256": "66e3a202a6625ed45d87e51ae21ba4275bca2c298b10e131a73355f337aa7b2f",
+      "category": "规章制度",
+      "chunks": 20,
+      "scope": {
+        "subject": "staff"
+      },
+      "source_path": "final-md/规章制度/人事制度/关于印发《桂林电子科技大学教职工进修管理办法》的通知（桂电人〔2023〕20号）.md"
+    },
+    {
+      "document_id": 68,
+      "title": "桂林电子科技大学高等学校社会科学研究系列职称评审条件(试行)",
+      "source_sha256": "d4d6bb77f43301dc62e71d58f70ce9017c3eca8c037eac13661d2797a5975a83",
+      "indexed_source_sha256": "e63708259d2732d1e2a6dc99e371333430549d66b71a58b940ceca25b475f124",
+      "category": "规章制度",
+      "chunks": 43,
+      "scope": {},
+      "source_path": "final-md/规章制度/人事制度/关于印发《桂林电子科技大学高等学校社会科学研究系列职称评审条件（试行）》的通知（桂电职改〔2022〕7号）.md"
+    },
+    {
+      "document_id": 69,
+      "title": "实验技术系列职称评审条件(试行)",
+      "source_sha256": "e650c5b016d16498ba4a6e343bf310f83a8cbf8225ba27bf2d574e5a94830459",
+      "indexed_source_sha256": "43b6e1dcdb4899c1a3df65987d85db1e7230794eedfb50ff26eb108f636f3528",
+      "category": "规章制度",
+      "chunks": 46,
+      "scope": {},
+      "source_path": "final-md/规章制度/人事制度/实验技术系列职称评审条件（试行）.md"
+    },
+    {
+      "document_id": 70,
+      "title": "高等学校教师系列职称评审条件(2022年修订)",
+      "source_sha256": "844deda011ec5e61b07a625ecc23debc6fb8c44c8dd3013663fdf8dbdc5a3265",
+      "indexed_source_sha256": "7700ff06cb96005a906f153cfffd2395d4e3256839cc23e46521437d2e1c2595",
+      "category": "规章制度",
+      "chunks": 97,
+      "scope": {
+        "subject": "staff"
+      },
+      "source_path": "final-md/规章制度/人事制度/高等学校教师系列职称评审条件（2022年修订）.md"
+    },
+    {
+      "document_id": 71,
+      "title": "高等学校自然科学研究系列职称评审条件(试行)",
+      "source_sha256": "21a72937317e532088420236bf86dfea96ba7c4c6b7ced5d16160dc269420b87",
+      "indexed_source_sha256": "74e4a9026c63196215cfe0ad7496643828e1f7fdb6166a37dc3dc50f0582969f",
+      "category": "规章制度",
+      "chunks": 43,
+      "scope": {},
+      "source_path": "final-md/规章制度/人事制度/高等学校自然科学研究系列职称评审条件（试行）.md"
+    },
+    {
+      "document_id": 72,
+      "title": "桂林电子科技大学“大学英语”课程替换及成绩认定办法(试行)",
+      "source_sha256": "433c202baab66479f38e095b65db34bc45e91b5619329bc9da81529737a92bb7",
+      "indexed_source_sha256": "181c5e58e68bc7b8ff5608636955976d8b8e968a1f29fc4915bea6f55cbb0176",
+      "category": "规章制度",
+      "chunks": 18,
+      "scope": {},
+      "source_path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学“大学英语”课程替换及成绩认定办法（试行）》（校教〔2025〕5号）.md"
+    },
+    {
+      "document_id": 73,
+      "title": "桂林电子科技大学应征入伍学生学籍学业学历管理细则",
+      "source_sha256": "66bdb24c929fd27998f00d6a7bdd36152c75d1ac54a33f4c7a432b31a2f19b5e",
+      "indexed_source_sha256": "8279d15f34a095e489bcd99c8d532459e63b211944f4428583019ff9d2f393ac",
+      "category": "规章制度",
+      "chunks": 11,
+      "scope": {
+        "subject": "student"
+      },
+      "source_path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学应征入伍学生学籍学业学历管理细则》（桂电教〔2024〕23号）.md"
+    },
+    {
+      "document_id": 74,
+      "title": "桂林电子科技大学普通高等教育学士学位授予工作实施细则(2025年修订)",
+      "source_sha256": "4edbc5e495b162abcfd736a33d991f5327d97dcfc7e6b334aebc16be17602e96",
+      "indexed_source_sha256": "f809d8cdd68e56a1845185a6f61fbbc5d3aef52879cb561b84d8210809d4d779",
+      "category": "规章制度",
+      "chunks": 22,
+      "scope": {},
+      "source_path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学普通高等教育学士学位授予工作实施细则(2025年修订)》(桂电学位〔2025〕19号).md"
+    },
+    {
+      "document_id": 75,
+      "title": "桂林电子科技大学普通高等教育本科学生学籍管理规定(2025年修订)",
+      "source_sha256": "e41d77ae0efaadfff4a9b70e8673e782c84161f07ae304878437bf26e0e45fe2",
+      "indexed_source_sha256": "54fe87c4de16c9a2d61cdae805fd135d874d76bf1a7c91e0643ac88be87c160f",
+      "category": "规章制度",
+      "chunks": 51,
+      "scope": {
+        "level": "undergraduate",
+        "subject": "student"
+      },
+      "source_path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）》(桂电教〔2025〕27号).md"
+    },
+    {
+      "document_id": 76,
+      "title": "桂林电子科技大学本科生专业分流及转专业管理办法(修订)",
+      "source_sha256": "a3cfcc6bff071ffed1ef93bb15e5e689ee1a03e2e8d4cec7ff85557696ee4dba",
+      "indexed_source_sha256": "53bef0a6cb557ccf00da14d432a4814f87d08176ed4edf21e1fa3b532a56aac6",
+      "category": "规章制度",
+      "chunks": 22,
+      "scope": {
+        "level": "undergraduate",
+        "subject": "student"
+      },
+      "source_path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学本科生专业分流及转专业管理办法(修订)》（桂电教〔2021〕6 号）.md"
+    },
+    {
+      "document_id": 77,
+      "title": "桂林电子科技大学本科生学业预警及学业退学实施细则",
+      "source_sha256": "dc917eaf7bcf1d4f2fa2bc38d6704df1e7a6e82365b6641b344789d098189c8d",
+      "indexed_source_sha256": "7cfea91525e76a3dc53adb861c5e4aaeb8002392c69a94e58c1c644329dfbe9a",
+      "category": "规章制度",
+      "chunks": 12,
+      "scope": {
+        "level": "undergraduate",
+        "subject": "student"
+      },
+      "source_path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学本科生学业预警及学业退学实施细则》(桂电教〔2025〕28号).md"
+    },
+    {
+      "document_id": 78,
+      "title": "桂林电子科技大学本科生课程认定暂行办法(修订)",
+      "source_sha256": "f6e8eb21874f0010276e08312f1ef98dcb071ff44b416486697aed916dac1bf4",
+      "indexed_source_sha256": "6dc550feee64c44716f9f8a8af5dea9eb590cdedffe5881f7c086409e1adfeae",
+      "category": "规章制度",
+      "chunks": 8,
+      "scope": {
+        "level": "undergraduate",
+        "subject": "student"
+      },
+      "source_path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学本科生课程认定暂行办法（修订）》（桂电教〔2021〕18号）.md"
+    },
+    {
+      "document_id": 79,
+      "title": "桂林电子科技大学教室使用管理办法",
+      "source_sha256": "823165bd215ae65c598f7efcf67a0084ba02fd10729066b4518d348fc0a66971",
+      "indexed_source_sha256": "fa3c7d898eb03e3077ef1b22f66b4b3f0e247b5b9af49ef9aa966ea03d838163",
+      "category": "规章制度",
+      "chunks": 6,
+      "scope": {},
+      "source_path": "final-md/规章制度/培养方案管理制度/桂电教〔2015〕67号--关于印发《桂林电子科技大学教室使用管理办法》的通知.md"
+    },
+    {
+      "document_id": 80,
+      "title": "桂林电子科技大学全日制普通本科生赴国(境)外交流学习成绩管理办法(试行)",
+      "source_sha256": "0691f43c22d0f92f578917fb96ab8a959455a5d3ff8868c0153b803d400eca91",
+      "indexed_source_sha256": "1da5afc4a6402b6548ba0dd1af21c5ac05d602b3b4a62baedd39dd9dac84ca3f",
+      "category": "规章制度",
+      "chunks": 13,
+      "scope": {
+        "level": "undergraduate",
+        "subject": "student"
+      },
+      "source_path": "final-md/规章制度/培养方案管理制度/桂电教〔2016〕20号--关于印发《桂林电子科技大学全日制普通本科生赴国(境)外交流学习成绩管理办法（试行）》的通知.md"
+    },
+    {
+      "document_id": 81,
+      "title": "桂林电子科技大学全日制普通本科生国内交换培养管理办法",
+      "source_sha256": "301ab918ce87ef7864208cbe23ba543dbd7cabbb1a9a7d07ea0e8b6270217630",
+      "indexed_source_sha256": "c1a715ab6100188d6124b738ec87acd4eee9c5fc90ea4ea632e08e81afe956a1",
+      "category": "规章制度",
+      "chunks": 12,
+      "scope": {
+        "level": "undergraduate",
+        "subject": "student"
+      },
+      "source_path": "final-md/规章制度/培养方案管理制度/桂电教〔2018〕17号--关于印发《桂林电子科技大学全日制普通本科生国内交换培养管理办法》的通知.md"
+    },
+    {
+      "document_id": 82,
+      "title": "桂电教〔2019〕10 号--桂林电子科技大学普通全日制本(专)科学生转学工作实施细则(修订)",
+      "source_sha256": "6943e29888624b40d7fff943a9a7f2b5203656bd56179d02fab497df93b1ad0c",
+      "indexed_source_sha256": "d4223c88cc4aebb6d1c01c0ecb5da749cc12504902e339ae657bf762071275c9",
+      "category": "规章制度",
+      "chunks": 14,
+      "scope": {
+        "subject": "student"
+      },
+      "source_path": "final-md/规章制度/培养方案管理制度/桂电教〔2019〕10 号--桂林电子科技大学普通全日制本（专）科学生转学工作实施细则（修订）.md"
+    },
+    {
+      "document_id": 83,
+      "title": "桂林电子科技大学考试管理规定",
+      "source_sha256": "f2894c8e46a0120a47b94d4058c41a259c482dca96baa8893edca0ac9396462a",
+      "indexed_source_sha256": "b1a05d27941b61f594cab7b5bfeae42d1046dc63f561755973de64778361dc10",
+      "category": "规章制度",
+      "chunks": 30,
+      "scope": {},
+      "source_path": "final-md/规章制度/培养方案管理制度/桂电教〔2020〕15号--关于印发《桂林电子科技大学考试管理规定》的通知.md"
+    },
+    {
+      "document_id": 84,
+      "title": "桂电教〔2021〕32 号--桂林电子科技大学本科生修读微专业、辅修专业、辅修学位管理办法",
+      "source_sha256": "5103149ef9f891fd1fee8379d644b07cf99389c108735e05a3f1aac5826ec12d",
+      "indexed_source_sha256": "c6bc29bd5a00339f2e5ac1c83b6e6eeeec8734d2154523e8434f195f8800e1bd",
+      "category": "规章制度",
+      "chunks": 26,
+      "scope": {
+        "level": "undergraduate",
+        "subject": "student"
+      },
+      "source_path": "final-md/规章制度/培养方案管理制度/桂电教〔2021〕32 号--桂林电子科技大学本科生修读微专业、辅修专业、辅修学位管理办法.md"
+    },
+    {
+      "document_id": 85,
+      "title": "桂林电子科技大学创新创业拓展课程学分认定管理办法",
+      "source_sha256": "b81ced8345e96410708e13cf5a066658d30a40eb9748ed3286ab60747a43dfd8",
+      "indexed_source_sha256": "5039e1718f55a801276933ca5f8304b5dd031e0da5fad9f11829e89d9942133b",
+      "category": "规章制度",
+      "chunks": 105,
+      "scope": {},
+      "source_path": "final-md/桂电教〔2026〕13号--关于印发《桂林电子科技大学创新创业拓展课程学分认定管理办法》的通知.md"
+    },
+    {
+      "document_id": 86,
+      "title": "桂林电子科技大学章程(2023年核准稿)",
+      "source_sha256": "161f18000a09bb9daf93eced624332c8a670bc7f61806ba0f1f65880df63fc74",
+      "indexed_source_sha256": "b87d1441f02b0e57c091d83c9836e9383a34463f8257a1703859eae10e108da6",
+      "category": "规章制度",
+      "chunks": 72,
+      "scope": {},
+      "source_path": "final-md/规章制度/学校章程/桂林电子科技大学章程（2023年核准稿）.md"
+    },
+    {
+      "document_id": 87,
+      "title": "桂林电子科技大学工程类硕士专业学位论文基本要求",
+      "source_sha256": "19a40305ce323479b832bb4ac4c26576feb15b69cef6567a54f56a6a7c3141c6",
+      "indexed_source_sha256": "af2338cf4254d18ed8d35bc3fa4b480e61bac215c9aea26b93ebb57b56ad0893",
+      "category": "规章制度",
+      "chunks": 29,
+      "scope": {
+        "level": "graduate"
+      },
+      "source_path": "final-md/规章制度/教学制度/关于印发《桂林电⼦科技⼤学⼯程类硕⼠ 专业学位论⽂基本要求》的.md"
+    },
+    {
+      "document_id": 88,
+      "title": "桂林电子科技大学本科课堂教学规范",
+      "source_sha256": "6ab3026026cc75a45cbbbdfe6347c1965bf7458c44bb24e5e8afe48395ce84be",
+      "indexed_source_sha256": "31c33e544613730c5a944047d33caa7b3ac5d25cecffc6eafb6dcb30fa20e825",
+      "category": "规章制度",
+      "chunks": 27,
+      "scope": {
+        "level": "undergraduate"
+      },
+      "source_path": "final-md/规章制度/教学制度/关于印发《桂林电子科技大学本科课堂教学规范》的通知（桂电教〔2023〕12号）.md"
+    },
+    {
+      "document_id": 89,
+      "title": "桂林电子科技大学通识教育专家委员会章程(试行)",
+      "source_sha256": "46c1eb7fbbc1bcac02820f3850a5d235dad56b8fb12359be2c7ae16347f25a75",
+      "indexed_source_sha256": "7ee6f16ca37e65786329b7139f7b9514df253e4a285440f5f96cfecf2b295b37",
+      "category": "规章制度",
+      "chunks": 18,
+      "scope": {},
+      "source_path": "final-md/规章制度/教学制度/关于印发《桂林电子科技大学通识教育 专家委员会章程（试行）》的通知（桂电教〔2023〕17号）.md"
+    },
+    {
+      "document_id": 90,
+      "title": "桂林电子科技大学非学历教育管理办法(试行)",
+      "source_sha256": "3f01d2e880dfd8b21ecc5c6fd209d67918cbd3f19ca1879f091e2b932a384ac6",
+      "indexed_source_sha256": "3867e7536a6a4679d6a9ab3d0ea6124ddbf89bc8b55fcb2184e86a2a1e92e927",
+      "category": "规章制度",
+      "chunks": 31,
+      "scope": {},
+      "source_path": "final-md/规章制度/教学制度/关于印发《桂林电子科技大学非学历教育管理办法（试行）》的通知（桂电〔2022〕27号）.md"
+    },
+    {
+      "document_id": 91,
+      "title": "桂林电子科技大学学科学术委员会工作办法(试行)",
+      "source_sha256": "bb05936a4e0c8b8cdecf87cddc3404871e4c832a86b5de70020ccee5ff657ba0",
+      "indexed_source_sha256": "3fb4f6d6d7b7038e85d7e73eea8b35afe124a43486a0103c00362b87f2703e99",
+      "category": "规章制度",
+      "chunks": 26,
+      "scope": {},
+      "source_path": "final-md/规章制度/科研制度/关于印发《桂林电子科技大学学科学术委员会工作办法（试行）》的通知（桂电科〔2023〕2号）.md"
+    },
+    {
+      "document_id": 92,
+      "title": "桂林电子科技大学科研诚信管理暂行办法",
+      "source_sha256": "643ea0c7880c305bab59d2fa1d6dc33f09d60d2d5460887f66811201ac835e6c",
+      "indexed_source_sha256": "ccbf867f9c3af298f73549a690f3fe7f3fae2b363946a1366f09557f6446865b",
+      "category": "规章制度",
+      "chunks": 20,
+      "scope": {},
+      "source_path": "final-md/规章制度/科研制度/关于印发《桂林电子科技大学科研诚信管理暂行办法》的通知（桂电科〔2022〕3号）.md"
+    }
+  ]
+}

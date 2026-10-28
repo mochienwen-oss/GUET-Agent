@@ -1,0 +1,74 @@
+# API 服务编排：MySQL + Qdrant + backend；生成统一使用 llm-api.json。
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: guet-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root123}
+      MYSQL_DATABASE: guet_chat
+      TZ: Asia/Shanghai
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p${MYSQL_ROOT_PASSWORD:-root123}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: guet-qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ..
+      dockerfile: deploy/backend.Dockerfile
+    container_name: guet-backend
+    environment:
+      MYSQL_URL: mysql+pymysql://root:${MYSQL_ROOT_PASSWORD:-root123}@mysql:3306/guet_chat?charset=utf8mb4
+      QDRANT_URL: http://qdrant:6333
+      LLM_API_CONFIG_PATH: ${LLM_API_CONFIG_PATH-/deploy/llm-api.json}
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+      ADMIN_USERNAME: ${ADMIN_USERNAME:-admin}
+      ADMIN_PASSWORD: ${ADMIN_PASSWORD:-admin123}
+      # embedding / reranker 走「挂在 /models 下的本地目录」，避免容器启动时联网下载 HF 模型
+      EMBED_MODEL: ${EMBED_MODEL:-/models/embedding}
+      RERANK_MODEL: ${RERANK_MODEL:-/models/rerank}
+      # 检索与精排默认走 CPU，生成由 API 提供
+      RERANK_DEVICE: cpu
+      HF_HOME: /huggingface
+      # 兜底：万一路径写成了 HF 模型名，仍走国内镜像
+      HF_ENDPOINT: ${HF_ENDPOINT:-https://hf-mirror.com}
+    ports:
+      - "${BACKEND_PORT:-8080}:8080"
+    volumes:
+      - ../backend:/app
+      - ./llm-api.json:/deploy/llm-api.json:ro
+      - ../frontend/dist:/frontend/dist
+      - ../scripts:/scripts:ro
+      - ../_kb:/kb:ro
+      - ${MODEL_PATH:-./models}:/models:ro
+      - hf_cache:/huggingface
+    command: uvicorn main:app --host 0.0.0.0 --port 8080
+    depends_on:
+      mysql:
+        condition: service_healthy
+      qdrant:
+        condition: service_started
+    restart: unless-stopped
+
+volumes:
+  mysql_data:
+  qdrant_data:
+  hf_cache:

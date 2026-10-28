@@ -1,0 +1,44 @@
+{
+  "version": "llm-api/1",
+  "active_profile": "aliyun",
+  "profiles": {
+    "aliyun": {
+      "protocol": "chat_completions",
+      "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "model": "deepseek-v4.1-flash-1017",
+      "api_key_env": "DASHSCOPE_API_KEY",
+      "timeout_seconds": 600,
+      "connect_timeout_seconds": 10,
+      "parameters": {"temperature": 0},
+      "structured_output": "json_object",
+      "chat_max_tokens_field": "max_tokens"
+    },
+    "deepseek": {
+      "protocol": "responses",
+      "base_url": "https://api.deepseek.com",
+      "model": "deepseek-flash",
+      "api_key_env": "DEEPSEEK_API_KEY",
+      "timeout_seconds": 300,
+      "connect_timeout_seconds": 10,
+      "parameters": {"temperature": 0, "reasoning": {"effort": "none"}},
+      "structured_output": "json_schema"
+    },
+    "openai-compatible-example": {
+      "protocol": "chat_completions",
+      "base_url": "https://example.invalid/v1",
+      "model": "REPLACE_WITH_MODEL_ID",
+      "api_key_env": "LLM_API_KEY",
+      "timeout_seconds": 120,
+      "connect_timeout_seconds": 10,
+      "parameters": {"temperature": 0},
+      "structured_output": "json_schema",
+      "chat_max_tokens_field": "max_tokens"
+    }
+  },
+  "tasks": {
+    "planning": {"max_output_tokens": 2048},
+    "title": {"max_output_tokens": 40},
+    "grading": {"max_output_tokens": 8},
+    "ppt": {"max_output_tokens": 393216}
+  }
+}

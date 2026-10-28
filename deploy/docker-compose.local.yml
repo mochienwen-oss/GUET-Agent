@@ -1,0 +1,7 @@
+# 本地 API 开发：不加载本地生成模型，沿用 MySQL / Qdrant 服务。
+# docker compose -f docker-compose.yml -f docker-compose.local.yml --env-file .env.local up -d
+services:
+  backend:
+    environment:
+      EMBED_DEVICE: cpu
+      RERANK_DEVICE: cpu

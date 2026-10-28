@@ -1,0 +1,83 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "search_regulations",
+      "description": "检索桂林电子科技大学的规章制度条文（学籍、学业预警、奖助、教务等）。当问题涉及学校规定、政策、办事流程时用它。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "检索用的问句或关键词"
+          }
+        },
+        "required": [
+          "query"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "query_course",
+      "description": "查询**某一个专业**里某门课程的定位：学分、学时、理论/实验学时、开课学期、所属模块、课程性质、支撑哪些毕业要求指标点。问句里**只涉及一个专业**时用它。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "major": {
+            "type": "string",
+            "description": "专业名称，如 计算机科学与技术"
+          },
+          "course": {
+            "type": "string",
+            "description": "课程名称，如 数据库系统原理"
+          }
+        },
+        "required": [
+          "major",
+          "course"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "compare_course",
+      "description": "对比**两个及以上专业**里同一门课程的学分、学时、开课学期、课程性质差异。问句里出现**多个专业名**，或问「哪个先开」「一样吗」「差多少」「对比」「都是必修吗」时用它 —— 不要退回 [query_course] 只查其中一个专业。",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "course": {
+            "type": "string"
+          },
+          "majors": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "要对比的专业列表，问句里提到的专业**一个都不能少**"
+          }
+        },
+        "required": [
+          "course",
+          "majors"
+        ]
+      }
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "query_empty_classroom",
+      "description": "查某个时间段**哪些教室空着**（找自习室、找空教室用）。问「哪里有空的教室」「哪间教室现在没人」「空教室怎么查」时用它。⚠️ 它**只给查询入口**，给不了实时名单（那要登录教务系统）—— 所以答的时候要如实说「查不到实时的」，别编教室名。问教室**借用/使用规定**时改用 [search_regulations]。",
+      "parameters": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    }
+  }
+]

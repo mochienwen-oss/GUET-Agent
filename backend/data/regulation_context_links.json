@@ -1,0 +1,95 @@
+{
+  "version": "regulation-context-links/1",
+  "documents": [
+    {
+      "title": "桂林电子科技大学“大学英语”课程替换及成绩认定办法(试行)",
+      "links": [
+        {
+          "from": [
+            "二、成绩认定",
+            "(三)认定程序"
+          ],
+          "to": [
+            "二、成绩认定",
+            "(一)认定条件"
+          ],
+          "quote": "达到以下要求者可申请认定",
+          "relation": "prerequisite"
+        }
+      ]
+    },
+    {
+      "title": "桂林电子科技大学本科生学业预警及学业退学实施细则",
+      "links": [
+        {
+          "from": [
+            "第二章学业预警"
+          ],
+          "to": [
+            "第四章附则",
+            "第十一条"
+          ],
+          "quote": "不执行退学预警和学业退学条款",
+          "relation": "applicability"
+        }
+      ]
+    },
+    {
+      "title": "桂林电子科技大学创新创业拓展课程学分认定管理办法",
+      "links": [
+        {
+          "from": [
+            "第三章认定标准"
+          ],
+          "block_type": "table",
+          "to": [
+            "第三章认定标准",
+            "第五条"
+          ],
+          "quote": "统计成绩(百分制)",
+          "relation": "measurement_basis"
+        }
+      ]
+    },
+    {
+      "title": "桂林电子科技大学普通高等教育学士学位授予工作实施细则(2025年修订)",
+      "source_sha256": "f809d8cdd68e56a1845185a6f61fbbc5d3aef52879cb561b84d8210809d4d779",
+      "source_path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学普通高等教育学士学位授予工作实施细则(2025年修订)》(桂电学位〔2025〕19号).md",
+      "raw_source_sha256": "4edbc5e495b162abcfd736a33d991f5327d97dcfc7e6b334aebc16be17602e96",
+      "links": [
+        {
+          "id": "degree-applicability-20261024-1",
+          "from": [
+            "第二章学士学位授予条件"
+          ],
+          "to": [
+            "第五章附则",
+            "第二十条"
+          ],
+          "quote": "本细则第二章仅适用于2022",
+          "relation": "applicability",
+          "required_for": "applicability"
+        }
+      ]
+    },
+    {
+      "title": "桂电教〔2021〕32 号--桂林电子科技大学本科生修读微专业、辅修专业、辅修学位管理办法",
+      "source_sha256": "c6bc29bd5a00339f2e5ac1c83b6e6eeeec8734d2154523e8434f195f8800e1bd",
+      "source_path": "final-md/规章制度/培养方案管理制度/桂电教〔2021〕32 号--桂林电子科技大学本科生修读微专业、辅修专业、辅修学位管理办法.md",
+      "raw_source_sha256": "5103149ef9f891fd1fee8379d644b07cf99389c108735e05a3f1aac5826ec12d",
+      "links": [
+        {
+          "id": "minor-applicability-20261024-1",
+          "from": [],
+          "to": [
+            "第七章附则",
+            "第二十六条"
+          ],
+          "quote": "本办法从2019 级学生开始施行",
+          "relation": "applicability",
+          "required_for": "applicability"
+        }
+      ]
+    }
+  ]
+}

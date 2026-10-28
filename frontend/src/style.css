@@ -1,0 +1,255 @@
+/* style.css —— 全站设计令牌与基线
+ *
+ * 令牌的**规范性来源**是 `frontend/DESIGN.md`（同目录）。改这里必须同时改那里，
+ * 否则两者漂移；各组件只许用这里的变量，不许写死色值。
+ *
+ * 取向：编辑感的后台工具 —— 排版承担层级、结构靠 1px 细线、色彩极度克制、
+ * 动效只在状态变化时出现。刻意避开"AI 生成界面"的通用形态（渐变、光晕、
+ * 通用卡片、等宽三连卡、卡片左侧彩色竖条）。
+ */
+
+/* Outfit —— 只覆盖西文与数字（Latin 子集，32KB）。中文由下面的回落栈接管，
+   不额外加载中文字体文件。 */
+@font-face {
+  font-family: 'Outfit';
+  src: url('/fonts/outfit-latin-wght.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ── 令牌：浅色 ── */
+:root {
+  /* ★ 让浏览器**自身的界面**（滚动条、光标、表单控件、buttontext）跟随主题。
+     漏掉它的后果是实测踩过的：深色模式下 <button> 仍吃 UA 的黑色 buttontext，
+     没有显式 color 的按钮直接看不见（ThemeToggle 就是这么消失的）。 */
+  color-scheme: light;
+
+  --bg: #f6f6f9;
+  --surface: #ffffff;
+  --surface-2: #eeeef4;
+  --surface-3: #e6e6ee;
+  --border: #e4e4ec;
+  --border-strong: #d2d2de;
+
+  --text: #191a20;
+  --text-muted: #62646f;
+  --text-faint: #74768a;
+
+  --accent: #5b53d8;
+  --accent-hover: #4b43c8;
+  --accent-soft: #ecebfb;
+  --accent-ink: #453dbb;
+  --accent-border: #d6d4f5;
+
+  --danger: #c2352f;
+  --success: #2f7d4f;
+  --warn: #8a5a12;
+
+  --shadow-md: 0 4px 16px -4px rgba(24, 26, 40, 0.1);
+  --shadow-lg: 0 16px 48px -12px rgba(24, 26, 40, 0.18);
+
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --fast: 140ms;
+  --base: 200ms;
+  --slow: 320ms;
+
+  --font: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC',
+    'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', Roboto, sans-serif;
+
+  --z-modal: 1000;
+}
+
+/* ── 令牌：深色（单独取值，不是浅色的机械反转） ── */
+[data-theme='dark'] {
+  color-scheme: dark;
+
+  --bg: #0e1014;
+  --surface: #161920;
+  --surface-2: #1d212a;
+  --surface-3: #242a35;
+  --border: #262b36;
+  --border-strong: #333a48;
+
+  --text: #e8e9ef;
+  --text-muted: #a2a6b4;
+  --text-faint: #8b90a0;
+
+  --accent: #8f88f0;
+  --accent-hover: #a29bf5;
+  --accent-soft: #21203a;
+  --accent-ink: #b3adfa;
+  --accent-border: #383663;
+
+  --danger: #e8736d;
+  --success: #5fbf8a;
+  --warn: #d8a45c;
+
+  --shadow-md: 0 4px 16px -4px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 48px -12px rgba(0, 0, 0, 0.6);
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.7;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--base) var(--ease), color var(--base) var(--ease);
+}
+
+/* 深色下加一档字重与行高 —— 浅色底反白需要更多"墨水"才等价可读 */
+[data-theme='dark'] body {
+  line-height: 1.75;
+  font-weight: 450;
+}
+
+::placeholder {
+  color: var(--text-faint);
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+}
+
+/* 颗粒：固定层、不吃事件、不参与滚动 —— 给纯平底一点物理质感 */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 900;
+  opacity: 0.026;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+[data-theme='dark'] body::after {
+  opacity: 0.038;
+}
+
+/* ── 交互基线 ── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--fast) var(--ease), border-color var(--fast) var(--ease),
+    color var(--fast) var(--ease), opacity var(--fast) var(--ease), transform var(--fast) var(--ease);
+}
+button:active:not(:disabled) {
+  transform: scale(0.985);
+}
+button:disabled {
+  cursor: not-allowed;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* 数字一律等宽 —— 向量数、相关度分数会实时刷新，比例数字会左右跳动 */
+.num,
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── 共享组件类 ──
+   `.ppt-action` 被 Chat.vue（输入岛里的「继续制作」）与 PptReview.vue（确认 / 下载）
+   同时使用。两者的 scoped 样式互不覆盖，所以它必须定义在全局这一处，否则会出现
+   两份会各自漂移的同名定义。 */
+.ppt-action {
+  min-height: 44px;
+  padding: 8px 16px;
+  border: 1px solid var(--accent-border);
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--accent-ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+.ppt-action:hover:not(:disabled) {
+  background: var(--surface-2);
+}
+.ppt-action:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.ppt-action:disabled {
+  opacity: 0.55;
+}
+
+/* 图标：统一线宽，颜色跟随 currentColor。
+   stroke / fill 是 SVG 继承属性，写在根 svg 上即可下传到 <use> 克隆出的图形。 */
+svg.ic {
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+
+/* 滚动条也纳入主题（浏览器自身的界面之一） */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 6px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--text-faint);
+  background-clip: content-box;
+}
+
+/* 尊重系统的"减少动态效果" */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

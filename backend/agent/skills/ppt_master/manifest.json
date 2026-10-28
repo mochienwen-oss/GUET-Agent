@@ -1,0 +1,19 @@
+{
+  "schema": "agent-skill/1",
+  "id": "ppt_master",
+  "name": "PPT Master",
+  "version": "6.7.3",
+  "entry": "SKILL.md",
+  "skill_dir": ".",
+  "license": "MIT",
+  "source": {
+    "repository": "https://github.com/hugohe3/ppt-master",
+    "commit": "78759bf62e9a1ef43e926ff9e50afa4cfe9a63cb",
+    "note": "内容取自上游 skills/ppt-master，原样未改；升级时整体替换本目录内容并同步 commit 与 version"
+  },
+  "capabilities": [
+    "presentation.generate",
+    "presentation.revise",
+    "presentation.export"
+  ]
+}

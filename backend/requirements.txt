@@ -1,0 +1,36 @@
+fastapi
+uvicorn[standard]
+sqlalchemy>=2.0
+pymysql
+cryptography
+python-multipart
+pydantic-settings
+httpx
+qdrant-client
+sentence-transformers
+torch
+pypdf
+pymupdf==1.28.2
+python-docx
+trafilatura
+beautifulsoup4>=4.13
+jieba
+# ★ 空教室查询（真接教务系统）用：解学校统一身份认证的验证码。
+#   该校 CAS 的验证码是**强制**的（/authserver/checkNeedCaptcha.htl 对任意用户名
+#   都返回 {"isNeed":true}），图是 80×30 四字符加干扰线 —— ddddocr 正对这类。
+#   ⚠️ 不能复用 backend/ocr_engine.py 的 RapidOCR：那是**文档级** OCR（检测框+识别），
+#      对这种扭曲验证码不对症。
+ddddocr
+# ★ 阶段1：PPT Agent 首个纵向切片所需（2026-10-12 钉版）
+#   ⚠️ 版本必须钉死：langchain-openai 的 convert_to_openai_tool 与
+#      max_tokens / max_completion_tokens 行为跨版本变过，不锁会在某次升级后
+#      **静默**改变发给 vLLM 的请求体。
+#   ⚠️ 已实测（pip install --dry-run）：这批依赖要求 websockets<17
+#      （基线 17.1 → 16.1.1），并升 anyio / idna。**装进共享环境会改动既有包**，
+#      故本阶段只在独立环境安装，基线环境逐字未动。详见实施记录。
+langgraph==1.2.14
+langchain-core==1.6.9
+langchain-openai==1.7.0
+python-pptx==1.0.2
+openpyxl>=3.1,<4
+pywin32>=306; sys_platform == "win32"

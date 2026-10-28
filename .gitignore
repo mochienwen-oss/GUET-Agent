@@ -1,0 +1,50 @@
+# Local credentials; examples remain versioned.
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local assistant state and working files.
+/.agents/
+/.workbuddy/
+/_work/
+/run/
+
+# Installed dependencies and generated builds.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+node_modules/
+/frontend/dist/
+
+# Local databases, model weights, and user workspaces.
+/qdrant_local/
+/model/*
+!/model/bm25_vocab.json
+!/model/bm25_vocab_phase5.json
+/backend/data/ppt_tasks/
+/backend/data/documents.active.availability.json
+/backend/data/*.lock
+/guet数据文件/
+/训练集/
+*.sqlite
+*.sqlite3
+*.db
+*.log
+*.pid
+
+# Editor and OS files.
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak

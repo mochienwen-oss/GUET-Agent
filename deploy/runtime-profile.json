@@ -1,0 +1,22 @@
+{
+  "version": "sai-runtime/1",
+  "qdrant_binary": "../qdrant-v1.10.1",
+  "storage": "storage",
+  "snapshots": "snapshots",
+  "collection": "structure_docs_20261019",
+  "bm25_vocab": "model/bm25_vocab.json",
+  "prompt": "backend/prompts/api-agent.txt",
+  "active_documents": "backend/data/documents.active.json",
+  "python": "/root/miniconda3/envs/deploy/bin/python",
+  "environment": {
+    "QDRANT_URL": "http://127.0.0.1:6333",
+    "EMBED_DEVICE": "cpu",
+    "RERANK_DEVICE": "cuda",
+    "RERANK_FP16": "true",
+    "INFERENCE_THREADS": "4",
+    "OMP_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "4",
+    "TOKENIZERS_PARALLELISM": "false"
+  }
+}

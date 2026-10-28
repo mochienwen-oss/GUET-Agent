@@ -1,0 +1,40 @@
+# backend-host.service —— FastAPI 后端（宿主机原生运行，不用 Docker）
+#
+# 安装：
+#   cp /root/guet-agent/deploy/backend-host.service /etc/systemd/system/
+#   systemctl daemon-reload
+#   systemctl enable --now backend-host
+#
+# 常用：
+#   systemctl status backend-host
+#   journalctl -u backend-host -f
+#   systemctl restart backend-host
+#
+# 说明：
+#   · 使用安装了 backend/requirements.txt 的 Python 环境；生成通过 llm-api.json 配置。
+#   · 前端不用单独启：main.py 检测到 ../frontend/dist 存在就会挂到 / 上，
+#     页面和 API 同在同一个端口。
+#   · 配置从 /root/guet-agent/backend/.env 读（pydantic-settings 的 env_file）。
+#     注意：真实环境变量优先级高于 .env —— 所以将来若改回 Docker，
+#     compose 的 environment 会正确覆盖这里的 .env，不会打架。
+#
+# ★ 端口为什么是 8800 而不是 8080（智星云专属坑）：
+#   智星云不给你任意端口，只开放固定的 6 个「内网端口」，且要到对应的「外网端口」：
+#       内网 8800 → 外网 25864      内网 8803 → 外网 25867
+#       内网 8801 → 外网 25865      内网 8804 → 外网 25868
+#       内网 8802 → 外网 25866      内网 8805 → 外网 25869
+#   服务监听 8080 的话，无论控制台怎么配都访问不到。先 `ss -tlnp | grep -E ':(880[0-5])'`
+#   挑一个空闲的，再同步改下面的 --port。
+[Unit]
+Description=GUET FastAPI backend (host, no docker)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/root/guet-agent/backend
+ExecStart=/root/venv-bk/bin/uvicorn main:app --host 0.0.0.0 --port 8800
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

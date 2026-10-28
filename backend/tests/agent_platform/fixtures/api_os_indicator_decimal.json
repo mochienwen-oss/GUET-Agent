@@ -1,0 +1,241 @@
+{
+  "provenance": {
+    "source": "_work/phase8/unified-api-live-20261024/remaining/returned/packets.json",
+    "source_sha256": "dce356d6926a618c695160aae96307a6a245014bed3f805a4d4d6ba8384a0f9a",
+    "turn_id": "new-15:target:0",
+    "packet_sha256": "a9f5fef4ee668e4a637051e7e47fe113bc92f012a91c50d153bb506450c88a98"
+  },
+  "packet": {
+    "evidence": [
+      {
+        "evidence_id": "3979a35b1ae2",
+        "title": "2025级人工智能专业培养方案(主修)",
+        "heading_path": [],
+        "text": "{\"college\": \"人工智能学院\", \"course\": {\"code\": \"220074\", \"credits\": 2.5, \"dept\": \"人工智能学院\", \"hours\": 40.0, \"is_core\": false, \"is_practice\": false, \"lab\": 8.0, \"module\": \"专业任选\", \"module_path\": [\"育课程\"], \"name\": \"操作系统\", \"nature\": \"专业任选\", \"practice\": null, \"required\": false, \"semester\": \"5\", \"theory\": 32.0}, \"indicators\": [{\"id\": \"2.2\", \"text\": \"能基于相关科学原理和数学模型方法正确表达人工智能领域复杂工程问题。\"}, {\"id\": \"5.2\", \"text\": \"能够正确使用计算机及其各种先进语言及工具。\"}], \"major\": \"人工智能\"}",
+        "scope": {
+          "cohort": "2025",
+          "major": "人工智能",
+          "level": "undergraduate",
+          "subject": "student"
+        },
+        "structured_kind": "query_course",
+        "retrieval_origin": "independent",
+        "evidence_role": "primary",
+        "role_basis": "structured_tool",
+        "human_ruling": {
+          "document_title": "2025级人工智能专业培养方案(主修)",
+          "field": "total_credits",
+          "value": 148,
+          "level": "undergraduate",
+          "cohort": "2025",
+          "reviewed_by": "human:owner",
+          "decision_date": "2026-10-20",
+          "source_md_sha256": "75c410072ac5cf0fd14f63f24c1fce257aa715520115d7d85d8f1f2685b4c3a8",
+          "note": "人工裁决：以标题/表格148学分为准；正文不低于147学分原样保留，不据此改写模块学分。"
+        },
+        "unit_ids": [
+          "3979a35b1ae2:major",
+          "3979a35b1ae2:college",
+          "3979a35b1ae2:course",
+          "3979a35b1ae2:r1",
+          "3979a35b1ae2:r2"
+        ]
+      }
+    ],
+    "evidence_units": [
+      {
+        "unit_id": "3979a35b1ae2:major",
+        "evidence_id": "3979a35b1ae2",
+        "unit_type": "course_field",
+        "text": "\"major\": \"人工智能\"",
+        "start": 423,
+        "end": 438,
+        "owner": {
+          "major": "人工智能",
+          "course": "操作系统"
+        },
+        "heading_path": []
+      },
+      {
+        "unit_id": "3979a35b1ae2:college",
+        "evidence_id": "3979a35b1ae2",
+        "unit_type": "course_field",
+        "text": "\"college\": \"人工智能学院\"",
+        "start": 1,
+        "end": 20,
+        "owner": {
+          "major": "人工智能",
+          "course": "操作系统"
+        },
+        "heading_path": []
+      },
+      {
+        "unit_id": "3979a35b1ae2:course",
+        "evidence_id": "3979a35b1ae2",
+        "unit_type": "course_field",
+        "text": "\"course\": {\"code\": \"220074\", \"credits\": 2.5, \"dept\": \"人工智能学院\", \"hours\": 40.0, \"is_core\": false, \"is_practice\": false, \"lab\": 8.0, \"module\": \"专业任选\", \"module_path\": [\"育课程\"], \"name\": \"操作系统\", \"nature\": \"专业任选\", \"practice\": null, \"required\": false, \"semester\": \"5\", \"theory\": 32.0}",
+        "start": 22,
+        "end": 297,
+        "owner": {
+          "major": "人工智能",
+          "course": "操作系统"
+        },
+        "heading_path": []
+      },
+      {
+        "unit_id": "3979a35b1ae2:r1",
+        "evidence_id": "3979a35b1ae2",
+        "unit_type": "indicator_record",
+        "text": "{\"id\": \"2.2\", \"text\": \"能基于相关科学原理和数学模型方法正确表达人工智能领域复杂工程问题。\"}",
+        "start": 314,
+        "end": 372,
+        "owner": {
+          "major": "人工智能",
+          "course": "操作系统"
+        },
+        "record_id": "2.2",
+        "record": {
+          "id": "2.2",
+          "text": "能基于相关科学原理和数学模型方法正确表达人工智能领域复杂工程问题。"
+        },
+        "heading_path": []
+      },
+      {
+        "unit_id": "3979a35b1ae2:r2",
+        "evidence_id": "3979a35b1ae2",
+        "unit_type": "indicator_record",
+        "text": "{\"id\": \"5.2\", \"text\": \"能够正确使用计算机及其各种先进语言及工具。\"}",
+        "start": 374,
+        "end": 420,
+        "owner": {
+          "major": "人工智能",
+          "course": "操作系统"
+        },
+        "record_id": "5.2",
+        "record": {
+          "id": "5.2",
+          "text": "能够正确使用计算机及其各种先进语言及工具。"
+        },
+        "heading_path": []
+      }
+    ],
+    "enumerations": [
+      {
+        "evidence_id": "3979a35b1ae2",
+        "records": [
+          {
+            "unit_id": "3979a35b1ae2:r1",
+            "record_id": "2.2"
+          },
+          {
+            "unit_id": "3979a35b1ae2:r2",
+            "record_id": "5.2"
+          }
+        ]
+      }
+    ],
+    "question_brief": {
+      "answer_type": "other",
+      "application_mode": "general_rule",
+      "reference_cohorts": [],
+      "subject_required": false,
+      "describes_reference": false,
+      "asked_relation": "other",
+      "target_entity": [
+        "人工智能",
+        "操作系统"
+      ],
+      "constraints": {
+        "level": "undergraduate",
+        "subject": "student",
+        "majors": [
+          "人工智能"
+        ],
+        "provenance": {
+          "subject": "owner_default",
+          "level": "owner_default",
+          "majors": "catalog_resolution"
+        }
+      },
+      "presupposition_cues": [],
+      "compared_terms": [],
+      "required_slots": [
+        "conclusion"
+      ],
+      "advisory_slots": []
+    },
+    "scope_rejections": [],
+    "source_revision": "bbed5731631e4176a9132fc49202144a",
+    "evidence_organization": {
+      "primary_ids": [
+        "3979a35b1ae2"
+      ],
+      "candidate_ids": [],
+      "supplementary_ids": [],
+      "background_ids": [],
+      "meaning": "primary只表示明确业务匹配或结构化工具结果，不证明本段能支持任意结论；candidate是待判断的检索候选。supplementary保留共同前提、适用范围或表格语义；background业务适用性尚未确认，不能直接套用。回答时保留会改变结论的条件；补充资料不能自动构成主要规定的例外；字段名不明时不得猜测单位。"
+    },
+    "question": "人工智能专业的操作系统课程支撑哪些毕业要求分解指标？",
+    "user_history": [],
+    "calculations": [],
+    "calculation_rules": [],
+    "scope_filtered": 0,
+    "retrieval_notes": [],
+    "evidence_state": {
+      "execution": [
+        {
+          "tool": "query_course",
+          "ok": true,
+          "status": "success"
+        }
+      ],
+      "state": "available",
+      "confirmed_complete": [
+        {
+          "kind": "enumeration",
+          "evidence_id": "3979a35b1ae2",
+          "record_ids": [
+            "2.2",
+            "5.2"
+          ]
+        }
+      ],
+      "target_records": [],
+      "gaps": [],
+      "source_revision": "bbed5731631e4176a9132fc49202144a",
+      "meaning": "available与success只说明取得或执行状态；完整性仅限confirmed_complete所列集合，非任意问题充分度。"
+    }
+  },
+  "drafts": [
+    {
+      "paragraphs": [
+        {
+          "text": "2025级人工智能专业（人工智能学院）的“操作系统”课程（课程代码220074，专业任选，第5学期，2.5学分、40学时，其中理论32学时、实验8学时）支撑以下毕业要求分解指标：2.2 能基于相关科学原理和数学模型方法正确表达人工智能领域复杂工程问题；5.2 能够正确使用计算机及其各种先进语言及工具。",
+          "unit_ids": [
+            "3979a35b1ae2:major",
+            "3979a35b1ae2:college",
+            "3979a35b1ae2:course",
+            "3979a35b1ae2:r1",
+            "3979a35b1ae2:r2"
+          ],
+          "calculation_ids": []
+        }
+      ]
+    },
+    {
+      "paragraphs": [
+        {
+          "text": "2025级人工智能专业（人工智能学院）的“操作系统”课程（课程代码220074，专业任选，第5学期，2.5学分、40学时，其中理论32学时、实验8学时）支撑以下毕业要求分解指标：2.2 能基于相关科学原理和数学模型方法正确表达人工智能领域复杂工程问题；5.2 能够正确使用计算机及其各种先进语言及工具。",
+          "unit_ids": [
+            "3979a35b1ae2:major",
+            "3979a35b1ae2:college",
+            "3979a35b1ae2:course",
+            "3979a35b1ae2:r1",
+            "3979a35b1ae2:r2"
+          ],
+          "calculation_ids": []
+        }
+      ]
+    }
+  ]
+}

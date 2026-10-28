@@ -1,0 +1,16 @@
+{
+  "version": "document-rulings/1",
+  "decisions": [
+    {
+      "document_title": "2025级人工智能专业培养方案(主修)",
+      "field": "total_credits",
+      "value": 148,
+      "level": "undergraduate",
+      "cohort": "2025",
+      "reviewed_by": "human:owner",
+      "decision_date": "2026-10-20",
+      "source_md_sha256": "75c410072ac5cf0fd14f63f24c1fce257aa715520115d7d85d8f1f2685b4c3a8",
+      "note": "人工裁决：以标题/表格148学分为准；正文不低于147学分原样保留，不据此改写模块学分。"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "version": "plan-field-rulings/1",
+  "corrections": [
+    {
+      "file": "2025级密码科学与技术专业培养方案(主修).md",
+      "source_md_sha256": "8142d1d653bca6f06aac4e4c641ae5f9cf97d2bf9c94d41cdfb23cb4dc89bfd9",
+      "course_code": "030246",
+      "course_name": "软件安全",
+      "field": "credits",
+      "source_value": "32",
+      "value": 2,
+      "reviewed_by": "human:owner",
+      "decision_date": "2026-10-20",
+      "reason": "用户核查确认：PDF也写32，是学校文件输入错误，特殊按2学分处理；源文档不改。"
+    },
+    {
+      "file": "2025级密码科学与技术专业培养方案(主修).md",
+      "source_md_sha256": "8142d1d653bca6f06aac4e4c641ae5f9cf97d2bf9c94d41cdfb23cb4dc89bfd9",
+      "course_code": "030245",
+      "course_name": "侧信道分析技术",
+      "field": "credits",
+      "source_value": "32",
+      "value": 2,
+      "reviewed_by": "human:owner",
+      "decision_date": "2026-10-20",
+      "reason": "用户核查确认：PDF也写32，是学校文件输入错误，特殊按2学分处理；源文档不改。"
+    }
+  ]
+}

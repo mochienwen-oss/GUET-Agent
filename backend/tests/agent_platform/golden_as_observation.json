@@ -1,0 +1,209 @@
+{
+ "note": "阶段2 · as_observation(status=None) 的逐字金标准；由 _work/s2_capture_golden.py 在改动前生成",
+ "cases": [
+  {
+   "name": "search_regulations",
+   "case": "blocks_2",
+   "result": {
+    "query": "转专业的条件",
+    "reason": "rerank_high",
+    "tier": "high",
+    "blocks": [
+     {
+      "source": "桂林电子科技大学本科生专业分流及转专业管理办法",
+      "heading_path": [
+       "第三章 转专业的条件与程序",
+       "第十二条"
+      ],
+      "text": "第十二条 学生有下列情形之一的，可以申请转专业：一、对拟转入专业有浓厚兴趣和专长的。",
+      "score": 0.9132
+     },
+     {
+      "source": "桂电教〔2020〕15号--关于印发《桂林电子科技大学本科生专业分流及转专业管理办法》的通知",
+      "heading_path": [
+       "第三章 转专业的条件与程序"
+      ],
+      "text": "第十三条 有下列情形之一的，不予申请转专业：一、入学未满一学期的。",
+      "score": 0.7704
+     }
+    ],
+    "sources": [
+     "桂林电子科技大学本科生专业分流及转专业管理办法",
+     "桂电教〔2020〕15号--关于印发《桂林电子科技大学本科生专业分流及转专业管理办法》的通知"
+    ],
+    "missing_files": []
+   },
+   "observation": "[1]《桂林电子科技大学本科生专业分流及转专业管理办法》 第三章 转专业的条件与程序 / 第十二条\n第十二条 学生有下列情形之一的，可以申请转专业：一、对拟转入专业有浓厚兴趣和专长的。\n\n[2]《桂林电子科技大学本科生专业分流及转专业管理办法》 第三章 转专业的条件与程序\n第十三条 有下列情形之一的，不予申请转专业：一、入学未满一学期的。"
+  },
+  {
+   "name": "search_regulations",
+   "case": "blocks_empty",
+   "result": {
+    "query": "食堂哪个窗口最好吃",
+    "reason": "low:gate",
+    "tier": "low",
+    "blocks": [],
+    "sources": [],
+    "missing_files": null
+   },
+   "observation": "未检索到相关资料。"
+  },
+  {
+   "name": "query_course",
+   "case": "card_ok",
+   "result": {
+    "major": "计算机科学与技术",
+    "college": "计算机与信息安全学院",
+    "duration": "四年",
+    "degree": "工学学士",
+    "total_credits": "170",
+    "module_credits": {
+     "通识必修课程": "46",
+     "专业核心课程": "31"
+    },
+    "course": {
+     "name": "数据库系统原理",
+     "code": "B0203010",
+     "nature": "必修",
+     "credits": "3.0",
+     "hours": "48",
+     "theory": "40",
+     "lab": "8",
+     "practice": null,
+     "semester": "5",
+     "required": true,
+     "dept": "计算机与信息安全学院",
+     "module": "专业核心课程",
+     "module_path": [
+      "专业教育课程",
+      "专业核心课程"
+     ],
+     "is_core": true,
+     "is_practice": false
+    },
+    "indicators": [
+     {
+      "id": "1.2",
+      "text": "能够运用数学与自然科学知识解决复杂工程问题"
+     }
+    ],
+    "match": "exact",
+    "alternatives": [],
+    "sources": {
+     "file": "2025级计算机科学与技术专业培养方案(主修).md",
+     "line": 142
+    }
+   },
+   "observation": "【课程定位卡】数据库系统原理 · 计算机科学与技术\n课程代码 B0203010｜课程性质 必修｜课程地位 核心课程\n学分 3.0｜总学时 48｜理论/实验/实践 40 / 8 / —\n开课学期 第5学期｜开课部门 计算机与信息安全学院｜所属模块 专业教育课程 › 专业核心课程\n所在专业：计算机与信息安全学院｜学制 四年｜工学学士｜毕业总学分 170\n各模块学分明细：通识必修课程 46、专业核心课程 31\n支撑的毕业要求指标点：\n  1.2 能够运用数学与自然科学知识解决复杂工程问题\n出处：《2025级计算机科学与技术专业培养方案(主修)》（培养方案）第 142 行"
+  },
+  {
+   "name": "query_course",
+   "case": "major_not_found",
+   "result": {
+    "error": "major_not_found",
+    "query": "某某专业",
+    "candidates": [
+     "计算机科学与技术",
+     "电子信息工程"
+    ]
+   },
+   "observation": "【未找到】major_not_found\n候选：计算机科学与技术、电子信息工程"
+  },
+  {
+   "name": "query_course",
+   "case": "course_not_found",
+   "result": {
+    "error": "course_not_found",
+    "major": "计算机科学与技术",
+    "query": "量子力学导论",
+    "candidates": [
+     "离散数学B",
+     "数据库系统原理"
+    ]
+   },
+   "observation": "【未找到】course_not_found\n候选：离散数学B、数据库系统原理"
+  },
+  {
+   "name": "compare_course",
+   "case": "rows_mixed",
+   "result": {
+    "course_query": "离散数学B",
+    "found_in": 1,
+    "rows": [
+     {
+      "major": "信息安全",
+      "college": "计算机与信息安全学院",
+      "found": true,
+      "course": {
+       "name": "离散数学B",
+       "credits": "4.0",
+       "hours": "64",
+       "semester": "3",
+       "nature": "必修",
+       "module": "学科基础课程",
+       "is_core": false
+      },
+      "match": "exact",
+      "sources": {
+       "file": "2025级信息安全专业培养方案(主修).md",
+       "line": 88
+      }
+     },
+     {
+      "major": "动画",
+      "college": "艺术与设计学院",
+      "found": false
+     }
+    ],
+    "sources": [
+     {
+      "file": "2025级信息安全专业培养方案(主修).md",
+      "line": 88
+     }
+    ],
+    "unresolved_majors": [
+     {
+      "major": "数字媒体艺术",
+      "candidates": [
+       "数字媒体技术"
+      ]
+     }
+    ]
+   },
+   "observation": "【跨专业对比】离散数学B\n\n| 专业 | 开课情况 | 学分 | 总学时 | 开课学期 | 课程性质 | 课程名 |\n| --- | --- | --- | --- | --- | --- | --- |\n| 信息安全 | 开设 | 4.0 | 64 | 3 | 必修 | 离散数学B |\n| 动画 | 未开设 | — | — | — | — | — |\n\n各专业来源：\n- 信息安全：《2025级信息安全专业培养方案(主修)》第 88 行\n\n以下专业名没对上：数字媒体艺术"
+  },
+  {
+   "name": "compare_course",
+   "case": "rows_empty",
+   "result": {
+    "course_query": "量子力学导论",
+    "found_in": 0,
+    "rows": [],
+    "sources": [],
+    "error": "course_not_found"
+   },
+   "observation": "【对比】没有找到可对比的专业。"
+  },
+  {
+   "name": "query_empty_classroom",
+   "case": "pointer",
+   "result": {
+    "kind": "pointer",
+    "entry_url": "https://bkjwtest.guet.edu.cn/student/home",
+    "room_free_path": "/student/for-std/room-free",
+    "need": "学号 + 统一身份认证密码",
+    "reason": "realtime_requires_login"
+   },
+   "observation": "【空教室查询】实时空教室名单我这边**查不到** —— 它要登录教务系统才看得到。\n查询入口：https://bkjwtest.guet.edu.cn/student/home\n登录后从菜单进「空闲教室」（页面地址 /student/for-std/room-free）。\n需要：学号 + 统一身份认证密码\n（教室**借用、使用管理的规定**是另一回事，那个我能直接查。）"
+  },
+  {
+   "name": "一些未注册的工具名",
+   "case": "json_fallback",
+   "result": {
+    "foo": "中文",
+    "n": 1
+   },
+   "observation": "{\"foo\": \"中文\", \"n\": 1}"
+  }
+ ]
+}

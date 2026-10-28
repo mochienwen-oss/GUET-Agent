@@ -1,0 +1,48 @@
+{
+  "version": "query_expansions/1",
+  "source": "backend/data/route_templates.json reviewed terms",
+  "entries": [
+    {
+      "canonical": "转专业",
+      "aliases": ["换专业", "换个专业", "专业分流"],
+      "domain": "student_status",
+      "reviewed": true
+    },
+    {
+      "canonical": "学业预警",
+      "aliases": ["预警", "学业退学", "退学试读", "试读期"],
+      "domain": "academic_warning",
+      "reviewed": true
+    },
+    {
+      "canonical": "大学英语课程认定",
+      "aliases": ["大学英语", "四级", "六级", "雅思", "托福"],
+      "domain": "english_credit",
+      "reviewed": true
+    },
+    {
+      "canonical": "微专业辅修",
+      "aliases": ["微专业", "辅修", "辅修学位", "辅修专业"],
+      "domain": "minor_program",
+      "reviewed": true
+    },
+    {
+      "canonical": "教职工进修",
+      "aliases": ["脱产学习", "脱产进修", "访学"],
+      "domain": "staff_training",
+      "reviewed": true
+    },
+    {
+      "canonical": "成果转化收益",
+      "aliases": ["成果转化收入", "技术交易金额", "技术作价金额"],
+      "domain": "title_evaluation",
+      "reviewed": true
+    },
+    {
+      "canonical": "创新创业拓展课程",
+      "aliases": ["创新创业拓展", "拓展课程", "学科竞赛"],
+      "domain": "innovation_credit",
+      "reviewed": true
+    }
+  ]
+}

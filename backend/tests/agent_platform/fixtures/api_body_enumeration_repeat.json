@@ -1,0 +1,271 @@
+{
+  "provenance": {
+    "source": "_work/phase8/api-writer-review-20261024/returned/answers.json",
+    "case_id": "ai-05",
+    "packet_sha256": "eb60435548e2c5ddb7fd26e9a16c46ceb2a6b77ca7bfcecfc358561f2bbacdc3",
+    "original_final_status": "failed",
+    "original_error": "完整枚举记录未唯一交付：2.1"
+  },
+  "packet": {
+    "evidence": [
+      {
+        "evidence_id": "1801373d6a02",
+        "title": "2025级人工智能专业培养方案(主修)",
+        "heading_path": [],
+        "text": "{\"college\": \"人工智能学院\", \"course\": {\"code\": \"220015\", \"credits\": 3.0, \"dept\": \"人工智能学院\", \"hours\": 48.0, \"is_core\": false, \"is_practice\": false, \"lab\": 16.0, \"module\": \"专业类基础课程\", \"module_path\": [\"学科基础课程\", \"专业类基础课程\"], \"name\": \"计算机网络\", \"nature\": \"必修\", \"practice\": null, \"required\": true, \"semester\": \"5\", \"theory\": 32.0}, \"indicators\": [{\"id\": \"2.1\", \"text\": \"能运用相关科学原理,识别和判断人工智能领域复杂工程问题的关键环节。\"}, {\"id\": \"3.1\", \"text\": \"具有设计开发人工智能相关领域的功能模块和系统的能力。\"}, {\"id\": \"5.1\", \"text\": \"具有选择和使用信息技术工具和检索工具全方位多渠道获取人工智能领域相关信息的能力,并理解其局限性。\"}], \"major\": \"人工智能\"}",
+        "scope": {
+          "cohort": "2025",
+          "major": "人工智能",
+          "level": "undergraduate",
+          "subject": "student"
+        },
+        "structured_kind": "query_course",
+        "retrieval_origin": "independent",
+        "evidence_role": "primary",
+        "role_basis": "structured_tool",
+        "human_ruling": {
+          "document_title": "2025级人工智能专业培养方案(主修)",
+          "field": "total_credits",
+          "value": 148,
+          "level": "undergraduate",
+          "cohort": "2025",
+          "reviewed_by": "human:owner",
+          "decision_date": "2026-10-20",
+          "source_md_sha256": "75c410072ac5cf0fd14f63f24c1fce257aa715520115d7d85d8f1f2685b4c3a8",
+          "note": "人工裁决：以标题/表格148学分为准；正文不低于147学分原样保留，不据此改写模块学分。"
+        },
+        "unit_ids": [
+          "1801373d6a02:major",
+          "1801373d6a02:college",
+          "1801373d6a02:course",
+          "1801373d6a02:r1",
+          "1801373d6a02:r2",
+          "1801373d6a02:r3"
+        ]
+      }
+    ],
+    "evidence_units": [
+      {
+        "unit_id": "1801373d6a02:major",
+        "evidence_id": "1801373d6a02",
+        "unit_type": "course_field",
+        "text": "\"major\": \"人工智能\"",
+        "start": 519,
+        "end": 534,
+        "owner": {
+          "major": "人工智能",
+          "course": "计算机网络"
+        },
+        "heading_path": []
+      },
+      {
+        "unit_id": "1801373d6a02:college",
+        "evidence_id": "1801373d6a02",
+        "unit_type": "course_field",
+        "text": "\"college\": \"人工智能学院\"",
+        "start": 1,
+        "end": 20,
+        "owner": {
+          "major": "人工智能",
+          "course": "计算机网络"
+        },
+        "heading_path": []
+      },
+      {
+        "unit_id": "1801373d6a02:course",
+        "evidence_id": "1801373d6a02",
+        "unit_type": "course_field",
+        "text": "\"course\": {\"code\": \"220015\", \"credits\": 3.0, \"dept\": \"人工智能学院\", \"hours\": 48.0, \"is_core\": false, \"is_practice\": false, \"lab\": 16.0, \"module\": \"专业类基础课程\", \"module_path\": [\"学科基础课程\", \"专业类基础课程\"], \"name\": \"计算机网络\", \"nature\": \"必修\", \"practice\": null, \"required\": true, \"semester\": \"5\", \"theory\": 32.0}",
+        "start": 22,
+        "end": 313,
+        "owner": {
+          "major": "人工智能",
+          "course": "计算机网络"
+        },
+        "heading_path": []
+      },
+      {
+        "unit_id": "1801373d6a02:r1",
+        "evidence_id": "1801373d6a02",
+        "unit_type": "indicator_record",
+        "text": "{\"id\": \"2.1\", \"text\": \"能运用相关科学原理,识别和判断人工智能领域复杂工程问题的关键环节。\"}",
+        "start": 330,
+        "end": 388,
+        "owner": {
+          "major": "人工智能",
+          "course": "计算机网络"
+        },
+        "record_id": "2.1",
+        "record": {
+          "id": "2.1",
+          "text": "能运用相关科学原理,识别和判断人工智能领域复杂工程问题的关键环节。"
+        },
+        "heading_path": []
+      },
+      {
+        "unit_id": "1801373d6a02:r2",
+        "evidence_id": "1801373d6a02",
+        "unit_type": "indicator_record",
+        "text": "{\"id\": \"3.1\", \"text\": \"具有设计开发人工智能相关领域的功能模块和系统的能力。\"}",
+        "start": 390,
+        "end": 441,
+        "owner": {
+          "major": "人工智能",
+          "course": "计算机网络"
+        },
+        "record_id": "3.1",
+        "record": {
+          "id": "3.1",
+          "text": "具有设计开发人工智能相关领域的功能模块和系统的能力。"
+        },
+        "heading_path": []
+      },
+      {
+        "unit_id": "1801373d6a02:r3",
+        "evidence_id": "1801373d6a02",
+        "unit_type": "indicator_record",
+        "text": "{\"id\": \"5.1\", \"text\": \"具有选择和使用信息技术工具和检索工具全方位多渠道获取人工智能领域相关信息的能力,并理解其局限性。\"}",
+        "start": 443,
+        "end": 516,
+        "owner": {
+          "major": "人工智能",
+          "course": "计算机网络"
+        },
+        "record_id": "5.1",
+        "record": {
+          "id": "5.1",
+          "text": "具有选择和使用信息技术工具和检索工具全方位多渠道获取人工智能领域相关信息的能力,并理解其局限性。"
+        },
+        "heading_path": []
+      }
+    ],
+    "enumerations": [
+      {
+        "evidence_id": "1801373d6a02",
+        "records": [
+          {
+            "unit_id": "1801373d6a02:r1",
+            "record_id": "2.1"
+          },
+          {
+            "unit_id": "1801373d6a02:r2",
+            "record_id": "3.1"
+          },
+          {
+            "unit_id": "1801373d6a02:r3",
+            "record_id": "5.1"
+          }
+        ]
+      }
+    ],
+    "question_brief": {
+      "answer_type": "other",
+      "application_mode": "general_rule",
+      "reference_cohorts": [],
+      "subject_required": false,
+      "describes_reference": false,
+      "asked_relation": "other",
+      "target_entity": [
+        "人工智能",
+        "计算机网络"
+      ],
+      "constraints": {
+        "level": "undergraduate",
+        "subject": "student",
+        "majors": [
+          "人工智能"
+        ],
+        "provenance": {
+          "subject": "owner_default",
+          "level": "owner_default",
+          "majors": "catalog_resolution"
+        }
+      },
+      "presupposition_cues": [],
+      "compared_terms": [],
+      "required_slots": [
+        "conclusion"
+      ],
+      "advisory_slots": []
+    },
+    "scope_rejections": [],
+    "source_revision": "bbed5731631e4176a9132fc49202144a",
+    "evidence_organization": {
+      "primary_ids": [
+        "1801373d6a02"
+      ],
+      "candidate_ids": [],
+      "supplementary_ids": [],
+      "background_ids": [],
+      "meaning": "primary只表示明确业务匹配或结构化工具结果，不证明本段能支持任意结论；candidate是待判断的检索候选。supplementary保留共同前提、适用范围或表格语义；background业务适用性尚未确认，不能直接套用。回答时保留会改变结论的条件；补充资料不能自动构成主要规定的例外；字段名不明时不得猜测单位。"
+    },
+    "question": "人工智能专业的计算机网络课程支撑哪些毕业要求分解指标？",
+    "user_history": [],
+    "calculations": [],
+    "calculation_rules": [],
+    "scope_filtered": 0,
+    "retrieval_notes": [],
+    "evidence_state": {
+      "execution": [
+        {
+          "tool": "query_course",
+          "ok": true,
+          "status": "success"
+        }
+      ],
+      "state": "available",
+      "confirmed_complete": [
+        {
+          "kind": "enumeration",
+          "evidence_id": "1801373d6a02",
+          "record_ids": [
+            "2.1",
+            "3.1",
+            "5.1"
+          ]
+        }
+      ],
+      "target_records": [],
+      "gaps": [],
+      "source_revision": "bbed5731631e4176a9132fc49202144a",
+      "meaning": "available与success只说明取得或执行状态；完整性仅限confirmed_complete所列集合，非任意问题充分度。"
+    }
+  },
+  "draft": {
+    "paragraphs": [
+      {
+        "text": "依据2025级人工智能专业（主修）培养方案，人工智能学院开设的计算机网络课程（课程代码220015，必修，3学分，第5学期，共48学时，其中理论32学时、实验16学时，属学科基础课程中的专业类基础课程）支撑以下毕业要求分解指标：2.1、3.1、5.1。",
+        "unit_ids": [
+          "1801373d6a02:major",
+          "1801373d6a02:college",
+          "1801373d6a02:course",
+          "1801373d6a02:r1",
+          "1801373d6a02:r2",
+          "1801373d6a02:r3"
+        ],
+        "calculation_ids": []
+      },
+      {
+        "text": "指标2.1：能运用相关科学原理，识别和判断人工智能领域复杂工程问题的关键环节。",
+        "unit_ids": [
+          "1801373d6a02:r1"
+        ],
+        "calculation_ids": []
+      },
+      {
+        "text": "指标3.1：具有设计开发人工智能相关领域的功能模块和系统的能力。",
+        "unit_ids": [
+          "1801373d6a02:r2"
+        ],
+        "calculation_ids": []
+      },
+      {
+        "text": "指标5.1：具有选择和使用信息技术工具和检索工具全方位多渠道获取人工智能领域相关信息的能力，并理解其局限性。",
+        "unit_ids": [
+          "1801373d6a02:r3"
+        ],
+        "calculation_ids": []
+      }
+    ]
+  }
+}

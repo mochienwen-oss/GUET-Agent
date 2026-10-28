@@ -1,0 +1,874 @@
+{
+  "documents": [
+    {
+      "document_id": 1,
+      "path": "final-md/培养方案/2025级交通工程专业培养方案(主修).md",
+      "sha256": "fdb6c27a5851a45efc0a760b1f09e632d4527b62196edc8373f8bf49598c6994",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级交通工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 2,
+      "path": "final-md/培养方案/2025级产品设计专业培养方案(主修).md",
+      "sha256": "5aaa37cd4696b6652b9bc89524ae150f7c03b65f110682c5f8d5ec9ea14d68d6",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级产品设计专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 3,
+      "path": "final-md/培养方案/2025级人力资源管理专业培养方案(主修).md",
+      "sha256": "a1a298652299b75ce3f0a4b8e547e3b107714327a866ed3ba190aff6ecbf4d28",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级人力资源管理专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 4,
+      "path": "final-md/培养方案/2025级人工智能专业培养方案(主修).md",
+      "sha256": "3203eb9cd79212cf07463dd1f574674d5a6481d256bec55e743b079e27c2a0e5",
+      "local_source": "D:\\guet-agent-微调\\_work\\phase8\\ai-structure-repair-v1\\output\\2025级人工智能专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 5,
+      "path": "final-md/培养方案/2025级会计学专业培养方案(主修).md",
+      "sha256": "fd56303d56945155d05054fee38e51e3fb91f784bdd1fc507ffb5ee59e2cbd7f",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级会计学专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 6,
+      "path": "final-md/培养方案/2025级信息与计算科学专业培养方案(主修).md",
+      "sha256": "24b30298bb0e59b3226d91c859bbaeb259c4fb117c5b9016f77f48f7fd538cfe",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级信息与计算科学专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 7,
+      "path": "final-md/培养方案/2025级信息安全专业培养方案(主修).md",
+      "sha256": "3a035b51fd287c826f3931fa34c883a9b99db50f72f20c33c5fc9fdb9a0f6789",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级信息安全专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 8,
+      "path": "final-md/培养方案/2025级信息管理与信息系统专业培养方案(主修).md",
+      "sha256": "dc49fc52191859938751b1a18e7321337a0185f3858aa615ec22676ef23390c9",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级信息管理与信息系统专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 9,
+      "path": "final-md/培养方案/2025级光电信息材料与器件专业培养方案(主修).md",
+      "sha256": "888a4f2df77db887a139835a73e317a7860d3282d256af4eaeae52b500befd93",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级光电信息材料与器件专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 10,
+      "path": "final-md/培养方案/2025级光电信息科学与工程专业培养方案(主修).md",
+      "sha256": "ee0f23596db4419d425bf89439a40ca7cf9eb793393f81b3fccc8de6c3e9b30b",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级光电信息科学与工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 11,
+      "path": "final-md/培养方案/2025级动画专业培养方案(主修).md",
+      "sha256": "c9af5ba304b7a6423fd5b6701a6e50e7eb7a26c1843c0521a302519dbbdb60ee",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级动画专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 12,
+      "path": "final-md/培养方案/2025级国际经贸规则专业培养方案(主修).md",
+      "sha256": "3f3799e624c76548880b06a56db9c2e7c322dac28f2f00eb4609d87a716f2b2a",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级国际经贸规则专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 13,
+      "path": "final-md/培养方案/2025级土木工程专业培养方案(主修).md",
+      "sha256": "e3f55471459158a2365bff675b3d437f98cc4d0e4ee814013a7ec153b027c50c",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级土木工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 14,
+      "path": "final-md/培养方案/2025级密码科学与技术专业培养方案(主修).md",
+      "sha256": "8142d1d653bca6f06aac4e4c641ae5f9cf97d2bf9c94d41cdfb23cb4dc89bfd9",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级密码科学与技术专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 15,
+      "path": "final-md/培养方案/2025级导航工程专业培养方案(主修).md",
+      "sha256": "412d27cc62fd50bb549eecec22a237e12028801f444176034b0466371b9fd52c",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级导航工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 16,
+      "path": "final-md/培养方案/2025级工业工程专业培养方案(主修).md",
+      "sha256": "9517688342765475a1e745e72ec5e7ca0e4cfcfea38736a467c4829f51304c2d",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级工业工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 17,
+      "path": "final-md/培养方案/2025级市场营销专业培养方案(主修).md",
+      "sha256": "f32b02b76c580ff46a2ceb7c5c5d5d993856e2e308d3d0840b9f670559b01eef",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级市场营销专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 18,
+      "path": "final-md/培养方案/2025级应用统计学专业培养方案(主修).md",
+      "sha256": "53ebcb0aa9f8d3dbb9cd1261346a3409b26d065e97459052c5d68f8e8967c600",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级应用统计学专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 19,
+      "path": "final-md/培养方案/2025级建筑环境与能源应用工程专业培养方案(主修).md",
+      "sha256": "b4a5cc75b70731906e17c82d9a85f0edbf38b77968500fd44a0bf55d2b8aa274",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级建筑环境与能源应用工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 20,
+      "path": "final-md/培养方案/2025级微电子科学与工程专业培养方案(主修).md",
+      "sha256": "b762ceab4e3e57082f63b814944d56635882ac6ede7d202d31d38ff64d427377",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级微电子科学与工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 21,
+      "path": "final-md/培养方案/2025级数字媒体技术(中外合作办学)培养方案.md",
+      "sha256": "cecbb73c5047142da84f9841b3db2c9bd2276b7404855b515709a6ae6b9f70b9",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级数字媒体技术(中外合作办学)培养方案.md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 22,
+      "path": "final-md/培养方案/2025级数字经济专业培养方案(主修).md",
+      "sha256": "5abeb0484dcb63516ce708368866d58191aa39947e317da6cc780809c8fba6fa",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级数字经济专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 23,
+      "path": "final-md/培养方案/2025级数学与应用数学专业培养方案(主修).md",
+      "sha256": "57d332655b1250ba21e22ef455a0b013b965cf2846627b4ef2950230f771edd7",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级数学与应用数学专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 24,
+      "path": "final-md/培养方案/2025级数据科学与大数据技术专业培养方案(主修).md",
+      "sha256": "6221f8bc05bd39453bc070eb5812af70d8097d7f0dda7666e2643e841ef54616",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级数据科学与大数据技术专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 25,
+      "path": "final-md/培养方案/2025级新能源材料与器件专业培养方案(主修).md",
+      "sha256": "1c02ea5250de020e64c0926d55927486cc3e20a5b6fef62ccc64b54f692e9734",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级新能源材料与器件专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 26,
+      "path": "final-md/培养方案/2025级日语专业培养方案(主修).md",
+      "sha256": "646c05275eb7ff7283f48ab253c35001f9e5c3ec71f05a0b1b9e5b116f00e95c",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级日语专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 27,
+      "path": "final-md/培养方案/2025级智慧交通专业培养方案(主修).md",
+      "sha256": "abab60ea035c7c8f30a7f58e6471359eefde81b8b0b0ae4cd539d504e216f414",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级智慧交通专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 28,
+      "path": "final-md/培养方案/2025级智能制造工程专业培养方案(主修).md",
+      "sha256": "bd23353224023d49454678b8ec53c64d931b31083dc7aa14e0945f3bed53be47",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级智能制造工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 29,
+      "path": "final-md/培养方案/2025级智能感知工程专业培养方案(主修).md",
+      "sha256": "c0a62442a56b7c8bcc18dd9eb3e93884affd442dbd972b5fc23b4ced78e35abf",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级智能感知工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 30,
+      "path": "final-md/培养方案/2025级智能科学与技术专业培养方案(主修).md",
+      "sha256": "b0751b618244b5fd28eab26a6c1d8940900c5264bdc19549d6104a8fffcf0af6",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级智能科学与技术专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 31,
+      "path": "final-md/培养方案/2025级智能装备与系统专业培养方案(主修).md",
+      "sha256": "5d1a96488b37fd238cab5e2bb93491464d7b24037cc564d13ff8fd1439529a9a",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级智能装备与系统专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 32,
+      "path": "final-md/培养方案/2025级智能视觉工程专业培养方案(主修).md",
+      "sha256": "cdd6b31a4eb5c1f3fa9de8f09d573599514654dddca2861c9cc6321907bab30c",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级智能视觉工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 33,
+      "path": "final-md/培养方案/2025级服装与服饰设计专业培养方案(主修).md",
+      "sha256": "0c4b7e5442c9ef9108b9281a54fc8185964a905bc93498b3837baf6d3e9e47a7",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级服装与服饰设计专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 34,
+      "path": "final-md/培养方案/2025级机器人工程专业培养方案(主修).md",
+      "sha256": "8ca39037be7d94661a144ec9dbc43eb99ad3bb01870d34570a5d8bab286e01a8",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级机器人工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 35,
+      "path": "final-md/培养方案/2025级机械电子工程专业培养方案(主修).md",
+      "sha256": "38a3dc585ea2496c8a87cc51374c87219eaec2034b1f21d515bfe7961612f348",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级机械电子工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 36,
+      "path": "final-md/培养方案/2025级机械设计制造及其自动化专业培养方案(主修).md",
+      "sha256": "2ba5de54ce7c093b582ba66c12bc2c6b8c2de9eac959278702961c77acb8d544",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级机械设计制造及其自动化专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 37,
+      "path": "final-md/培养方案/2025级材料成型及控制工程专业培养方案(主修).md",
+      "sha256": "bb8530ff9ae76e7cfbd871dc7bc3fcbd306e3d205638ae9b7afc28e6aeee56b4",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级材料成型及控制工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 38,
+      "path": "final-md/培养方案/2025级材料科学与工程专业培养方案(主修).md",
+      "sha256": "8e92272f42f7871771a13e16a032ecb6aff5d907f2424b5dca12754f48d1d364",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级材料科学与工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 39,
+      "path": "final-md/培养方案/2025级汉语国际教育专业培养方案(主修).md",
+      "sha256": "c0fa9f23de3aba590d32e94e06f7c36045ae21147b94b58f8e8a2103c1d626e6",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级汉语国际教育专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 40,
+      "path": "final-md/培养方案/2025级法学专业培养方案(主修).md",
+      "sha256": "0292dee7563c4388316b2bae9defe6821b163daa1db8451047e84891b7e50e4e",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级法学专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 41,
+      "path": "final-md/培养方案/2025级测控技术与仪器专业培养方案(主修).md",
+      "sha256": "381e7a2c22a2a778e9cd8c3e2c307bd737a6de95dc13cd17aea4f604b6f6b444",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级测控技术与仪器专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 42,
+      "path": "final-md/培养方案/2025级物联网工程专业培养方案(主修).md",
+      "sha256": "85d36f75eec08317f28a029d3f1167e5d047dd07bd17ef8a9157438763f2d3db",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级物联网工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 43,
+      "path": "final-md/培养方案/2025级环境工程专业培养方案(主修).md",
+      "sha256": "8b911c1a0458124f6e6582928a0806b6e8aac3477f9fe02971762b4df5e49a2a",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级环境工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 44,
+      "path": "final-md/培养方案/2025级环境设计专业培养方案(主修).md",
+      "sha256": "fad3321d70f13af1fd5f2140c1bb9a08dd4ed2d400a1e9acca229d46f54ca415",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级环境设计专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 45,
+      "path": "final-md/培养方案/2025级生物医学工程专业培养方案(主修).md",
+      "sha256": "facb2f5da79443af38a472a3c4e6ab5de3073285f4f775bc19db5b5dc96328eb",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级生物医学工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 46,
+      "path": "final-md/培养方案/2025级电子信息工程专业培养方案(主修).md",
+      "sha256": "d8c4f9096fbe944570876dc15ebe55927695e5966c16094f668bf9d40dcd68e6",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级电子信息工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 47,
+      "path": "final-md/培养方案/2025级电子商务专业培养方案(主修).md",
+      "sha256": "3e1723598f86d1dfd9995cda7bfad91f2bab442993ea14b4f94bc736c46cc8e6",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级电子商务专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 48,
+      "path": "final-md/培养方案/2025级电子封装技术专业培养方案(主修).md",
+      "sha256": "38bd3c6ddfa99a9f9106a3b00990a61431bb803388230d305861a2dae9ae6608",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级电子封装技术专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 49,
+      "path": "final-md/培养方案/2025级电子科学与技术专业培养方案(主修).md",
+      "sha256": "39452b84c6f05b616f9158ebb77ffdead92bfb5f88b4d3311801ee9d0e7e5a1f",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级电子科学与技术专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 50,
+      "path": "final-md/培养方案/2025级电气工程及其自动化专业培养方案(主修).md",
+      "sha256": "0e8615e65af4bb1eb0c1822cefdbef03d8b4b0f9611fea65ae05cb20558aedf6",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级电气工程及其自动化专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 51,
+      "path": "final-md/培养方案/2025级知识产权专业培养方案(主修).md",
+      "sha256": "fc16c03fee6db18fba585562343b16e991fd9977519e83b9e198632695ad3bd5",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级知识产权专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 52,
+      "path": "final-md/培养方案/2025级网络空间安全专业培养方案(主修).md",
+      "sha256": "ad3097a619a43c5d1609a8a93e2e00f08e217c3c1e5dabd4b6218bac03e2ca4b",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级网络空间安全专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 53,
+      "path": "final-md/培养方案/2025级自动化专业培养方案(主修) .md",
+      "sha256": "44657746e7257b500695f837d55d56a73d0d408e59bfb841ff179a829dd5c8a9",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级自动化专业培养方案(主修) .md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 54,
+      "path": "final-md/培养方案/2025级英语专业培养方案(主修).md",
+      "sha256": "3cec75d20f580de6d29033c4958248e719b5b0a74cd8ec8e11ec1f7b1d994aef",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级英语专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 55,
+      "path": "final-md/培养方案/2025级表演专业培养方案(主修).md",
+      "sha256": "07e0588f904c0efaa3c9df39cff430afd172e37e0937137c3ba6c6f30bc79814",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级表演专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 56,
+      "path": "final-md/培养方案/2025级视觉传达设计专业培养方案(主修).md",
+      "sha256": "6d78706318d7a5aadd18c745e0a8ec78c64a4f05a3d092d79ba665353eca4697",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级视觉传达设计专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 57,
+      "path": "final-md/培养方案/2025级计算机科学与技术专业培养方案(主修).md",
+      "sha256": "aed1ae0507cb6ac36e466cf9afb7d5e302c2335a60e8bbf0188e140125136fc3",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级计算机科学与技术专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 58,
+      "path": "final-md/培养方案/2025级财务管理专业培养方案(主修).md",
+      "sha256": "0a8a16b501711aba6a5f5b053f63d926f8c25b6ee30f257aa675e609a00526ad",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级财务管理专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 59,
+      "path": "final-md/培养方案/2025级车辆工程专业培养方案(主修).md",
+      "sha256": "281e3ae4316755b5a15f547e097efd44c834bf855ba362058788646929dc5be3",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级车辆工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 60,
+      "path": "final-md/培养方案/2025级软件工程专业培养方案(主修).md",
+      "sha256": "a194dca76900266a7bcc63a8504a18621e5d4471215803135a5e5be5d222bfeb",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级软件工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 61,
+      "path": "final-md/培养方案/2025级通信工程专业培养方案(主修).md",
+      "sha256": "16bc9227fae1a4f7d7482db2391a2cc9a167c1abdec2cdee2fcaf25e26b95552",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级通信工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 62,
+      "path": "final-md/培养方案/2025级金融工程专业培养方案(主修).md",
+      "sha256": "777d9a482a025f833d6855dfed32ba5032d08542f0b16bbe9f2af7f5884c5b6b",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级金融工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 63,
+      "path": "final-md/培养方案/2025级高分子材料与工程专业培养方案(主修).md",
+      "sha256": "73ce82b92537cacbeab7fe488a25af487dd03bbcd73e5dc4626bd370264e8b71",
+      "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级高分子材料与工程专业培养方案(主修).md",
+      "category": "培养方案"
+    },
+    {
+      "document_id": 64,
+      "path": "final-md/智能〔2026〕14号--关于印发《人工智能学院本科生综合素质测评实施办法》的通知.md",
+      "sha256": "b5d66f1351f524acfcb1f4bee75860b305b0539088c14b3793bd7b39fc635e9d",
+      "local_source": "D:\\guet-agent-微调\\final-md\\智能〔2026〕14号--关于印发《人工智能学院本科生综合素质测评实施办法》的通知.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 65,
+      "path": "final-md/桂电教〔2026〕13号--关于印发《桂林电子科技大学创新创业拓展课程学分认定管理办法》的通知.md",
+      "sha256": "b81ced8345e96410708e13cf5a066658d30a40eb9748ed3286ab60747a43dfd8",
+      "local_source": "D:\\guet-agent-微调\\final-md\\桂电教〔2026〕13号--关于印发《桂林电子科技大学创新创业拓展课程学分认定管理办法》的通知.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 66,
+      "path": "final-md/规章制度/人事制度/关于印发《桂林电子科技大学博士后管理工作实施办法》的通知（桂电人〔2022〕2号）.md",
+      "sha256": "75f65d6f610516a63511e7e3a9d1aca7cfaff081156a4dc5ae5be85ee6470c14",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\人事制度\\关于印发《桂林电子科技大学博士后管理工作实施办法》的通知（桂电人〔2022〕2号）.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 67,
+      "path": "final-md/规章制度/人事制度/关于印发《桂林电子科技大学教职工进修管理办法》的通知（桂电人〔2023〕20号）.md",
+      "sha256": "d88ebd1bf42528471ee96daa912395397ace39d24b6d8eb37fabd0202dcad61d",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\人事制度\\关于印发《桂林电子科技大学教职工进修管理办法》的通知（桂电人〔2023〕20号）.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 68,
+      "path": "final-md/规章制度/人事制度/关于印发《桂林电子科技大学高等学校社会科学研究系列职称评审条件（试行）》的通知（桂电职改〔2022〕7号）.md",
+      "sha256": "d4d6bb77f43301dc62e71d58f70ce9017c3eca8c037eac13661d2797a5975a83",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\人事制度\\关于印发《桂林电子科技大学高等学校社会科学研究系列职称评审条件（试行）》的通知（桂电职改〔2022〕7号）.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 69,
+      "path": "final-md/规章制度/人事制度/实验技术系列职称评审条件（试行）.md",
+      "sha256": "e650c5b016d16498ba4a6e343bf310f83a8cbf8225ba27bf2d574e5a94830459",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\人事制度\\实验技术系列职称评审条件（试行）.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 70,
+      "path": "final-md/规章制度/人事制度/高等学校教师系列职称评审条件（2022年修订）.md",
+      "sha256": "844deda011ec5e61b07a625ecc23debc6fb8c44c8dd3013663fdf8dbdc5a3265",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\人事制度\\高等学校教师系列职称评审条件（2022年修订）.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 71,
+      "path": "final-md/规章制度/人事制度/高等学校自然科学研究系列职称评审条件（试行）.md",
+      "sha256": "21a72937317e532088420236bf86dfea96ba7c4c6b7ced5d16160dc269420b87",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\人事制度\\高等学校自然科学研究系列职称评审条件（试行）.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 72,
+      "path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学“大学英语”课程替换及成绩认定办法（试行）》（校教〔2025〕5号）.md",
+      "sha256": "433c202baab66479f38e095b65db34bc45e91b5619329bc9da81529737a92bb7",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学“大学英语”课程替换及成绩认定办法（试行）》（校教〔2025〕5号）.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 73,
+      "path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学应征入伍学生学籍学业学历管理细则》（桂电教〔2024〕23号）.md",
+      "sha256": "66bdb24c929fd27998f00d6a7bdd36152c75d1ac54a33f4c7a432b31a2f19b5e",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学应征入伍学生学籍学业学历管理细则》（桂电教〔2024〕23号）.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 74,
+      "path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学普通高等教育学士学位授予工作实施细则(2025年修订)》(桂电学位〔2025〕19号).md",
+      "sha256": "4edbc5e495b162abcfd736a33d991f5327d97dcfc7e6b334aebc16be17602e96",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学普通高等教育学士学位授予工作实施细则(2025年修订)》(桂电学位〔2025〕19号).md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 75,
+      "path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）》(桂电教〔2025〕27号).md",
+      "sha256": "e41d77ae0efaadfff4a9b70e8673e782c84161f07ae304878437bf26e0e45fe2",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）》(桂电教〔2025〕27号).md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 76,
+      "path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学本科生专业分流及转专业管理办法(修订)》（桂电教〔2021〕6 号）.md",
+      "sha256": "a3cfcc6bff071ffed1ef93bb15e5e689ee1a03e2e8d4cec7ff85557696ee4dba",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学本科生专业分流及转专业管理办法(修订)》（桂电教〔2021〕6 号）.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 77,
+      "path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学本科生学业预警及学业退学实施细则》(桂电教〔2025〕28号).md",
+      "sha256": "dc917eaf7bcf1d4f2fa2bc38d6704df1e7a6e82365b6641b344789d098189c8d",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学本科生学业预警及学业退学实施细则》(桂电教〔2025〕28号).md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 78,
+      "path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学本科生课程认定暂行办法（修订）》（桂电教〔2021〕18号）.md",
+      "sha256": "f6e8eb21874f0010276e08312f1ef98dcb071ff44b416486697aed916dac1bf4",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学本科生课程认定暂行办法（修订）》（桂电教〔2021〕18号）.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 79,
+      "path": "final-md/规章制度/培养方案管理制度/桂电教〔2015〕67号--关于印发《桂林电子科技大学教室使用管理办法》的通知.md",
+      "sha256": "823165bd215ae65c598f7efcf67a0084ba02fd10729066b4518d348fc0a66971",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2015〕67号--关于印发《桂林电子科技大学教室使用管理办法》的通知.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 80,
+      "path": "final-md/规章制度/培养方案管理制度/桂电教〔2016〕20号--关于印发《桂林电子科技大学全日制普通本科生赴国(境)外交流学习成绩管理办法（试行）》的通知.md",
+      "sha256": "0691f43c22d0f92f578917fb96ab8a959455a5d3ff8868c0153b803d400eca91",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2016〕20号--关于印发《桂林电子科技大学全日制普通本科生赴国(境)外交流学习成绩管理办法（试行）》的通知.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 81,
+      "path": "final-md/规章制度/培养方案管理制度/桂电教〔2018〕17号--关于印发《桂林电子科技大学全日制普通本科生国内交换培养管理办法》的通知.md",
+      "sha256": "301ab918ce87ef7864208cbe23ba543dbd7cabbb1a9a7d07ea0e8b6270217630",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2018〕17号--关于印发《桂林电子科技大学全日制普通本科生国内交换培养管理办法》的通知.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 82,
+      "path": "final-md/规章制度/培养方案管理制度/桂电教〔2019〕10 号--桂林电子科技大学普通全日制本（专）科学生转学工作实施细则（修订）.md",
+      "sha256": "6943e29888624b40d7fff943a9a7f2b5203656bd56179d02fab497df93b1ad0c",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2019〕10 号--桂林电子科技大学普通全日制本（专）科学生转学工作实施细则（修订）.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 83,
+      "path": "final-md/规章制度/培养方案管理制度/桂电教〔2020〕15号--关于印发《桂林电子科技大学考试管理规定》的通知.md",
+      "sha256": "f2894c8e46a0120a47b94d4058c41a259c482dca96baa8893edca0ac9396462a",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2020〕15号--关于印发《桂林电子科技大学考试管理规定》的通知.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 84,
+      "path": "final-md/规章制度/培养方案管理制度/桂电教〔2021〕32 号--桂林电子科技大学本科生修读微专业、辅修专业、辅修学位管理办法.md",
+      "sha256": "5103149ef9f891fd1fee8379d644b07cf99389c108735e05a3f1aac5826ec12d",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2021〕32 号--桂林电子科技大学本科生修读微专业、辅修专业、辅修学位管理办法.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 85,
+      "path": "final-md/规章制度/培养方案管理制度/桂电教〔2026〕13号--关于印发《桂林电子科技大学创新创业拓展课程学分认定管理办法》的通知.md",
+      "sha256": "b81ced8345e96410708e13cf5a066658d30a40eb9748ed3286ab60747a43dfd8",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2026〕13号--关于印发《桂林电子科技大学创新创业拓展课程学分认定管理办法》的通知.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 86,
+      "path": "final-md/规章制度/学校章程/桂林电子科技大学章程（2023年核准稿）.md",
+      "sha256": "161f18000a09bb9daf93eced624332c8a670bc7f61806ba0f1f65880df63fc74",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\学校章程\\桂林电子科技大学章程（2023年核准稿）.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 87,
+      "path": "final-md/规章制度/教学制度/关于印发《桂林电⼦科技⼤学⼯程类硕⼠ 专业学位论⽂基本要求》的.md",
+      "sha256": "19a40305ce323479b832bb4ac4c26576feb15b69cef6567a54f56a6a7c3141c6",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\教学制度\\关于印发《桂林电⼦科技⼤学⼯程类硕⼠ 专业学位论⽂基本要求》的.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 88,
+      "path": "final-md/规章制度/教学制度/关于印发《桂林电子科技大学本科课堂教学规范》的通知（桂电教〔2023〕12号）.md",
+      "sha256": "6ab3026026cc75a45cbbbdfe6347c1965bf7458c44bb24e5e8afe48395ce84be",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\教学制度\\关于印发《桂林电子科技大学本科课堂教学规范》的通知（桂电教〔2023〕12号）.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 89,
+      "path": "final-md/规章制度/教学制度/关于印发《桂林电子科技大学通识教育 专家委员会章程（试行）》的通知（桂电教〔2023〕17号）.md",
+      "sha256": "46c1eb7fbbc1bcac02820f3850a5d235dad56b8fb12359be2c7ae16347f25a75",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\教学制度\\关于印发《桂林电子科技大学通识教育 专家委员会章程（试行）》的通知（桂电教〔2023〕17号）.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 90,
+      "path": "final-md/规章制度/教学制度/关于印发《桂林电子科技大学非学历教育管理办法（试行）》的通知（桂电〔2022〕27号）.md",
+      "sha256": "3f01d2e880dfd8b21ecc5c6fd209d67918cbd3f19ca1879f091e2b932a384ac6",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\教学制度\\关于印发《桂林电子科技大学非学历教育管理办法（试行）》的通知（桂电〔2022〕27号）.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 91,
+      "path": "final-md/规章制度/科研制度/关于印发《桂林电子科技大学学科学术委员会工作办法（试行）》的通知（桂电科〔2023〕2号）.md",
+      "sha256": "bb05936a4e0c8b8cdecf87cddc3404871e4c832a86b5de70020ccee5ff657ba0",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\科研制度\\关于印发《桂林电子科技大学学科学术委员会工作办法（试行）》的通知（桂电科〔2023〕2号）.md",
+      "category": "规章制度"
+    },
+    {
+      "document_id": 92,
+      "path": "final-md/规章制度/科研制度/关于印发《桂林电子科技大学科研诚信管理暂行办法》的通知（桂电科〔2022〕3号）.md",
+      "sha256": "643ea0c7880c305bab59d2fa1d6dc33f09d60d2d5460887f66811201ac835e6c",
+      "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\科研制度\\关于印发《桂林电子科技大学科研诚信管理暂行办法》的通知（桂电科〔2022〕3号）.md",
+      "category": "规章制度"
+    }
+  ],
+  "cases": 37,
+  "files": {
+    "backend/auth.py": "be28f353cd53682ba748b8289628499572e7ad724c64f5cf2e45b56521e74692",
+    "backend/config.py": "74c0666f294311f0d0d9c9bc988937846874a4d83dd38b36dc3838c2a82d00e5",
+    "backend/conversation_context.py": "fd759dd87e33caea4ea4f53497b40ba1b95a5b3ced9c4f1cf142b593d6d82280",
+    "backend/conversation_context_store.py": "485a28f32bcbbe7fc58fb961e6e11d55e6846e39e671716c4f686b492c256b01",
+    "backend/ctx_budget.py": "9b7b3ba4a151d5ba8093b8815fccd59105ce381991147cb450e7e8df8d3b4fb5",
+    "backend/db.py": "7f62d718dd50cecb2d4e78de9a0f69c1763ea1a085523fabbc9bb398c13dc83a",
+    "backend/document_chunks.py": "c4a3876dab74a00a3ff93daae465f06e6b722d26a924d509889a90b03f8e6fbf",
+    "backend/entity_aliases.py": "0dc9e852d4a0f4f6af57bcdd179b13a64a72b7c656012c1bd2153fd084e7b1a0",
+    "backend/entity_alias_queue.py": "1f67bf47b2237d59f56636fe6b94fdbc688c46d8c2dc6fd41f3c110a35d1a4ac",
+    "backend/entity_calls.py": "e15f84d2c501062b9d75b35df71d8ddb1d83b2a7febdf87b2b31ec6ace240978",
+    "backend/entity_catalog.py": "18dbd22154f972eefc4f839885c511ccddda148ae2b2ce0340f260b01a5dc179",
+    "backend/entity_prior.py": "df2786fd081e7ebc8c24c54057164d2ec30b80c935dd7c45d24026292b70f4b7",
+    "backend/entity_resolver.py": "6f66fdfb52213e0062382283602252e385b18d8eb30b957363bc1f4843e0d170",
+    "backend/errors.py": "319ffe0987d6605a9986f97ebb08d8c13fcc7a0c4058c443a5d7aa5280b4218c",
+    "backend/llm_client.py": "2ede9512882c20d94d06fc2fb8794195b8debe5a7bdde4d30ea38449beaf6218",
+    "backend/main.py": "5eb54b94ae176ee8102a3754c8cef90d9b7ca7e89c1bc2f82670754c63b1c13d",
+    "backend/mdify.py": "80ec3a15447be46d2157c76cea2fddbc156dd0a9e200b3e5a91869304d70169a",
+    "backend/ocr_engine.py": "00ab9cf3bc1dd7d6c7a5beb26ab36ef79bd3258cdddfd00c1df9938f035b7303",
+    "backend/pdfextract.py": "622360f11fbf9c4a1ebfb3076b199ad0a7ca3994561c3d320db07b1eb00bc222",
+    "backend/schemas.py": "865698b1ef51469357108c27499f9f5466e059130b35b3d99e776c008c623f51",
+    "backend/security.py": "afedd7ccadb3390a7c875e9fd50326e073cbadb52b82370f0cec10036e9883a6",
+    "backend/tablebuild.py": "a956c69486bd3d37a53a65bde8186abf4ac701d08907605038eca26ac698cf9e",
+    "backend/titles.py": "3e332896f79061bd13b743da6843f0e55c6655aca1666fefc5bebcfc843a8a54",
+    "backend/agent/evidence_contract.py": "d2cef7257fc23d4b4fa709689679ce14141101241a81d4f3ac6ac797d4986c6d",
+    "backend/agent/__init__.py": "c58418206b0ab4701aeb9ce04bf745e339a1e101b1c2461a85c204d207f6d8ce",
+    "backend/routers/admin.py": "3db109ab0497f321e867bbea10bbca154577b28bc4dd0e7007610e762a981de6",
+    "backend/routers/auth.py": "6aa220f4f6455b1003b29290a52f9f481ff6313e62840e88ae049a4f88a98b5d",
+    "backend/routers/chat.py": "64c9bb58a081e77e7a481e029ddb23e51ff1da16c6fe0cc80f8f034ac77e9b23",
+    "backend/routers/ppt.py": "a9211cc0826ca22d07c699fc7c2055e7cd3f985eb1138d2e6afcc8048fc62e3e",
+    "backend/routers/__init__.py": "2a47055ad59fffe391cfdca986f3aed18eca88a3fe61c6b02d3e2182ecc67462",
+    "backend/agent/core/citations.py": "2e0514c1dba919a16fd1222c859541833fa48e176303fdb4b82b6af404d7534e",
+    "backend/agent/core/contracts.py": "0a6cf9759633506f5cd06bbc38e0b2653f8a25b2a067891577ccbfbfb12419ca",
+    "backend/agent/core/errors.py": "01cd20b5ac3036a589b3fe9907e5b8a815248742316f6084e1fedc5c4f536bb3",
+    "backend/agent/core/evidence.py": "775b201f4fbc46fb6af9bac2a883cadfe8524b5a2b6b765b501b380d3b4014f4",
+    "backend/agent/core/observation.py": "c16769225c76a48f08f48ad0cbc1572211b2b938eaf8440fa24f751111eec570",
+    "backend/agent/core/__init__.py": "3629ad0cb8cd55edfb4cc852d8ebd8266492017dfa2802dfe1f48969f5495820",
+    "backend/agent/runtime/budgets.py": "f14e6610452e602b4a857a3b638d8fc1db22451a088881db458a05c61409079d",
+    "backend/agent/runtime/context_summary.py": "2ba5de862d10305d9b97bc7fb502cdabb27860af08db6c39a60317f61d44cd22",
+    "backend/agent/runtime/context_window.py": "ec3a32e7e75613b6c01420c4651574a178b38f8ee291255bf1f246f47532c457",
+    "backend/agent/runtime/graph.py": "997ae34fb83b50d74db154cdf8d48d3afbd95d6f4eff60322391dfa67fde71e7",
+    "backend/agent/runtime/model.py": "dbb911c70a0159454c6281c1986a59d6c9b2a2ac2818337265a299f3c097f3ff",
+    "backend/agent/runtime/registry.py": "8ab9a4ef15512312dabc50b3da73937b37a2ecdc65f2b5eb8bda4519a6c64cea",
+    "backend/agent/runtime/skills.py": "930a3c18a06a611dcc1d6f761e3f080e6560058118d7bbadb39e2d9b997ac6f0",
+    "backend/agent/runtime/state.py": "eed9c506833c684b979f4788ba215ed949258cceedf364b23b5ef7a99813f180",
+    "backend/agent/runtime/__init__.py": "52f1531ef2aaf0940c8a6aa37067d60531baa624fd0ef3276539817c86533d49",
+    "backend/agent/tools/conftest.py": "af1df3a30b7f6e5d2d7871481f88627ccada1b0b7cb2339a6a3e2dcf05010cd8",
+    "backend/agent/tools/__init__.py": "73ce287466ce5dc7440b20b7e8d667dfcf9cc215ed2551ffe56aa70ce796665d",
+    "backend/agent/tools/compare_course/renderer.py": "c8307ba9c67d1156f3ba09b8c6dc89d3ddafc51821b7ed541407963678c6bae8",
+    "backend/agent/tools/compare_course/schemas.py": "de2e8d6e27e8786157551466808309cb49823ded479c9d1855885c425877e6e9",
+    "backend/agent/tools/compare_course/tool.py": "6ca2fdbb0cbef56a35656679c915e39da9cf6e8a9284f21d93e47173baba9ad0",
+    "backend/agent/tools/compare_course/__init__.py": "5f0747c2a052bebf360b953d8af27e9e2a1f2f668255a30dd148b776f7e652af",
+    "backend/agent/tools/create_ppt/renderer.py": "273cc64b16a420ea021ee51ac07af3a48674f77c19e93c7beddf38b1ff9c14ab",
+    "backend/agent/tools/create_ppt/schemas.py": "977e942e5a806e8b1e2b5d683eb0a333d9edadb8af65f2566184bb56318120f2",
+    "backend/agent/tools/create_ppt/tool.py": "9613e12e91da672488771da6ab5c7b2beaaf53ab6e27919d06e11fb10ba284c3",
+    "backend/agent/tools/create_ppt/__init__.py": "62618e2314681c12c768e764ea5bb5f3e55f4cef5c8ed71ec8e917d243b98ef8",
+    "backend/agent/tools/list_courses/renderer.py": "0b4ca6a29fd29def226cd50b01b66a6171b36d086285cd48cc2d0b4360789e7e",
+    "backend/agent/tools/list_courses/schemas.py": "dcb5bde96557f26681cb949ba8f3dad6306529a50bb542d028a79b9089cd9abf",
+    "backend/agent/tools/list_courses/tool.py": "179656f0119aab603860fc0e01bb2c0ab65684a3c751341e703734fb96eba304",
+    "backend/agent/tools/list_courses/__init__.py": "885733470b090fbc566f9c83034424cf44649add3fd89265752f9658e551abbe",
+    "backend/agent/tools/query_course/renderer.py": "addb718149a323438f38ea321930fb96a9f054fa4d6653082c1793c559109c11",
+    "backend/agent/tools/query_course/schemas.py": "44202db468990908dbe151b8ac22361a377c0d1fc5b8c3340975262585194862",
+    "backend/agent/tools/query_course/tool.py": "246ea8d0a98cc47a0aec45f36e7318f5803d2343c83e06e9a5f78d8ad872f9b1",
+    "backend/agent/tools/query_course/__init__.py": "aedc0a4d68a810b47ae07fa8f86644fdc4f0ef769dc5b1c97ea9032d96a746d3",
+    "backend/agent/tools/query_empty_classroom/renderer.py": "efbf299b87a8a63f3924d81fa6af066596b21a8f2f0ad7c75ade9911c6e9532d",
+    "backend/agent/tools/query_empty_classroom/schemas.py": "a8f78bec9ec23c46d288e2e6a37484b00fe6d4ae8a974a9b824fbfee1f80a9f0",
+    "backend/agent/tools/query_empty_classroom/tool.py": "9eacfa7aacd40890af77904bf57f124f0d575cf95dd8f84726929ee7d578cff5",
+    "backend/agent/tools/query_empty_classroom/__init__.py": "06a11350b77be2cc7fb04283c11019c82496d712bcfb0893334bf75058d2eba5",
+    "backend/agent/tools/query_major_requirements/renderer.py": "be1fa06777731afc19b3673369bac406835789e9ed4608f074a8f263bc824cd9",
+    "backend/agent/tools/query_major_requirements/schemas.py": "0e22f151ff46ba798bbe0da2b797a73d8f843b738e96d815aad86ab092a3e418",
+    "backend/agent/tools/query_major_requirements/tool.py": "e287e5d47c397fd1a4b57e15fe473ee54688ec994e8e07a599e604ad23aabbf5",
+    "backend/agent/tools/query_major_requirements/__init__.py": "38e59be54172f38e92f3d4d3deb9320d9dc488bb585c0bd296cdaff98a07d4f0",
+    "backend/agent/tools/search_regulations/renderer.py": "4b1a2236a8020188bc77617ef08fa0958500d87d3f8548b181117df4f882949f",
+    "backend/agent/tools/search_regulations/schemas.py": "6e5698861ff17293c034b6f9f03b35f28035d4dc7e8a829ccb6e6c0499cbac9a",
+    "backend/agent/tools/search_regulations/tool.py": "9ee34222d137d2519e8d96d09d6ca5975395f997f655a5a9c47702982a8372f0",
+    "backend/agent/tools/search_regulations/__init__.py": "04907fb2b7527cd93589498ae70f86365ad6603690feb2f1b6277e1da5fe9c93",
+    "backend/agent/tools/search_regulations/scripts/bm25.py": "ca5bc7f23932a0e650b99df39f9aab22dfbae9d3769b67ab57741619413c386d",
+    "backend/agent/tools/search_regulations/scripts/build_collection.py": "05fd5227d1aa7d222052b2ee9159cf3ab0b1d066010a053919c8d677f3dba5bf",
+    "backend/agent/tools/search_regulations/scripts/build_gold.py": "1638ed42fae92dd8eed11e49f34086f2a73c32cc51fca7a59db821b175a68493",
+    "backend/agent/tools/search_regulations/scripts/corpus_fingerprint.py": "a8808213b63ec58df24744c6c942540ff7fcec6592eefd7f58f96838c13b17c1",
+    "backend/agent/tools/search_regulations/scripts/corrective_query.py": "7fb51d7e06760d56e1d82173d4b3fdca017ea1f057a82d64478daf2e9b9e9a0b",
+    "backend/agent/tools/search_regulations/scripts/coverage.py": "777344dd9855f50bbc19122e02e13ff61442eb632c821ebc1d52e430cee975bd",
+    "backend/agent/tools/search_regulations/scripts/diagnostics.py": "0adef8d2fb983dcf46ae76a2f6ff20376b5b293668e6fe0c971ed52122598c7a",
+    "backend/agent/tools/search_regulations/scripts/evidence_gate.py": "20cb05105699c78b0fc66a17c0da89237918174fc566e20201a6eb9f74e34f86",
+    "backend/agent/tools/search_regulations/scripts/flow_expand.py": "0c91ac5e4abdfb3ea2000a7453554d8efbc8ac87b6a626865a9e1c24b1299585",
+    "backend/agent/tools/search_regulations/scripts/gate_signals.py": "ac82e6025125617c09d77a1ea35a5840b89449478bd2a8f8ec3b8e6d1d9941b9",
+    "backend/agent/tools/search_regulations/scripts/gold.py": "0082e303dade45be03a0347b74d3a3101f20db0783026573657375b99082115e",
+    "backend/agent/tools/search_regulations/scripts/indexing.py": "4a8de960c53ca6fa768cc165248972bd6a16e1abdde01226b4f5b81ab424d5bb",
+    "backend/agent/tools/search_regulations/scripts/intent.py": "27ec8687d10c8f54719bebb9fb4bb33393b8c2877847b3629d4aebfe69fd3c77",
+    "backend/agent/tools/search_regulations/scripts/query_plan.py": "399a8cadd7a73f35cd42e38d99cddded7aadd6246b6818fac553fe8f8b70d89e",
+    "backend/agent/tools/search_regulations/scripts/query_quality.py": "cef0179cb663e81aacdb027c3320a378c41f4a487a1a06933e7320ddcaa5b13a",
+    "backend/agent/tools/search_regulations/scripts/reference_follow.py": "998963cd6c27f3a9f8a71aa61924294a1d9e11f42d841ce863a8d24e2cbc7637",
+    "backend/agent/tools/search_regulations/scripts/rerank_scores.py": "e8b920280e760d3f518e9d9c9eea7ca12ceff1ee55981338400c91dc1d288625",
+    "backend/agent/tools/search_regulations/scripts/retrieval.py": "50cc8616c0dcb1842fbca747e5f3a90666d573fe44c2c4614a40de217ba8136e",
+    "backend/agent/tools/search_regulations/scripts/table_check.py": "ef07e25febe465b0c505efafda9e6ce05597a1395e04cc7b93aaa6da3087f4b8",
+    "backend/agent/tools/search_regulations/scripts/table_selection.py": "235339d91149b9c73627069b454f212956f6f4a0cf93e70cd7877e6f5078b1aa",
+    "backend/agent/tools/search_regulations/scripts/trace.py": "c048d5fe9e7471269123c8f0b9c7abc8f22544f9be7917677e49755532aaae75",
+    "backend/agent/tools/search_regulations/scripts/__init__.py": "1b70099dc50dda4ca766b9ad9f93b125b75553c76a766ec8170635c6ca40d719",
+    "backend/agent/tools/query_major_requirements/scripts/query.py": "d1ff1520d52908879b09f3979e8d14947337bf17e0a0ed0a0636b43601113edf",
+    "backend/agent/tools/query_major_requirements/scripts/__init__.py": "6b2a3dad51de51743accec01c7e2f9a713befc6de64a10b032bc5be33c3eb742",
+    "backend/agent/tools/query_empty_classroom/scripts/cas.py": "137905c1bb4b438b463317b1da44a45db0a99132fb3ae0c21e5b92f65a4fcd58",
+    "backend/agent/tools/query_empty_classroom/scripts/pointer.py": "0a44b265a5ac8c716947c9d363634e850b6d69593b7c580f231b4ce3059f375a",
+    "backend/agent/tools/query_empty_classroom/scripts/__init__.py": "2413ad5e33dab1a906ed1f948f044772aed018a257b10f467b52454e902d07d4",
+    "backend/agent/tools/query_course/scripts/build_plan_db.py": "0c6f71684bb8edf9a08da66526913737b0b3b70a1baf7084cb6194d143a0f6d0",
+    "backend/agent/tools/query_course/scripts/normalize.py": "365b6b26b7f3696e5356d22004d0bab40fc645329f4b3f24f10a023e1932a6cd",
+    "backend/agent/tools/query_course/scripts/plan_source.py": "78bdccf3bffd4a08682af86dff02d04e01d61620d90dca4c0462fbb4f551d9a5",
+    "backend/agent/tools/query_course/scripts/repository.py": "3b964b239345a42e97c998a3f7e305b0ff00d9eca14f6f61f8a52b4319ade3aa",
+    "backend/agent/tools/query_course/scripts/__init__.py": "23cd3f02df306224310d69abdc4edc00360682fbf4bd2886ced528cec8577211",
+    "backend/agent/tools/list_courses/scripts/query.py": "7c16af3bb2be0f72f7da04a07b5777c5291b12a79fe1ebaa31e458b3dcadd4d8",
+    "backend/agent/tools/list_courses/scripts/__init__.py": "b52192ca123ac7581c84f47465bccbfaf4eb8acd9feeafae0e5543551b0bf5ed",
+    "backend/agent/tools/create_ppt/scripts/delivery.py": "7d762346d951f8b673d880406d95fec292da050ca50668f4ce73d15f09ff7fb6",
+    "backend/agent/tools/create_ppt/scripts/generate.py": "494b380cf2ff72dac884af344f2258eb92a1175bba2595759f88557892b613b7",
+    "backend/agent/tools/create_ppt/scripts/layouts.py": "9ada169b7116d92535e923e941d888bcb79be5e21d79d06b40fe5be628aea4f9",
+    "backend/agent/tools/create_ppt/scripts/model.py": "3e56bfc561494a93c29fb6da38edd5c39b45573c4c9ef75caa50c18e3d72d51d",
+    "backend/agent/tools/create_ppt/scripts/qa.py": "66934b2b12c710c3f1caeb97eb2d93e086c531968e027f3d4fe030f7bf59bc91",
+    "backend/agent/tools/create_ppt/scripts/render.py": "1c7dfced2fe8cdc609ec247911c6685e3d42bfa6b346218335c1d2c962aa47ef",
+    "backend/agent/tools/create_ppt/scripts/subgraph.py": "3da2345bd3fed3c98eeae2b12510b6725233fd8a4ee99b350644a00ccb02d07e",
+    "backend/agent/tools/create_ppt/scripts/__init__.py": "587c7f7f5808e0d55af246d8dec0fae54858fe9aede97046624fe98d97593ca3",
+    "backend/data/entity_aliases.jsonl": "d01b4b87ead682ec95749ffe8c27058d94a03d279bb84b6d6d49a51cfb815e78",
+    "backend/data/entity_aliases.manifest.json": "c2c962e19e9dba2745bfc5fffec35b2ddad31f9583f5538e253abd32f1e9c07f",
+    "backend/data/entity_catalog.collisions.json": "44d4ce0da9dd3dc81e5fc50b249c80feacc7fe9c404da7a851d421089a1da707",
+    "backend/data/entity_catalog.json": "0ad90dec9a68bd42e3e3d6eef4b3c182b5c743d1c9f71760ead9276bd76fe349",
+    "backend/data/entity_catalog.manifest.json": "901637d4f4ee8a4b77f97f7b17ea2b4be266ec1c79082c470af0fbbf0f80c97e",
+    "backend/data/entity_families.jsonl": "4932f5196b33b8767fd2a0929cc45e5994d8d957bac1586b86fe68613ec9c566",
+    "backend/data/plan_db.json": "bb3f7262707510facc8ff5027d852ba33faa12d0ba2a4ecfb9e77379a1f7bdb3",
+    "backend/data/ref_allowlist.json": "64d977da99b412e9821bbe273e5a2bdd0859a04c8dce74d5aef510771d16627c",
+    "backend/data/route_templates.json": "559e1134c29a347448b61bafcd730490a43d3180f83e49f63c056c7f744c9f87",
+    "backend/agent/skills/campus_information_query.json": "6fe9f696bb0c1f0f021ff5869f4941d8145791f9fce30bcacbb6f772e28f5712",
+    "backend/agent/skills/create_presentation.json": "bde9e116b6f9ccece65ef3c9af4b45d08dc1170485b549087a5a9f47452db55e",
+    "backend/requirements.txt": "4c25cf472e535b702a363739a092ba1e94e2aa557077ac4dd9a7c428de68e28a",
+    "final-md/培养方案/2025级交通工程专业培养方案(主修).md": "fdb6c27a5851a45efc0a760b1f09e632d4527b62196edc8373f8bf49598c6994",
+    "final-md/培养方案/2025级产品设计专业培养方案(主修).md": "5aaa37cd4696b6652b9bc89524ae150f7c03b65f110682c5f8d5ec9ea14d68d6",
+    "final-md/培养方案/2025级人力资源管理专业培养方案(主修).md": "a1a298652299b75ce3f0a4b8e547e3b107714327a866ed3ba190aff6ecbf4d28",
+    "final-md/培养方案/2025级人工智能专业培养方案(主修).md": "3203eb9cd79212cf07463dd1f574674d5a6481d256bec55e743b079e27c2a0e5",
+    "final-md/培养方案/2025级会计学专业培养方案(主修).md": "fd56303d56945155d05054fee38e51e3fb91f784bdd1fc507ffb5ee59e2cbd7f",
+    "final-md/培养方案/2025级信息与计算科学专业培养方案(主修).md": "24b30298bb0e59b3226d91c859bbaeb259c4fb117c5b9016f77f48f7fd538cfe",
+    "final-md/培养方案/2025级信息安全专业培养方案(主修).md": "3a035b51fd287c826f3931fa34c883a9b99db50f72f20c33c5fc9fdb9a0f6789",
+    "final-md/培养方案/2025级信息管理与信息系统专业培养方案(主修).md": "dc49fc52191859938751b1a18e7321337a0185f3858aa615ec22676ef23390c9",
+    "final-md/培养方案/2025级光电信息材料与器件专业培养方案(主修).md": "888a4f2df77db887a139835a73e317a7860d3282d256af4eaeae52b500befd93",
+    "final-md/培养方案/2025级光电信息科学与工程专业培养方案(主修).md": "ee0f23596db4419d425bf89439a40ca7cf9eb793393f81b3fccc8de6c3e9b30b",
+    "final-md/培养方案/2025级动画专业培养方案(主修).md": "c9af5ba304b7a6423fd5b6701a6e50e7eb7a26c1843c0521a302519dbbdb60ee",
+    "final-md/培养方案/2025级国际经贸规则专业培养方案(主修).md": "3f3799e624c76548880b06a56db9c2e7c322dac28f2f00eb4609d87a716f2b2a",
+    "final-md/培养方案/2025级土木工程专业培养方案(主修).md": "e3f55471459158a2365bff675b3d437f98cc4d0e4ee814013a7ec153b027c50c",
+    "final-md/培养方案/2025级密码科学与技术专业培养方案(主修).md": "8142d1d653bca6f06aac4e4c641ae5f9cf97d2bf9c94d41cdfb23cb4dc89bfd9",
+    "final-md/培养方案/2025级导航工程专业培养方案(主修).md": "412d27cc62fd50bb549eecec22a237e12028801f444176034b0466371b9fd52c",
+    "final-md/培养方案/2025级工业工程专业培养方案(主修).md": "9517688342765475a1e745e72ec5e7ca0e4cfcfea38736a467c4829f51304c2d",
+    "final-md/培养方案/2025级市场营销专业培养方案(主修).md": "f32b02b76c580ff46a2ceb7c5c5d5d993856e2e308d3d0840b9f670559b01eef",
+    "final-md/培养方案/2025级应用统计学专业培养方案(主修).md": "53ebcb0aa9f8d3dbb9cd1261346a3409b26d065e97459052c5d68f8e8967c600",
+    "final-md/培养方案/2025级建筑环境与能源应用工程专业培养方案(主修).md": "b4a5cc75b70731906e17c82d9a85f0edbf38b77968500fd44a0bf55d2b8aa274",
+    "final-md/培养方案/2025级微电子科学与工程专业培养方案(主修).md": "b762ceab4e3e57082f63b814944d56635882ac6ede7d202d31d38ff64d427377",
+    "final-md/培养方案/2025级数字媒体技术(中外合作办学)培养方案.md": "cecbb73c5047142da84f9841b3db2c9bd2276b7404855b515709a6ae6b9f70b9",
+    "final-md/培养方案/2025级数字经济专业培养方案(主修).md": "5abeb0484dcb63516ce708368866d58191aa39947e317da6cc780809c8fba6fa",
+    "final-md/培养方案/2025级数学与应用数学专业培养方案(主修).md": "57d332655b1250ba21e22ef455a0b013b965cf2846627b4ef2950230f771edd7",
+    "final-md/培养方案/2025级数据科学与大数据技术专业培养方案(主修).md": "6221f8bc05bd39453bc070eb5812af70d8097d7f0dda7666e2643e841ef54616",
+    "final-md/培养方案/2025级新能源材料与器件专业培养方案(主修).md": "1c02ea5250de020e64c0926d55927486cc3e20a5b6fef62ccc64b54f692e9734",
+    "final-md/培养方案/2025级日语专业培养方案(主修).md": "646c05275eb7ff7283f48ab253c35001f9e5c3ec71f05a0b1b9e5b116f00e95c",
+    "final-md/培养方案/2025级智慧交通专业培养方案(主修).md": "abab60ea035c7c8f30a7f58e6471359eefde81b8b0b0ae4cd539d504e216f414",
+    "final-md/培养方案/2025级智能制造工程专业培养方案(主修).md": "bd23353224023d49454678b8ec53c64d931b31083dc7aa14e0945f3bed53be47",
+    "final-md/培养方案/2025级智能感知工程专业培养方案(主修).md": "c0a62442a56b7c8bcc18dd9eb3e93884affd442dbd972b5fc23b4ced78e35abf",
+    "final-md/培养方案/2025级智能科学与技术专业培养方案(主修).md": "b0751b618244b5fd28eab26a6c1d8940900c5264bdc19549d6104a8fffcf0af6",
+    "final-md/培养方案/2025级智能装备与系统专业培养方案(主修).md": "5d1a96488b37fd238cab5e2bb93491464d7b24037cc564d13ff8fd1439529a9a",
+    "final-md/培养方案/2025级智能视觉工程专业培养方案(主修).md": "cdd6b31a4eb5c1f3fa9de8f09d573599514654dddca2861c9cc6321907bab30c",
+    "final-md/培养方案/2025级服装与服饰设计专业培养方案(主修).md": "0c4b7e5442c9ef9108b9281a54fc8185964a905bc93498b3837baf6d3e9e47a7",
+    "final-md/培养方案/2025级机器人工程专业培养方案(主修).md": "8ca39037be7d94661a144ec9dbc43eb99ad3bb01870d34570a5d8bab286e01a8",
+    "final-md/培养方案/2025级机械电子工程专业培养方案(主修).md": "38a3dc585ea2496c8a87cc51374c87219eaec2034b1f21d515bfe7961612f348",
+    "final-md/培养方案/2025级机械设计制造及其自动化专业培养方案(主修).md": "2ba5de54ce7c093b582ba66c12bc2c6b8c2de9eac959278702961c77acb8d544",
+    "final-md/培养方案/2025级材料成型及控制工程专业培养方案(主修).md": "bb8530ff9ae76e7cfbd871dc7bc3fcbd306e3d205638ae9b7afc28e6aeee56b4",
+    "final-md/培养方案/2025级材料科学与工程专业培养方案(主修).md": "8e92272f42f7871771a13e16a032ecb6aff5d907f2424b5dca12754f48d1d364",
+    "final-md/培养方案/2025级汉语国际教育专业培养方案(主修).md": "c0fa9f23de3aba590d32e94e06f7c36045ae21147b94b58f8e8a2103c1d626e6",
+    "final-md/培养方案/2025级法学专业培养方案(主修).md": "0292dee7563c4388316b2bae9defe6821b163daa1db8451047e84891b7e50e4e",
+    "final-md/培养方案/2025级测控技术与仪器专业培养方案(主修).md": "381e7a2c22a2a778e9cd8c3e2c307bd737a6de95dc13cd17aea4f604b6f6b444",
+    "final-md/培养方案/2025级物联网工程专业培养方案(主修).md": "85d36f75eec08317f28a029d3f1167e5d047dd07bd17ef8a9157438763f2d3db",
+    "final-md/培养方案/2025级环境工程专业培养方案(主修).md": "8b911c1a0458124f6e6582928a0806b6e8aac3477f9fe02971762b4df5e49a2a",
+    "final-md/培养方案/2025级环境设计专业培养方案(主修).md": "fad3321d70f13af1fd5f2140c1bb9a08dd4ed2d400a1e9acca229d46f54ca415",
+    "final-md/培养方案/2025级生物医学工程专业培养方案(主修).md": "facb2f5da79443af38a472a3c4e6ab5de3073285f4f775bc19db5b5dc96328eb",
+    "final-md/培养方案/2025级电子信息工程专业培养方案(主修).md": "d8c4f9096fbe944570876dc15ebe55927695e5966c16094f668bf9d40dcd68e6",
+    "final-md/培养方案/2025级电子商务专业培养方案(主修).md": "3e1723598f86d1dfd9995cda7bfad91f2bab442993ea14b4f94bc736c46cc8e6",
+    "final-md/培养方案/2025级电子封装技术专业培养方案(主修).md": "38bd3c6ddfa99a9f9106a3b00990a61431bb803388230d305861a2dae9ae6608",
+    "final-md/培养方案/2025级电子科学与技术专业培养方案(主修).md": "39452b84c6f05b616f9158ebb77ffdead92bfb5f88b4d3311801ee9d0e7e5a1f",
+    "final-md/培养方案/2025级电气工程及其自动化专业培养方案(主修).md": "0e8615e65af4bb1eb0c1822cefdbef03d8b4b0f9611fea65ae05cb20558aedf6",
+    "final-md/培养方案/2025级知识产权专业培养方案(主修).md": "fc16c03fee6db18fba585562343b16e991fd9977519e83b9e198632695ad3bd5",
+    "final-md/培养方案/2025级网络空间安全专业培养方案(主修).md": "ad3097a619a43c5d1609a8a93e2e00f08e217c3c1e5dabd4b6218bac03e2ca4b",
+    "final-md/培养方案/2025级自动化专业培养方案(主修) .md": "44657746e7257b500695f837d55d56a73d0d408e59bfb841ff179a829dd5c8a9",
+    "final-md/培养方案/2025级英语专业培养方案(主修).md": "3cec75d20f580de6d29033c4958248e719b5b0a74cd8ec8e11ec1f7b1d994aef",
+    "final-md/培养方案/2025级表演专业培养方案(主修).md": "07e0588f904c0efaa3c9df39cff430afd172e37e0937137c3ba6c6f30bc79814",
+    "final-md/培养方案/2025级视觉传达设计专业培养方案(主修).md": "6d78706318d7a5aadd18c745e0a8ec78c64a4f05a3d092d79ba665353eca4697",
+    "final-md/培养方案/2025级计算机科学与技术专业培养方案(主修).md": "aed1ae0507cb6ac36e466cf9afb7d5e302c2335a60e8bbf0188e140125136fc3",
+    "final-md/培养方案/2025级财务管理专业培养方案(主修).md": "0a8a16b501711aba6a5f5b053f63d926f8c25b6ee30f257aa675e609a00526ad",
+    "final-md/培养方案/2025级车辆工程专业培养方案(主修).md": "281e3ae4316755b5a15f547e097efd44c834bf855ba362058788646929dc5be3",
+    "final-md/培养方案/2025级软件工程专业培养方案(主修).md": "a194dca76900266a7bcc63a8504a18621e5d4471215803135a5e5be5d222bfeb",
+    "final-md/培养方案/2025级通信工程专业培养方案(主修).md": "16bc9227fae1a4f7d7482db2391a2cc9a167c1abdec2cdee2fcaf25e26b95552",
+    "final-md/培养方案/2025级金融工程专业培养方案(主修).md": "777d9a482a025f833d6855dfed32ba5032d08542f0b16bbe9f2af7f5884c5b6b",
+    "final-md/培养方案/2025级高分子材料与工程专业培养方案(主修).md": "73ce82b92537cacbeab7fe488a25af487dd03bbcd73e5dc4626bd370264e8b71",
+    "final-md/智能〔2026〕14号--关于印发《人工智能学院本科生综合素质测评实施办法》的通知.md": "b5d66f1351f524acfcb1f4bee75860b305b0539088c14b3793bd7b39fc635e9d",
+    "final-md/桂电教〔2026〕13号--关于印发《桂林电子科技大学创新创业拓展课程学分认定管理办法》的通知.md": "b81ced8345e96410708e13cf5a066658d30a40eb9748ed3286ab60747a43dfd8",
+    "final-md/规章制度/人事制度/关于印发《桂林电子科技大学博士后管理工作实施办法》的通知（桂电人〔2022〕2号）.md": "75f65d6f610516a63511e7e3a9d1aca7cfaff081156a4dc5ae5be85ee6470c14",
+    "final-md/规章制度/人事制度/关于印发《桂林电子科技大学教职工进修管理办法》的通知（桂电人〔2023〕20号）.md": "d88ebd1bf42528471ee96daa912395397ace39d24b6d8eb37fabd0202dcad61d",
+    "final-md/规章制度/人事制度/关于印发《桂林电子科技大学高等学校社会科学研究系列职称评审条件（试行）》的通知（桂电职改〔2022〕7号）.md": "d4d6bb77f43301dc62e71d58f70ce9017c3eca8c037eac13661d2797a5975a83",
+    "final-md/规章制度/人事制度/实验技术系列职称评审条件（试行）.md": "e650c5b016d16498ba4a6e343bf310f83a8cbf8225ba27bf2d574e5a94830459",
+    "final-md/规章制度/人事制度/高等学校教师系列职称评审条件（2022年修订）.md": "844deda011ec5e61b07a625ecc23debc6fb8c44c8dd3013663fdf8dbdc5a3265",
+    "final-md/规章制度/人事制度/高等学校自然科学研究系列职称评审条件（试行）.md": "21a72937317e532088420236bf86dfea96ba7c4c6b7ced5d16160dc269420b87",
+    "final-md/规章制度/培养方案管理制度/《桂林电子科技大学“大学英语”课程替换及成绩认定办法（试行）》（校教〔2025〕5号）.md": "433c202baab66479f38e095b65db34bc45e91b5619329bc9da81529737a92bb7",
+    "final-md/规章制度/培养方案管理制度/《桂林电子科技大学应征入伍学生学籍学业学历管理细则》（桂电教〔2024〕23号）.md": "66bdb24c929fd27998f00d6a7bdd36152c75d1ac54a33f4c7a432b31a2f19b5e",
+    "final-md/规章制度/培养方案管理制度/《桂林电子科技大学普通高等教育学士学位授予工作实施细则(2025年修订)》(桂电学位〔2025〕19号).md": "4edbc5e495b162abcfd736a33d991f5327d97dcfc7e6b334aebc16be17602e96",
+    "final-md/规章制度/培养方案管理制度/《桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）》(桂电教〔2025〕27号).md": "e41d77ae0efaadfff4a9b70e8673e782c84161f07ae304878437bf26e0e45fe2",
+    "final-md/规章制度/培养方案管理制度/《桂林电子科技大学本科生专业分流及转专业管理办法(修订)》（桂电教〔2021〕6 号）.md": "a3cfcc6bff071ffed1ef93bb15e5e689ee1a03e2e8d4cec7ff85557696ee4dba",
+    "final-md/规章制度/培养方案管理制度/《桂林电子科技大学本科生学业预警及学业退学实施细则》(桂电教〔2025〕28号).md": "dc917eaf7bcf1d4f2fa2bc38d6704df1e7a6e82365b6641b344789d098189c8d",
+    "final-md/规章制度/培养方案管理制度/《桂林电子科技大学本科生课程认定暂行办法（修订）》（桂电教〔2021〕18号）.md": "f6e8eb21874f0010276e08312f1ef98dcb071ff44b416486697aed916dac1bf4",
+    "final-md/规章制度/培养方案管理制度/桂电教〔2015〕67号--关于印发《桂林电子科技大学教室使用管理办法》的通知.md": "823165bd215ae65c598f7efcf67a0084ba02fd10729066b4518d348fc0a66971",
+    "final-md/规章制度/培养方案管理制度/桂电教〔2016〕20号--关于印发《桂林电子科技大学全日制普通本科生赴国(境)外交流学习成绩管理办法（试行）》的通知.md": "0691f43c22d0f92f578917fb96ab8a959455a5d3ff8868c0153b803d400eca91",
+    "final-md/规章制度/培养方案管理制度/桂电教〔2018〕17号--关于印发《桂林电子科技大学全日制普通本科生国内交换培养管理办法》的通知.md": "301ab918ce87ef7864208cbe23ba543dbd7cabbb1a9a7d07ea0e8b6270217630",
+    "final-md/规章制度/培养方案管理制度/桂电教〔2019〕10 号--桂林电子科技大学普通全日制本（专）科学生转学工作实施细则（修订）.md": "6943e29888624b40d7fff943a9a7f2b5203656bd56179d02fab497df93b1ad0c",
+    "final-md/规章制度/培养方案管理制度/桂电教〔2020〕15号--关于印发《桂林电子科技大学考试管理规定》的通知.md": "f2894c8e46a0120a47b94d4058c41a259c482dca96baa8893edca0ac9396462a",
+    "final-md/规章制度/培养方案管理制度/桂电教〔2021〕32 号--桂林电子科技大学本科生修读微专业、辅修专业、辅修学位管理办法.md": "5103149ef9f891fd1fee8379d644b07cf99389c108735e05a3f1aac5826ec12d",
+    "final-md/规章制度/培养方案管理制度/桂电教〔2026〕13号--关于印发《桂林电子科技大学创新创业拓展课程学分认定管理办法》的通知.md": "b81ced8345e96410708e13cf5a066658d30a40eb9748ed3286ab60747a43dfd8",
+    "final-md/规章制度/学校章程/桂林电子科技大学章程（2023年核准稿）.md": "161f18000a09bb9daf93eced624332c8a670bc7f61806ba0f1f65880df63fc74",
+    "final-md/规章制度/教学制度/关于印发《桂林电⼦科技⼤学⼯程类硕⼠ 专业学位论⽂基本要求》的.md": "19a40305ce323479b832bb4ac4c26576feb15b69cef6567a54f56a6a7c3141c6",
+    "final-md/规章制度/教学制度/关于印发《桂林电子科技大学本科课堂教学规范》的通知（桂电教〔2023〕12号）.md": "6ab3026026cc75a45cbbbdfe6347c1965bf7458c44bb24e5e8afe48395ce84be",
+    "final-md/规章制度/教学制度/关于印发《桂林电子科技大学通识教育 专家委员会章程（试行）》的通知（桂电教〔2023〕17号）.md": "46c1eb7fbbc1bcac02820f3850a5d235dad56b8fb12359be2c7ae16347f25a75",
+    "final-md/规章制度/教学制度/关于印发《桂林电子科技大学非学历教育管理办法（试行）》的通知（桂电〔2022〕27号）.md": "3f01d2e880dfd8b21ecc5c6fd209d67918cbd3f19ca1879f091e2b932a384ac6",
+    "final-md/规章制度/科研制度/关于印发《桂林电子科技大学学科学术委员会工作办法（试行）》的通知（桂电科〔2023〕2号）.md": "bb05936a4e0c8b8cdecf87cddc3404871e4c832a86b5de70020ccee5ff657ba0",
+    "final-md/规章制度/科研制度/关于印发《桂林电子科技大学科研诚信管理暂行办法》的通知（桂电科〔2022〕3号）.md": "643ea0c7880c305bab59d2fa1d6dc33f09d60d2d5460887f66811201ac835e6c",
+    "cases.json": "053315fdf7d7e2e6df335a8275c2812c91e91ad2f1b6591a37b9b8b283eeee7d",
+    "run.py": "2a9da0d283c93b70d964c4e4432115fe715c4102f4f2129b7202d5271b0bd7d8"
+  }
+}
