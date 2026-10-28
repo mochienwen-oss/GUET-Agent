@@ -1,7 +1,7 @@
 # config.py —— 全局配置：从环境变量 / .env 读取（环境变量 > 默认值）
 import os
 
-from core.paths import BACKEND_ROOT
+from core.paths import BACKEND_ROOT, PROJECT_ROOT
 
 from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -15,16 +15,9 @@ _LOCAL_RERANK = os.path.join(os.path.dirname(_HERE), "model", "rerank_m3")
 
 
 class Settings(BaseSettings):
-    # ★★ 2026-10-08：`env_file` 由**相对路径 ".env" 改为绝对路径**。
-    #   原写法相对**当前工作目录**解析 —— 生产没问题（`backend-host.service` 的
-    #   WorkingDirectory 与 `start_all.sh` 都先 cd 到 backend），但**任何从别处跑的脚本**
-    #   （`python 训练集/.../xxx.py` 而 CWD=项目根）会**静默读不到 .env**，
-    #   于是悄悄用上 config.py 的默认值。
-    #   实测后果：一整轮方案 1/4/6 的进程内 A/B 全跑在**默认的 `school_docs`（旧库）**上，
-    #   而不是 `.env` 指定的 `school_docs_v2` —— 指标与基线对不上（R@1 0.9528 vs 0.9843），
-    #   连错两轮才被「基线复现断言」拦下。**静默用错配置比报错难查得多。**
+    # 根目录 .env 使用绝对路径读取，与启动时的工作目录无关。
     model_config = SettingsConfigDict(
-        env_file=os.path.join(_HERE, ".env"), env_file_encoding="utf-8", extra="ignore"
+        env_file=str(PROJECT_ROOT / ".env"), env_file_encoding="utf-8", extra="ignore"
     )
 
     # 所有生成任务必须使用统一 API；空配置不再选择本地模型。
@@ -171,7 +164,7 @@ class Settings(BaseSettings):
     #   bge-m3 是 8192 token，装得下 chunk_max_len；且自带稀疏（词权重）输出，
     #   多路召回那条路零额外模型。
     #   ⚠️ 换模型后必须**重建 collection**（旧向量与新向量不同源，混在一起检索全废）：
-    #      rm -rf qdrant_local  然后重跑 scripts/ingest_local.py
+    #      rm -rf qdrant_local  然后重跑 scripts/knowledge/ingest_local.py
     embed_model: str = _LOCAL_EMBED if os.path.isdir(_LOCAL_EMBED) else "BAAI/bge-m3"
     # query 侧指令前缀。**bge-m3 不需要**（官方用法是无指令检索），留空即可。
     # ⚠️ 若换回 bge-large-zh-v1.5 之类的模型，必须改回

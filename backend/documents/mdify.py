@@ -79,13 +79,13 @@ def _ends_sentence(line: str) -> bool:
 
 
 # ---------------------------------------------------------------- 入库质量门
-# ★ 判据的**单一来源**：scripts/audit_parse.py 与三个入库入口都 import 这几个常量，
+# ★ 判据的**单一来源**：scripts/diagnostics/audit_parse.py 与三个入库入口都 import 这几个常量，
 #   避免「两处各写一个 200，改了一处」那种靠注释维持的一致。
 #
 # 为什么需要这道门：解析失败是**静默**的——实测 97 份 PDF 里 28 份（29%）解析后
 # 几乎为空（23 页的章程只出 481 字），而它们全部通过了「源文件有没有对应 md」的
 # 覆盖检查。空文档进库比不进库更糟：它让检索看起来正常但答不出来。
-MIN_DOC_CHARS = 200        # md 绝对字数下限（与 scripts/pdf2md.py 原 _MIN_OK 对齐）
+MIN_DOC_CHARS = 200        # md 绝对字数下限（与 scripts/documents/pdf2md.py 原 _MIN_OK 对齐）
 MIN_CHARS_PER_PAGE = 150   # md 字数 / 源文件页数 的下限
 
 
@@ -107,7 +107,7 @@ def quality_reasons(md: str, pages: int | None = None, stats: dict | None = None
                        f"（< {MIN_CHARS_PER_PAGE}）")
         if stats and stats.get("scan_pages") and per < MIN_CHARS_PER_PAGE:
             out.append(f"扫描页未处理：{len(stats['scan_pages'])}/{pages} 页无文字层"
-                       f" → 先跑 scripts/ocr2md.py")
+                       f" → 先跑 scripts/documents/ocr2md.py")
     return out
 
 
@@ -145,7 +145,7 @@ def _normalize(text: str) -> str:
 
 
 # ---------------------------------------------------------------- OCR 错字修正
-# ⚠️ 只该用在 **OCR 结果** 上（调用方见 scripts/ocr2md.py）。原生文字层不会有这类
+# ⚠️ 只该用在 **OCR 结果** 上（调用方见 scripts/documents/ocr2md.py）。原生文字层不会有这类
 #    形近误识，拿它去改原生文本反而有改错的风险。
 #
 # 这是「降低人工校验成本」最划算的一招：你只需要通读一遍，把**规律性**的错字登记到

@@ -179,7 +179,7 @@ def _in_band(bbox, height: float, band: float) -> bool:
     return bbox[3] <= height * band or bbox[1] >= height * (1 - band)
 
 
-# 页面文字层低于这个字数 → 视为扫描页，整页 OCR 交给 scripts/ocr2md.py。
+# 页面文字层低于这个字数 → 视为扫描页，整页 OCR 交给 scripts/documents/ocr2md.py。
 # ★ 单一来源在 ocr_engine.TEXT_LAYER_MIN：两边一个负责扫描件、一个负责正文插图，
 #   阈值错开就会出现真空或重复劳动。原先靠注释维持「两处都是 50」，现在靠 import。
 _TEXT_LAYER_MIN = ocr_engine.TEXT_LAYER_MIN
@@ -277,7 +277,7 @@ def _page_items(page, body_hint: float | None = None, repeated: set | None = Non
             marker = f"<!-- 图片 {int(w)}x{int(h)} -->"
             # ★ 插图 OCR 的三重把关：
             #   ① 开关打开  ② 这一页**已有文字层**  ③ 这张图**不是整页**
-            #   ②③ 是为了不和 scripts/ocr2md.py 抢活：整页图 + 无文字层 = 扫描件，
+            #   ②③ 是为了不和 scripts/documents/ocr2md.py 抢活：整页图 + 无文字层 = 扫描件，
             #   整页 OCR 是它的职责。两边都做会让同一份正文被灌两遍。
             if ocr_images and page_text_len >= _TEXT_LAYER_MIN and w * h < page_area * 0.85:
                 text = _ocr_figure(page, (x0, y0, x1, y1))
@@ -468,10 +468,10 @@ def to_markdown_report(content: bytes, ocr_images: bool = False) -> tuple[str, d
     为什么需要它：解析失败是**静默**的——23 页的扫描件会返回一小段文本，
     调用方一律当成功。实测 97 份 PDF 里 10 份解析后几乎为空，且全部通过了原有的
     「源文件有没有对应 md」覆盖检查。stats 把「哪些页需要 OCR」「丢了几张图」
-    「表格认出来几张」变成可判定的数，供 scripts/audit_parse.py 和入库前置门使用。
+    「表格认出来几张」变成可判定的数，供 scripts/diagnostics/audit_parse.py 和入库前置门使用。
 
     关键字段：
-      scan_pages      —— 文字层 < _TEXT_LAYER_MIN 的页号（= 该走 scripts/ocr2md.py）
+      scan_pages      —— 文字层 < _TEXT_LAYER_MIN 的页号（= 该走 scripts/documents/ocr2md.py）
       text_chars      —— 文字层总字数（判断「是不是网页外壳」用）
       images_dropped  —— 被尺寸/banner 门槛丢掉的图片块数（原来完全静默）
       tables          —— 认出来的表格数；tables_rejected = 形状/内容不过关被丢的

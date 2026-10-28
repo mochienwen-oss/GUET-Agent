@@ -11,10 +11,10 @@
 #   systemctl restart backend-host
 #
 # 说明：
-#   · 使用安装了 backend/requirements.txt 的 Python 环境；生成通过 llm-api.json 配置。
+#   · 使用安装了 requirements.txt 的 Python 环境；生成通过 llm-api.json 配置。
 #   · 前端不用单独启：main.py 检测到 ../frontend/dist 存在就会挂到 / 上，
 #     页面和 API 同在同一个端口。
-#   · 配置从 /root/guet-agent/backend/.env 读（pydantic-settings 的 env_file）。
+#   · 配置从 /root/guet-agent/.env 读（pydantic-settings 的 env_file）。
 #     注意：真实环境变量优先级高于 .env —— 所以将来若改回 Docker，
 #     compose 的 environment 会正确覆盖这里的 .env，不会打架。
 #

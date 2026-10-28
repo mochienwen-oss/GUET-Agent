@@ -211,7 +211,7 @@ def reindex_all(user: User = Depends(require_admin)):
 def sync_documents(user: User = Depends(require_admin)):
     """对账：把**灌库脚本写进 Qdrant、却没进 `documents` 表**的文档补出来。
 
-    为什么需要：`scripts/ingest_local.py` 直接调 `vector._index_document()` 写 Qdrant
+    为什么需要：`scripts/knowledge/ingest_local.py` 直接调 `vector._index_document()` 写 Qdrant
     （document_id 取 crc32），全程不碰 MySQL；而本页的文档列表与总览的文档数都读 MySQL。
     结果是灌完库只看得见向量数、看不见任何文档（bug③）。详见 `vector.sync_documents`。
 

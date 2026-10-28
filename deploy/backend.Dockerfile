@@ -4,7 +4,7 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # 先装依赖（利用层缓存）。backend 源码通过 docker-compose 挂载，便于改代码后重启生效。
-COPY backend/requirements.txt .
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 
 EXPOSE 8080

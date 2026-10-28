@@ -106,7 +106,7 @@ def build_table(boxes, gap_min: float | None = None):
                 empty.append((ri, ci))
         grid.append(cells)
     # 行/列的几何范围一并回传 —— 调用方要用它去**放大重 OCR** 空单元格，
-# 以及把**合并单元格**的值铺回它两侧的数据行（见 scripts/repair_flat_table.py）。
+# 以及把**合并单元格**的值铺回它两侧的数据行（见 scripts/documents/repair_flat_table.py）。
     row_ranges = [(min(b[1] for b in r), max(b[3] for b in r)) for r in rows]
     cell_centers = {}
     for ri, r in enumerate(rows):
@@ -275,7 +275,7 @@ def spread_merged(tb, cols=(0,)) -> list[tuple]:
         row2 | A≥567     | 100        ← 最近锚点是 row1(CET4)     → CET4 ✓
         row3 | 425≤A<500 | A×0.2      ← 距 row4(CET6) 更近          → CET6 ✓
 
-    ★ **填充范围 = 该列全部空格，按最近的锚点取值**（与 `scripts/repair_flat_table.py`
+    ★ **填充范围 = 该列全部空格，按最近的锚点取值**（与 `scripts/documents/repair_flat_table.py`
       的 `fill_merged` 同规则，那份是**人工核验过**的）。曾试过「只插值不外推」
       （限于首个锚点~末个锚点之间），结果雅思的最后两行**丢标签** —— 因为雅思的锚点
       落在它 4 行跨度的**第一行**，下面 3 行都在「末个锚点」之外。合并跨度本来就可能

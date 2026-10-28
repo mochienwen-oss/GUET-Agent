@@ -17,33 +17,42 @@
 
 | 路径 | 内容 |
 | --- | --- |
+| `requirements.txt` | 后端 Python 依赖 |
+| `.env.example` | 根目录环境变量示例；复制为私有 `.env` 后配置 |
 | `backend/` | FastAPI 后端、Agent、检索、文档处理、权限与测试 |
 | `backend/agent/skills/ppt_master/` | 已接入的 PPT Master Skill 及其原始许可 |
 | `frontend/` | Vue 3、TypeScript 和 Vite 前端 |
-| `final-md/` | 已整理的知识库 Markdown 原文和配图 |
+| `final-md/` | 已整理的知识库 Markdown 原文；`assets/` 配图仅在本地保留 |
 | `backend/data/` | 文档清单、课程与专业结构化资料、引用关联等必要数据 |
 | `model/` | 模型下载说明及 BM25 词表；权重需自行下载，见 [model/README.md](model/README.md) |
 | `deploy/` | API 模型配置、环境变量示例和部署文件 |
-| `scripts/` | 本地启动、知识导入及资料维护入口 |
+| `scripts/runtime/` | 本地启动与已有服务器环境的服务管理 |
+| `scripts/knowledge/` | 知识库导入、元数据补提取和检索路由资料维护 |
+| `scripts/documents/` | 文档转换、OCR、清理、去重和表格修复 |
+| `scripts/diagnostics/` | 语料、索引、解析和分块检查 |
+| `scripts/evaluation/` | 检索评测与阈值标定 |
+| `scripts/models/` | 本地检索模型下载 |
 
 ## 本地运行（Windows PowerShell）
 
 当前本地已使用的环境为 Windows、Python 3.13.5、Node.js 24.14.1。以下以 Windows 为主，所有命令均在仓库根目录执行；涉及实际安装、模型下载和知识库导入的命令由操作者按需执行。
 
-如果这台电脑已经有完整环境和 `backend/.env`，直接看“日常再次启动”，不要覆盖现有密钥配置、重新下载已有模型或重复导入知识库。
+如果这台电脑已经有完整环境和 `.env`，直接看“日常再次启动”，不要覆盖现有密钥配置、重新下载已有模型或重复导入知识库。
 
 ### 1. 获取代码并创建 Python 环境
 
 ```powershell
-git clone https://github.com/mochienwen-oss/GUET-Agent.git
+git clone --depth 1 https://github.com/mochienwen-oss/GUET-Agent.git
 cd GUET-Agent
 python -m venv .venv
 .\.venv\Scripts\python.exe -m pip install --upgrade pip
-.\.venv\Scripts\python.exe -m pip install -r backend/requirements.txt
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe -m pip install -r backend/agent/skills/ppt_master/requirements.txt
 ```
 
 私有仓库需要先登录有访问权限的 GitHub 账号。这里直接调用虚拟环境中的 Python，无需修改 PowerShell 的脚本执行策略。
+
+示例只下载当前版本，避免拉取历史提交中已移出仓库的资料；需要完整 Git 历史时去掉 `--depth 1`。
 
 Windows 的 PPT 页面预览需要已安装并可正常使用的桌面版 Microsoft PowerPoint；`pywin32` 由后端依赖安装。仅安装 Python 和 `python-pptx` 不能代替 PowerPoint 预览引擎。
 
@@ -83,10 +92,10 @@ docker run -d --name guet-agent-mysql -e MYSQL_ROOT_PASSWORD=change-this-passwor
 仅在没有私有配置文件时复制示例：
 
 ```powershell
-if (-not (Test-Path backend/.env)) { Copy-Item backend/.env.example backend/.env }
+if (-not (Test-Path .env)) { Copy-Item .env.example .env }
 ```
 
-编辑 `backend/.env`，至少确认：
+编辑 `.env`，至少确认：
 
 ```dotenv
 MYSQL_URL=mysql+pymysql://root:change-this-password@127.0.0.1:33306/guet_chat?charset=utf8mb4
@@ -110,7 +119,7 @@ RERANK_FP16=0
 - `QDRANT_PATH` 非空时使用本地嵌入式 Qdrant，不需要另外启动 Qdrant 容器；如果改用 HTTP Qdrant 服务，应把 `QDRANT_PATH` 留空并正确设置 `QDRANT_URL`。
 - CPU 配置便于先启动；使用 GPU 时先准备支持本机 CUDA 的 PyTorch，再按 [模型说明](model/README.md) 调整设备参数。
 - 相对路径以仓库根目录为工作目录。恢复已有知识库时，MySQL、向量库、文档清单及 BM25 词表必须配套，`ACTIVE_DOCUMENTS_PATH` 应改为该数据集实际使用的清单。
-- 仅启用 PPT 公开搜索时填写 `VOLC_SEARCH_API_KEY`；其余现有搜索配置见 `deploy/volc-search.env.example`，按需合并到 `backend/.env`。未配置或不满足现有启用条件时，搜索会如实显示不可用。
+- 仅启用 PPT 公开搜索时填写 `VOLC_SEARCH_API_KEY`；其余现有搜索配置见 `deploy/volc-search.env.example`，按需合并到 `.env`。未配置或不满足现有启用条件时，搜索会如实显示不可用。
 
 生成模型和公开搜索的实际调用可能产生平台费用。密钥只放在本地 `.env`，不要填写到 README 或示例文件。
 
@@ -131,7 +140,7 @@ RERANK_FP16=0
 
 ```powershell
 $env:MD_DIR = (Resolve-Path final-md).Path
-.\.venv\Scripts\python.exe scripts/seed_knowledge.py
+.\.venv\Scripts\python.exe scripts/knowledge/seed_knowledge.py
 Remove-Item Env:MD_DIR
 ```
 
@@ -155,7 +164,7 @@ cd ..
 ### 7. 启动和访问
 
 ```powershell
-.\.venv\Scripts\python.exe scripts/local_api.py --host 127.0.0.1 --port 8080
+.\.venv\Scripts\python.exe scripts/runtime/local_api.py --host 127.0.0.1 --port 8080
 ```
 
 看到 `Application startup complete` 后访问 <http://127.0.0.1:8080/>，使用 `.env` 中配置的管理员账号登录。健康接口为 <http://127.0.0.1:8080/api/health>；健康接口正常说明服务已启动，知识库是否可检索还取决于前面的模型与数据初始化。
@@ -167,7 +176,7 @@ cd ..
 数据库和知识库已经配置好后，只需要确认 MySQL 正在运行，再在仓库根目录执行：
 
 ```powershell
-.\.venv\Scripts\python.exe scripts/local_api.py --host 127.0.0.1 --port 8080
+.\.venv\Scripts\python.exe scripts/runtime/local_api.py --host 127.0.0.1 --port 8080
 ```
 
 若 MySQL 使用上面的 Docker 容器且已停止，可先运行 `docker start guet-agent-mysql`。Python 依赖、模型和知识库不需要每次重装或重建；前端源码变化后才需要重新构建。
@@ -189,7 +198,11 @@ cd ..
 
 `docs/` 中的本地交接、审计和实施记录保留在本机，不再纳入当前仓库。运行必需的资料仍在 `backend/data/` 和 Skill 自身资源目录中；历史提交不因本次清理而改写。
 
-已有本地数据库若缺少引用展示元数据，可单独执行 `scripts/backfill_source_metadata.py` 补提取，无需为此重建向量或 BM25。培养方案解析和名称归一化保留于 `backend/documents/plan_data/`，用于资料维护及实体识别，不作为模型可调用的业务工具。
+`final-md/assets/` 原文配图和脚本临时图片不纳入仓库，本机文件保留。部分 Markdown 引用了这些配图；新环境若需要完整显示原文附件和图表，需要另行恢复对应的 `assets/` 目录。PPT Master 原版脚本所依赖的资源不受此规则影响。
+
+旧模型下载、LoRA 合并及历史训练数据脚本仅在本地 `scripts/training/` 归档，不作为当前 API 项目的安装或运行入口，也不上传。当前会实际使用的检索评测脚本保留于 `scripts/evaluation/`，不会在启动服务时自动执行。
+
+已有本地数据库若缺少引用展示元数据，可单独执行 `scripts/knowledge/backfill_source_metadata.py` 补提取，无需为此重建向量或 BM25。培养方案解析和名称归一化保留于 `backend/documents/plan_data/`，用于资料维护及实体识别，不作为模型可调用的业务工具。
 
 ## 第三方组件
 

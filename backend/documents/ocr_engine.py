@@ -1,7 +1,7 @@
 # ocr_engine.py —— 共用 OCR 引擎（RapidOCR，纯 CPU，不占显存）
 #
 # 两个调用方，分工不同、不能混：
-#   scripts/ocr2md.py      —— **扫描件整页 OCR**：无文字层的页，整页就是一张图，
+#   scripts/documents/ocr2md.py      —— **扫描件整页 OCR**：无文字层的页，整页就是一张图，
 #                             OCR 它等于抽取全文。
 #   backend/pdfextract.py  —— **正文插图 OCR**：有文字层的页里，抠出插图区域的文字。
 #
@@ -14,7 +14,7 @@ import re
 _engine = None
 
 # ★ 页级「有文字层」的判定阈值 —— **单一来源**，backend/pdfextract.py 与
-#   scripts/ocr2md.py 都 import 它。
+#   scripts/documents/ocr2md.py 都 import 它。
 #   两边一个负责扫描件整页 OCR、一个负责正文插图 OCR，阈值错开就会出现真空或重复劳动
 #   （该 OCR 的页没人管 / 同一份正文被灌两遍）。原先靠注释维持「两处都是 50」——
 #   注释不会报错，改成 import 才会。
@@ -60,7 +60,7 @@ def ocr_image_with_boxes(img, to_bgr: bool = True, engine=None) -> list[tuple]:
     这个多回坐标 —— **表格重建**（`backend/tablebuild.py`）必须靠坐标才能把列分开。
     两条路共用同一个引擎实例，不额外加载模型。
 
-    `engine` 可注入：`scripts/ocr2md.py` 手上已有引擎实例（它还负责缺依赖时给人话提示），
+    `engine` 可注入：`scripts/documents/ocr2md.py` 手上已有引擎实例（它还负责缺依赖时给人话提示），
     不传就按模块级单例取 —— 两条调用路径共用这**一份**取框逻辑，别再各写一遍。
 
     ⚠️ RapidOCR 的第三个元素是 **str 类型的置信度**（不是 float），这里转成 float。

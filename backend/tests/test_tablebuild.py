@@ -59,7 +59,7 @@ def test_merged_cell_centered_in_gap_forms_own_row():
 
     实测（《大学英语》表）：CET4 的 y 区间压在上下两行数据的**空隙**中，与两边
     **都不重叠** → 区间重叠聚类会把它单独聚成一行。调用方要还原成 markdown
-    （不支持合并单元格）就得显式把它铺回两侧——见 scripts/repair_flat_table.py
+    （不支持合并单元格）就得显式把它铺回两侧——见 scripts/documents/repair_flat_table.py
     的 MERGE_COLS。这里把这个行为锁住，免得以后有人「顺手优化」成别样。
     """
     bs = [box(200, 10, 280, 22, "425≤A<567"), box(350, 10, 420, 22, "A×0.1764"),
@@ -191,7 +191,7 @@ def test_no_text_lost_is_vacuous_by_construction():
 # ------------------------------------------------------- 合并单元格铺开（spread_merged）
 # 用**实测的真实输出**当输入：这是《大学英语》认定标准表 OCR 后、铺开**之前**的样子
 # （合并的「类别」列纵向居中 → 自成一个孤儿行，行数因此翻倍）。
-# 真值见 scripts/repair_flat_table.py 的 EXPECTED（人工目视读值那份）。
+# 真值见 scripts/documents/repair_flat_table.py 的 EXPECTED（人工目视读值那份）。
 
 _MERGED_BEFORE = [
     ["", "425≤A<567", "A×0.1764"],

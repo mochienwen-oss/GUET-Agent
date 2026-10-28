@@ -14,7 +14,7 @@ from llm import ctx_budget, final_answer_profile, llm_api_config
 
 
 def test_default_resources_stay_at_existing_locations():
-    assert Path(Settings.model_config["env_file"]) == BACKEND_ROOT / ".env"
+    assert Path(Settings.model_config["env_file"]) == PROJECT_ROOT / ".env"
     assert Path(Settings.model_fields["system_prompt_path"].default).is_file()
     assert Path(Settings.model_fields["active_documents_path"].default) == BACKEND_ROOT / "data/documents.active.json"
     assert entity_catalog.DEFAULT_PLAN_DB == BACKEND_ROOT / "data/plan_db.json"

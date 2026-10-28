@@ -1,6 +1,6 @@
 # tests/test_vector_sync.py —— 灌库对账（bug③）里那个纯函数的单测
 #
-# 背景：`scripts/ingest_local.py` 直接调 `vector._index_document()` 写 Qdrant，
+# 背景：`scripts/knowledge/ingest_local.py` 直接调 `vector._index_document()` 写 Qdrant，
 # **从不写 MySQL**，而后台的文档列表读的正是 MySQL —— 于是灌完库只看得见向量数、
 # 看不见任何文档。`vector.sync_documents()` 就是补这一步的对账；
 # 其中唯一能脱离 Qdrant/MySQL 单测的，是「把分块拼回全文」这一步。

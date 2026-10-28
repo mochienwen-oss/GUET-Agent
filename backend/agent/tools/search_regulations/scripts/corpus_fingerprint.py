@@ -12,7 +12,7 @@
     与 `diagnostics._corpus_snapshot()` **同式**，所以能和索引里算出来的直接比。
 
 ⚠️ 读文件必须走 `open(path, encoding="utf-8").read()` —— 通用换行会把 CRLF 折成 LF，
-   这正是入库路径（`scripts/ingest_local.py`）的读法。用 `open(path,"rb").read().decode()`
+   这正是入库路径（`scripts/knowledge/ingest_local.py`）的读法。用 `open(path,"rb").read().decode()`
    **保留 `\\r\\n`**，会切出不同的块（实测 3384 → 3047，差 337 块）。
    文件级 SHA-256 仍按**原始字节**算，不受此影响。
 """

@@ -39,7 +39,7 @@ DEFAULT_CRAG_HIGH = 0.6
 DEFAULT_CRAG_LOW = 0.3
 
 # reranker（cross-encoder 精排）三档默认阈值（sigmoid 后的 0~1 分数）
-# ★ 用 bge-reranker-v2-m3 实测标定（scripts/calibrate_gate.py，318 可答 + 24 越界）：
+# ★ 用 bge-reranker-v2-m3 实测标定（scripts/evaluation/calibrate_gate.py，318 可答 + 24 越界）：
 #     可答题 best 分 min 0.555 / p5 0.622 / p25 0.711 / 中位 0.724
 #     越界题 best 分 min 0.500 / 中位 0.522 / max 0.719
 #   low = 0.555 取**可答题的最低分** → 误判空 0/318，同时把「话题完全不相干」的越界题判空。

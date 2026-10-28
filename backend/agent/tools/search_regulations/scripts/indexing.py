@@ -68,7 +68,7 @@ def _encode_sparse(texts: list[str]) -> list:
     if vocab is None:
         raise RuntimeError(
             "缺少 BM25 词表（model/bm25_vocab.json）。入库前先建：\n"
-            "  python scripts/ingest_local.py --sync <目录...>   # 会自动建\n"
+            "  python scripts/knowledge/ingest_local.py --sync <目录...>   # 会自动建\n"
             "或显式：python -c \"import sys;sys.path.insert(0,'backend');"
             "import vector;vector.build_bm25_vocab(['_md'])\"")
     out = []
@@ -501,7 +501,7 @@ def _sync_documents() -> dict:
     """对账：把 **Qdrant 里有、MySQL `documents` 表里没有**的文档补进表里。
 
     ★ 为什么需要它（bug③ 的根因）：
-      灌库脚本 `scripts/ingest_local.py` 是**直接调 `_index_document()`** 写 Qdrant 的
+      灌库脚本 `scripts/knowledge/ingest_local.py` 是**直接调 `_index_document()`** 写 Qdrant 的
       （document_id 取 `crc32(标题)`），**从头到尾不碰 MySQL**。
       而后台「知识库」的文档列表读的是 MySQL（`routers/admin.list_documents`），
       「总览」里的文档数也读它（`get_stats`）、向量数才读 Qdrant。

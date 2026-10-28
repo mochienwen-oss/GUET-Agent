@@ -54,6 +54,7 @@ services:
       - "${BACKEND_PORT:-8080}:8080"
     volumes:
       - ../backend:/app
+      - ../.env:/.env:ro
       - ./llm-api.json:/deploy/llm-api.json:ro
       - ../frontend/dist:/frontend/dist
       - ../scripts:/scripts:ro

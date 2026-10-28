@@ -21,11 +21,11 @@
 
 两个模型的权重都在 GB 量级。Embedding 下载保留 `pytorch_model.bin`、分词器、配置和 `1_Pooling/`，排除本项目不使用的 ONNX 副本；reranker 保留 `model.safetensors`、配置和分词器。下载实现使用官方 [snapshot_download](https://huggingface.co/docs/huggingface_hub/guides/download)，中断后可再次运行同一命令使用已有缓存。
 
-激活虚拟环境后，Git Bash 或 Linux 也可执行 `bash scripts/download_bge.sh` 下载到相同目录。
+激活虚拟环境后，Git Bash 或 Linux 也可执行 `bash scripts/models/download_bge.sh` 下载到相同目录。
 
 ## 后端配置
 
-在 `backend/.env` 中设置：
+在 `.env` 中设置：
 
 ```dotenv
 EMBED_MODEL=model/embedding_m3
