@@ -13,8 +13,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[4]))
 from core.config import settings
 from core.errors import ApiError
 from agent.runtime import loop
-from agent.tools.create_ppt.scripts import delivery, master_host, master_workspace, subgraph, workflow
-from agent.tools.create_ppt.scripts.materials import Material, read_materials
+from agent.tools.create_ppt.scripts.rendering import delivery
+from agent.tools.create_ppt.scripts.master import master_host
+from agent.tools.create_ppt.scripts.master import master_workspace
+from agent.tools.create_ppt.scripts.execution import subgraph
+from agent.tools.create_ppt.scripts.execution import workflow
+from agent.tools.create_ppt.scripts.content.materials import Material, read_materials
 
 
 @pytest.fixture(autouse=True)
@@ -227,7 +231,7 @@ def test_messages_and_continuations_preserve_cumulative_usage(monkeypatch):
 
 def test_user_pause_waits_for_worker_and_keeps_returned_usage(monkeypatch):
     import asyncio
-    from agent.tools.create_ppt.scripts import background
+    from agent.tools.create_ppt.scripts.execution import background
 
     state = task()
     entered, release = Event(), Event()
@@ -288,7 +292,7 @@ def test_user_pause_waits_for_worker_and_keeps_returned_usage(monkeypatch):
 
 def test_pause_before_first_step_does_not_start_model_and_is_resumable():
     import asyncio
-    from agent.tools.create_ppt.scripts import background
+    from agent.tools.create_ppt.scripts.execution import background
 
     state = task()
     async def scenario():
@@ -305,7 +309,7 @@ def test_pause_before_first_step_does_not_start_model_and_is_resumable():
 
 
 def test_pause_checks_owner_and_revision_before_touching_a_task():
-    from agent.tools.create_ppt.scripts import background
+    from agent.tools.create_ppt.scripts.execution import background
     state = task()
     with pytest.raises(ApiError):
         background.pause(state['task_id'], 2, 0)
@@ -424,7 +428,7 @@ def test_rebuild_checks_current_page_target_instead_of_old_effective_count():
 def test_revision_receipt_follows_real_export_and_preview_files(monkeypatch):
     from PIL import Image
     from pptx import Presentation
-    from agent.tools.create_ppt.scripts import preview
+    from agent.tools.create_ppt.scripts.rendering import preview
     state = saved_deck()
     old_file = Path(state['artifacts']['pptx_path'])
     master_host._set_revision_scope(state, 'replace', ['p2'], '用户要求仅修改第二页')

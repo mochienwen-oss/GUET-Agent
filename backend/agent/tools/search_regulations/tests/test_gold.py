@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pytest
 
-from agent.tools.search_regulations.scripts import build_gold
-from agent.tools.search_regulations.scripts.gold import load_gold, validate_case
+from agent.tools.search_regulations.scripts.evidence_ops import build_gold
+from agent.tools.search_regulations.scripts.evidence_ops.gold import load_gold, validate_case
 
 
 def test_builder_uses_only_reviewed_independent_sources_and_is_deterministic():

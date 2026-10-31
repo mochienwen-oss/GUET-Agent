@@ -9,7 +9,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from agent.tools.search_regulations.scripts import indexing as V  # noqa: E402
+from agent.tools.search_regulations.scripts.index_ops import indexing as V  # noqa: E402
 
 
 def test_join_chunk_texts_removes_seam_overlap():

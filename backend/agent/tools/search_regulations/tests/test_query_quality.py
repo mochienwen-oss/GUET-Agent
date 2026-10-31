@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from agent.tools.search_regulations.scripts.query_quality import (
+from agent.tools.search_regulations.scripts.querying.query_quality import (
     audit_query_args,
     load_lexicon,
 )

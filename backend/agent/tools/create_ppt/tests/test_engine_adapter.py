@@ -5,8 +5,8 @@ import xml.etree.ElementTree as ET
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[4]))
-from agent.tools.create_ppt.scripts.model import Claim, Slide
-from agent.tools.create_ppt.scripts.ppt_master import page_svg
+from agent.tools.create_ppt.scripts.content.model import Claim, Slide
+from agent.tools.create_ppt.scripts.master.ppt_master import page_svg
 
 
 def test_svg_escapes_material_text_and_keeps_cjk_language():

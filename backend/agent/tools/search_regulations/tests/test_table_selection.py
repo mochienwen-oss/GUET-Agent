@@ -5,8 +5,8 @@ import pytest
 
 from agent.core import ToolResult
 from agent.tools.search_regulations.renderer import render
-from agent.tools.search_regulations.scripts import retrieval
-from agent.tools.search_regulations.scripts.trace import RetrievalTrace
+from agent.tools.search_regulations.scripts.recall import retrieval
+from agent.tools.search_regulations.scripts.inspection.trace import RetrievalTrace
 
 
 QUERY = "计算机网络支撑哪些毕业要求？"
@@ -24,7 +24,7 @@ def row(idx, parent="table-a", *, doc=1, term="计算机网络", score=.98):
 
 
 def select(ranked, *, query=QUERY, top_k=5, max_chars=8000, cap=2):
-    from agent.tools.search_regulations.scripts.table_selection import select_table_rows
+    from agent.tools.search_regulations.scripts.recall.table_selection import select_table_rows
     baseline = retrieval._cap_per_doc(ranked, top_k)
     return select_table_rows(query, ranked, baseline, top_k=top_k, per_doc=cap,
                              max_chars=max_chars, min_score=.8473)

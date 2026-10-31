@@ -9,8 +9,11 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[4]))
 from core.config import settings
 from core.errors import ApiError
-from agent.tools.create_ppt.scripts import delivery, master_host, master_workspace, workflow
-from agent.tools.create_ppt.scripts.materials import Material
+from agent.tools.create_ppt.scripts.rendering import delivery
+from agent.tools.create_ppt.scripts.master import master_host
+from agent.tools.create_ppt.scripts.master import master_workspace
+from agent.tools.create_ppt.scripts.execution import workflow
+from agent.tools.create_ppt.scripts.content.materials import Material
 
 
 def reply(name, **arguments):
@@ -159,7 +162,7 @@ def test_publication_checks_real_file_preview_and_revision_token(state, monkeypa
     """Native-file fixture checks delivery only, not model/upstream authoring quality."""
     from pptx import Presentation
     from pptx.util import Inches
-    from agent.tools.create_ppt.scripts import preview
+    from agent.tools.create_ppt.scripts.rendering import preview
     master_host.start(state)
     folder = Path(state['master']['project'])
     (folder / 'svg_output').mkdir(exist_ok=True)

@@ -4,7 +4,7 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[4]))
 
-from agent.tools.create_ppt.scripts.reading import PptFileWorkspace
+from agent.tools.create_ppt.scripts.master.reading import PptFileWorkspace
 
 
 def test_read_receipt_reports_new_ranges_and_keeps_legitimate_reread_text(tmp_path):

@@ -9,8 +9,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[4]))
 
 from agent.core.contracts import Source, ToolResult  # noqa: E402
 from core.config import settings  # noqa: E402
-from agent.tools.create_ppt.scripts import subgraph  # noqa: E402
-from agent.tools.create_ppt.scripts.model import Claim, Slide  # noqa: E402
+from agent.tools.create_ppt.scripts.execution import subgraph  # noqa: E402
+from agent.tools.create_ppt.scripts.content.model import Claim, Slide  # noqa: E402
 
 
 def test_two_different_tools_to_claim_checked_pptx(tmp_path, monkeypatch):
@@ -78,7 +78,7 @@ def test_two_different_tools_to_claim_checked_pptx(tmp_path, monkeypatch):
 
 
 def test_model_plan_validates_tool_arguments(monkeypatch):
-    from agent.tools.create_ppt.scripts import generate
+    from agent.tools.create_ppt.scripts.content import generate
 
     monkeypatch.setattr(generate, "_json_reply", lambda *_: {"research_tasks": [
         {"question": "制度", "name": "search_regulations", "args": {"query": "转专业"}},
@@ -89,7 +89,7 @@ def test_model_plan_validates_tool_arguments(monkeypatch):
 
 
 def test_named_major_course_repairs_wrong_retrieval_tool(monkeypatch):
-    from agent.tools.create_ppt.scripts import generate
+    from agent.tools.create_ppt.scripts.content import generate
 
     replies = [
         {"research_tasks": [

@@ -11,9 +11,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[4]))
 
 from core.config import settings
 from core.errors import ApiError
-from agent.tools.create_ppt.scripts import delivery, workflow
-from agent.tools.create_ppt.scripts.materials import Material
-from agent.tools.create_ppt.scripts.model import Claim, Slide
+from agent.tools.create_ppt.scripts.rendering import delivery
+from agent.tools.create_ppt.scripts.execution import workflow
+from agent.tools.create_ppt.scripts.content.materials import Material
+from agent.tools.create_ppt.scripts.content.model import Claim, Slide
 
 
 @pytest.fixture
@@ -119,7 +120,7 @@ def test_failed_revision_keeps_previous_version_and_rejects_wrong_owner(task):
 
 
 def test_stale_revision_is_rejected_before_model_request(task, monkeypatch):
-    from agent.tools.create_ppt.scripts import generate
+    from agent.tools.create_ppt.scripts.content import generate
     monkeypatch.setattr(generate, "_json_reply", lambda *a: pytest.fail("Stale request must not call the model"))
     with pytest.raises(ApiError):
         workflow.revise(task["task_id"], 1, 0, "第三页简化")

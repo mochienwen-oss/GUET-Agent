@@ -1,4 +1,4 @@
-from agent.tools.search_regulations.scripts.query_plan import build_query_plan
+from agent.tools.search_regulations.scripts.querying.query_plan import build_query_plan
 
 
 def test_no_keywords_preserves_one_query_for_all_retrieval_paths():

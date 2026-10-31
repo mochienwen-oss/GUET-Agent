@@ -5,7 +5,7 @@ from pathlib import Path
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from documents import document_metadata as M
+from documents.catalog import document_metadata as M
 
 
 def catalog(tmp_path, monkeypatch):
@@ -61,7 +61,7 @@ def test_ingest_failure_is_committed_not_rolled_back_on_close(monkeypatch, tmp_p
     from sqlalchemy.orm import sessionmaker
     from database import db
     monkeypatch.setattr(M.settings, "active_documents_path", str(tmp_path / "documents.json"))
-    from agent.tools.search_regulations.scripts import indexing
+    from agent.tools.search_regulations.scripts.index_ops import indexing
     engine = create_engine("sqlite:///:memory:")
     # SQLite adapter only; the real ORM/session lifecycle stays in use.
     monkeypatch.setattr(db.Document.__table__.c.content, "type", Text())

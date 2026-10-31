@@ -12,8 +12,8 @@ import pytest
 from agent.core import evidence as ev  # noqa: E402
 from agent.core.contracts import Source, ToolResult  # noqa: E402
 from core.config import settings  # noqa: E402
-from agent.tools.create_ppt.scripts import subgraph  # noqa: E402
-from agent.tools.create_ppt.scripts.subgraph import build_ppt_subgraph  # noqa: E402
+from agent.tools.create_ppt.scripts.execution import subgraph  # noqa: E402
+from agent.tools.create_ppt.scripts.execution.subgraph import build_ppt_subgraph  # noqa: E402
 
 
 @pytest.fixture(autouse=True)

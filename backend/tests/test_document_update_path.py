@@ -16,8 +16,9 @@ def stores(tmp_path, monkeypatch):
     from sqlalchemy.orm import sessionmaker
     from qdrant_client import QdrantClient, models
     from database import db
-    from documents import document_availability as availability
-    from agent.tools.search_regulations.scripts import indexing, bm25
+    from documents.catalog import document_availability as availability
+    from agent.tools.search_regulations.scripts.index_ops import indexing
+    from agent.tools.search_regulations.scripts.index_ops import bm25
     settings = indexing.settings
     monkeypatch.setattr(settings, "active_documents_path", str(tmp_path / "active.json"))
     monkeypatch.setattr(settings, "bm25_vocab_path", str(tmp_path / "bm25.json"))

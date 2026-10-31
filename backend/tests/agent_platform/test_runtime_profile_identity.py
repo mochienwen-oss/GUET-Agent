@@ -8,8 +8,8 @@ from core.config import settings
 @pytest.mark.parametrize('collection', ['current', 'wrong'])
 def test_startup_keeps_knowledge_identity_without_model_probe(tmp_path, monkeypatch, api_config, collection):
     from database import db
-    from documents import document_availability
-    from agent.tools.search_regulations.scripts import bm25
+    from documents.catalog import document_availability
+    from agent.tools.search_regulations.scripts.index_ops import bm25
     import qdrant_client
     import httpx
     api_config()

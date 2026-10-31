@@ -1,6 +1,6 @@
 from dataclasses import fields
 
-from agent.tools.search_regulations.scripts import gate_signals as gs
+from agent.tools.search_regulations.scripts.evidence_ops import gate_signals as gs
 
 
 def _row(doc, idx, rerank, dense=.7, source=None, text="考试作弊按违纪处理"):

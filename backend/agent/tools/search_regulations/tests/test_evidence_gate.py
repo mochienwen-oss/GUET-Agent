@@ -1,7 +1,7 @@
 from dataclasses import replace
 
-from agent.tools.search_regulations.scripts import evidence_gate as eg
-from agent.tools.search_regulations.scripts.gate_signals import GateSignals
+from agent.tools.search_regulations.scripts.evidence_ops import evidence_gate as eg
+from agent.tools.search_regulations.scripts.evidence_ops.gate_signals import GateSignals
 
 
 def _signals(**overrides):

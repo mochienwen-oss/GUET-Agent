@@ -3,7 +3,9 @@ from copy import deepcopy
 import pytest
 
 from agent.core import EvidenceLedger
-from agent.tools.search_regulations.scripts import evidence_units as units, retrieval, indexing
+from agent.tools.search_regulations.scripts.evidence_ops import evidence_units as units
+from agent.tools.search_regulations.scripts.recall import retrieval
+from agent.tools.search_regulations.scripts.index_ops import indexing
 
 
 def row(idx, **extra):
@@ -92,7 +94,7 @@ def test_budget_omits_whole_lower_priority_blocks_and_deduplicates():
 
 
 def test_flow_expansion_preserves_metadata_without_crossing_article(monkeypatch):
-    from agent.tools.search_regulations.scripts import flow_expand
+    from agent.tools.search_regulations.scripts.recall import flow_expand
     seed = row(2)
     related, unrelated = row(3), row(1)
     unrelated["parent_id"] = "another-article"
@@ -193,7 +195,7 @@ def test_real_memory_qdrant_payload_filter_registry_and_final_packet(monkeypatch
         assert boundary_result.status == "success"
         assert [s.chunk_id for s in boundary_result.sources] == ["1:1", "1:2"]
         assert boundary_result.data["evidence_units"]["groups"][0]["boundary_skips"] == ["next_id"]
-        from agent.tools.search_regulations.scripts.evidence_gate import GateDecision
+        from agent.tools.search_regulations.scripts.evidence_ops.evidence_gate import GateDecision
         monkeypatch.setattr(retrieval, "decide", lambda *a: GateDecision(
             "uncertain", "test_unexposable", "test/1", (), True, False))
         monkeypatch.setattr(retrieval, "_related_evidence", lambda *a: pytest.fail("No expansion of unexposable evidence"))

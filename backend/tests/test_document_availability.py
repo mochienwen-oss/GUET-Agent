@@ -6,7 +6,7 @@ import sys
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from documents import document_availability as A
+from documents.catalog import document_availability as A
 
 
 @pytest.fixture

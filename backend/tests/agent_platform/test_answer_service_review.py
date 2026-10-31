@@ -152,7 +152,7 @@ def test_tool_partial_evidence_alone_does_not_declare_partial_answer(monkeypatch
 
 
 def test_body_keeps_complete_enumeration_and_current_source_checks():
-    from documents.document_availability import SourceUnavailable
+    from documents.catalog.document_availability import SourceUnavailable
     packet = G.evidence_packet({"evidence": ledger("修业年限为3至6年。")})
     draft = paragraph(packet)
     packet["source_revision"] = "definitely-not-the-current-revision"

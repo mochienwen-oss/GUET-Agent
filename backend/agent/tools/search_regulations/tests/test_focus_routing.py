@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from agent.tools.search_regulations.scripts import intent, retrieval
+from agent.tools.search_regulations.scripts.querying import intent
+from agent.tools.search_regulations.scripts.recall import retrieval
 
 
 def _chunk(doc, idx):

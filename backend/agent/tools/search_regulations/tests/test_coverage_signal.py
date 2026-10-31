@@ -13,7 +13,7 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[4]))
 
-from agent.tools.search_regulations.scripts.answer_coverage import (
+from agent.tools.search_regulations.scripts.evidence_ops.answer_coverage import (
     coverage_signal, QUESTION_STOPWORDS,
 )
 

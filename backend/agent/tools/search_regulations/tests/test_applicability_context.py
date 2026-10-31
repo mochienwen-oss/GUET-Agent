@@ -11,7 +11,8 @@ from agent.core import EvidenceLedger, Source, ToolResult
 from agent.core.evidence import chunk_id_of
 from agent.core.task import interpret_task
 from agent.runtime import answer_service as A, grounded_answer as G, graph, composition as C
-from agent.tools.search_regulations.scripts import evidence_units, linked_context
+from agent.tools.search_regulations.scripts.evidence_ops import evidence_units
+from agent.tools.search_regulations.scripts.recall import linked_context
 
 
 @pytest.fixture
@@ -224,8 +225,9 @@ def test_memory_index_to_tool_packet_provider_view_and_delivery(candidate, monke
     from pydantic import SecretStr
     from qdrant_client import QdrantClient, models
     from agent.runtime import registry
-    from agent.tools.search_regulations.scripts import retrieval, indexing
-    from agent.tools.search_regulations.scripts.evidence_gate import GateDecision
+    from agent.tools.search_regulations.scripts.recall import retrieval
+    from agent.tools.search_regulations.scripts.index_ops import indexing
+    from agent.tools.search_regulations.scripts.evidence_ops.evidence_gate import GateDecision
     from core.config import settings
 
     entry = candidate['degree']

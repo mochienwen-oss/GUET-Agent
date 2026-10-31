@@ -2,7 +2,7 @@ import json
 
 import pytest
 
-from agent.tools.search_regulations.scripts.trace import RetrievalTrace
+from agent.tools.search_regulations.scripts.inspection.trace import RetrievalTrace
 
 
 def test_trace_preserves_chunk_identity_and_json_round_trips():

@@ -20,7 +20,7 @@ def writer(monkeypatch, api_config):
     api_config('responses', writer=PROFILE, model='deepseek-flash', base_url='https://api.deepseek.com', profile='deepseek')
     data = json.loads((Path(__file__).parent / 'fixtures/api_body_enumeration_repeat.json').read_text(encoding='utf-8'))
     packet = data['packet']
-    monkeypatch.setattr('documents.document_availability.snapshot', lambda: {'revision': packet['source_revision'], 'status': 'ready', 'documents': {}})
+    monkeypatch.setattr('documents.catalog.document_availability.snapshot', lambda: {'revision': packet['source_revision'], 'status': 'ready', 'documents': {}})
     return packet, data['draft']
 
 

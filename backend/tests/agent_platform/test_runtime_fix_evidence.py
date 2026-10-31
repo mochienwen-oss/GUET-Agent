@@ -18,7 +18,7 @@ from agent.runtime import composition, graph
 def os_recorded(monkeypatch):
     data = json.loads((Path(__file__).parent / 'fixtures/api_os_indicator_decimal.json').read_text(encoding='utf8'))
     assert hashlib.sha256(json.dumps(data['packet'], ensure_ascii=False, sort_keys=True).encode()).hexdigest() == data['provenance']['packet_sha256']
-    monkeypatch.setattr('documents.document_availability.snapshot', lambda: {
+    monkeypatch.setattr('documents.catalog.document_availability.snapshot', lambda: {
         'revision': data['packet']['source_revision'], 'status': 'ready', 'documents': {}})
     return data
 

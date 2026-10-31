@@ -1,7 +1,7 @@
 from types import SimpleNamespace
 
-from agent.tools.search_regulations.scripts import retrieval
-from agent.tools.search_regulations.scripts.trace import RetrievalTrace
+from agent.tools.search_regulations.scripts.recall import retrieval
+from agent.tools.search_regulations.scripts.inspection.trace import RetrievalTrace
 
 
 def _chunk(doc, idx, score):
@@ -83,7 +83,7 @@ def test_retrieve_chunks_records_dense_sparse_and_fused(monkeypatch):
     monkeypatch.setattr(retrieval.settings, "use_sparse", True)
     monkeypatch.setattr(retrieval.settings, "aux_route", False)
     monkeypatch.setattr(retrieval.settings, "sparse_fuse_gate", False)
-    from agent.tools.search_regulations.scripts import bm25
+    from agent.tools.search_regulations.scripts.index_ops import bm25
     monkeypatch.setattr(bm25, "load_vocab", lambda: {"x": 1})
     monkeypatch.setattr(bm25, "query_vector", lambda query, vocab: ([1], [1.0]))
     trace = RetrievalTrace.start("问题")

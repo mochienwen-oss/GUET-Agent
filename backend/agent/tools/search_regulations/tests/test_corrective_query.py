@@ -1,8 +1,8 @@
-from agent.tools.search_regulations.scripts import corrective_query as cq
-from agent.tools.search_regulations.scripts import intent
-from agent.tools.search_regulations.scripts.evidence_gate import GateDecision
-from agent.tools.search_regulations.scripts.gate_signals import build_anchor_index
-from agent.tools.search_regulations.scripts.query_plan import QueryPlan
+from agent.tools.search_regulations.scripts.querying import corrective_query as cq
+from agent.tools.search_regulations.scripts.querying import intent
+from agent.tools.search_regulations.scripts.evidence_ops.evidence_gate import GateDecision
+from agent.tools.search_regulations.scripts.evidence_ops.gate_signals import build_anchor_index
+from agent.tools.search_regulations.scripts.querying.query_plan import QueryPlan
 
 
 def _decision(status="uncertain", retry=True, reason="gray_band", exposable=True):

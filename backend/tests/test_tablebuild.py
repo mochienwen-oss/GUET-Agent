@@ -6,7 +6,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from documents import tablebuild as T  # noqa: E402
+from documents.ingest import tablebuild as T  # noqa: E402
 
 
 def box(x0, y0, x1, y1, text):

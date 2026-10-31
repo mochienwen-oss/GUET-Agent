@@ -7,9 +7,9 @@ from pptx import Presentation
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[4]))
 
-from agent.tools.create_ppt.scripts.model import Claim, Slide  # noqa: E402
-from agent.tools.create_ppt.scripts.qa import check  # noqa: E402
-from agent.tools.create_ppt.scripts.render import render, sources_markdown  # noqa: E402
+from agent.tools.create_ppt.scripts.content.model import Claim, Slide  # noqa: E402
+from agent.tools.create_ppt.scripts.rendering.qa import check  # noqa: E402
+from agent.tools.create_ppt.scripts.rendering.render import render, sources_markdown  # noqa: E402
 
 
 EID = "0123456789ab"

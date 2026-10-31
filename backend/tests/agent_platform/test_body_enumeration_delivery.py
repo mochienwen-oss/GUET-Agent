@@ -19,7 +19,7 @@ def recorded(monkeypatch):
     packet = data['packet']
     digest = hashlib.sha256(json.dumps(packet, ensure_ascii=False, sort_keys=True).encode()).hexdigest()
     assert digest == data['provenance']['packet_sha256']
-    monkeypatch.setattr('documents.document_availability.snapshot', lambda: {
+    monkeypatch.setattr('documents.catalog.document_availability.snapshot', lambda: {
         'revision': packet['source_revision'], 'status': 'ready', 'documents': {}})
     return packet, data['draft']
 

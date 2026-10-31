@@ -8,7 +8,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[4]))
 
 from core.config import settings  # noqa: E402
 from core.errors import ApiError  # noqa: E402
-from agent.tools.create_ppt.scripts import delivery, subgraph  # noqa: E402
+from agent.tools.create_ppt.scripts.rendering import delivery
+from agent.tools.create_ppt.scripts.execution import subgraph  # noqa: E402
 
 
 @pytest.fixture

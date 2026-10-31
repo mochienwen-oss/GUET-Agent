@@ -10,7 +10,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[4]))
 from core.config import settings  # noqa: E402
 from agent.runtime import graph  # noqa: E402
 from agent.tools.create_ppt import tool as ppt_tool  # noqa: E402
-from agent.tools.create_ppt.scripts import subgraph  # noqa: E402
+from agent.tools.create_ppt.scripts.execution import subgraph  # noqa: E402
 
 
 def test_real_ppt_stream_emits_typed_events(monkeypatch, tmp_path):
@@ -19,8 +19,9 @@ def test_real_ppt_stream_emits_typed_events(monkeypatch, tmp_path):
     ★ 阶段3：入口不再是关键词路由 —— 由模型选 `create_ppt` 触发。这里把模型
       换成替身，主图、任务持久化与子图是真的；模型提取的受众不能在交接时丢失。
     """
-    from agent.tools.create_ppt.scripts import generate, workflow
-    from agent.tools.create_ppt.scripts.model import Slide
+    from agent.tools.create_ppt.scripts.content import generate
+    from agent.tools.create_ppt.scripts.execution import workflow
+    from agent.tools.create_ppt.scripts.content.model import Slide
     monkeypatch.setattr(settings, "agent_ppt_workdir", str(tmp_path))
     monkeypatch.setattr(generate, "plan", lambda brief: {"research_questions": [], "research_tasks": []})
     monkeypatch.setattr(generate, "create_slides", lambda state: [Slide("cover", "转专业"),

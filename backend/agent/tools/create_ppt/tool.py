@@ -1,11 +1,12 @@
 """PPT task service facade; no presentation function is offered to the model."""
-from .scripts import delivery, subgraph
+from agent.tools.create_ppt.scripts.rendering import delivery
+from agent.tools.create_ppt.scripts.execution import subgraph
 
 
 async def run_stream(history, question, *, task_id=None, owner_id=None, **kwargs):
     from agent.core.request_control import run_sync
     from core.errors import ApiError
-    from .scripts import workflow
+    from agent.tools.create_ppt.scripts.execution import workflow
     if not task_id:
         raise ApiError(400, '请从演示文稿工作区创建制作任务')
     current = delivery.owned_state(task_id, owner_id)

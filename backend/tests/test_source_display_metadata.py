@@ -2,7 +2,7 @@
 import hashlib
 from types import SimpleNamespace
 
-from documents.source_metadata import display_metadata, extract_metadata
+from documents.catalog.source_metadata import display_metadata, extract_metadata
 from conversations import source_references
 
 
@@ -99,7 +99,7 @@ def test_legacy_document_and_empty_metadata_have_no_placeholders():
 
 
 def test_read_reference_preserves_metadata_evidence_offsets_and_stale_guard(monkeypatch):
-    from documents import document_availability
+    from documents.catalog import document_availability
     monkeypatch.setattr(document_availability, 'require_ready', lambda *args: 1)
     monkeypatch.setattr(document_availability, 'require_source', lambda *args, **kwargs: None)
     monkeypatch.setattr(source_references, 'document_catalog', lambda: {})

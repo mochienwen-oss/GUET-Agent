@@ -12,7 +12,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from agent.core.task import interpret_task
 from agent.core import Source, EvidenceLedger
 from agent.runtime import composition as C, graph, grounded_answer as G, answer_service as A
-from agent.tools.search_regulations.scripts.target_records import select_target_record
+from agent.tools.search_regulations.scripts.evidence_ops.target_records import select_target_record
 from test_grounded_answers import ledger
 
 TITLE = '桂林电子科技大学“大学英语”课程替换及成绩认定办法(试行)'
@@ -205,11 +205,11 @@ def test_compose_transport_has_no_model_status_fields(monkeypatch, repair_mode, 
 @pytest.mark.parametrize("in_pool", [True, False])
 def test_real_retrieval_exit_delivers_target_before_budget(monkeypatch, in_pool):
     from types import SimpleNamespace
-    from documents.document_chunks import build_chunks
-    from agent.tools.search_regulations.scripts import retrieval as R
-    from agent.tools.search_regulations.scripts.evidence_gate import GateDecision
-    from agent.tools.search_regulations.scripts.trace import RetrievalTrace
-    from documents import document_availability
+    from documents.catalog.document_chunks import build_chunks
+    from agent.tools.search_regulations.scripts.recall import retrieval as R
+    from agent.tools.search_regulations.scripts.evidence_ops.evidence_gate import GateDecision
+    from agent.tools.search_regulations.scripts.inspection.trace import RetrievalTrace
+    from documents.catalog import document_availability
     root = Path(__file__).resolve().parents[3]
     source = next(path for path in (root / "final-md").rglob("*.md")
                   if "大学英语" in path.name and "成绩认定" in path.name)

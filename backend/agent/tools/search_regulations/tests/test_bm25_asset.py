@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from agent.tools.search_regulations.scripts import bm25
+from agent.tools.search_regulations.scripts.index_ops import bm25
 
 
 def test_default_bm25_vocabulary_resolves_to_the_existing_project_artifact():

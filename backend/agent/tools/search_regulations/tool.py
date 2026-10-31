@@ -7,12 +7,13 @@ from agent.core import Source, ToolResult
 from agent.core.evidence import chunk_id_of, text_hash
 
 from .schemas import SearchRegulationsArgs
-from .scripts import indexing, retrieval
-from .scripts.corrective_query import build_corrective_query
-from .scripts.evidence_gate import POLICY_V1, GateDecision, GatePolicy
-from .scripts.query_plan import build_query_plan
-from .scripts.trace import RetrievalTrace
-from .scripts.answer_coverage import coverage_signal
+from agent.tools.search_regulations.scripts.index_ops import indexing
+from agent.tools.search_regulations.scripts.recall import retrieval
+from agent.tools.search_regulations.scripts.querying.corrective_query import build_corrective_query
+from agent.tools.search_regulations.scripts.evidence_ops.evidence_gate import POLICY_V1, GateDecision, GatePolicy
+from agent.tools.search_regulations.scripts.querying.query_plan import build_query_plan
+from agent.tools.search_regulations.scripts.inspection.trace import RetrievalTrace
+from agent.tools.search_regulations.scripts.evidence_ops.answer_coverage import coverage_signal
 
 
 # ★ 冻结：逐字等于 LoRA 训练列里的 description（与 schemas.py 的 PARAMETERS 同一份来源）。

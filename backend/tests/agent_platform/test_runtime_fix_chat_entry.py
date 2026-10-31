@@ -60,7 +60,7 @@ def chat_app(monkeypatch, request):
     monkeypatch.setattr(router, 'ConversationLease', SQLiteLease)
     monkeypatch.setattr(settings, 'llm_api_config_path', str(ROOT / 'deploy/llm-api.json'))
     recorded = json.loads((Path(__file__).parent / 'fixtures/api_os_indicator_decimal.json').read_text(encoding='utf8'))
-    monkeypatch.setattr('documents.document_availability.snapshot', lambda: {
+    monkeypatch.setattr('documents.catalog.document_availability.snapshot', lambda: {
         'revision': recorded['packet']['source_revision'], 'status': 'ready', 'documents': {}})
     row = json.loads((Path(__file__).parent / 'fixtures/api_conversion_policy.json').read_text(encoding='utf8'))['row']
     source = Source(title=row['source'], text=row['text'], heading_path=row['heading_path'])

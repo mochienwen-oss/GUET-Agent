@@ -11,7 +11,8 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[4]))
 from core.config import settings
-from agent.tools.create_ppt.scripts import public_materials as public, web_search as search
+from agent.tools.create_ppt.scripts.content import public_materials as public
+from agent.tools.create_ppt.scripts.content import web_search as search
 
 
 @pytest.fixture(autouse=True)

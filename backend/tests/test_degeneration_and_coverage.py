@@ -10,7 +10,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from agent.core import citations  # noqa: E402
-from agent.tools.search_regulations.scripts import coverage  # noqa: E402
+from agent.tools.search_regulations.scripts.evidence_ops import coverage  # noqa: E402
 
 
 # ---------------------------------------------------------------- 重复退化

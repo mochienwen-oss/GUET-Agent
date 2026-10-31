@@ -7,7 +7,9 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[4]))
 from core.config import settings
 from core.errors import ApiError
-from agent.tools.create_ppt.scripts import subgraph, task_management, workflow
+from agent.tools.create_ppt.scripts.execution import subgraph
+from agent.tools.create_ppt.scripts.execution import task_management
+from agent.tools.create_ppt.scripts.execution import workflow
 
 TASK_ID = 'a123456789ab'
 

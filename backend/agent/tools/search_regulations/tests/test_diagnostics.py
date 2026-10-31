@@ -1,4 +1,4 @@
-from agent.tools.search_regulations.scripts.diagnostics import (
+from agent.tools.search_regulations.scripts.inspection.diagnostics import (
     _config_fingerprint,
     _expected_evidence_rank,
     diagnose_case,

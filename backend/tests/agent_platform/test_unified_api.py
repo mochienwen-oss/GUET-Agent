@@ -217,7 +217,7 @@ def test_title_grading_and_ppt_share_the_same_config(configure, monkeypatch):
         return response(request, 'responses', text='校园制度查询')
     monkeypatch.setattr(httpx.Client, 'send', send)
     monkeypatch.setattr(httpx.AsyncClient, 'send', send_async)
-    from agent.tools.create_ppt.scripts.generate import _json_reply
+    from agent.tools.create_ppt.scripts.content.generate import _json_reply
     assert llm_client.grade_relevance('问题', '依据')
     assert _json_reply('只输出JSON', {}) == {'research_tasks': []}
     assert asyncio.run(llm_client.generate_title('校园政策')) == '校园制度查询'
@@ -313,10 +313,10 @@ def test_real_chat_graph_plans_executes_composes_and_persists_using_only_api(con
 def test_api_startup_skips_local_generation_but_keeps_knowledge_identity(configure, monkeypatch, tmp_path, points):
     from types import SimpleNamespace
     from database import db
-    from documents import document_availability
+    from documents.catalog import document_availability
     import qdrant_client
     from application import runtime_identity
-    from agent.tools.search_regulations.scripts import bm25
+    from agent.tools.search_regulations.scripts.index_ops import bm25
     configure()
     profile = tmp_path / 'runtime-profile.json'
     profile.write_text(json.dumps({'collection': 'api-test', 'api_config': 'test-api.json'}), encoding='utf-8')
@@ -349,7 +349,7 @@ def test_api_chat_and_persistence_with_explicit_source_double(configure, monkeyp
     """The same HTTP/graph/wire path, with a declared source double, not real KB acceptance."""
     from agent.core import Source, ToolResult
     from agent.runtime import registry
-    from documents import document_availability
+    from documents.catalog import document_availability
     facts = {'major': '人工智能', 'college': '测试学院',
              'course': {'name': '计算机网络', 'credits': 3, 'hours': 48},
              'indicators': [{'id': key, 'text': '本地协议测试指标 ' + key}

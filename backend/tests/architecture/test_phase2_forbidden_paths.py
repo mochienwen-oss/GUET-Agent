@@ -15,13 +15,13 @@ PROJECT = BACKEND.parent
 
 #: 阶段2 搬走的根模块 → 它们的新位置（记录在这里，红了能直接告诉人搬去哪儿了）
 MOVED_ROOT_MODULES = {
-    "rag.py": "agent/tools/search_regulations/scripts/retrieval.py",
-    "vector.py": "agent/tools/search_regulations/scripts/indexing.py",
-    "bm25.py": "agent/tools/search_regulations/scripts/bm25.py",
-    "coverage.py": "agent/tools/search_regulations/scripts/coverage.py",
-    "flows.py": "agent/tools/search_regulations/scripts/flow_expand.py",
-    "refs.py": "agent/tools/search_regulations/scripts/reference_follow.py",
-    "intent.py": "agent/tools/search_regulations/scripts/intent.py",
+    "rag.py": "agent/tools/search_regulations/scripts/recall/retrieval.py",
+    "vector.py": "agent/tools/search_regulations/scripts/index_ops/indexing.py",
+    "bm25.py": "agent/tools/search_regulations/scripts/index_ops/bm25.py",
+    "coverage.py": "agent/tools/search_regulations/scripts/evidence_ops/coverage.py",
+    "flows.py": "agent/tools/search_regulations/scripts/recall/flow_expand.py",
+    "refs.py": "agent/tools/search_regulations/scripts/recall/reference_follow.py",
+    "intent.py": "agent/tools/search_regulations/scripts/querying/intent.py",
     "citations.py": "agent/core/citations.py",
 }
 

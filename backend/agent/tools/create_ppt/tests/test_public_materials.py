@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[4]))
-from agent.tools.create_ppt.scripts import public_materials as public
+from agent.tools.create_ppt.scripts.content import public_materials as public
 
 
 @pytest.mark.parametrize("url,address", [
@@ -40,8 +40,8 @@ def test_public_source_keeps_url_date_and_question(monkeypatch):
 
 
 def test_gap_research_reads_only_user_candidate_and_preserves_source(monkeypatch):
-    from agent.tools.create_ppt.scripts import subgraph
-    from agent.tools.create_ppt.scripts.materials import Material
+    from agent.tools.create_ppt.scripts.execution import subgraph
+    from agent.tools.create_ppt.scripts.content.materials import Material
     seen = []
     def read(url, question, **kwargs):
         seen.append((url, question))

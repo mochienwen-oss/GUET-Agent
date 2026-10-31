@@ -184,7 +184,7 @@ def _gate(status, reason, retry, exposable=True):
 
 
 def test_uncertain_triggers_exactly_one_corrective_retrieval(monkeypatch):
-    from agent.tools.search_regulations.scripts.corrective_query import CorrectiveQuery
+    from agent.tools.search_regulations.scripts.querying.corrective_query import CorrectiveQuery
 
     calls = []
 
@@ -216,7 +216,7 @@ def test_uncertain_triggers_exactly_one_corrective_retrieval(monkeypatch):
 
 
 def test_second_uncertain_does_not_retry_again(monkeypatch):
-    from agent.tools.search_regulations.scripts.corrective_query import CorrectiveQuery
+    from agent.tools.search_regulations.scripts.querying.corrective_query import CorrectiveQuery
 
     calls = []
 
@@ -238,7 +238,7 @@ def test_second_uncertain_does_not_retry_again(monkeypatch):
 
 
 def test_second_grounded_uncertain_is_partial_evidence(monkeypatch):
-    from agent.tools.search_regulations.scripts.corrective_query import CorrectiveQuery
+    from agent.tools.search_regulations.scripts.querying.corrective_query import CorrectiveQuery
 
     calls = []
 

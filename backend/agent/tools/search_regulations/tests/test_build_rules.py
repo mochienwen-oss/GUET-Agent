@@ -5,7 +5,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from agent.tools.search_regulations.scripts import build_collection as bc  # noqa: E402
+from agent.tools.search_regulations.scripts.index_ops import build_collection as bc  # noqa: E402
 
 
 def _units(*specs):

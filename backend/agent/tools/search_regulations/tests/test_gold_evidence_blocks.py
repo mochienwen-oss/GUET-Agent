@@ -15,9 +15,10 @@ from pathlib import Path
 
 import pytest
 
-from agent.tools.search_regulations.scripts import corpus_fingerprint as cf
-from agent.tools.search_regulations.scripts import diagnostics, indexing
-from agent.tools.search_regulations.scripts.gold import load_gold
+from agent.tools.search_regulations.scripts.index_ops import corpus_fingerprint as cf
+from agent.tools.search_regulations.scripts.inspection import diagnostics
+from agent.tools.search_regulations.scripts.index_ops import indexing
+from agent.tools.search_regulations.scripts.evidence_ops.gold import load_gold
 
 ROOT = Path(__file__).resolve().parents[5]
 MD = ROOT / "_md"

@@ -13,7 +13,7 @@ from security.auth import require_auth
 from database.db import get_db
 from core.errors import ApiError
 from routers.ppt import router
-from agent.tools.create_ppt.scripts import public_materials
+from agent.tools.create_ppt.scripts.content import public_materials
 
 
 @pytest.fixture
@@ -57,7 +57,7 @@ def test_missing_materials_remains_waiting_instead_of_fake_success(client):
 
 
 def test_workspace_list_is_owned_read_only_and_contains_only_summaries(client):
-    from agent.tools.create_ppt.scripts import subgraph
+    from agent.tools.create_ppt.scripts.execution import subgraph
     c, app = client
     first = c.post('/api/ppt/tasks', json={'brief': {'goal': '自己的演示文稿', 'audience': '新生'}}).json()
     path = Path(subgraph._state_path(first['task_id']))
@@ -76,7 +76,7 @@ def test_workspace_list_is_owned_read_only_and_contains_only_summaries(client):
 
 def test_master_design_answer_is_owned_and_does_not_expose_execution_context(client, monkeypatch):
     from llm import llm_api_client
-    from agent.tools.create_ppt.scripts.master_workspace import MasterWorkspace
+    from agent.tools.create_ppt.scripts.master.master_workspace import MasterWorkspace
     monkeypatch.setattr(MasterWorkspace, 'initialize', lambda workspace, state: workspace.folder.mkdir(parents=True, exist_ok=True))
     def model(messages, **kwargs):
         answered = any('"approved": true' in m.get('content', '') for m in messages if m['role'] == 'user')

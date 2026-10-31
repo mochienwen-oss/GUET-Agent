@@ -5,7 +5,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from agent.tools.search_regulations.scripts import table_check as tc  # noqa: E402
+from agent.tools.search_regulations.scripts.recall import table_check as tc  # noqa: E402
 
 
 def test_a_well_formed_three_column_table_passes():

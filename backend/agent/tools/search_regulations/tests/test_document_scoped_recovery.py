@@ -5,13 +5,14 @@ from pathlib import Path
 import pytest
 
 from agent.tools.search_regulations import tool as search_tool
-from agent.tools.search_regulations.scripts import gate_signals, retrieval
-from agent.tools.search_regulations.scripts.corrective_query import CorrectiveQuery
-from agent.tools.search_regulations.scripts.evidence_gate import (
+from agent.tools.search_regulations.scripts.evidence_ops import gate_signals
+from agent.tools.search_regulations.scripts.recall import retrieval
+from agent.tools.search_regulations.scripts.querying.corrective_query import CorrectiveQuery
+from agent.tools.search_regulations.scripts.evidence_ops.evidence_gate import (
     POLICY_V1, GateDecision, GatePolicy, decide,
 )
-from agent.tools.search_regulations.scripts.gate_signals import GateSignals
-from agent.tools.search_regulations.scripts.trace import RetrievalTrace
+from agent.tools.search_regulations.scripts.evidence_ops.gate_signals import GateSignals
+from agent.tools.search_regulations.scripts.inspection.trace import RetrievalTrace
 
 
 CANDIDATE = GatePolicy(version="evidence-gate/1.2-candidate",

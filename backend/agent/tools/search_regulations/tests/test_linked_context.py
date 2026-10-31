@@ -2,7 +2,8 @@ from copy import deepcopy
 import pytest
 
 from agent.core.scope import business_scope_conflict
-from agent.tools.search_regulations.scripts import evidence_units, linked_context
+from agent.tools.search_regulations.scripts.evidence_ops import evidence_units
+from agent.tools.search_regulations.scripts.recall import linked_context
 
 
 def row(idx, title='样本规定', path=None, text='原始正文', **extra):

@@ -7,8 +7,8 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[4]))
 
-from agent.tools.create_ppt.scripts.materials import Material, read_materials
-from agent.tools.create_ppt.scripts.analysis import analyse
+from agent.tools.create_ppt.scripts.content.materials import Material, read_materials
+from agent.tools.create_ppt.scripts.content.analysis import analyse
 
 
 def test_two_documents_keep_distinct_scope_and_locations():
@@ -68,7 +68,7 @@ def test_unsupported_or_empty_document_is_not_silently_accepted():
 
 
 def test_sufficient_sources_allow_zero_research_and_policy_cannot_be_overridden(monkeypatch):
-    from agent.tools.create_ppt.scripts import generate
+    from agent.tools.create_ppt.scripts.content import generate
     monkeypatch.setattr(generate, "_json_reply", lambda *a: {"research_tasks": [], "gaps": []})
     assert generate.plan({"goal": "材料说明", "material_policy": "provided_only"})["research_tasks"] == []
     monkeypatch.setattr(generate, "_json_reply", lambda *a: {"research_tasks": [

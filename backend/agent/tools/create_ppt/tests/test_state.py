@@ -15,7 +15,7 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[4]))
 
 from core.config import settings  # noqa: E402
-from agent.tools.create_ppt.scripts import subgraph as S  # noqa: E402
+from agent.tools.create_ppt.scripts.execution import subgraph as S  # noqa: E402
 
 _GOOD = {"task_id": "t1", "stage": "researching", "next_node": "evidence_check",
          "request_raw": "做个PPT", "brief": {"goal": "g"},

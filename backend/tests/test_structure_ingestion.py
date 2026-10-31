@@ -6,12 +6,14 @@ from types import SimpleNamespace
 
 import pytest
 
-from documents import document_chunks
-from documents import mdify
-from documents import pdfextract
-from agent.tools.search_regulations.scripts import indexing, retrieval, gate_signals
-from agent.tools.search_regulations.scripts.evidence_gate import POLICY_V1, decide
-from agent.tools.search_regulations.scripts.rerank_scores import (
+from documents.catalog import document_chunks
+from documents.ingest import mdify
+from documents.ingest import pdfextract
+from agent.tools.search_regulations.scripts.index_ops import indexing
+from agent.tools.search_regulations.scripts.recall import retrieval
+from agent.tools.search_regulations.scripts.evidence_ops import gate_signals
+from agent.tools.search_regulations.scripts.evidence_ops.evidence_gate import POLICY_V1, decide
+from agent.tools.search_regulations.scripts.recall.rerank_scores import (
     SCORE_VERSION, sigmoid, threshold_on_single_scale,
 )
 
