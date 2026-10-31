@@ -60,3 +60,13 @@ release/
 # 校园任务与用户会话文件（本地数据，不入库）
 /backend/data/campus_tasks/
 /backend/data/chat_files/
+
+# 桌面客户端（仅本地保留，不入库）
+/desktop/
+
+# 知识库语料与培养方案库（仅本地保留，不入库）
+/final-md/
+/backend/data/plan_db.json
+
+# 评测数据（仅本地保留，不入库）
+/测试集/

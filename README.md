@@ -2,15 +2,17 @@
 
 面向桂林电子科技大学学生的校园问答与聊天式 PPT 制作工作区。
 
-第一版：`v1.0.0`，2026-10-28。此版本保存当前本地已实现的项目代码和知识资料。
+当前版本：`v1.1.0`，2026-10-31。相对 `v1.0.0`（2026-10-28）新增校园空教室查询、附件问答上下文与界面升级；知识库语料和桌面客户端转为仅本地保留。
 
 ## 当前功能
 
 - 校园资料检索问答：API 模型规划与工具调用，结合向量检索、BM25 和精排；检索无依据、不相关或失败时返回明确状态。
+- 校园空教室查询：服务端完成学校 CAS 单点登录（内存会话、2 小时有效），网页端无需桌面客户端即可自动查询各时段空闲教室，结果作为消息持久保存。
 - 答案引用交互：点击引用阅读原文及上下文，定位段落或表格，查看按原文依据提取的日期、适用对象和适用范围。
+- 附件问答：上传文档或表格后，文件名与内容引用自动注入对话上下文，无需重复描述。
 - 聊天式 PPT 工作区：持续对话、材料登记、大纲与页面预览、后台制作、暂停续做、修订和 PPTX 下载。
 - PPT 公开资料搜索：接入火山引擎独立搜索 API；密钥由后端环境变量提供。
-- 用户登录、会话保存和知识库管理。
+- 用户登录、会话保存和知识库管理；退出登录同步清理学校会话。
 
 
 ## 目录
@@ -20,11 +22,9 @@
 | `requirements.txt` | 后端 Python 依赖 |
 | `.env.example` | 根目录环境变量示例；复制为私有 `.env` 后配置 |
 | `backend/` | FastAPI 后端、Agent、检索、文档处理、权限与测试；文档解析和资料目录分别位于 `documents/ingest/`、`documents/catalog/` |
-| `backend/agent/skills/ppt_master/` | 已接入的 PPT Master Skill 及其原始许可 |
+| `backend/agent/skills/ppt_master/` | 已接入的 PPT Master Skill 及其原始许可（整包入库） |
 | `frontend/` | Vue 3、TypeScript 和 Vite 前端；组件按通用、布局、聊天、演示文稿和管理分类 |
-| `desktop/` | Electron 桌面客户端；`campus/` 为校园页面导航和接口模块 |
-| `final-md/` | 已整理的知识库 Markdown 原文；`assets/` 配图仅在本地保留 |
-| `backend/data/` | 文档清单、课程与专业结构化资料、引用关联等必要数据 |
+| `backend/data/` | 文档清单、课程与专业结构化资料、引用关联等必要数据（`plan_db.json` 除外，见下文） |
 | `model/` | 模型下载说明及 BM25 词表；权重需自行下载，见 [model/README.md](model/README.md) |
 | `deploy/` | API 模型配置、环境变量示例和部署文件 |
 | `scripts/` | 按启动、知识库、文档处理、检查、评测和模型下载分类的脚本 |
@@ -33,10 +33,10 @@
 
 - `backend/agent/runtime/`：Agent 运行、上下文、短期和长期记忆。
 - `backend/agent/tools/search_regulations/scripts/`：`querying/` 查询理解、`recall/` 召回与排序、`index_ops/` 索引、`evidence_ops/` 证据及 `inspection/` 诊断。
+- `backend/agent/tools/campus/`：校园空教室查询工具与时段映射。
 - `backend/agent/tools/create_ppt/scripts/`：`execution/` 任务流程、`master/` PPT Master 宿主、`content/` 材料内容及 `rendering/` 页面预览与导出。
 - `backend/documents/`：`ingest/` 解析与 OCR、`catalog/` 资料目录与元数据、`plan_data/` 培养方案处理。
 - `frontend/src/components/`：`common/` 通用组件、`layout/` 布局、`chat/` 对话、`presentation/` 演示文稿及 `admin/` 管理后台。
-- `desktop/campus/`：学校页面导航、校园接口和调试采集模块。
 
 ## 本地运行（Windows PowerShell）
 
@@ -125,7 +125,14 @@ cd ..
 
 ## 数据与本地配置
 
-仓库不包含私有 `.env`、PostgreSQL 数据、模型权重和用户 PPT 任务，新环境需自行初始化或恢复配套数据。原文配图 `final-md/assets/` 也需另行恢复。
+仓库不包含以下内容，新环境需自行初始化或恢复：
+
+- 私有 `.env`、PostgreSQL 数据、模型权重和用户 PPT 任务。
+- 知识库语料 `final-md/`（培养方案与规章制度 Markdown 原文）及由它构建的 `backend/data/plan_db.json`；语料缺失时培养方案类问答与实体归一不可用。
+- Electron 桌面客户端 `desktop/`（可选组件，网页端功能不依赖它）。
+- 评测数据 `测试集/`。
+
+原文配图 `final-md/assets/` 也在本地保留。
 
 ## 第三方组件
 
