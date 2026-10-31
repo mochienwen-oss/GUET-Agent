@@ -9,7 +9,7 @@ from pathlib import Path
 import re
 import unicodedata
 
-from documents.document_chunks import HTML_TABLE, table_grid
+from documents.catalog.document_chunks import HTML_TABLE, table_grid
 from agent.core.rulings import ruling_for
 from .normalize import join_key
 from . import plan_source

@@ -5,15 +5,22 @@ from pydantic import BaseModel, Field
 
 
 # ---- auth ----
-class RegisterBody(BaseModel):
-    username: str
-    password: str
-    name: str
-
-
 class LoginBody(BaseModel):
     username: str
     password: str
+
+
+class ProfileBody(BaseModel):
+    name: str = Field(min_length=1, max_length=64)
+
+
+class SchoolChallengeBody(BaseModel):
+    username: str = Field(min_length=1, max_length=64)
+
+
+class SchoolLoginBody(LoginBody):
+    challenge_id: str = Field(min_length=1, max_length=100)
+    captcha: str = Field(default='', max_length=40)
 
 
 # ---- chat ----
@@ -21,6 +28,8 @@ class ChatBody(BaseModel):
     message: str
     conversation_id: Optional[int] = None
     ppt_task_id: Optional[str] = None  # 仅显式选择「继续制作 PPT」时发送
+    # 本轮附带的会话文件（上传的表格），由后端再次校验归属后才交给模型。
+    attachments: list[str] = Field(default_factory=list, max_length=5)
 
 
 class ConversationCreate(BaseModel):

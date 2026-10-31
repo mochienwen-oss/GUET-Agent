@@ -6,8 +6,10 @@ from security.auth import require_auth
 from database.db import User, Conversation, get_db
 from core.errors import ApiError
 from agent.tools.create_ppt import tool as ppt_tool
-from agent.tools.create_ppt.scripts import background, workflow, subgraph
-from agent.tools.create_ppt.scripts.materials import Material, read_materials, MAX_UPLOAD_BYTES
+from agent.tools.create_ppt.scripts.execution import background
+from agent.tools.create_ppt.scripts.execution import workflow
+from agent.tools.create_ppt.scripts.execution import subgraph
+from agent.tools.create_ppt.scripts.content.materials import Material, read_materials, MAX_UPLOAD_BYTES
 from pydantic import BaseModel, Field
 from typing import Literal
 from agent.core.request_control import run_request
@@ -19,7 +21,7 @@ router = APIRouter()
 @router.get('/ppt/style-reference/{style_id}')
 def style_reference(style_id: str):
     """Public reference artwork shipped with the installed Skill, not task data."""
-    from agent.tools.create_ppt.scripts.master_workspace import SKILL_DIR
+    from agent.tools.create_ppt.scripts.master.master_workspace import SKILL_DIR
     if style_id not in {'swiss-minimal', 'editorial', 'blueprint'}:
         raise ApiError(404, '风格参考不存在')
     path = SKILL_DIR / 'scripts' / 'confirm_ui' / 'static' / 'style_previews' / (style_id + '.svg')
@@ -100,7 +102,7 @@ def task_status(task_id: str, user: User = Depends(require_auth)):
 
 
 def _status(state):
-    from agent.tools.create_ppt.scripts import chat_history
+    from agent.tools.create_ppt.scripts.execution import chat_history
     chat_history.ensure_history(state)
     task_id = state["task_id"]
     usage = [item for item in (state.get('master') or {}).get('usage', []) if isinstance(item, dict)]
@@ -137,7 +139,7 @@ def _status(state):
                          "cached_tokens": cached_tokens, "reasoning_tokens": reasoning_tokens,
                          "open": sum(not x.get("covered") for x in
                                      (state.get("coverage") or {}).values())}}
-    from agent.tools.create_ppt.scripts import live_preview
+    from agent.tools.create_ppt.scripts.rendering import live_preview
     body.update(live_preview.snapshot(state))
     # 逐页内容只在「已生成」之后才有意义（草稿与已确认两种态都带上）。
     if state.get("artifacts") or state.get("stage") in ("draft", "ready", "materials_changed"):
@@ -243,13 +245,13 @@ class RenameTaskBody(BaseModel):
 
 @router.patch('/ppt/task/{task_id}/title')
 def rename_task(task_id: str, body: RenameTaskBody, user: User = Depends(require_auth)):
-    from agent.tools.create_ppt.scripts import task_management
+    from agent.tools.create_ppt.scripts.execution import task_management
     return _status(task_management.rename(task_id, user.id, body.title))
 
 
 @router.delete('/ppt/task/{task_id}')
 def delete_task(task_id: str, user: User = Depends(require_auth)):
-    from agent.tools.create_ppt.scripts import task_management
+    from agent.tools.create_ppt.scripts.execution import task_management
     return task_management.remove(task_id, user.id)
 
 
@@ -406,7 +408,7 @@ def add_analysis(task_id: str, body: AnalysisBody, user: User = Depends(require_
 @router.post("/ppt/task/{task_id}/public-source")
 async def add_public_source(task_id: str, body: PublicSourceBody, request: Request,
                             user: User = Depends(require_auth)):
-    from agent.tools.create_ppt.scripts.public_materials import read_public_material
+    from agent.tools.create_ppt.scripts.content.public_materials import read_public_material
     state = ppt_tool.owned_state(task_id, user.id)
     policy = (state.get("brief") or {}).get("material_policy", "provided_only")
     if policy == "provided_only":
@@ -455,7 +457,7 @@ async def answer_design(task_id: str, body: DesignAnswerBody, user: User = Depen
 @router.get("/ppt/task/{task_id}/preview/{revision}/{slide_id}")
 def preview(task_id: str, revision: int, slide_id: str, user: User = Depends(require_auth)):
     from pathlib import Path
-    from agent.tools.create_ppt.scripts.subgraph import _workdir
+    from agent.tools.create_ppt.scripts.execution.subgraph import _workdir
     state = ppt_tool.owned_state(task_id, user.id)
     if state.get("revision") != revision or slide_id not in {s.get("slide_id") for s in state.get("slides") or []}:
         raise ApiError(404, "页面预览不存在")
@@ -468,7 +470,7 @@ def preview(task_id: str, revision: int, slide_id: str, user: User = Depends(req
 
 @router.get('/ppt/task/{task_id}/live-preview/{filename}')
 def live_preview(task_id: str, filename: str, user: User = Depends(require_auth)):
-    from agent.tools.create_ppt.scripts.live_preview import svg
+    from agent.tools.create_ppt.scripts.rendering.live_preview import svg
     import xml.etree.ElementTree as ET
     state = ppt_tool.owned_state(task_id, user.id)
     try:
@@ -506,7 +508,7 @@ def _page(state, slide_id):
 @router.get('/ppt/task/{task_id}/page/{slide_id}/texts')
 def page_texts(task_id: str, slide_id: str, user: User = Depends(require_auth)):
     """返回该页真实 SVG 里的可编辑文本，供工作区直接改字。"""
-    from agent.tools.create_ppt.scripts import page_edit
+    from agent.tools.create_ppt.scripts.rendering import page_edit
     state = ppt_tool.owned_state(task_id, user.id)
     if (state.get('master') or {}).get('project') is None:
         raise ApiError(409, '该任务没有可编辑的PPT Master工程')

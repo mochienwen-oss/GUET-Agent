@@ -81,16 +81,23 @@ async def bounded_stream(stream, seconds):
 
 
 class ConversationLease:
-    """MySQL connection-owned lease; shared by all backend workers."""
+    """Database connection-owned lease; shared by all backend workers."""
     def __init__(self, conversation_id):
         from database.db import engine
         from sqlalchemy import text
         self.connection = engine.connect()
         self.name = "guet:conversation:%s" % conversation_id
+        self.conversation_id = int(conversation_id)
+        self.postgresql = engine.dialect.name == 'postgresql'
         try:
-            result = self.connection.execute(text("SELECT GET_LOCK(:name, 0)"),
-                                             {"name": self.name}).scalar()
-            if result != 1:
+            if self.postgresql:
+                result = self.connection.execute(
+                    text("SELECT pg_try_advisory_lock(:namespace, :conversation_id)"),
+                    {"namespace": 1196778836, "conversation_id": self.conversation_id}).scalar()
+            else:
+                result = self.connection.execute(text("SELECT GET_LOCK(:name, 0)"),
+                                                 {"name": self.name}).scalar()
+            if not result:
                 from core.errors import ApiError
                 raise ApiError(409, "该会话已有请求正在处理，请完成或停止后重试")
         except BaseException:
@@ -104,7 +111,11 @@ class ConversationLease:
         from sqlalchemy import text
         connection, self.connection = self.connection, None
         try:
-            connection.execute(text("SELECT RELEASE_LOCK(:name)"), {"name": self.name})
+            if self.postgresql:
+                connection.execute(text("SELECT pg_advisory_unlock(:namespace, :conversation_id)"),
+                                   {"namespace": 1196778836, "conversation_id": self.conversation_id})
+            else:
+                connection.execute(text("SELECT RELEASE_LOCK(:name)"), {"name": self.name})
         except BaseException:
             connection.invalidate()  # Do not return a connection holding a lease to the pool.
             raise

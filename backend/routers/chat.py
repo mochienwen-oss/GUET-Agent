@@ -24,7 +24,8 @@ from routers.schemas import ChatBody, ConversationCreate, ConversationRename
 from agent.core.request_control import ConversationLease, bounded_stream
 from agent.core.request_control import check_cancelled
 from starlette.background import BackgroundTask
-from documents.document_availability import SourceUnavailable
+from documents import chat_files
+from documents.catalog.document_availability import SourceUnavailable
 from conversations.source_references import prepare_references, read_reference
 
 router = APIRouter()
@@ -117,14 +118,34 @@ def _chat(body, user, db, lease):
         ppt_tool.owned_state(body.ppt_task_id, user.id)
         raise ApiError(409, "请在演示文稿工作区继续任务；旧版补问任务请重新创建")
 
-    history = context_store.recent_history(db, conv.id)
+    # 附件先验归属：只把确实属于本会话、本用户的文件交给模型。
+    attachments, attachment_refs = [], []
+    for file_id in (body.attachments or []):
+        try:
+            row = chat_files.get(db, file_id, user_id=user.id, conversation_id=conversation_id)
+        except chat_files.FileNotAvailable as error:
+            raise ApiError(400, str(error))
+        attachments.append(row.id)
+        attachment_refs.append(chat_files.public(row))
+
+    from database.db import MemoryControl
+    control = db.get(MemoryControl, 1) if settings.database_url else None
+    history = context_store.recent_history(db, conv.id, after_id=control.cutoff_message_id if control else 0)
+    if settings.database_url:
+        from agent.runtime.history_memory import history as prepare_history
+        history = prepare_history(history, question, user.id, conv.id)
+    else:
+        history = [{'role': row['role'], 'content': row['content']} for row in history]
     contexts = []
     n_refs = 0
 
     # 持久化用户消息并刷新会话时间
-    db.add(Message(conversation_id=conv.id, role="user", content=question))
+    user_message = Message(conversation_id=conv.id, role="user", content=question,
+                           files=attachment_refs or None)
+    db.add(user_message)
     conv.updated_at = datetime.utcnow()
     db.commit()
+    user_message_id = user_message.id
 
     async def generate():
         full = ""            # 模型已产出的全部文本
@@ -135,6 +156,7 @@ def _chat(body, user, db, lease):
         agent_done = False
         agent_answer = None
         terminal_reply = False
+        result_files: list = []
 
         async def _delta_source():
             nonlocal n_refs, agent_done, agent_answer, terminal_reply
@@ -142,11 +164,19 @@ def _chat(body, user, db, lease):
             async for ev, payload in agent_graph.run_stream(
                     history, question, conversation_id=conversation_id,
                     ppt_task_id=ppt_task_id, resume_stage=resume_stage,
-                    owner_id=user.id):
+                    owner_id=user.id, attachments=tuple(attachments),
+                    attachment_refs=tuple(attachment_refs)):
                 if ev == "delta":
                     yield ("delta", payload)
                 elif ev == 'replace':
                     yield ('replace', payload)
+                elif ev == 'file':
+                    # 表格结果：独立事件，不是答案正文，也不能触发"完成"。
+                    result_files.append(payload.get("file") or {})
+                    yield ('file', payload)
+                elif ev == 'campus_action':
+                    # 校园服务任务：只表示"该打开学校页面了"，不代表已查到结果。
+                    yield ('campus_action', payload)
                 elif ev == "ppt":
                     if not ppt_announced and "ppt_task" in payload:
                         ppt_announced = True
@@ -171,6 +201,9 @@ def _chat(body, user, db, lease):
                     yield f"data: {json.dumps({'replace': full}, ensure_ascii=False)}\n\n"
                     continue
                 if kind == "ppt":
+                    yield f"data: {json.dumps(val, ensure_ascii=False)}\n\n"
+                    continue
+                if kind in ('file', 'campus_action'):
                     yield f"data: {json.dumps(val, ensure_ascii=False)}\n\n"
                     continue
                 delta = val
@@ -220,12 +253,21 @@ def _chat(body, user, db, lease):
                         content=finalized,
                         answer_json=agent_answer,
                         retrieved_docs=prepare_references(contexts, finalized, s),
+                        # 结果文件跟着消息走，刷新后仍能找到下载入口。
+                        files=result_files or None,
                     )
                     s.add(saved)
+                    s.flush()
                     c = s.query(Conversation).filter(Conversation.id == conversation_id).first()
                     if c:
                         c.updated_at = datetime.utcnow()
                     check_cancelled()
+                    if settings.database_url and not any(
+                            call.get('name') == 'forget_memories' and call.get('status') == 'success'
+                            for call in agent_calls):
+                        from agent.runtime.user_memory import enqueue
+                        enqueue(s, user_id=user.id, conversation_id=conversation_id,
+                                user_message_id=user_message_id, assistant_message_id=saved.id)
                     s.commit()
                     yield f"data: {json.dumps({'message_id': saved.id, 'retrieved_docs': saved.retrieved_docs}, ensure_ascii=False)}\n\n"
                 finally:
@@ -285,6 +327,7 @@ def get_messages(conversation_id: int, user: User = Depends(require_auth), db: S
         {"id": m.id, "role": m.role, "content": m.content,
          "retrieved_docs": m.retrieved_docs,
          "answer": m.answer_json,
+         "files": m.files or [],
          "created_at": m.created_at.isoformat() if m.created_at else None}
         for m in msgs
     ]
@@ -324,8 +367,13 @@ def delete_conversation(conversation_id: int, user: User = Depends(require_auth)
     conv = _get_conv(db, user, conversation_id)
     lease = ConversationLease(conversation_id)
     try:
-        db.delete(conv)  # cascade 删除 messages
+        if settings.database_url:
+            from agent.runtime.history_memory import delete as delete_summary
+            delete_summary(user.id, conversation_id)
+        db.delete(conv)  # messages / chat_files 由外键 CASCADE 连带删除
         db.commit()
+        agent_graph.forget_conversation(user.id, conversation_id)
+        chat_files.drop_conversation_folder(conversation_id)  # 会话自己的文件目录，失败不影响删除结果
     finally:
         lease.close()
     return {"ok": True}

@@ -1,5 +1,4 @@
 """Extract source-bound display information once, outside the question path."""
-import json
 import re
 import unicodedata
 from datetime import date
@@ -32,8 +31,9 @@ def document_catalog(path=None):
     path = Path(path)
     if not path.is_file():
         return {}
+    from documents.catalog.catalog_cache import read_catalog
     return {str(row['document_id']): row for row in
-            json.loads(path.read_text(encoding='utf-8-sig')).get('documents', [])}
+            read_catalog(path).get('documents', [])}
 
 
 def _number(value):

@@ -24,16 +24,38 @@ def run_turn(messages, *, task, tools, execute, max_steps, max_calls,
             on_progress("request", None)
         request_started = time.monotonic()
         logger.info('agent_api_start task=%s step=%d', task, step + 1)
+        seen = {'first_delta': None, 'chars': 0}
+
+        def mark():
+            if seen['first_delta'] is None:
+                seen['first_delta'] = time.monotonic() - request_started
+
+        def delta(text):
+            # 可见正文增量：直接交给上层显示。
+            mark()
+            seen['chars'] += len(text or '')
+            on_output('delta', text)
+
+        def tick(total):
+            # 不含正文的进度（PPT 几乎全是工具参数）：只用于判断"还在不在动"。
+            mark()
+            seen['chars'] = max(seen['chars'], int(total or 0))
+            on_output('progress', seen['chars'])
+
         try:
-            streaming = {'on_delta': lambda text: on_output('delta', text)} if on_output else {}
+            streaming = {'on_delta': delta, 'on_tick': tick} if on_output else {}
             response = complete_sync(messages, task=task, tools=tools,
                                      tool_choice="auto" if max_calls is None or len(calls) < max_calls else "none", **streaming)
         except BaseException as error:
-            logger.warning('agent_api_failed task=%s step=%d elapsed=%.2fs kind=%s',
-                           task, step + 1, time.monotonic() - request_started, type(error).__name__)
+            logger.warning('agent_api_failed task=%s step=%d elapsed=%.2fs kind=%s first_delta=%s chars=%d',
+                           task, step + 1, time.monotonic() - request_started, type(error).__name__,
+                           'n/a' if seen['first_delta'] is None else '%.2fs' % seen['first_delta'],
+                           seen['chars'])
             raise
-        logger.info('agent_api_done task=%s step=%d elapsed=%.2fs calls=%d',
-                    task, step + 1, time.monotonic() - request_started, len(response.get('calls') or []))
+        logger.info('agent_api_done task=%s step=%d elapsed=%.2fs calls=%d first_delta=%s chars=%d',
+                    task, step + 1, time.monotonic() - request_started, len(response.get('calls') or []),
+                    'n/a' if seen['first_delta'] is None else '%.2fs' % seen['first_delta'],
+                    seen['chars'])
         usage.append(response.get("usage"))
         messages.append(response["message"])
         if on_usage:

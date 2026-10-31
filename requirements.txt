@@ -2,6 +2,10 @@ fastapi
 uvicorn[standard]
 sqlalchemy>=2.0
 pymysql
+psycopg[binary,pool]
+pgvector
+redis
+langgraph-checkpoint-postgres>=3.1,<3.2
 cryptography
 python-multipart
 pydantic-settings

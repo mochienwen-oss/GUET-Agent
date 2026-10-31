@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 
 from database.db import Session as SessionModel, User, get_db
 from core.errors import ApiError
+from core.config import settings
 
 
 def create_token(db: Session, user_id: int) -> str:
@@ -25,6 +26,8 @@ def _get_user(db: Session, token: str) -> User:
     user = db.query(User).filter(User.id == s.user_id).first()
     if not user:
         raise ApiError(401, "用户不存在")
+    if user.auth_source != 'school' and not (user.username == settings.admin_username and user.role == 'admin'):
+        raise ApiError(401, '旧账号已停用，请使用学校账号登录')
     return user
 
 

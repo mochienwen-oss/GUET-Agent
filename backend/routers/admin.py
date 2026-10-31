@@ -5,8 +5,8 @@ from fastapi import APIRouter, BackgroundTasks, Depends, File, UploadFile, Reque
 from agent.core.request_control import run_request
 from sqlalchemy.orm import Session
 
-from documents import mdify
-from documents.document_chunks import VERSION as CHUNKING_VERSION, build_chunks
+from documents.ingest import mdify
+from documents.catalog.document_chunks import VERSION as CHUNKING_VERSION, build_chunks
 from agent.tools.search_regulations import tool as rag
 from agent.tools.search_regulations import tool as vector
 from security.auth import require_admin
@@ -101,7 +101,7 @@ def create_document(body: DocumentCreate, background: BackgroundTasks,
             raise ValueError("没有可入库的完整结构块")
     except ValueError as exc:
         raise ApiError(400, str(exc))
-    from documents.document_availability import SourceUnavailable
+    from documents.catalog.document_availability import SourceUnavailable
     try:
         task = vector.prepare_add_document(title, content, body.source_type or "txt", body.category or "",
                                            source_filename=body.source_filename)
@@ -113,7 +113,7 @@ def create_document(body: DocumentCreate, background: BackgroundTasks,
 
 @router.get("/documents")
 def list_documents(user: User = Depends(require_admin), db: Session = Depends(get_db)):
-    from documents.document_availability import snapshot
+    from documents.catalog.document_availability import snapshot
     availability = snapshot()
     docs = db.query(Document).order_by(Document.id.desc()).all()
     return [

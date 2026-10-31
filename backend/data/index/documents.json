@@ -3,7 +3,7 @@
     "document_id": 1,
     "path": "final-md/培养方案/2025级交通工程专业培养方案(主修).md",
     "sha256": "fdb6c27a5851a45efc0a760b1f09e632d4527b62196edc8373f8bf49598c6994",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级交通工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级交通工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级交通工程专业培养方案(主修)",
     "chunks": 257
@@ -12,7 +12,7 @@
     "document_id": 2,
     "path": "final-md/培养方案/2025级产品设计专业培养方案(主修).md",
     "sha256": "5aaa37cd4696b6652b9bc89524ae150f7c03b65f110682c5f8d5ec9ea14d68d6",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级产品设计专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级产品设计专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级产品设计专业培养方案(主修)",
     "chunks": 258
@@ -21,7 +21,7 @@
     "document_id": 3,
     "path": "final-md/培养方案/2025级人力资源管理专业培养方案(主修).md",
     "sha256": "a1a298652299b75ce3f0a4b8e547e3b107714327a866ed3ba190aff6ecbf4d28",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级人力资源管理专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级人力资源管理专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级人力资源管理专业培养方案(主修)",
     "chunks": 250
@@ -30,7 +30,7 @@
     "document_id": 4,
     "path": "final-md/培养方案/2025级人工智能专业培养方案(主修).md",
     "sha256": "3203eb9cd79212cf07463dd1f574674d5a6481d256bec55e743b079e27c2a0e5",
-    "local_source": "D:\\guet-agent-微调\\_work\\phase8\\ai-structure-repair-v1\\output\\2025级人工智能专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\_work\\phase8\\ai-structure-repair-v1\\output\\2025级人工智能专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级人工智能专业培养方案(主修)",
     "chunks": 237
@@ -39,7 +39,7 @@
     "document_id": 5,
     "path": "final-md/培养方案/2025级会计学专业培养方案(主修).md",
     "sha256": "fd56303d56945155d05054fee38e51e3fb91f784bdd1fc507ffb5ee59e2cbd7f",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级会计学专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级会计学专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级会计学专业培养方案(主修)",
     "chunks": 251
@@ -48,7 +48,7 @@
     "document_id": 6,
     "path": "final-md/培养方案/2025级信息与计算科学专业培养方案(主修).md",
     "sha256": "24b30298bb0e59b3226d91c859bbaeb259c4fb117c5b9016f77f48f7fd538cfe",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级信息与计算科学专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级信息与计算科学专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级信息与计算科学专业培养方案(主修)",
     "chunks": 246
@@ -57,7 +57,7 @@
     "document_id": 7,
     "path": "final-md/培养方案/2025级信息安全专业培养方案(主修).md",
     "sha256": "3a035b51fd287c826f3931fa34c883a9b99db50f72f20c33c5fc9fdb9a0f6789",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级信息安全专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级信息安全专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级信息安全专业培养方案(主修)",
     "chunks": 249
@@ -66,7 +66,7 @@
     "document_id": 8,
     "path": "final-md/培养方案/2025级信息管理与信息系统专业培养方案(主修).md",
     "sha256": "dc49fc52191859938751b1a18e7321337a0185f3858aa615ec22676ef23390c9",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级信息管理与信息系统专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级信息管理与信息系统专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级信息管理与信息系统专业培养方案(主修)",
     "chunks": 262
@@ -75,7 +75,7 @@
     "document_id": 9,
     "path": "final-md/培养方案/2025级光电信息材料与器件专业培养方案(主修).md",
     "sha256": "888a4f2df77db887a139835a73e317a7860d3282d256af4eaeae52b500befd93",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级光电信息材料与器件专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级光电信息材料与器件专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级光电信息材料与器件专业培养方案(主修)",
     "chunks": 249
@@ -84,7 +84,7 @@
     "document_id": 10,
     "path": "final-md/培养方案/2025级光电信息科学与工程专业培养方案(主修).md",
     "sha256": "ee0f23596db4419d425bf89439a40ca7cf9eb793393f81b3fccc8de6c3e9b30b",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级光电信息科学与工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级光电信息科学与工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级光电信息科学与工程专业培养方案(主修)",
     "chunks": 259
@@ -93,7 +93,7 @@
     "document_id": 11,
     "path": "final-md/培养方案/2025级动画专业培养方案(主修).md",
     "sha256": "c9af5ba304b7a6423fd5b6701a6e50e7eb7a26c1843c0521a302519dbbdb60ee",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级动画专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级动画专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级动画专业培养方案(主修)",
     "chunks": 261
@@ -102,7 +102,7 @@
     "document_id": 12,
     "path": "final-md/培养方案/2025级国际经贸规则专业培养方案(主修).md",
     "sha256": "3f3799e624c76548880b06a56db9c2e7c322dac28f2f00eb4609d87a716f2b2a",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级国际经贸规则专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级国际经贸规则专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级国际经贸规则专业培养方案(主修)",
     "chunks": 230
@@ -111,7 +111,7 @@
     "document_id": 13,
     "path": "final-md/培养方案/2025级土木工程专业培养方案(主修).md",
     "sha256": "e3f55471459158a2365bff675b3d437f98cc4d0e4ee814013a7ec153b027c50c",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级土木工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级土木工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级土木工程专业培养方案(主修)",
     "chunks": 261
@@ -120,7 +120,7 @@
     "document_id": 14,
     "path": "final-md/培养方案/2025级密码科学与技术专业培养方案(主修).md",
     "sha256": "8142d1d653bca6f06aac4e4c641ae5f9cf97d2bf9c94d41cdfb23cb4dc89bfd9",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级密码科学与技术专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级密码科学与技术专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级密码科学与技术专业培养方案(主修)",
     "chunks": 246
@@ -129,7 +129,7 @@
     "document_id": 15,
     "path": "final-md/培养方案/2025级导航工程专业培养方案(主修).md",
     "sha256": "412d27cc62fd50bb549eecec22a237e12028801f444176034b0466371b9fd52c",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级导航工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级导航工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级导航工程专业培养方案(主修)",
     "chunks": 280
@@ -138,7 +138,7 @@
     "document_id": 16,
     "path": "final-md/培养方案/2025级工业工程专业培养方案(主修).md",
     "sha256": "9517688342765475a1e745e72ec5e7ca0e4cfcfea38736a467c4829f51304c2d",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级工业工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级工业工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级工业工程专业培养方案(主修)",
     "chunks": 262
@@ -147,7 +147,7 @@
     "document_id": 17,
     "path": "final-md/培养方案/2025级市场营销专业培养方案(主修).md",
     "sha256": "f32b02b76c580ff46a2ceb7c5c5d5d993856e2e308d3d0840b9f670559b01eef",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级市场营销专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级市场营销专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级市场营销专业培养方案(主修)",
     "chunks": 246
@@ -156,7 +156,7 @@
     "document_id": 18,
     "path": "final-md/培养方案/2025级应用统计学专业培养方案(主修).md",
     "sha256": "53ebcb0aa9f8d3dbb9cd1261346a3409b26d065e97459052c5d68f8e8967c600",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级应用统计学专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级应用统计学专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级应用统计学专业培养方案(主修)",
     "chunks": 255
@@ -165,7 +165,7 @@
     "document_id": 19,
     "path": "final-md/培养方案/2025级建筑环境与能源应用工程专业培养方案(主修).md",
     "sha256": "b4a5cc75b70731906e17c82d9a85f0edbf38b77968500fd44a0bf55d2b8aa274",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级建筑环境与能源应用工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级建筑环境与能源应用工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级建筑环境与能源应用工程专业培养方案(主修)",
     "chunks": 255
@@ -174,7 +174,7 @@
     "document_id": 20,
     "path": "final-md/培养方案/2025级微电子科学与工程专业培养方案(主修).md",
     "sha256": "b762ceab4e3e57082f63b814944d56635882ac6ede7d202d31d38ff64d427377",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级微电子科学与工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级微电子科学与工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级微电子科学与工程专业培养方案(主修)",
     "chunks": 286
@@ -183,7 +183,7 @@
     "document_id": 21,
     "path": "final-md/培养方案/2025级数字媒体技术(中外合作办学)培养方案.md",
     "sha256": "cecbb73c5047142da84f9841b3db2c9bd2276b7404855b515709a6ae6b9f70b9",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级数字媒体技术(中外合作办学)培养方案.md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级数字媒体技术(中外合作办学)培养方案.md",
     "category": "培养方案",
     "title": "2025级数字媒体技术(中外合作办学)培养方案",
     "chunks": 213
@@ -192,7 +192,7 @@
     "document_id": 22,
     "path": "final-md/培养方案/2025级数字经济专业培养方案(主修).md",
     "sha256": "5abeb0484dcb63516ce708368866d58191aa39947e317da6cc780809c8fba6fa",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级数字经济专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级数字经济专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级数字经济专业培养方案(主修)",
     "chunks": 242
@@ -201,7 +201,7 @@
     "document_id": 23,
     "path": "final-md/培养方案/2025级数学与应用数学专业培养方案(主修).md",
     "sha256": "57d332655b1250ba21e22ef455a0b013b965cf2846627b4ef2950230f771edd7",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级数学与应用数学专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级数学与应用数学专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级数学与应用数学专业培养方案(主修)",
     "chunks": 247
@@ -210,7 +210,7 @@
     "document_id": 24,
     "path": "final-md/培养方案/2025级数据科学与大数据技术专业培养方案(主修).md",
     "sha256": "6221f8bc05bd39453bc070eb5812af70d8097d7f0dda7666e2643e841ef54616",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级数据科学与大数据技术专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级数据科学与大数据技术专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级数据科学与大数据技术专业培养方案(主修)",
     "chunks": 233
@@ -219,7 +219,7 @@
     "document_id": 25,
     "path": "final-md/培养方案/2025级新能源材料与器件专业培养方案(主修).md",
     "sha256": "1c02ea5250de020e64c0926d55927486cc3e20a5b6fef62ccc64b54f692e9734",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级新能源材料与器件专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级新能源材料与器件专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级新能源材料与器件专业培养方案(主修)",
     "chunks": 247
@@ -228,7 +228,7 @@
     "document_id": 26,
     "path": "final-md/培养方案/2025级日语专业培养方案(主修).md",
     "sha256": "646c05275eb7ff7283f48ab253c35001f9e5c3ec71f05a0b1b9e5b116f00e95c",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级日语专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级日语专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级日语专业培养方案(主修)",
     "chunks": 219
@@ -237,7 +237,7 @@
     "document_id": 27,
     "path": "final-md/培养方案/2025级智慧交通专业培养方案(主修).md",
     "sha256": "abab60ea035c7c8f30a7f58e6471359eefde81b8b0b0ae4cd539d504e216f414",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级智慧交通专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级智慧交通专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级智慧交通专业培养方案(主修)",
     "chunks": 233
@@ -246,7 +246,7 @@
     "document_id": 28,
     "path": "final-md/培养方案/2025级智能制造工程专业培养方案(主修).md",
     "sha256": "bd23353224023d49454678b8ec53c64d931b31083dc7aa14e0945f3bed53be47",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级智能制造工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级智能制造工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级智能制造工程专业培养方案(主修)",
     "chunks": 264
@@ -255,7 +255,7 @@
     "document_id": 29,
     "path": "final-md/培养方案/2025级智能感知工程专业培养方案(主修).md",
     "sha256": "c0a62442a56b7c8bcc18dd9eb3e93884affd442dbd972b5fc23b4ced78e35abf",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级智能感知工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级智能感知工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级智能感知工程专业培养方案(主修)",
     "chunks": 259
@@ -264,7 +264,7 @@
     "document_id": 30,
     "path": "final-md/培养方案/2025级智能科学与技术专业培养方案(主修).md",
     "sha256": "b0751b618244b5fd28eab26a6c1d8940900c5264bdc19549d6104a8fffcf0af6",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级智能科学与技术专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级智能科学与技术专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级智能科学与技术专业培养方案(主修)",
     "chunks": 245
@@ -273,7 +273,7 @@
     "document_id": 31,
     "path": "final-md/培养方案/2025级智能装备与系统专业培养方案(主修).md",
     "sha256": "5d1a96488b37fd238cab5e2bb93491464d7b24037cc564d13ff8fd1439529a9a",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级智能装备与系统专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级智能装备与系统专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级智能装备与系统专业培养方案(主修)",
     "chunks": 251
@@ -282,7 +282,7 @@
     "document_id": 32,
     "path": "final-md/培养方案/2025级智能视觉工程专业培养方案(主修).md",
     "sha256": "cdd6b31a4eb5c1f3fa9de8f09d573599514654dddca2861c9cc6321907bab30c",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级智能视觉工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级智能视觉工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级智能视觉工程专业培养方案(主修)",
     "chunks": 238
@@ -291,7 +291,7 @@
     "document_id": 33,
     "path": "final-md/培养方案/2025级服装与服饰设计专业培养方案(主修).md",
     "sha256": "0c4b7e5442c9ef9108b9281a54fc8185964a905bc93498b3837baf6d3e9e47a7",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级服装与服饰设计专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级服装与服饰设计专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级服装与服饰设计专业培养方案(主修)",
     "chunks": 268
@@ -300,7 +300,7 @@
     "document_id": 34,
     "path": "final-md/培养方案/2025级机器人工程专业培养方案(主修).md",
     "sha256": "8ca39037be7d94661a144ec9dbc43eb99ad3bb01870d34570a5d8bab286e01a8",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级机器人工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级机器人工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级机器人工程专业培养方案(主修)",
     "chunks": 232
@@ -309,7 +309,7 @@
     "document_id": 35,
     "path": "final-md/培养方案/2025级机械电子工程专业培养方案(主修).md",
     "sha256": "38a3dc585ea2496c8a87cc51374c87219eaec2034b1f21d515bfe7961612f348",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级机械电子工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级机械电子工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级机械电子工程专业培养方案(主修)",
     "chunks": 246
@@ -318,7 +318,7 @@
     "document_id": 36,
     "path": "final-md/培养方案/2025级机械设计制造及其自动化专业培养方案(主修).md",
     "sha256": "2ba5de54ce7c093b582ba66c12bc2c6b8c2de9eac959278702961c77acb8d544",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级机械设计制造及其自动化专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级机械设计制造及其自动化专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级机械设计制造及其自动化专业培养方案(主修)",
     "chunks": 260
@@ -327,7 +327,7 @@
     "document_id": 37,
     "path": "final-md/培养方案/2025级材料成型及控制工程专业培养方案(主修).md",
     "sha256": "bb8530ff9ae76e7cfbd871dc7bc3fcbd306e3d205638ae9b7afc28e6aeee56b4",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级材料成型及控制工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级材料成型及控制工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级材料成型及控制工程专业培养方案(主修)",
     "chunks": 256
@@ -336,7 +336,7 @@
     "document_id": 38,
     "path": "final-md/培养方案/2025级材料科学与工程专业培养方案(主修).md",
     "sha256": "8e92272f42f7871771a13e16a032ecb6aff5d907f2424b5dca12754f48d1d364",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级材料科学与工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级材料科学与工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级材料科学与工程专业培养方案(主修)",
     "chunks": 276
@@ -345,7 +345,7 @@
     "document_id": 39,
     "path": "final-md/培养方案/2025级汉语国际教育专业培养方案(主修).md",
     "sha256": "c0fa9f23de3aba590d32e94e06f7c36045ae21147b94b58f8e8a2103c1d626e6",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级汉语国际教育专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级汉语国际教育专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级汉语国际教育专业培养方案(主修)",
     "chunks": 240
@@ -354,7 +354,7 @@
     "document_id": 40,
     "path": "final-md/培养方案/2025级法学专业培养方案(主修).md",
     "sha256": "0292dee7563c4388316b2bae9defe6821b163daa1db8451047e84891b7e50e4e",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级法学专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级法学专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级法学专业培养方案(主修)",
     "chunks": 252
@@ -363,7 +363,7 @@
     "document_id": 41,
     "path": "final-md/培养方案/2025级测控技术与仪器专业培养方案(主修).md",
     "sha256": "381e7a2c22a2a778e9cd8c3e2c307bd737a6de95dc13cd17aea4f604b6f6b444",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级测控技术与仪器专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级测控技术与仪器专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级测控技术与仪器专业培养方案(主修)",
     "chunks": 1299
@@ -372,7 +372,7 @@
     "document_id": 42,
     "path": "final-md/培养方案/2025级物联网工程专业培养方案(主修).md",
     "sha256": "85d36f75eec08317f28a029d3f1167e5d047dd07bd17ef8a9157438763f2d3db",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级物联网工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级物联网工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级物联网工程专业培养方案(主修)",
     "chunks": 252
@@ -381,7 +381,7 @@
     "document_id": 43,
     "path": "final-md/培养方案/2025级环境工程专业培养方案(主修).md",
     "sha256": "8b911c1a0458124f6e6582928a0806b6e8aac3477f9fe02971762b4df5e49a2a",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级环境工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级环境工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级环境工程专业培养方案(主修)",
     "chunks": 262
@@ -390,7 +390,7 @@
     "document_id": 44,
     "path": "final-md/培养方案/2025级环境设计专业培养方案(主修).md",
     "sha256": "fad3321d70f13af1fd5f2140c1bb9a08dd4ed2d400a1e9acca229d46f54ca415",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级环境设计专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级环境设计专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级环境设计专业培养方案(主修)",
     "chunks": 257
@@ -399,7 +399,7 @@
     "document_id": 45,
     "path": "final-md/培养方案/2025级生物医学工程专业培养方案(主修).md",
     "sha256": "facb2f5da79443af38a472a3c4e6ab5de3073285f4f775bc19db5b5dc96328eb",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级生物医学工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级生物医学工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级生物医学工程专业培养方案(主修)",
     "chunks": 273
@@ -408,7 +408,7 @@
     "document_id": 46,
     "path": "final-md/培养方案/2025级电子信息工程专业培养方案(主修).md",
     "sha256": "d8c4f9096fbe944570876dc15ebe55927695e5966c16094f668bf9d40dcd68e6",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级电子信息工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级电子信息工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级电子信息工程专业培养方案(主修)",
     "chunks": 285
@@ -417,7 +417,7 @@
     "document_id": 47,
     "path": "final-md/培养方案/2025级电子商务专业培养方案(主修).md",
     "sha256": "3e1723598f86d1dfd9995cda7bfad91f2bab442993ea14b4f94bc736c46cc8e6",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级电子商务专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级电子商务专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级电子商务专业培养方案(主修)",
     "chunks": 247
@@ -426,7 +426,7 @@
     "document_id": 48,
     "path": "final-md/培养方案/2025级电子封装技术专业培养方案(主修).md",
     "sha256": "38bd3c6ddfa99a9f9106a3b00990a61431bb803388230d305861a2dae9ae6608",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级电子封装技术专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级电子封装技术专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级电子封装技术专业培养方案(主修)",
     "chunks": 253
@@ -435,7 +435,7 @@
     "document_id": 49,
     "path": "final-md/培养方案/2025级电子科学与技术专业培养方案(主修).md",
     "sha256": "39452b84c6f05b616f9158ebb77ffdead92bfb5f88b4d3311801ee9d0e7e5a1f",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级电子科学与技术专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级电子科学与技术专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级电子科学与技术专业培养方案(主修)",
     "chunks": 288
@@ -444,7 +444,7 @@
     "document_id": 50,
     "path": "final-md/培养方案/2025级电气工程及其自动化专业培养方案(主修).md",
     "sha256": "0e8615e65af4bb1eb0c1822cefdbef03d8b4b0f9611fea65ae05cb20558aedf6",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级电气工程及其自动化专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级电气工程及其自动化专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级电气工程及其自动化专业培养方案(主修)",
     "chunks": 260
@@ -453,7 +453,7 @@
     "document_id": 51,
     "path": "final-md/培养方案/2025级知识产权专业培养方案(主修).md",
     "sha256": "fc16c03fee6db18fba585562343b16e991fd9977519e83b9e198632695ad3bd5",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级知识产权专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级知识产权专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级知识产权专业培养方案(主修)",
     "chunks": 235
@@ -462,7 +462,7 @@
     "document_id": 52,
     "path": "final-md/培养方案/2025级网络空间安全专业培养方案(主修).md",
     "sha256": "ad3097a619a43c5d1609a8a93e2e00f08e217c3c1e5dabd4b6218bac03e2ca4b",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级网络空间安全专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级网络空间安全专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级网络空间安全专业培养方案(主修)",
     "chunks": 251
@@ -471,7 +471,7 @@
     "document_id": 53,
     "path": "final-md/培养方案/2025级自动化专业培养方案(主修) .md",
     "sha256": "44657746e7257b500695f837d55d56a73d0d408e59bfb841ff179a829dd5c8a9",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级自动化专业培养方案(主修) .md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级自动化专业培养方案(主修) .md",
     "category": "培养方案",
     "title": "2025级自动化专业培养方案(主修)",
     "chunks": 1313
@@ -480,7 +480,7 @@
     "document_id": 54,
     "path": "final-md/培养方案/2025级英语专业培养方案(主修).md",
     "sha256": "3cec75d20f580de6d29033c4958248e719b5b0a74cd8ec8e11ec1f7b1d994aef",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级英语专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级英语专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级英语专业培养方案(主修)",
     "chunks": 235
@@ -489,7 +489,7 @@
     "document_id": 55,
     "path": "final-md/培养方案/2025级表演专业培养方案(主修).md",
     "sha256": "07e0588f904c0efaa3c9df39cff430afd172e37e0937137c3ba6c6f30bc79814",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级表演专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级表演专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级表演专业培养方案(主修)",
     "chunks": 260
@@ -498,7 +498,7 @@
     "document_id": 56,
     "path": "final-md/培养方案/2025级视觉传达设计专业培养方案(主修).md",
     "sha256": "6d78706318d7a5aadd18c745e0a8ec78c64a4f05a3d092d79ba665353eca4697",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级视觉传达设计专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级视觉传达设计专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级视觉传达设计专业培养方案(主修)",
     "chunks": 249
@@ -507,7 +507,7 @@
     "document_id": 57,
     "path": "final-md/培养方案/2025级计算机科学与技术专业培养方案(主修).md",
     "sha256": "aed1ae0507cb6ac36e466cf9afb7d5e302c2335a60e8bbf0188e140125136fc3",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级计算机科学与技术专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级计算机科学与技术专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级计算机科学与技术专业培养方案(主修)",
     "chunks": 259
@@ -516,7 +516,7 @@
     "document_id": 58,
     "path": "final-md/培养方案/2025级财务管理专业培养方案(主修).md",
     "sha256": "0a8a16b501711aba6a5f5b053f63d926f8c25b6ee30f257aa675e609a00526ad",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级财务管理专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级财务管理专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级财务管理专业培养方案(主修)",
     "chunks": 254
@@ -525,7 +525,7 @@
     "document_id": 59,
     "path": "final-md/培养方案/2025级车辆工程专业培养方案(主修).md",
     "sha256": "281e3ae4316755b5a15f547e097efd44c834bf855ba362058788646929dc5be3",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级车辆工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级车辆工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级车辆工程专业培养方案(主修)",
     "chunks": 258
@@ -534,7 +534,7 @@
     "document_id": 60,
     "path": "final-md/培养方案/2025级软件工程专业培养方案(主修).md",
     "sha256": "a194dca76900266a7bcc63a8504a18621e5d4471215803135a5e5be5d222bfeb",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级软件工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级软件工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级软件工程专业培养方案(主修)",
     "chunks": 264
@@ -543,7 +543,7 @@
     "document_id": 61,
     "path": "final-md/培养方案/2025级通信工程专业培养方案(主修).md",
     "sha256": "16bc9227fae1a4f7d7482db2391a2cc9a167c1abdec2cdee2fcaf25e26b95552",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级通信工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级通信工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级通信工程专业培养方案(主修)",
     "chunks": 284
@@ -552,7 +552,7 @@
     "document_id": 62,
     "path": "final-md/培养方案/2025级金融工程专业培养方案(主修).md",
     "sha256": "777d9a482a025f833d6855dfed32ba5032d08542f0b16bbe9f2af7f5884c5b6b",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级金融工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级金融工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级金融工程专业培养方案(主修)",
     "chunks": 250
@@ -561,7 +561,7 @@
     "document_id": 63,
     "path": "final-md/培养方案/2025级高分子材料与工程专业培养方案(主修).md",
     "sha256": "73ce82b92537cacbeab7fe488a25af487dd03bbcd73e5dc4626bd370264e8b71",
-    "local_source": "D:\\guet-agent-微调\\final-md\\培养方案\\2025级高分子材料与工程专业培养方案(主修).md",
+    "local_source": "D:\\guet-agent\\final-md\\培养方案\\2025级高分子材料与工程专业培养方案(主修).md",
     "category": "培养方案",
     "title": "2025级高分子材料与工程专业培养方案(主修)",
     "chunks": 274
@@ -570,7 +570,7 @@
     "document_id": 64,
     "path": "final-md/智能〔2026〕14号--关于印发《人工智能学院本科生综合素质测评实施办法》的通知.md",
     "sha256": "b5d66f1351f524acfcb1f4bee75860b305b0539088c14b3793bd7b39fc635e9d",
-    "local_source": "D:\\guet-agent-微调\\final-md\\智能〔2026〕14号--关于印发《人工智能学院本科生综合素质测评实施办法》的通知.md",
+    "local_source": "D:\\guet-agent\\final-md\\智能〔2026〕14号--关于印发《人工智能学院本科生综合素质测评实施办法》的通知.md",
     "category": "规章制度",
     "title": "人工智能学院本科生综合素质测评实施办法",
     "chunks": 152
@@ -579,7 +579,7 @@
     "document_id": 65,
     "path": "final-md/桂电教〔2026〕13号--关于印发《桂林电子科技大学创新创业拓展课程学分认定管理办法》的通知.md",
     "sha256": "b81ced8345e96410708e13cf5a066658d30a40eb9748ed3286ab60747a43dfd8",
-    "local_source": "D:\\guet-agent-微调\\final-md\\桂电教〔2026〕13号--关于印发《桂林电子科技大学创新创业拓展课程学分认定管理办法》的通知.md",
+    "local_source": "D:\\guet-agent\\final-md\\桂电教〔2026〕13号--关于印发《桂林电子科技大学创新创业拓展课程学分认定管理办法》的通知.md",
     "category": "规章制度",
     "title": "桂林电子科技大学创新创业拓展课程学分认定管理办法",
     "chunks": 105
@@ -588,7 +588,7 @@
     "document_id": 66,
     "path": "final-md/规章制度/人事制度/关于印发《桂林电子科技大学博士后管理工作实施办法》的通知（桂电人〔2022〕2号）.md",
     "sha256": "75f65d6f610516a63511e7e3a9d1aca7cfaff081156a4dc5ae5be85ee6470c14",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\人事制度\\关于印发《桂林电子科技大学博士后管理工作实施办法》的通知（桂电人〔2022〕2号）.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\人事制度\\关于印发《桂林电子科技大学博士后管理工作实施办法》的通知（桂电人〔2022〕2号）.md",
     "category": "规章制度",
     "title": "桂林电子科技大学博士后管理工作实施办法",
     "chunks": 38
@@ -597,7 +597,7 @@
     "document_id": 67,
     "path": "final-md/规章制度/人事制度/关于印发《桂林电子科技大学教职工进修管理办法》的通知（桂电人〔2023〕20号）.md",
     "sha256": "d88ebd1bf42528471ee96daa912395397ace39d24b6d8eb37fabd0202dcad61d",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\人事制度\\关于印发《桂林电子科技大学教职工进修管理办法》的通知（桂电人〔2023〕20号）.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\人事制度\\关于印发《桂林电子科技大学教职工进修管理办法》的通知（桂电人〔2023〕20号）.md",
     "category": "规章制度",
     "title": "桂林电子科技大学教职工进修管理办法",
     "chunks": 20
@@ -606,7 +606,7 @@
     "document_id": 68,
     "path": "final-md/规章制度/人事制度/关于印发《桂林电子科技大学高等学校社会科学研究系列职称评审条件（试行）》的通知（桂电职改〔2022〕7号）.md",
     "sha256": "d4d6bb77f43301dc62e71d58f70ce9017c3eca8c037eac13661d2797a5975a83",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\人事制度\\关于印发《桂林电子科技大学高等学校社会科学研究系列职称评审条件（试行）》的通知（桂电职改〔2022〕7号）.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\人事制度\\关于印发《桂林电子科技大学高等学校社会科学研究系列职称评审条件（试行）》的通知（桂电职改〔2022〕7号）.md",
     "category": "规章制度",
     "title": "桂林电子科技大学高等学校社会科学研究系列职称评审条件(试行)",
     "chunks": 43
@@ -615,7 +615,7 @@
     "document_id": 69,
     "path": "final-md/规章制度/人事制度/实验技术系列职称评审条件（试行）.md",
     "sha256": "e650c5b016d16498ba4a6e343bf310f83a8cbf8225ba27bf2d574e5a94830459",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\人事制度\\实验技术系列职称评审条件（试行）.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\人事制度\\实验技术系列职称评审条件（试行）.md",
     "category": "规章制度",
     "title": "实验技术系列职称评审条件(试行)",
     "chunks": 46
@@ -624,7 +624,7 @@
     "document_id": 70,
     "path": "final-md/规章制度/人事制度/高等学校教师系列职称评审条件（2022年修订）.md",
     "sha256": "844deda011ec5e61b07a625ecc23debc6fb8c44c8dd3013663fdf8dbdc5a3265",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\人事制度\\高等学校教师系列职称评审条件（2022年修订）.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\人事制度\\高等学校教师系列职称评审条件（2022年修订）.md",
     "category": "规章制度",
     "title": "高等学校教师系列职称评审条件(2022年修订)",
     "chunks": 97
@@ -633,7 +633,7 @@
     "document_id": 71,
     "path": "final-md/规章制度/人事制度/高等学校自然科学研究系列职称评审条件（试行）.md",
     "sha256": "21a72937317e532088420236bf86dfea96ba7c4c6b7ced5d16160dc269420b87",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\人事制度\\高等学校自然科学研究系列职称评审条件（试行）.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\人事制度\\高等学校自然科学研究系列职称评审条件（试行）.md",
     "category": "规章制度",
     "title": "高等学校自然科学研究系列职称评审条件(试行)",
     "chunks": 43
@@ -642,7 +642,7 @@
     "document_id": 72,
     "path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学“大学英语”课程替换及成绩认定办法（试行）》（校教〔2025〕5号）.md",
     "sha256": "433c202baab66479f38e095b65db34bc45e91b5619329bc9da81529737a92bb7",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学“大学英语”课程替换及成绩认定办法（试行）》（校教〔2025〕5号）.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学“大学英语”课程替换及成绩认定办法（试行）》（校教〔2025〕5号）.md",
     "category": "规章制度",
     "title": "桂林电子科技大学“大学英语”课程替换及成绩认定办法(试行)",
     "chunks": 18
@@ -651,7 +651,7 @@
     "document_id": 73,
     "path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学应征入伍学生学籍学业学历管理细则》（桂电教〔2024〕23号）.md",
     "sha256": "66bdb24c929fd27998f00d6a7bdd36152c75d1ac54a33f4c7a432b31a2f19b5e",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学应征入伍学生学籍学业学历管理细则》（桂电教〔2024〕23号）.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学应征入伍学生学籍学业学历管理细则》（桂电教〔2024〕23号）.md",
     "category": "规章制度",
     "title": "桂林电子科技大学应征入伍学生学籍学业学历管理细则",
     "chunks": 11
@@ -660,7 +660,7 @@
     "document_id": 74,
     "path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学普通高等教育学士学位授予工作实施细则(2025年修订)》(桂电学位〔2025〕19号).md",
     "sha256": "4edbc5e495b162abcfd736a33d991f5327d97dcfc7e6b334aebc16be17602e96",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学普通高等教育学士学位授予工作实施细则(2025年修订)》(桂电学位〔2025〕19号).md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学普通高等教育学士学位授予工作实施细则(2025年修订)》(桂电学位〔2025〕19号).md",
     "category": "规章制度",
     "title": "桂林电子科技大学普通高等教育学士学位授予工作实施细则(2025年修订)",
     "chunks": 22
@@ -669,7 +669,7 @@
     "document_id": 75,
     "path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）》(桂电教〔2025〕27号).md",
     "sha256": "e41d77ae0efaadfff4a9b70e8673e782c84161f07ae304878437bf26e0e45fe2",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）》(桂电教〔2025〕27号).md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学普通高等教育本科学生学籍管理规定（2025年修订）》(桂电教〔2025〕27号).md",
     "category": "规章制度",
     "title": "桂林电子科技大学普通高等教育本科学生学籍管理规定(2025年修订)",
     "chunks": 51
@@ -678,7 +678,7 @@
     "document_id": 76,
     "path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学本科生专业分流及转专业管理办法(修订)》（桂电教〔2021〕6 号）.md",
     "sha256": "a3cfcc6bff071ffed1ef93bb15e5e689ee1a03e2e8d4cec7ff85557696ee4dba",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学本科生专业分流及转专业管理办法(修订)》（桂电教〔2021〕6 号）.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学本科生专业分流及转专业管理办法(修订)》（桂电教〔2021〕6 号）.md",
     "category": "规章制度",
     "title": "桂林电子科技大学本科生专业分流及转专业管理办法(修订)",
     "chunks": 22
@@ -687,7 +687,7 @@
     "document_id": 77,
     "path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学本科生学业预警及学业退学实施细则》(桂电教〔2025〕28号).md",
     "sha256": "dc917eaf7bcf1d4f2fa2bc38d6704df1e7a6e82365b6641b344789d098189c8d",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学本科生学业预警及学业退学实施细则》(桂电教〔2025〕28号).md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学本科生学业预警及学业退学实施细则》(桂电教〔2025〕28号).md",
     "category": "规章制度",
     "title": "桂林电子科技大学本科生学业预警及学业退学实施细则",
     "chunks": 12
@@ -696,7 +696,7 @@
     "document_id": 78,
     "path": "final-md/规章制度/培养方案管理制度/《桂林电子科技大学本科生课程认定暂行办法（修订）》（桂电教〔2021〕18号）.md",
     "sha256": "f6e8eb21874f0010276e08312f1ef98dcb071ff44b416486697aed916dac1bf4",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学本科生课程认定暂行办法（修订）》（桂电教〔2021〕18号）.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\培养方案管理制度\\《桂林电子科技大学本科生课程认定暂行办法（修订）》（桂电教〔2021〕18号）.md",
     "category": "规章制度",
     "title": "桂林电子科技大学本科生课程认定暂行办法(修订)",
     "chunks": 8
@@ -705,7 +705,7 @@
     "document_id": 79,
     "path": "final-md/规章制度/培养方案管理制度/桂电教〔2015〕67号--关于印发《桂林电子科技大学教室使用管理办法》的通知.md",
     "sha256": "823165bd215ae65c598f7efcf67a0084ba02fd10729066b4518d348fc0a66971",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2015〕67号--关于印发《桂林电子科技大学教室使用管理办法》的通知.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2015〕67号--关于印发《桂林电子科技大学教室使用管理办法》的通知.md",
     "category": "规章制度",
     "title": "桂林电子科技大学教室使用管理办法",
     "chunks": 6
@@ -714,7 +714,7 @@
     "document_id": 80,
     "path": "final-md/规章制度/培养方案管理制度/桂电教〔2016〕20号--关于印发《桂林电子科技大学全日制普通本科生赴国(境)外交流学习成绩管理办法（试行）》的通知.md",
     "sha256": "0691f43c22d0f92f578917fb96ab8a959455a5d3ff8868c0153b803d400eca91",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2016〕20号--关于印发《桂林电子科技大学全日制普通本科生赴国(境)外交流学习成绩管理办法（试行）》的通知.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2016〕20号--关于印发《桂林电子科技大学全日制普通本科生赴国(境)外交流学习成绩管理办法（试行）》的通知.md",
     "category": "规章制度",
     "title": "桂林电子科技大学全日制普通本科生赴国(境)外交流学习成绩管理办法(试行)",
     "chunks": 13
@@ -723,7 +723,7 @@
     "document_id": 81,
     "path": "final-md/规章制度/培养方案管理制度/桂电教〔2018〕17号--关于印发《桂林电子科技大学全日制普通本科生国内交换培养管理办法》的通知.md",
     "sha256": "301ab918ce87ef7864208cbe23ba543dbd7cabbb1a9a7d07ea0e8b6270217630",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2018〕17号--关于印发《桂林电子科技大学全日制普通本科生国内交换培养管理办法》的通知.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2018〕17号--关于印发《桂林电子科技大学全日制普通本科生国内交换培养管理办法》的通知.md",
     "category": "规章制度",
     "title": "桂林电子科技大学全日制普通本科生国内交换培养管理办法",
     "chunks": 12
@@ -732,7 +732,7 @@
     "document_id": 82,
     "path": "final-md/规章制度/培养方案管理制度/桂电教〔2019〕10 号--桂林电子科技大学普通全日制本（专）科学生转学工作实施细则（修订）.md",
     "sha256": "6943e29888624b40d7fff943a9a7f2b5203656bd56179d02fab497df93b1ad0c",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2019〕10 号--桂林电子科技大学普通全日制本（专）科学生转学工作实施细则（修订）.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2019〕10 号--桂林电子科技大学普通全日制本（专）科学生转学工作实施细则（修订）.md",
     "category": "规章制度",
     "title": "桂电教〔2019〕10 号--桂林电子科技大学普通全日制本(专)科学生转学工作实施细则(修订)",
     "chunks": 14
@@ -741,7 +741,7 @@
     "document_id": 83,
     "path": "final-md/规章制度/培养方案管理制度/桂电教〔2020〕15号--关于印发《桂林电子科技大学考试管理规定》的通知.md",
     "sha256": "f2894c8e46a0120a47b94d4058c41a259c482dca96baa8893edca0ac9396462a",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2020〕15号--关于印发《桂林电子科技大学考试管理规定》的通知.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2020〕15号--关于印发《桂林电子科技大学考试管理规定》的通知.md",
     "category": "规章制度",
     "title": "桂林电子科技大学考试管理规定",
     "chunks": 30
@@ -750,7 +750,7 @@
     "document_id": 84,
     "path": "final-md/规章制度/培养方案管理制度/桂电教〔2021〕32 号--桂林电子科技大学本科生修读微专业、辅修专业、辅修学位管理办法.md",
     "sha256": "5103149ef9f891fd1fee8379d644b07cf99389c108735e05a3f1aac5826ec12d",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2021〕32 号--桂林电子科技大学本科生修读微专业、辅修专业、辅修学位管理办法.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2021〕32 号--桂林电子科技大学本科生修读微专业、辅修专业、辅修学位管理办法.md",
     "category": "规章制度",
     "title": "桂电教〔2021〕32 号--桂林电子科技大学本科生修读微专业、辅修专业、辅修学位管理办法",
     "chunks": 26
@@ -759,7 +759,7 @@
     "document_id": 85,
     "path": "final-md/规章制度/培养方案管理制度/桂电教〔2026〕13号--关于印发《桂林电子科技大学创新创业拓展课程学分认定管理办法》的通知.md",
     "sha256": "b81ced8345e96410708e13cf5a066658d30a40eb9748ed3286ab60747a43dfd8",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2026〕13号--关于印发《桂林电子科技大学创新创业拓展课程学分认定管理办法》的通知.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\培养方案管理制度\\桂电教〔2026〕13号--关于印发《桂林电子科技大学创新创业拓展课程学分认定管理办法》的通知.md",
     "category": "规章制度",
     "title": "桂林电子科技大学创新创业拓展课程学分认定管理办法",
     "chunks": 105
@@ -768,7 +768,7 @@
     "document_id": 86,
     "path": "final-md/规章制度/学校章程/桂林电子科技大学章程（2023年核准稿）.md",
     "sha256": "161f18000a09bb9daf93eced624332c8a670bc7f61806ba0f1f65880df63fc74",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\学校章程\\桂林电子科技大学章程（2023年核准稿）.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\学校章程\\桂林电子科技大学章程（2023年核准稿）.md",
     "category": "规章制度",
     "title": "桂林电子科技大学章程(2023年核准稿)",
     "chunks": 72
@@ -777,7 +777,7 @@
     "document_id": 87,
     "path": "final-md/规章制度/教学制度/关于印发《桂林电⼦科技⼤学⼯程类硕⼠ 专业学位论⽂基本要求》的.md",
     "sha256": "19a40305ce323479b832bb4ac4c26576feb15b69cef6567a54f56a6a7c3141c6",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\教学制度\\关于印发《桂林电⼦科技⼤学⼯程类硕⼠ 专业学位论⽂基本要求》的.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\教学制度\\关于印发《桂林电⼦科技⼤学⼯程类硕⼠ 专业学位论⽂基本要求》的.md",
     "category": "规章制度",
     "title": "桂林电子科技大学工程类硕士专业学位论文基本要求",
     "chunks": 29
@@ -786,7 +786,7 @@
     "document_id": 88,
     "path": "final-md/规章制度/教学制度/关于印发《桂林电子科技大学本科课堂教学规范》的通知（桂电教〔2023〕12号）.md",
     "sha256": "6ab3026026cc75a45cbbbdfe6347c1965bf7458c44bb24e5e8afe48395ce84be",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\教学制度\\关于印发《桂林电子科技大学本科课堂教学规范》的通知（桂电教〔2023〕12号）.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\教学制度\\关于印发《桂林电子科技大学本科课堂教学规范》的通知（桂电教〔2023〕12号）.md",
     "category": "规章制度",
     "title": "桂林电子科技大学本科课堂教学规范",
     "chunks": 27
@@ -795,7 +795,7 @@
     "document_id": 89,
     "path": "final-md/规章制度/教学制度/关于印发《桂林电子科技大学通识教育 专家委员会章程（试行）》的通知（桂电教〔2023〕17号）.md",
     "sha256": "46c1eb7fbbc1bcac02820f3850a5d235dad56b8fb12359be2c7ae16347f25a75",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\教学制度\\关于印发《桂林电子科技大学通识教育 专家委员会章程（试行）》的通知（桂电教〔2023〕17号）.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\教学制度\\关于印发《桂林电子科技大学通识教育 专家委员会章程（试行）》的通知（桂电教〔2023〕17号）.md",
     "category": "规章制度",
     "title": "桂林电子科技大学通识教育专家委员会章程(试行)",
     "chunks": 18
@@ -804,7 +804,7 @@
     "document_id": 90,
     "path": "final-md/规章制度/教学制度/关于印发《桂林电子科技大学非学历教育管理办法（试行）》的通知（桂电〔2022〕27号）.md",
     "sha256": "3f01d2e880dfd8b21ecc5c6fd209d67918cbd3f19ca1879f091e2b932a384ac6",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\教学制度\\关于印发《桂林电子科技大学非学历教育管理办法（试行）》的通知（桂电〔2022〕27号）.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\教学制度\\关于印发《桂林电子科技大学非学历教育管理办法（试行）》的通知（桂电〔2022〕27号）.md",
     "category": "规章制度",
     "title": "桂林电子科技大学非学历教育管理办法(试行)",
     "chunks": 31
@@ -813,7 +813,7 @@
     "document_id": 91,
     "path": "final-md/规章制度/科研制度/关于印发《桂林电子科技大学学科学术委员会工作办法（试行）》的通知（桂电科〔2023〕2号）.md",
     "sha256": "bb05936a4e0c8b8cdecf87cddc3404871e4c832a86b5de70020ccee5ff657ba0",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\科研制度\\关于印发《桂林电子科技大学学科学术委员会工作办法（试行）》的通知（桂电科〔2023〕2号）.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\科研制度\\关于印发《桂林电子科技大学学科学术委员会工作办法（试行）》的通知（桂电科〔2023〕2号）.md",
     "category": "规章制度",
     "title": "桂林电子科技大学学科学术委员会工作办法(试行)",
     "chunks": 26
@@ -822,7 +822,7 @@
     "document_id": 92,
     "path": "final-md/规章制度/科研制度/关于印发《桂林电子科技大学科研诚信管理暂行办法》的通知（桂电科〔2022〕3号）.md",
     "sha256": "643ea0c7880c305bab59d2fa1d6dc33f09d60d2d5460887f66811201ac835e6c",
-    "local_source": "D:\\guet-agent-微调\\final-md\\规章制度\\科研制度\\关于印发《桂林电子科技大学科研诚信管理暂行办法》的通知（桂电科〔2022〕3号）.md",
+    "local_source": "D:\\guet-agent\\final-md\\规章制度\\科研制度\\关于印发《桂林电子科技大学科研诚信管理暂行办法》的通知（桂电科〔2022〕3号）.md",
     "category": "规章制度",
     "title": "桂林电子科技大学科研诚信管理暂行办法",
     "chunks": 20

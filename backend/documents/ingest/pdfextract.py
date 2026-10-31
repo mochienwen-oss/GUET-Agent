@@ -19,7 +19,7 @@
 import re
 from collections import Counter
 
-from documents import ocr_engine
+from documents.ingest import ocr_engine
 
 # 句末标点：上一行以这些收尾 → 一段结束
 _TERMINAL = "。！？；：!?;:…"
@@ -197,8 +197,8 @@ def _ocr_figure(page, bbox) -> str:
         import numpy as np
         import pymupdf as fitz
 
-        from documents import mdify
-        from documents.ocr_engine import is_content_text, ocr_image
+        from documents.ingest import mdify
+        from documents.ingest.ocr_engine import is_content_text, ocr_image
     except ImportError:
         return ""
     try:
@@ -504,5 +504,5 @@ def to_markdown_with_fallback(content: bytes, ocr_images: bool = False) -> str:
     try:
         return to_markdown(content, ocr_images=ocr_images)
     except Exception:
-        from documents import mdify
+        from documents.ingest import mdify
         return mdify._extract_pdf_pypdf(content)

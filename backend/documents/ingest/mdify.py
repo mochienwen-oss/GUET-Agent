@@ -193,7 +193,7 @@ def _convert(filename: str, content: bytes, ocr_images: bool = False) -> tuple[s
     if name.endswith(".pdf"):
         # Layout/table extraction is mandatory: never silently replace a failed
         # structured parse with plain text and pretend tables were preserved.
-        from documents import pdfextract
+        from documents.ingest import pdfextract
         raw, stats = pdfextract.to_markdown_report(content, ocr_images=ocr_images)
         if stats.get("unprocessed_scan_pages"):
             pages = "、".join(map(str, stats["unprocessed_scan_pages"]))
@@ -447,7 +447,7 @@ def _docx_tc_key(tc) -> str:
 
 def _docx_table_to_md(table) -> str:
     """DOCX XML identity -> explicit HTML spans; keep source cell line breaks."""
-    from documents.pdfextract import _table_to_md
+    from documents.ingest.pdfextract import _table_to_md
 
     rows, keys, locations = [], [], {}
     for r, row in enumerate(table.rows):
