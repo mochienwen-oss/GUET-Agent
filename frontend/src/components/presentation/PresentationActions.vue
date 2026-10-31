@@ -24,9 +24,9 @@
 <script setup lang="ts">
 import { computed, nextTick, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import Icon from './Icon.vue'
-import { usePresentationStore } from '../store/presentation'
-import type { PptTaskSummary } from '../types/presentation'
+import Icon from '../common/Icon.vue'
+import { usePresentationStore } from '../../store/presentation'
+import type { PptTaskSummary } from '../../types/presentation'
 
 const props = defineProps<{ task: PptTaskSummary; compact?: boolean }>()
 const ppt = usePresentationStore(), router = useRouter(), route = useRoute()

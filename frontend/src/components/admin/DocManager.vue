@@ -213,10 +213,10 @@
 
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
-import api from '../api'
-import Icon from './Icon.vue'
+import api from '../../api'
+import Icon from '../common/Icon.vue'
 import SourceMetadataEditor from './SourceMetadataEditor.vue'
-import type { SourceMetadata } from '../types/chat'
+import type { SourceMetadata } from '../../types/chat'
 
 interface Doc {
   id: number

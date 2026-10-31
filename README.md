@@ -19,18 +19,28 @@
 | --- | --- |
 | `requirements.txt` | 后端 Python 依赖 |
 | `.env.example` | 根目录环境变量示例；复制为私有 `.env` 后配置 |
-| `backend/` | FastAPI 后端、Agent、检索、文档处理、权限与测试 |
+| `backend/` | FastAPI 后端、Agent、检索、文档处理、权限与测试；文档解析和资料目录分别位于 `documents/ingest/`、`documents/catalog/` |
 | `backend/agent/skills/ppt_master/` | 已接入的 PPT Master Skill 及其原始许可 |
-| `frontend/` | Vue 3、TypeScript 和 Vite 前端 |
+| `frontend/` | Vue 3、TypeScript 和 Vite 前端；组件按通用、布局、聊天、演示文稿和管理分类 |
+| `desktop/` | Electron 桌面客户端；`campus/` 为校园页面导航和接口模块 |
 | `final-md/` | 已整理的知识库 Markdown 原文；`assets/` 配图仅在本地保留 |
 | `backend/data/` | 文档清单、课程与专业结构化资料、引用关联等必要数据 |
 | `model/` | 模型下载说明及 BM25 词表；权重需自行下载，见 [model/README.md](model/README.md) |
 | `deploy/` | API 模型配置、环境变量示例和部署文件 |
 | `scripts/` | 按启动、知识库、文档处理、检查、评测和模型下载分类的脚本 |
 
+### 主要源码层级
+
+- `backend/agent/runtime/`：Agent 运行、上下文、短期和长期记忆。
+- `backend/agent/tools/search_regulations/scripts/`：`querying/` 查询理解、`recall/` 召回与排序、`index_ops/` 索引、`evidence_ops/` 证据及 `inspection/` 诊断。
+- `backend/agent/tools/create_ppt/scripts/`：`execution/` 任务流程、`master/` PPT Master 宿主、`content/` 材料内容及 `rendering/` 页面预览与导出。
+- `backend/documents/`：`ingest/` 解析与 OCR、`catalog/` 资料目录与元数据、`plan_data/` 培养方案处理。
+- `frontend/src/components/`：`common/` 通用组件、`layout/` 布局、`chat/` 对话、`presentation/` 演示文稿及 `admin/` 管理后台。
+- `desktop/campus/`：学校页面导航、校园接口和调试采集模块。
+
 ## 本地运行（Windows PowerShell）
 
-环境：Windows、Python 3.13、Node.js 24、本地 MySQL。PPT 页面预览还需要桌面版 Microsoft PowerPoint。
+环境：Windows、Python 3.13、Node.js、本地 PostgreSQL（含 pgvector）和 Redis。PPT 页面预览还需要桌面版 Microsoft PowerPoint。
 
 如果这台电脑已经有完整环境和 `.env`，直接看“日常再次启动”，不要覆盖现有密钥配置、重新下载已有模型或重复导入知识库。
 
@@ -64,66 +74,29 @@ python -m venv .venv
 
 已有完整模型目录时直接复用。CPU/GPU 配置见 [model/README.md](model/README.md)。
 
-### 3. 启动本地 MySQL
+### 3. 启动本地数据服务
 
-安装 MySQL 并注册为 Windows 服务。以管理员身份打开 PowerShell，查看并启动服务：
-
-```powershell
-Get-Service *mysql*
-Start-Service MySQL84
-```
-
-`MySQL84` 替换为本机实际服务名，也可以在 Windows“服务”中启动。服务已运行时跳过启动。
-
-使用 MySQL 命令行创建数据库，输入安装时设置的密码：
+项目当前使用 PostgreSQL（含 pgvector）和 Redis。已有本机数据时，保留现有数据库、向量索引及配套的 BM25 词表，不要创建空库覆盖它们。
 
 ```powershell
-mysql -h 127.0.0.1 -P 33306 -u root -p -e "CREATE DATABASE IF NOT EXISTS guet_chat DEFAULT CHARACTER SET utf8mb4;"
+.\scripts\runtime\start_local_data.ps1
 ```
 
-示例端口为 `33306`；若本机使用 `3306` 或其他端口，修改命令中的端口，并在下一步填写相同的连接地址。若终端找不到 `mysql`，将 MySQL 安装目录下的 `bin` 加入 PATH。
+脚本使用已准备的本地服务程序及 `run/` 下的数据目录。新环境需要先配置 PostgreSQL、pgvector、Redis 和相应数据。
 
-### 4. 配置后端环境变量和 API
+### 4. 配置后端和 API
 
-仅在没有私有配置文件时复制示例：
+仅在没有私有配置文件时复制配置示例；已有 `.env` 不应覆盖。确认 `DATABASE_URL`、`REDIS_URL`、模型及管理员配置指向本机实际环境。
 
-```powershell
-if (-not (Test-Path .env)) { Copy-Item .env.example .env }
-```
+- `deploy/llm-api.json` 决定生成模型、平台和参数，密钥放在私有 `.env` 中。
+- PPT 公开搜索配置见 `deploy/volc-search.env.example`。
+- 已有知识库的文档清单、向量数据和 BM25 词表必须相互配套。
 
-编辑 `.env`，至少确认：
+生成模型和公开搜索的实际调用可能产生平台费用。不要将密钥写入版本库。
 
-```dotenv
-MYSQL_URL=mysql+pymysql://root:change-this-password@127.0.0.1:33306/guet_chat?charset=utf8mb4
-ADMIN_USERNAME=admin
-ADMIN_PASSWORD=请设置自己的管理员密码
-DASHSCOPE_API_KEY=填写自己的API密钥
-```
+### 5. 首次部署与数据恢复
 
-- `deploy/llm-api.json` 决定生成模型、平台和参数。当前 `active_profile=aliyun`，读取 `DASHSCOPE_API_KEY`；选择其他 profile 时填写对应 `api_key_env` 指定的变量。
-- 示例已配置本地模型路径和嵌入式 Qdrant，无需另外启动 Qdrant 服务。恢复已有知识库时，修改为与数据配套的存储、文档清单及 BM25 词表路径。
-- PPT 公开搜索配置见 `deploy/volc-search.env.example`，按需将密钥和启用配置填入 `.env`。
-
-生成模型和公开搜索的实际调用可能产生平台费用。密钥只放在本地 `.env`，不要填写到 README 或示例文件。
-
-### 5. 全新空库首次初始化（已有配套数据时跳过）
-
-仅用于全新空库。完成模型下载和 `.env` 配置，确认 MySQL 正在运行，后端尚未启动，再创建表、管理员和空文档清单：
-
-```powershell
-.\.venv\Scripts\python.exe -c "import sys; sys.path.insert(0, 'backend'); from database.db import init_db, seed_admin; init_db(); seed_admin()"
-.\.venv\Scripts\python.exe -c "from pathlib import Path; import json; p=Path('run/documents.local.json'); p.parent.mkdir(exist_ok=True); p.open('x', encoding='utf-8').write(json.dumps({'version':'active-documents/1','collection':'structure_docs_20261019','points':0,'documents':[]}))"
-```
-
-导入原文，生成本机向量及 BM25 数据：
-
-```powershell
-$env:MD_DIR = (Resolve-Path final-md).Path
-.\.venv\Scripts\python.exe scripts/knowledge/seed_knowledge.py
-Remove-Item Env:MD_DIR
-```
-
-确认导入成功后再启动服务。恢复已有知识库时，使用配套的 MySQL、向量库、活动文档清单和 BM25 词表，跳过本节；不要用已有清单作为新空库的导入结果。
+全新环境需准备 PostgreSQL、pgvector、Redis、检索模型和知识库数据。旧 MySQL / Qdrant 数据的迁移脚本位于 `scripts/knowledge/`；已有配套数据时不应重复迁移或重建索引。
 
 ### 6. 构建前端
 
@@ -148,11 +121,11 @@ cd ..
 
 ### 日常再次启动
 
-确认本地 MySQL 服务正在运行，执行上面的后端启动命令即可。无需重复安装依赖、下载模型或导入知识库；前端代码变动后才需重新构建。
+确认本地 PostgreSQL 和 Redis 服务正在运行，执行上面的后端启动命令即可。无需重复安装依赖、下载模型或导入知识库；前端代码变动后才需重新构建。
 
 ## 数据与本地配置
 
-仓库不包含私有 `.env`、MySQL 数据、Qdrant 存储、模型权重和用户 PPT 任务，新环境需自行初始化或恢复配套数据。原文配图 `final-md/assets/` 也需另行恢复。
+仓库不包含私有 `.env`、PostgreSQL 数据、模型权重和用户 PPT 任务，新环境需自行初始化或恢复配套数据。原文配图 `final-md/assets/` 也需另行恢复。
 
 ## 第三方组件
 

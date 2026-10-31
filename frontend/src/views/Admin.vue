@@ -43,11 +43,11 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import DocManager from '../components/DocManager.vue'
-import Overview from '../components/Overview.vue'
-import RetrievalPlayground from '../components/RetrievalPlayground.vue'
-import BrandLogo from '../components/BrandLogo.vue'
-import Icon from '../components/Icon.vue'
+import DocManager from '../components/admin/DocManager.vue'
+import Overview from '../components/admin/Overview.vue'
+import RetrievalPlayground from '../components/admin/RetrievalPlayground.vue'
+import BrandLogo from '../components/common/BrandLogo.vue'
+import Icon from '../components/common/Icon.vue'
 
 const router = useRouter()
 const active = ref<'overview' | 'docs' | 'retrieval'>('overview')

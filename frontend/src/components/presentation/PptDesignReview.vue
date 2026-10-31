@@ -34,8 +34,8 @@
 
 <script setup lang="ts">
 import { computed, onBeforeUnmount, ref, watch } from 'vue'
-import { answerPresentationDesign, continuePresentation } from '../api/presentation'
-import type { PptTask, PptTaskStatus } from '../types/presentation'
+import { answerPresentationDesign, continuePresentation } from '../../api/presentation'
+import type { PptTask, PptTaskStatus } from '../../types/presentation'
 
 const props = defineProps<{ task: PptTask }>()
 const isDialogue = computed(() => props.task.pending_user?.stage === 'dialogue')

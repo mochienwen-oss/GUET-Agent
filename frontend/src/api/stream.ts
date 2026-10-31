@@ -7,6 +7,8 @@ export interface ChatStreamRequest {
   signal: AbortSignal
   pptTaskId?: string
   resumeUrl?: string
+  /** 本轮附带、已由后端校验归属的会话文件 id。 */
+  attachments?: string[]
 }
 
 /** 读取既有 SSE 协议；界面状态由调用者按事件更新。 */
@@ -14,7 +16,7 @@ export async function streamChat(
   request: ChatStreamRequest,
   onEvent: (event: ChatStreamEvent) => Promise<void>
 ) {
-  const { conversationId, message, token, signal, pptTaskId, resumeUrl } = request
+  const { conversationId, message, token, signal, pptTaskId, resumeUrl, attachments } = request
   const resp = await fetch(resumeUrl || '/api/chat', {
     method: 'POST',
     headers: {
@@ -22,7 +24,8 @@ export async function streamChat(
       Authorization: `Bearer ${token}`,
     },
     body: resumeUrl ? undefined : JSON.stringify({ message, conversation_id: conversationId,
-      ...(pptTaskId ? { ppt_task_id: pptTaskId } : {}) }),
+      ...(pptTaskId ? { ppt_task_id: pptTaskId } : {}),
+      ...(attachments && attachments.length ? { attachments } : {}) }),
     signal,
   })
   if (!resp.ok) {

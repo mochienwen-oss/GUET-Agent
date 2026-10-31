@@ -65,8 +65,8 @@
 
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import api from '../api'
-import Icon from './Icon.vue'
+import api from '../../api'
+import Icon from '../common/Icon.vue'
 
 interface Ctx {
   source: string

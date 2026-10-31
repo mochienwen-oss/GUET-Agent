@@ -2,7 +2,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { renderMarkdown } from '../utils/markdown'
+import { renderMarkdown } from '../../utils/markdown'
 
 const props = defineProps<{ content: string }>()
 function escapeHtmlOutsideLiterals(text: string) {

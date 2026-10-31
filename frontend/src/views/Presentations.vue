@@ -26,9 +26,9 @@
 import { computed, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { usePresentationStore } from '../store/presentation'
-import PptChatWorkspace from '../components/PptChatWorkspace.vue'
-import Icon from '../components/Icon.vue'
-import PresentationActions from '../components/PresentationActions.vue'
+import PptChatWorkspace from '../components/presentation/PptChatWorkspace.vue'
+import Icon from '../components/common/Icon.vue'
+import PresentationActions from '../components/presentation/PresentationActions.vue'
 
 const route = useRoute(), router = useRouter(), ppt = usePresentationStore()
 const search = ref(''), workspaceKey = ref(0)

@@ -9,7 +9,7 @@
 //
 //   只认 `\( \)`、`\[ \]`、`$$ $$` 三种定界符；**故意不认单个 `$`** ——
 //   中文规章里 `$` 和金额容易撞车，误判比不渲染更糟。
-import { marked } from 'marked'
+import { marked, Marked } from 'marked'
 import katex from 'katex'
 import 'katex/dist/katex.min.css'
 
@@ -60,4 +60,19 @@ marked.use({ extensions: [katexExt] } as unknown as Parameters<typeof marked.use
 
 export function renderMarkdown(text: string): string {
   return marked.parse(text || '', { breaks: true }) as string
+}
+
+// ★ 流式期间的轻量渲染：**独立实例，不挂 KaTeX 扩展**。
+//
+//   为什么需要它：流式回答每 60ms 重渲染一次，走完整管线时每次都要把全文重新
+//   parse 一遍、并把每个公式交给 KaTeX 生成一串 DOM。一个中等长度的回答里常有
+//   5–10 个公式，单次渲染就能吃掉 10–40ms —— 叠加节流后仍然卡。
+//
+//   为什么可以省：流式阶段用户看的是「字在长出来」，公式此刻还没成形，没必要
+//   逐帧排版；正文一旦定稿，MessageBubble 会立即切回完整渲染，公式与引用
+//   一个都不会少。
+const lite = new Marked({ breaks: true })
+
+export function renderMarkdownLite(text: string): string {
+  return lite.parse(text || '') as string
 }

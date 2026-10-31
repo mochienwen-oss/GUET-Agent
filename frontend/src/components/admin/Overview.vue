@@ -73,8 +73,8 @@
 
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
-import api from '../api'
-import Icon from './Icon.vue'
+import api from '../../api'
+import Icon from '../common/Icon.vue'
 
 const emit = defineEmits<{ (e: 'navigate', tab: 'docs' | 'retrieval'): void }>()
 

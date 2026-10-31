@@ -53,3 +53,10 @@ node_modules/
 Thumbs.db
 *.tmp
 *.bak
+
+# 分发包（含 Electron 运行时，269MB，不入库）
+release/
+
+# 校园任务与用户会话文件（本地数据，不入库）
+/backend/data/campus_tasks/
+/backend/data/chat_files/

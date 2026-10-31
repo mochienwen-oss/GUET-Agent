@@ -15,9 +15,9 @@
 
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
-import api from '../api'
-import Icon from './Icon.vue'
-import type { SourceMetadata } from '../types/chat'
+import api from '../../api'
+import Icon from '../common/Icon.vue'
+import type { SourceMetadata } from '../../types/chat'
 
 const props = defineProps<{ document: { id: number; title: string; source_metadata?: SourceMetadata } }>()
 const emit = defineEmits<{ (e: 'close'): void; (e: 'saved'): void }>()

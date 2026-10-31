@@ -1,4 +1,4 @@
-import api from './index'
+import api from '.'
 import type { Conversation, Message, SourcePreview } from '../types/chat'
 
 export async function getMessageSource(conversationId: number, messageId: number, citationId: string, full = false) {
@@ -13,7 +13,14 @@ export async function listConversations() {
 }
 
 export async function getMessages(id: number) {
-  return (await api.get<Message[]>(`/conversations/${id}/messages`)).data
+  const data = (await api.get<any[]>(`/conversations/${id}/messages`)).data
+  // 后端把校园查询结果存进 answer_json，这里映射成 Message.campus_result 供渲染。
+  return data.map((m: any) => {
+    const campus = m.answer && m.answer.kind === 'campus_result'
+      ? { date: m.answer.date, units: m.answer.units || [], query: m.answer.query, summary: m.answer.summary }
+      : undefined
+    return { ...m, campus_result: campus }
+  })
 }
 
 export async function createConversation(title: string) {

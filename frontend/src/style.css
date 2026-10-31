@@ -31,29 +31,65 @@
      没有显式 color 的按钮直接看不见（ThemeToggle 就是这么消失的）。 */
   color-scheme: light;
 
-  --bg: #f6f6f9;
+  /* ── 基座与面（用户指定色板：深海蓝 #254B7D）──
+     柔和不发白的浅底 #F3F6FA 承载白卡；颜色由「色带 + 分区淡彩 + 数据」三层承担。
+     文字用中性深灰 #1F2937，次要文字按实测收紧（原生 #64748B 在浅底上只有 4.39:1，
+     小字不达标）—— --text-muted 收深到 #4B5B73（6.4:1），--text-faint 取 #5D6C82（4.9:1）。 */
+  --bg: #f3f6fa;
+  --sidebar: #e9eff7;      /* 侧栏：主色 6% 淡蓝，与主区区分但不脱离基座 */
   --surface: #ffffff;
-  --surface-2: #eeeef4;
-  --surface-3: #e6e6ee;
-  --border: #e4e4ec;
-  --border-strong: #d2d2de;
+  --surface-2: #f1f5fa;
+  --surface-3: #e6edf5;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
 
-  --text: #191a20;
-  --text-muted: #62646f;
-  --text-faint: #74768a;
+  --text: #1f2937;
+  --text-muted: #4b5b73;
+  /* ★ 注脚 11px 也要过 AA：基座 4.93:1、白卡 5.34:1、侧栏底 4.62:1 */
+  --text-faint: #5d6c82;
 
-  --accent: #5b53d8;
-  --accent-hover: #4b43c8;
-  --accent-soft: #ecebfb;
-  --accent-ink: #453dbb;
-  --accent-border: #d6d4f5;
+  /* ── 结构色（主色深海蓝）：一切可点、选中、链接、焦点环 ── */
+  --accent: #254b7d;
+  --accent-hover: #3a639e;
+  --accent-soft: #e7eff8;
+  --accent-ink: #1c3e68;
+  --accent-border: #c6d7e8;
 
-  --danger: #c2352f;
-  --success: #2f7d4f;
-  --warn: #8a5a12;
+  /* ── 主操作：每屏只允许一个实底按钮 ── */
+  --brand-navy: #254b7d;
+  --brand-navy-hover: #3a639e;
 
-  --shadow-md: 0 4px 16px -4px rgba(24, 26, 40, 0.1);
-  --shadow-lg: 0 16px 48px -12px rgba(24, 26, 40, 0.18);
+  /* ── 数据色（警告橙兼任）：只给数字、刻度、教室号 ──
+     ★ 文字档加深为 #9a5f00：#f5a623 在淡橙底上只有 2.1:1，作为小字必挂；
+       加深后 4.93:1 过 AA。填充档（刻度条、边线）保留鲜橙 #f5a623。 */
+  --data: #9a5f00;
+  --data-fill: #f5a623;
+  --data-soft: #fdf3e2;
+
+  /* ── 印章/危险：只给认证状态、当前标记、危险操作 ──
+     文字档 #c93b3b（5.03:1）；纯填充可用 #e54d4d。 --danger 取文字档，因为它
+     在组件里主要用作文字色（错误提示、校验失败）。 */
+  --seal: #c93b3b;
+  --seal-soft: #fdecec;
+
+  /* ── 分区淡彩：6% 浓度，只铺底色不抢文字 ── */
+  --tint-blue: #edf3fa;
+  --tint-indigo: #eff3fa;
+  --tint-orange: #fdf5e8;
+  --tint-red: #fceeee;
+
+  /* ── 四色色带：界面的签名，3px 一条（深 → 主 → 浅 → 橙） ── */
+  --band-1: #1a3459;
+  --band-2: #254b7d;
+  --band-3: #3a639e;
+  --band-4: #f5a623;
+
+  --danger: #c93b3b;
+  --success: #36b37e;
+  --warn: #9a5f00;
+
+  --shadow-md: 0 4px 16px -4px rgba(26, 52, 89, 0.1);
+  --shadow-lg: 0 16px 48px -12px rgba(26, 52, 89, 0.18);
 
   --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   --fast: 140ms;
@@ -70,29 +106,53 @@
 [data-theme='dark'] {
   color-scheme: dark;
 
-  --bg: #0e1014;
-  --surface: #161920;
-  --surface-2: #1d212a;
-  --surface-3: #242a35;
-  --border: #262b36;
-  --border-strong: #333a48;
+  /* 深色不是浅色反转：页面底取更沉的 #121A29，卡片 #1E293B 浮一层，
+     主色提亮到 #3A639E（原色在深底上会糊成一块），文字 #F1F5F9 / 次要 #94A3B8。 */
+  --bg: #121a29;
+  --sidebar: #17202f;
+  --surface: #1e293b;
+  --surface-2: #253347;
+  --surface-3: #2c3c52;
+  --border: #2c3a4e;
+  --border-strong: #3b4c64;
 
-  --text: #e8e9ef;
-  --text-muted: #a2a6b4;
-  --text-faint: #8b90a0;
+  --text: #f1f5f9;
+  --text-muted: #94a3b8;
+  /* 深色下「更弱」= 更靠近底色，但仍要过 AA（卡片上 4.7:1 / 浅面板 4.6:1） */
+  --text-faint: #93a5ba;
 
-  --accent: #8f88f0;
-  --accent-hover: #a29bf5;
-  --accent-soft: #21203a;
-  --accent-ink: #b3adfa;
-  --accent-border: #383663;
+  --accent: #3a639e;
+  --accent-hover: #4a76b4;
+  --accent-soft: #1b2b41;
+  --accent-ink: #9fc0e4;
+  --accent-border: #2f4a6b;
 
-  --danger: #e8736d;
-  --success: #5fbf8a;
-  --warn: #d8a45c;
+  --brand-navy: #3a639e;
+  --brand-navy-hover: #4a76b4;
 
-  --shadow-md: 0 4px 16px -4px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 16px 48px -12px rgba(0, 0, 0, 0.6);
+  --data: #f5a623;
+  --data-fill: #f5a623;
+  --data-soft: #33270f;
+
+  --seal: #f08585;
+  --seal-soft: #3a1f22;
+
+  --tint-blue: #16202f;
+  --tint-indigo: #182333;
+  --tint-orange: #2a2113;
+  --tint-red: #2e1c1f;
+
+  --band-1: #1a3459;
+  --band-2: #3a639e;
+  --band-3: #5c86bd;
+  --band-4: #f5a623;
+
+  --danger: #f08585;
+  --success: #36b37e;
+  --warn: #f5a623;
+
+  --shadow-md: 0 4px 16px -4px rgba(0, 0, 0, 0.55);
+  --shadow-lg: 0 16px 48px -12px rgba(0, 0, 0, 0.65);
 }
 
 html,
@@ -209,6 +269,35 @@ select:focus {
   opacity: 0.55;
 }
 
+/* ── 共享母题 ──
+   这四个类被 Chat.vue 与 Profile.vue 同时使用，所以定义在全局这一处。
+   色带是界面的签名：背景保持中性浅色时，靠它提供色彩记忆点。 */
+.band {
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--band-1) 0 34%,
+    var(--band-2) 34% 62%,
+    var(--band-3) 62% 86%,
+    var(--band-4) 86% 100%
+  );
+}
+/* 双线规则：印刷品的栏线感。上粗下细，比单根 hairline 更有"段落结束"的意味。 */
+.rule-pair {
+  border-top: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border);
+  height: 3px;
+}
+/* 分节编号：01 / 02 …… 给长页面页码感 */
+.sec-no {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--text-faint);
+  font-variant-numeric: tabular-nums;
+}
+
 /* 图标：统一线宽，颜色跟随 currentColor。
    stroke / fill 是 SVG 继承属性，写在根 svg 上即可下传到 <use> 克隆出的图形。 */
 svg.ic {
@@ -251,5 +340,13 @@ svg.ic {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  /* ★ 唯一例外：生成中的三个点是**功能性指示器**，不是装饰。
+     把它一并压掉，用户就分不清「正在生成」和「已经卡死」—— 这比动效本身更糟。
+     选择器特异性（.thinking .drop）高于上面的 `*`，所以能覆盖回来。 */
+  .thinking .drop {
+    animation-duration: 1.5s !important;
+    animation-iteration-count: infinite !important;
   }
 }

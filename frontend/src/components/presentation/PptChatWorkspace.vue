@@ -106,15 +106,15 @@
 
 <script setup lang="ts">
 import { computed, nextTick, onBeforeUnmount, ref, watch } from 'vue'
-import Icon from './Icon.vue'
+import Icon from '../common/Icon.vue'
 import PptMarkdown from './PptMarkdown.vue'
-import { usePresentationStore } from '../store/presentation'
-import { usePptPreview } from '../composables/usePptPreview'
-import { usePptPanels } from '../composables/usePptPanels'
+import { usePresentationStore } from '../../store/presentation'
+import { usePptPreview } from '../../composables/usePptPreview'
+import { usePptPanels } from '../../composables/usePptPanels'
 import { confirmPresentation, continuePresentation, pausePresentation, createPresentationChat, getPresentation, getPresentationBlob,
   getPresentationDownload, getPageTexts, reorderPresentationPages, savePageTexts, selectPresentationSlide,
-  sendPresentationMessage, uploadPresentationMaterials } from '../api/presentation'
-import type { PptChatAttachment, PptChatMessage, PptMessageRequest, PptPageText, PptSlide, PptTaskStatus, PptUpdatedPage } from '../types/presentation'
+  sendPresentationMessage, uploadPresentationMaterials } from '../../api/presentation'
+import type { PptChatAttachment, PptChatMessage, PptMessageRequest, PptPageText, PptSlide, PptTaskStatus, PptUpdatedPage } from '../../types/presentation'
 
 const props = defineProps<{ taskId: string }>()
 const emit = defineEmits<{ (e: 'created', id: string): void; (e: 'new'): void }>()

@@ -67,6 +67,52 @@ export interface Message {
   role: 'user' | 'assistant'
   content: string
   retrieved_docs?: RetrievedDoc[]
+  /** 本条消息关联的会话文件：用户上传的表格，或工具生成的表格结果。 */
+  files?: ChatFileRef[]
+  /** 校园空教室查询结果（桌面端调接口回传后，作为一条消息展示）。 */
+  campus_result?: CampusResult
+}
+
+/** 校园空教室查询结果（结构化，前端按楼栋分组展示）。 */
+export interface CampusResult {
+  date: string
+  units: string[]
+  query?: { end_date?: string; weekdays?: string[]; building?: string; room?: string; room_type?: string; seats?: number }
+  summary: {
+    total: number
+    buildings: Array<{
+      name: string
+      rooms: Array<{ code: string; name: string; type: string; seats: number; remark: string }>
+    }>
+  }
+}
+
+/** 会话内文件（不透明 id，下载必须带令牌走后端校验）。 */
+export interface ChatFileRef {
+  file_id: string
+  filename: string
+  size?: number
+  role?: 'upload' | 'result'
+}
+
+/** 校园服务任务：只表示"该打开学校页面了"，不代表已查到结果。 */
+export interface CampusAction {
+  task_id: string
+  service: string
+  query?: {
+    start_date?: string
+    end_date?: string
+    weekdays?: string[]
+    units?: string[]
+    building?: string
+    room?: string
+    room_type?: string
+    date?: string
+    period?: 'morning' | 'noon' | 'afternoon' | 'evening'
+    campus_id?: number
+    building_id?: string
+    seats?: number
+  }
 }
 
 export interface Conversation {
@@ -82,6 +128,10 @@ export interface ChatStreamEvent {
   replace?: string
   title?: string
   error?: string
+  /** 表格工具产出的结果文件；与答案正文分开处理。 */
+  file?: ChatFileRef
+  /** 校园服务任务；桌面端据此打开学校页面。 */
+  campus_action?: CampusAction
   ppt_task?: {
     renderer?: string
     task_id: string; stage: string; progress?: PptTask['progress']; question?: string

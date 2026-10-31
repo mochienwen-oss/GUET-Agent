@@ -1,4 +1,4 @@
-import api from './index'
+import api from '.'
 import type {
   PptAnalysisRequest, PptAnalysisResult, PptBrief, PptDownload, PptMaterialInput,
   PptPageTexts, PptRevisionRequest, PptTaskStatus, PptTaskSummary, PptTextEdit, PublicCandidate, PptMessageRequest,

@@ -6,8 +6,9 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     { path: '/login', component: () => import('../views/Login.vue') },
-    { path: '/', component: () => import('../components/AppShell.vue'), children: [
+    { path: '/', component: () => import('../components/layout/AppShell.vue'), children: [
       { path: '', component: () => import('../views/Chat.vue') },
+      { path: 'profile', component: () => import('../views/Profile.vue') },
       { path: 'presentations', component: () => import('../views/Presentations.vue') },
       { path: 'presentations/:taskId', component: () => import('../views/Presentations.vue') },
     ] },
