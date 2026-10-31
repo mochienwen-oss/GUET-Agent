@@ -30,7 +30,7 @@ except Exception:
 BACKEND_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))), "backend")
 sys.path.insert(0, BACKEND_DIR)
 
-from documents import mdify  # noqa: E402
+from documents.ingest import mdify  # noqa: E402
 
 _EXTS = (".pdf", ".docx", ".html", ".htm", ".txt", ".md")
 # ⚠️ 判据已收口到 mdify.MIN_DOC_CHARS / MIN_CHARS_PER_PAGE（与 audit_parse.py、

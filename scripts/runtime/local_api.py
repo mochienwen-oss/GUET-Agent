@@ -19,6 +19,9 @@ def main():
     # The server runtime profile contains server filesystem paths; local startup
     # uses .env and the same API profile, not those deployment paths.
     os.environ.pop('SAI_RUNTIME_PROFILE', None)
+    local_dependencies = ROOT / 'run' / 'python-pg-deps'
+    if local_dependencies.is_dir():
+        sys.path.insert(0, str(local_dependencies))
     sys.path.insert(0, str(ROOT / 'backend'))
     from llm.llm_api_config import get_api_config
     get_api_config().active.api_key()

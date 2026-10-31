@@ -91,7 +91,11 @@ if __name__ == "__main__":
         if sys.platform != "win32":
             import resource
             resource.setrlimit(resource.RLIMIT_AS, (512 * 1024 * 1024, 512 * 1024 * 1024))
-        print(json.dumps(main(json.load(sys.stdin)), ensure_ascii=False))
+        # 显式按 utf-8 字节写出：即使解释器编码被环境改回 cp936，父进程也能正确解码。
+        payload = json.dumps(main(json.load(sys.stdin)), ensure_ascii=False)
+        sys.stdout.buffer.write(payload.encode("utf-8"))
+        sys.stdout.buffer.flush()
     except Exception as error:
-        print(str(error)[:2000], file=sys.stderr)
+        sys.stderr.buffer.write(str(error)[:2000].encode("utf-8", "replace"))
+        sys.stderr.buffer.flush()
         sys.exit(1)

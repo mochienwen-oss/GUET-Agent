@@ -21,22 +21,22 @@ def verify_runtime():
     path = Path(settings.bm25_vocab_path)
     if not path.is_absolute() or not path.is_file():
         raise RuntimeError("BM25词表必须是存在的绝对路径")
-    from agent.tools.search_regulations.scripts import bm25
+    from agent.tools.search_regulations.scripts.index_ops import bm25
     vocab = bm25.load_vocab()
     if not vocab or not vocab.get("terms"):
         raise RuntimeError("BM25词表为空，拒绝缺少词面的运行")
     from database.db import SessionLocal, Document
     from qdrant_client import QdrantClient
     active = json.loads(Path(settings.active_documents_path).read_text("utf-8"))
-    from documents.document_availability import snapshot
+    from documents.catalog.document_availability import snapshot
     maintenance = snapshot()["status"] != "ready"
     with SessionLocal() as db:
         actual = {d.id: (d.title, d.chunk_count) for d in db.query(Document).all()}
     wanted = {d["document_id"]: (d["title"], d["chunks"]) for d in active["documents"]}
     if actual != wanted and not maintenance:
         raise RuntimeError("管理文档与活动文档ID/标题/块数未对齐，拒绝启动维护入口")
-    if settings.qdrant_path:
-        from agent.tools.search_regulations.scripts.indexing import _get_client
+    if settings.vector_backend == 'pgvector' or settings.qdrant_path:
+        from agent.tools.search_regulations.scripts.index_ops.indexing import _get_client
         info = _get_client().get_collection(settings.qdrant_collection)
     else:
         info = QdrantClient(url=settings.qdrant_url).get_collection(settings.qdrant_collection)

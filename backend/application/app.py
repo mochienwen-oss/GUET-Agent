@@ -11,7 +11,9 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 from core.errors import ApiError
 from core.paths import PROJECT_ROOT
 from application.lifespan import lifespan
-from routers import admin as admin_router, auth as auth_router, chat as chat_router, ppt as ppt_router
+from routers import admin as admin_router, auth as auth_router, chat as chat_router
+from routers import campus_query as campus_query_router
+from routers import files as files_router, ppt as ppt_router
 
 
 app = FastAPI(title="校园知识库助手 API", version="3.0.0", lifespan=lifespan)
@@ -44,6 +46,8 @@ def health():
 app.include_router(auth_router.router, prefix="/api/auth", tags=["auth"])
 app.include_router(chat_router.router, prefix="/api", tags=["chat"])
 app.include_router(ppt_router.router, prefix="/api", tags=["ppt"])
+app.include_router(files_router.router, prefix="/api", tags=["files"])
+app.include_router(campus_query_router.router, prefix="/api", tags=["campus"])
 app.include_router(admin_router.router, prefix="/api/admin", tags=["admin"])
 
 

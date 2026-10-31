@@ -31,8 +31,8 @@ for _extra in (REPO / "backend", REPO / "训练集"):
     if str(_extra) not in sys.path:
         sys.path.insert(0, str(_extra))
 
-from agent.tools.search_regulations.scripts import build_collection as BC  # noqa: E402
-from agent.tools.search_regulations.scripts import corpus_fingerprint as CF  # noqa: E402
+from agent.tools.search_regulations.scripts.index_ops import build_collection as BC  # noqa: E402
+from agent.tools.search_regulations.scripts.index_ops import corpus_fingerprint as CF  # noqa: E402
 
 
 def index_identity(collection: str | None = None) -> dict:
@@ -41,7 +41,7 @@ def index_identity(collection: str | None = None) -> dict:
     ★ 刻意不在 `corpus_fingerprint` 里实现：那个模块的契约是「纯函数、不连 Qdrant」，
       加一个要起服务的函数会把它自己的说明变成假的。
     """
-    from agent.tools.search_regulations.scripts import diagnostics
+    from agent.tools.search_regulations.scripts.inspection import diagnostics
 
     _docs, _texts, _chunks, meta = diagnostics._corpus_snapshot()
     if collection is not None and meta.get("collection") != collection:

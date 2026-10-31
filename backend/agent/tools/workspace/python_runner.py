@@ -35,10 +35,12 @@ def execute_code(code, workspace):
     environment = {key: value for key, value in os.environ.items()
                    if key.upper() in {"SYSTEMROOT", "WINDIR", "TEMP", "TMP", "PATH", "LANG"}}
     environment["PYTHONIOENCODING"] = "utf-8"
-    process = subprocess.Popen([sys.executable, "-I", "-S", str(worker)],
+    # -I 同时隐含 -E，环境变量里的编码设置会被忽略，中文输出会回落成 cp936，
+    # 父进程按 utf-8 解码就会拿到 None。用命令行开关强制 UTF-8 模式才不受影响。
+    process = subprocess.Popen([sys.executable, "-I", "-S", "-X", "utf8", str(worker)],
                                cwd=workspace.folder, env=environment,
                                stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
-                               text=True, encoding="utf-8")
+                               text=True, encoding="utf-8", errors="replace")
     release = None
     try:
         # Worker waits on stdin, so restrictions are installed before user code.

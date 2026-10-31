@@ -27,8 +27,8 @@ sys.stdout.reconfigure(encoding="utf-8")
 
 import numpy as np            # noqa: E402
 import pymupdf               # noqa: E402
-from documents import tablebuild            # noqa: E402
-from documents.ocr_engine import load_engine, ocr_image_with_boxes  # noqa: E402
+from documents.ingest import tablebuild            # noqa: E402
+from documents.ingest.ocr_engine import load_engine, ocr_image_with_boxes  # noqa: E402
 
 SCALE = 2.0        # 整页渲染倍率（与 ocr2md 一致）
 ZOOM = 8.0         # 空单元格二次 OCR 的放大倍率

@@ -104,7 +104,7 @@ FRAG_MAX = 100           # 「碎片块」= 索引里 <100 字的块（跨页表
 #
 # ⚠️ 阈值不在这里定义：收口在 backend/mdify.py，与 pdf2md / seed_knowledge / admin
 #    三个入库入口共用同一套（见 mdify.quality_reasons）。改阈值改那一处。
-from documents.mdify import MIN_CHARS_PER_PAGE as MIN_MD_PER_PAGE, MIN_DOC_CHARS as MIN_MD_CHARS  # noqa: E402
+from documents.ingest.mdify import MIN_CHARS_PER_PAGE as MIN_MD_PER_PAGE, MIN_DOC_CHARS as MIN_MD_CHARS  # noqa: E402
 
 
 def _lines(md: str) -> list[str]:
@@ -346,7 +346,7 @@ def audit_one(path: str, ocr: bool, md_override: str | None = None) -> dict:
     ★ 这是判断「处置有没有生效」的正确来源：ocr2md 是**独立于 pdf2md 的一遍**，
       重新从源文件转换只会得到 ocr 之前的结果，永远看不到处置的效果。
     """
-    from documents import mdify
+    from documents.ingest import mdify
 
     src = source_stats(path)
     stats: dict = {}

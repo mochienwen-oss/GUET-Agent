@@ -3,8 +3,8 @@ import re
 from html.parser import HTMLParser
 
 # --------------------------配置---------------------------
-INPUT_DIR = r"D:\guet-agent-微调\_md\培养方案"
-OUTPUT_DIR = r"D:\guet-agent-微调\_md_fixed\培养方案"
+INPUT_DIR = r"D:\guet-agent\_md\培养方案"
+OUTPUT_DIR = r"D:\guet-agent\_md_fixed\培养方案"
 # ----------------------------------------------------------
 
 # 【白名单：需要保留的一级章节标题（只匹配标题文本，与序号无关）】

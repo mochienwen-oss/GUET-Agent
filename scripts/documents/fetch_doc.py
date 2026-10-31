@@ -32,7 +32,7 @@ except Exception:
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, os.path.join(ROOT, "backend"))
 
-from documents import mdify  # noqa: E402
+from documents.ingest import mdify  # noqa: E402
 
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
 _ATTACH_RE = re.compile(r'(?:href|src)=["\']([^"\']*\.(?:pdf|docx?))["\']', re.I)

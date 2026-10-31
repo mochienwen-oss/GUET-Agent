@@ -2,7 +2,7 @@
 from datetime import datetime
 
 from sqlalchemy import (
-    JSON, Column, DateTime, ForeignKey, Integer, String, Text, create_engine,
+    JSON, Column, DateTime, ForeignKey, Integer, String, Text, UniqueConstraint, create_engine,
 )
 from sqlalchemy.dialects.mysql import LONGTEXT
 from sqlalchemy.orm import declarative_base, relationship, sessionmaker
@@ -10,7 +10,7 @@ from sqlalchemy.orm import declarative_base, relationship, sessionmaker
 from core.config import settings
 from security.passwords import hash_password
 
-engine = create_engine(settings.mysql_url, pool_pre_ping=True, pool_recycle=3600)
+engine = create_engine(settings.database_url or settings.mysql_url, pool_pre_ping=True, pool_recycle=3600)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
 
@@ -21,7 +21,9 @@ class User(Base):
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String(64), unique=True, nullable=False, index=True)
     password_hash = Column(String(200), nullable=False)
+    auth_source = Column(String(16), nullable=False, default='local')
     name = Column(String(64), nullable=False)
+    avatar = Column(Text().with_variant(LONGTEXT(), 'mysql'), nullable=True)
     role = Column(String(20), nullable=False, default="user")  # user / admin
     created_at = Column(DateTime, default=datetime.utcnow)
 
@@ -60,9 +62,72 @@ class Message(Base):
     content = Column(Text, nullable=False)
     retrieved_docs = Column(JSON, nullable=True)  # 本次检索引用的文档片段
     answer_json = Column(JSON, nullable=True)  # final-answer/1，旧消息保留null
+    # 本条消息关联的会话文件（上传的表格 / 生成的表格结果），存不透明 file_id。
+    files = Column(JSON, nullable=True)
     created_at = Column(DateTime, default=datetime.utcnow)
 
     conversation = relationship("Conversation", back_populates="messages")
+
+
+class MemoryControl(Base):
+    __tablename__ = 'memory_control'
+    id = Column(Integer, primary_key=True)
+    cutoff_message_id = Column(Integer, nullable=False)
+    generation = Column(Integer, nullable=False, default=1)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+
+
+class MemoryOwner(Base):
+    __tablename__ = 'memory_owners'
+    user_id = Column(Integer, ForeignKey('users.id', ondelete='CASCADE'), primary_key=True)
+    revision = Column(Integer, nullable=False, default=0)
+    epoch = Column(Integer, nullable=False, default=0)
+    maintenance_due = Column(DateTime, nullable=True)
+    maintenance_cursor = Column(String(64), nullable=True)
+    maintenance_lease = Column(String(64), nullable=True)
+    maintenance_lease_until = Column(DateTime, nullable=True)
+
+
+class MemoryJob(Base):
+    __tablename__ = 'memory_jobs'
+    __table_args__ = (UniqueConstraint('assistant_message_id', name='uq_memory_job_assistant'),)
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, ForeignKey('users.id', ondelete='CASCADE'), nullable=False, index=True)
+    conversation_id = Column(Integer, ForeignKey('conversations.id', ondelete='CASCADE'), nullable=False)
+    user_message_id = Column(Integer, ForeignKey('messages.id', ondelete='CASCADE'), nullable=False)
+    assistant_message_id = Column(Integer, ForeignKey('messages.id', ondelete='CASCADE'), nullable=False)
+    epoch = Column(Integer, nullable=False)
+    generation = Column(Integer, nullable=False)
+    status = Column(String(16), nullable=False, default='pending', index=True)
+    attempts = Column(Integer, nullable=False, default=0)
+    lease_token = Column(String(64), nullable=True)
+    lease_until = Column(DateTime, nullable=True)
+    next_attempt_at = Column(DateTime, nullable=True)
+    error_code = Column(String(64), nullable=True)
+    created_at = Column(DateTime, nullable=False, default=datetime.utcnow)
+    updated_at = Column(DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+
+class ChatFile(Base):
+    """会话内文件：用户上传的表格，或工具生成的表格结果。
+
+    只存元数据；实体文件落在 `data/chat_files/<conversation_id>/` 下，
+    所有读取/下载都必须经 `documents.chat_files` 校验归属，禁止拿路径直接当下载地址。
+    """
+
+    __tablename__ = "chat_files"
+
+    id = Column(String(32), primary_key=True)
+    # 删除会话时让数据库连带删除文件记录：否则外键会挡住会话删除（实测踩过）。
+    conversation_id = Column(Integer, ForeignKey("conversations.id", ondelete="CASCADE"),
+                             nullable=False, index=True)
+    user_id = Column(Integer, nullable=False, index=True)
+    role = Column(String(16), nullable=False)  # upload / result
+    filename = Column(String(255), nullable=False)
+    path = Column(String(512), nullable=False)
+    size = Column(Integer, nullable=False, default=0)
+    created_at = Column(DateTime, default=datetime.utcnow)
+
 
 
 class Document(Base):
@@ -74,7 +139,7 @@ class Document(Base):
     chunk_count = Column(Integer, default=0)
     status = Column(String(20), default="ready")  # ready / processing / failed
     category = Column(String(100), default="")  # 分类 / 文件夹
-    content = Column(LONGTEXT, nullable=True)  # 全文原文（用于重建索引/重新分块）
+    content = Column(Text().with_variant(LONGTEXT(), "mysql"), nullable=True)  # 全文原文
     source_metadata = Column(JSON, nullable=True)  # 引用展示信息，不参与检索或向量计算
     uploaded_at = Column(DateTime, default=datetime.utcnow)
 
@@ -133,20 +198,76 @@ def get_setting_bool(db: Session, key: str, default: bool = False) -> bool:
 def init_db():
     """建表（已存在则跳过），并做轻量补列迁移。"""
     Base.metadata.create_all(bind=engine)
+    _migrate_users()
     _migrate_documents()
     _migrate_conversations()
     _migrate_messages()
+    _migrate_chat_files()
+
+
+def _migrate_users() -> None:
+    from sqlalchemy import inspect
+    with engine.begin() as conn:
+        columns = {row['name'] for row in inspect(conn).get_columns('users')}
+        if 'avatar' not in columns:
+            kind = 'LONGTEXT' if engine.dialect.name == 'mysql' else 'TEXT'
+            conn.exec_driver_sql(f'ALTER TABLE users ADD COLUMN avatar {kind} NULL')
+        if 'auth_source' not in columns:
+            conn.exec_driver_sql("ALTER TABLE users ADD COLUMN auth_source VARCHAR(16) NOT NULL DEFAULT 'local'")
+
+
+def _migrate_chat_files() -> None:
+    """确保 chat_files 外键是 ON DELETE CASCADE。
+
+    `create_all` 不会改动已存在的约束，而早期版本按默认 RESTRICT 建的，
+    结果删除会话会被外键挡住（会话删不掉）。这里只重建这一条约束，数据不动。
+    """
+    try:
+        if engine.dialect.name == "postgresql":
+            with engine.begin() as conn:
+                conn.exec_driver_sql(
+                    "ALTER TABLE chat_files DROP CONSTRAINT IF EXISTS chat_files_conversation_id_fkey")
+                conn.exec_driver_sql(
+                    "ALTER TABLE chat_files ADD CONSTRAINT chat_files_conversation_id_fkey "
+                    "FOREIGN KEY (conversation_id) REFERENCES conversations(id) ON DELETE CASCADE")
+            return
+        with engine.begin() as conn:
+            rows = conn.exec_driver_sql(
+                "SELECT CONSTRAINT_NAME, DELETE_RULE FROM information_schema.REFERENTIAL_CONSTRAINTS "
+                "WHERE CONSTRAINT_SCHEMA = DATABASE() AND TABLE_NAME = 'chat_files' "
+                "AND REFERENCED_TABLE_NAME = 'conversations'").fetchall()
+            for name, rule in rows:
+                if str(rule).upper() == "CASCADE":
+                    continue
+                conn.exec_driver_sql(f"ALTER TABLE chat_files DROP FOREIGN KEY {name}")
+                conn.exec_driver_sql(
+                    "ALTER TABLE chat_files ADD CONSTRAINT fk_chat_files_conversation "
+                    "FOREIGN KEY (conversation_id) REFERENCES conversations(id) ON DELETE CASCADE")
+    except Exception:  # 迁移失败不应挡住启动；删除会话时会给出明确报错
+        pass
 
 
 def _migrate_messages() -> None:
     from sqlalchemy import inspect
     with engine.begin() as conn:
-        if "answer_json" not in {row["name"] for row in inspect(conn).get_columns("messages")}:
+        columns = {row["name"] for row in inspect(conn).get_columns("messages")}
+        if "answer_json" not in columns:
             conn.exec_driver_sql("ALTER TABLE messages ADD COLUMN answer_json JSON NULL")
+        if "files" not in columns:
+            conn.exec_driver_sql("ALTER TABLE messages ADD COLUMN files JSON NULL")
 
 
 def _migrate_documents() -> None:
     """为已有 documents 表补列 / 改列型（create_all 不会改动已存在表的结构）。"""
+    if engine.dialect.name == 'postgresql':
+        from sqlalchemy import inspect
+        with engine.begin() as conn:
+            columns = {row['name'] for row in inspect(conn).get_columns('documents')}
+            for name, ddl in (('content', 'TEXT'), ('source_metadata', 'JSON'),
+                              ('category', "VARCHAR(100) NOT NULL DEFAULT ''")):
+                if name not in columns:
+                    conn.exec_driver_sql(f'ALTER TABLE documents ADD COLUMN {name} {ddl}')
+        return
     with engine.begin() as conn:
         def has_column(name: str) -> bool:
             return bool(conn.exec_driver_sql(
@@ -183,6 +304,14 @@ def _migrate_documents() -> None:
 
 def _migrate_conversations() -> None:
     """为已有 conversations 表补 ConversationContext 两列。"""
+    if engine.dialect.name == 'postgresql':
+        from sqlalchemy import inspect
+        with engine.begin() as conn:
+            columns = {row['name'] for row in inspect(conn).get_columns('conversations')}
+            for name, ddl in (('context_json', 'JSON'), ('context_revision', 'INTEGER')):
+                if name not in columns:
+                    conn.exec_driver_sql(f'ALTER TABLE conversations ADD COLUMN {name} {ddl}')
+        return
     with engine.begin() as conn:
         def has_column(name: str) -> bool:
             return bool(conn.exec_driver_sql(

@@ -38,9 +38,9 @@ except Exception:
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, os.path.join(ROOT, "backend"))
 
-from documents import mdify  # noqa: E402
-from documents import pdfextract  # noqa: E402
-from documents import tablebuild  # noqa: E402
+from documents.ingest import mdify  # noqa: E402
+from documents.ingest import pdfextract  # noqa: E402
+from documents.ingest import tablebuild  # noqa: E402
 
 _EXTS = (".pdf",)
 
@@ -62,8 +62,8 @@ def load_manual() -> dict:
         return {}
 
 
-from documents import ocr_engine  # noqa: E402  （BACKEND_DIR 已加进 sys.path）
-from documents.ocr_engine import TEXT_LAYER_MIN  # noqa: E402
+from documents.ingest import ocr_engine  # noqa: E402  （BACKEND_DIR 已加进 sys.path）
+from documents.ingest.ocr_engine import TEXT_LAYER_MIN  # noqa: E402
 
 
 def _load_engine():

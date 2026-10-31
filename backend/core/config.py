@@ -25,6 +25,14 @@ class Settings(BaseSettings):
     system_prompt_path: str = os.path.join(_HERE, "prompts", "api-agent.txt")
     inference_threads: int = 4
     agent_request_timeout_seconds: float = 180.0
+    conversation_history_token_threshold: int = 800000
+    memory_context_window_tokens: int = 1000000
+    memory_context_safety_fraction: float = 0.75
+    memory_token_estimate_multiplier: float = 1.25
+    memory_recall_token_budget: int = 4096
+    memory_recall_limit: int = 24
+    memory_job_lease_seconds: int = 900
+    memory_job_max_attempts: int = 4
     index_upsert_batch_size: int = 64
     active_documents_path: str = os.path.join(_HERE, "data", "documents.active.json")
     # 旧材料打包辅助函数的字符上限，不限制当前 API 证据包。
@@ -147,6 +155,7 @@ class Settings(BaseSettings):
     volc_search_usage_path: str = os.path.join(os.path.dirname(_HERE), 'run', 'volc_search_usage.json')
 
     # Qdrant 向量库
+    vector_backend: str = "qdrant"  # 迁移并验证后可设置为 pgvector
     qdrant_url: str = "http://localhost:6333"
     # 本地验证可直接打开向量存储；留空时继续连接 HTTP 服务。
     qdrant_path: str = ""
@@ -212,6 +221,9 @@ class Settings(BaseSettings):
     #   不用重标。换模型/换 dtype 后仍应重跑这个对照（`_work/v4/parity` 那类脚本）。
     rerank_fp16: bool = False
 
+    # 可选 PostgreSQL 业务库；未配置时保留当前 MySQL 服务。
+    database_url: str = ""
+    redis_url: str = ""
     # MySQL
     mysql_url: str = "mysql+pymysql://root:password@localhost:3306/guet_chat?charset=utf8mb4"
 

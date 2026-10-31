@@ -3,7 +3,7 @@ import hashlib
 import re
 
 from agent.core.citations import clean_path, display_heading_path, short_title
-from documents.source_metadata import display_metadata, document_catalog
+from documents.catalog.source_metadata import display_metadata, document_catalog
 
 
 MARKER = re.compile(r'(?<!\[)\[(S[1-9]\d*)\](?![\](])')
@@ -64,7 +64,7 @@ def prepare_references(contexts, text, db):
 
 def read_reference(reference, document, *, full=False):
     """Read by document identity; never accept a browser-supplied filesystem path."""
-    from documents.document_availability import SourceUnavailable, require_ready, require_source
+    from documents.catalog.document_availability import SourceUnavailable, require_ready, require_source
     packet = {
         'citation_id': reference['citation_id'], 'title': reference.get('title') or reference.get('source'),
         'excerpt': reference.get('text') or '', 'metadata': reference.get('metadata') or {},

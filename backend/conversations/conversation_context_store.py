@@ -209,11 +209,9 @@ def record_turn(db, conversation_id, *, validations, calls, correction=None,
                         expected_revision=current.revision)
 
 
-def recent_history(db, conversation_id, *, max_messages: int = 6):
-    """当前聊天按时间顺序读取最近 max_messages 条消息，默认 6 条。"""
+def recent_history(db, conversation_id, *, after_id=0):
+    """按时间顺序读取会话消息，窗口由 Token 摘要逻辑决定。"""
     rows = (db.query(Message)
-            .filter(Message.conversation_id == conversation_id)
-            .order_by(Message.id.desc())
-            .limit(max_messages).all())
-    return [{"role": row.role, "content": row.content}
-            for row in reversed(rows)]
+            .filter(Message.conversation_id == conversation_id, Message.id > after_id)
+            .order_by(Message.id).all())
+    return [{"id": row.id, "role": row.role, "content": row.content} for row in rows]

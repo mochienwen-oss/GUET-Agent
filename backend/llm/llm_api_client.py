@@ -1,10 +1,34 @@
 """Responses/Chat Completions transport with one configured model for all tasks."""
 from copy import deepcopy
 import json
+import logging
+import time
 
 import httpx
 
 from llm.llm_api_config import get_api_config
+
+logger = logging.getLogger('uvicorn.error')
+
+#: 供应商侧瞬时故障时才值得重发；业务错误（400/401/422）重发也不会变。
+_RETRY_STATUS = {408, 425, 429, 500, 502, 503, 504}
+_RETRY_ERRORS = (httpx.TimeoutException, httpx.NetworkError, httpx.RemoteProtocolError)
+#: 只重试一次；间隔留出排队抖动恢复的时间。
+_RETRY_DELAY_SECONDS = 1.2
+
+
+class ApiHttpError(RuntimeError):
+    """非 200 响应；保留状态码以便区分“值得重试”和“重试也没用”。"""
+
+    def __init__(self, message, status_code):
+        super().__init__(message)
+        self.status_code = status_code
+
+
+def _transient(error):
+    if isinstance(error, ApiHttpError):
+        return error.status_code in _RETRY_STATUS
+    return isinstance(error, _RETRY_ERRORS)
 
 
 def strict_schema(schema):
@@ -192,7 +216,8 @@ def _timeout(config):
 def _http_ok(response, config, task):
     if response.status_code != 200:
         # Provider error messages can echo credentials or prompt contents.
-        raise RuntimeError('API调用失败：profile=%s task=%s HTTP=%s' % (config.active_profile, task, response.status_code))
+        raise ApiHttpError('API调用失败：profile=%s task=%s HTTP=%s'
+                           % (config.active_profile, task, response.status_code), response.status_code)
 
 
 def _request_audit(trace, config, url, body, task):
@@ -236,6 +261,16 @@ class _StreamResult:
         self.refusal = []
         self.model = self.id = self.usage = None
         self.finish_reason = None
+
+    def progress(self):
+        """已生成的字符总量（正文 + 工具参数 + 思考）。
+
+        PPT 的响应几乎全是 tool_calls，只看正文会误判成"什么都没收到"，
+        所以进度必须把参数分片也计进来。
+        """
+        return (sum(len(part) for part in self.text)
+                + sum(len(row['arguments']) for row in self.calls.values())
+                + sum(len(part) for part in self.reasoning))
 
     def feed(self, raw):
         if raw == '[DONE]' and self.protocol == 'chat_completions':
@@ -300,34 +335,65 @@ class _StreamResult:
                         'choices': [{'message': message, 'finish_reason': self.finish_reason}]}, 'chat_completions')
 
 
-def complete_sync(messages, *, task, json_object=False, tools=None, tool_choice='auto', on_delta=None):
+def _post_once(client, url, body, key, config, task):
+    response = client.post(url, json=body, headers={'Authorization': 'Bearer ' + key})
+    _http_ok(response, config, task)
+    return _result(response.json(), config.active.protocol), False
+
+
+def _stream_once(client, url, body, key, config, task, on_delta, on_tick=None):
+    from agent.core.request_control import check_cancelled
+    collector = _StreamResult(config.active.protocol)
+    emitted = False
+    with client.stream('POST', url, json=body, headers={'Authorization': 'Bearer ' + key}) as response:
+        _http_ok(response, config, task)
+        for line in response.iter_lines():
+            check_cancelled()
+            if not line.startswith('data:') or not line[5:].strip():
+                continue
+            text = collector.feed(line[5:].strip())
+            if on_tick is not None:
+                on_tick(collector.progress())
+            if text:
+                emitted = True
+                on_delta(text)
+            if collector.finished and config.active.protocol == 'responses':
+                break
+    if on_tick is not None:
+        on_tick(collector.progress())
+    result = collector.finish()
+    if not emitted and not result['calls'] and result['text']:
+        on_delta(result['text'])
+        emitted = True
+    return result, emitted
+
+
+def complete_sync(messages, *, task, json_object=False, tools=None, tool_choice='auto',
+                  on_delta=None, on_tick=None):
     config, url, body = build_request(messages, task=task, json_object=json_object,
                                       tools=tools, tool_choice=tool_choice, stream=on_delta is not None)
     key = config.active.api_key()
-    with httpx.Client(timeout=_timeout(config)) as client:
-        if on_delta is not None:
-            from agent.core.request_control import check_cancelled
-            collector = _StreamResult(config.active.protocol)
-            emitted = False
-            with client.stream('POST', url, json=body, headers={'Authorization': 'Bearer ' + key}) as response:
-                _http_ok(response, config, task)
-                for line in response.iter_lines():
-                    check_cancelled()
-                    if not line.startswith('data:') or not line[5:].strip():
-                        continue
-                    text = collector.feed(line[5:].strip())
-                    if text:
-                        emitted = True
-                        on_delta(text)
-                    if collector.finished and config.active.protocol == 'responses':
-                        break
-            result = collector.finish()
-            if not emitted and not result['calls'] and result['text']:
-                on_delta(result['text'])
+    # 增量一旦露出就记在闭包外，异常路径也能看到：重发会让前端重复显示。
+    marks = {'emitted': False}
+
+    def emit(text):
+        marks['emitted'] = True
+        on_delta(text)
+
+    for attempt in (1, 2):
+        try:
+            with httpx.Client(timeout=_timeout(config)) as client:
+                if on_delta is not None:
+                    result, _ = _stream_once(client, url, body, key, config, task, emit, on_tick)
+                else:
+                    result, _ = _post_once(client, url, body, key, config, task)
             return result
-        response = client.post(url, json=body, headers={'Authorization': 'Bearer ' + key})
-        _http_ok(response, config, task)
-        return _result(response.json(), config.active.protocol)
+        except BaseException as error:
+            if attempt == 2 or marks['emitted'] or not _transient(error):
+                raise
+            logger.warning('agent_api_retry task=%s attempt=%d kind=%s emitted=%s',
+                           task, attempt, type(error).__name__, marks['emitted'])
+            time.sleep(_RETRY_DELAY_SECONDS)
 
 
 async def stream(messages, *, tools=None, tool_choice='auto'):

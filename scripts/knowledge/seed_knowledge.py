@@ -17,7 +17,7 @@ BACKEND_DIR = os.environ.get("BACKEND_DIR") or os.path.join(
 )
 sys.path.insert(0, BACKEND_DIR)
 
-from documents import mdify  # noqa: E402
+from documents.ingest import mdify  # noqa: E402
 from agent.tools.search_regulations import tool as vector  # noqa: E402
 
 MD_DIR = os.environ.get("MD_DIR") or os.path.join(os.path.dirname(BACKEND_DIR), "_md")
